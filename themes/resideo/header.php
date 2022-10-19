@@ -76,6 +76,7 @@
             .home .pxp-testim-1-intro .pxp-section-h2 {color:#fff !important;}
             .home .pxp-contact-section .pxp-section-h2 {color:#fff !important;}
            .pxp-section-h2{ color: #333 !important ; }
+           .technical-spc .pxp-section-h2 {color:#fff !important;}
            .service_case2_intro{color: #fff !important;}
            .service_case2_intro p{color: #fff !important; }
           
@@ -374,14 +375,14 @@
         <style type="text/css">
             @media screen and (max-width: 980px) {
                 .iframe_video{
-                    margin-top: 100px !important;
+                    margin-top: 0px !important;
                     height: 300px !important;
                 }
                 .pxp-services-h-fig{
-                    height: 400px !important;
+                    height: auto !important;
                 }
                 .pxp-props-carousel-right.pxp-has-intro {
-                    padding-left: 34px !important;
+                    /* padding-left: 34px !important; */
                 }
                 .page_service {
                     background: #fff !important;
@@ -396,9 +397,9 @@
                }
             }
             @media screen and (max-width: 576px){
-                .iframe_video img {
+                /* .iframe_video img {
                     height: 304px !important;
-                }
+                } */
             }
         </style>
         <?php
@@ -452,9 +453,9 @@
                }
             }
             @media screen and (max-width: 576px){
-                .iframe_video img {
+                /* .iframe_video img {
                     height: 304px !important;
-                }
+                } */
             }
         </style>
         <?php
@@ -673,8 +674,9 @@
             .pxp-services-h-items {
                 flex: 1 !important;
                 padding-top: 1rem;
+                padding-bottom:1rem;
                 padding-left: 0 !important;
-                min-height: 200px !important; 
+                min-height: auto !important; 
                 max-height: auto;
             } 
             .pxp-services-h-items-img{
@@ -737,7 +739,8 @@
                 text-align: center;
             }
             .service-txt-data{
-                 margin-left: 3rem;
+                 /* margin-left: 3rem; */
+                 margin:0 auto;
                  margin-bottom: 1.7rem;
             }
             .centrally_h{
@@ -766,13 +769,14 @@
             .pxp-services-h-fig iframe {
                 height: 304px !important;
             }
-            .iframe_video img {
+            /* .iframe_video img {
                 height: 304px !important;
-            }
+            } */
             .pxp-services-h-items {
                 padding-top: 1rem;
+                padding-bottom: 1rem;
                 padding-left: 0 !important;
-                min-height: 200px !important; 
+                min-height: auto !important; 
                 max-height: auto;
             } 
         }
@@ -800,7 +804,7 @@
                 margin-bottom: 14px !important;
             }
             .pxp-services-h-fig{
-                height: 200px !important;
+                height: auto !important;
             }
             .pxp-services-h-fig iframe{
                 height: 200px !important;

@@ -83,6 +83,9 @@ function closeGallery() {
         display: inline;
         color: #fff;
     }
+    .centrally_p_h {
+    margin-top:40px;
+    }
     .centrally_p_color{
         color: #fff;
     }
@@ -93,6 +96,9 @@ function closeGallery() {
     }
     .tech_cta:after{
         border-top: 2px solid #fff !important;
+    }
+    .page_service1_community.comm_map {
+        padding-top:100px;
     }
     <?php 
     
@@ -110,8 +116,145 @@ function closeGallery() {
         .pxp-props-carousel-right-arrow{right: unset !important; left:30px;}
         <?php
     }
+
+   
     
     ?>
+    @media only screen and (max-width: 575px) {
+        .iframe_video .ct-anim-video-play-button {
+            width:16px;
+            height:22px;
+        }
+        .iframe_video .ct-anim-video-play-button:before {
+            width:40px;
+            height:40px;
+        }
+        .iframe_video .ct-anim-video-play-button:after {
+            width:40px;
+            height:40px;
+        }
+        .iframe_video .ct-anim-video-play-button span {
+            border-left: 14px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+     .page_service_community .pxp-services-h-fig > div{
+            height:250px !important;
+            margin-top:0 !important;
+     }
+     .page_service1_community .pxp-services-h-fig .pxp-service-h-img {
+    height:250px !important;
+     }
+     .technical-spc.pt-100 {
+        padding-top:30px;
+     }
+     .technical-spc.mt-100 {
+        margin-top:0px;
+     }
+     .technical-spc .pxp-section-h2 {
+        color:#fff !important;
+     }
+     .tech_list.pxp-in ul li {
+      font-size:13px;
+     }
+     .page_service_community {
+        padding-top:10px;
+     }
+    }
+    @media only screen and (max-width: 576px) {
+        .ct_communities_cont {
+        max-width:540px;
+    }
+    }
+    @media only screen and (max-width: 768px) {
+        .page_service1_community .pxp-services-h-container {
+   display:block;
+    }
+    .ct_communities_cont {
+        max-width:720px;
+    }
+    }
+    @media only screen and (max-width: 990px) {
+    .technical-spc.mt-100 {
+        margin-top:0;
+    }
+    .page_service_community .pxp-services-h-container {
+   display:block;
+    }
+    .page_service1_community.service1_interior .pxp-services-h-container {
+   display:block;
+    }
+    .ct_communities_cont {
+        max-width:600px;
+        padding-left:15px !important;
+        padding-right:15px !important
+    }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px) { 
+    .page_service_community .pxp-services-h-container {
+   display:flex;
+   align-items:flex-start;
+    }
+    .page_service1_community.service1_interior .pxp-services-h-container {
+   display:flex;
+   align-items:flex-start;
+    }
+    .page_service1_community .pxp-services-h-items .pxp-services-h-items.mr-lg-5 {
+   margin-right:0px !important;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .ct_communities_cont.pxp-props-carousel-right.mt-100 {
+        margin-top:40px !important;
+    }
+    .pxp-services-h-container {
+   display:block;
+    }
+    .page_service {
+        background:none;
+    }
+    .page_service.pt-100 {
+        padding-top:0;
+    }
+    .page_service .pxp-services-h-fig .iframe_video img{
+        width:100%;
+    }
+    .page_service .pxp-services-h-fig {
+        height:auto !important;
+    }
+    .page_service1_community {padding-top:0;margin-bottom:0 !important;}
+    .page_service1_community .pxp-services-h-fig{
+       height:auto !important;
+    }
+    .page_service1_community .pxp-services-h-items {
+        /* padding-left:0 !important; */
+        padding-top:25px;
+    }
+    .page_service1_community.service1_interior .pxp-services-h-items {
+        padding-top:10px;
+        margin-top:0px !important;
+    }
+    .service1_interior .pxp-services-h-items {
+        padding-left:0 !important;
+    }
+    .page_service1_community.comm_map .pxp-services-h-items{
+        padding-left:0 !important;
+    }
+    .pxp-props-carousel-right.mt-100 {
+        margin-top:80px;
+    }
+  
+    .page_service_community .pxp-services-h-items {
+        min-height:auto !important;
+    }
+}
+
+
+.comm_map iframe {
+    border:0 !important;
+}
+
 </style>
 <div class="pxp-content">
     <?php while(have_posts()) : the_post();
@@ -390,7 +533,7 @@ function closeGallery() {
                         </div>
                     </div>
 
-                    <div class="pt-100 pb-100 page_service1_community body_color" style="margin-bottom: 58px; background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/07/contact_bg.png); background-repeat: no-repeat; background-position: top right;">
+                    <div class="pt-100 pb-100 page_service1_community comm_map body_color" style="margin-bottom: 58px; background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/07/contact_bg.png); background-repeat: no-repeat; background-position: top right;">
                         <div class="container">
                             <div class="pxp-services-h-container mt-4 mt-md-5" style="margin-top:0px !important;">
                                 <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: 400px; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
@@ -442,7 +585,7 @@ function closeGallery() {
             transform: translateY(-125%) !important;
         }
     </style>
-    <div class="container-fluid pxp-props-carousel-right pxp-has-intro mt-100">
+    <div class="container-fluid pxp-props-carousel-right pxp-has-intro mt-100 ct_communities_cont">
         <div class="pxp-props-carousel-right-intro">
             <p class="pxp-text-light color_green"><?php echo pll__( $explore_title ); ?></p>
             <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL PROJECTS" ); ?></a>
@@ -631,7 +774,7 @@ function closeGallery() {
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="pxp-testim-1-intro">
+                    <div class="pxp-testim-1-intro centrally_p_h">
                         <p class="pxp-text-light centrally_p" style="color: ; padding-top:20px; font-weight: 600; font-size: 20px;"><?php echo  pll__( $centrally_heading );  ?></p>
                     </div>
                 </div>
@@ -703,7 +846,7 @@ function closeGallery() {
                                      <p style="padding-right: 10px; text-align: left;"><?php echo $description; ?></p>
                                 </div>
                             </div>
-                            <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: 400px">
+                            <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: auto;">
                                 <div class="" style="margin-top: 36px; background-color:#000">
                                     <img src="<?php echo $image; ?>" class="design_img">
                                     <div style="width: 40px; height: 40px; background-color: #fff; position: absolute; bottom: 20px; right: 30px">
@@ -738,11 +881,11 @@ function closeGallery() {
                 <?php
             }
             else { ?>
-                <div class="pt-100 pb-100 page_service1_community body_color" style="margin-bottom: 58px;">
+                <div class="pt-100 pb-100 page_service1_community service1_interior body_color" style="margin-bottom: 58px;">
                     <div class="container">
 
                         <div class="pxp-services-h-container mt-4 mt-md-5" style="margin-top:0px !important;">
-                            <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: 400px">
+                            <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: auto;">
                                 
                                 <div class="pxp-service-h-img" style="margin-top: 36px; background-color:#000">
                                     <img src="<?php echo $image; ?>" class="pxp-service-h-img">

@@ -2221,6 +2221,9 @@ code {
     /*box-shadow: 0px 15px 30px rgba(0,0,0,0.10);*/
     padding: 40px;
 }
+.pxp-contact-section-form {
+ padding:0;
+}
 .pxp-dark-mode .pxp-hero-contact-form, 
 .pxp-dark-mode .pxp-contact-section-form {
     background-color: transparent;
@@ -12931,6 +12934,7 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     .pxp-hero {
         height: 560px !important;
         min-height: 560px;
+        max-height:100vh;
     }
     .pxp-hero.pxp-hero-contact {
         height: auto !important;
@@ -13224,7 +13228,7 @@ color: #fff; }
         color: #fff;
     }
     .pxp-primary-cta{
-        color: #fff ;
+        color: #333;
     }
     .pxp-services-h-fig{
         margin-bottom: 4rem;
@@ -13292,10 +13296,10 @@ color: #fff; }
 
 @media only screen and (max-width: 450px) and (min-width: 350px)
 {
-    .pxp-hero {
+    /* .pxp-hero {
         min-height: 200px !important;
         height: 200px !important;
-    }
+    } */
     
 }
 @media only screen and (max-width: 350px)
@@ -13325,5 +13329,23 @@ color: #fff; }
         margin-bottom: 10px !important;
     }
     
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+    border:none !important;
+    color: #dc3232;
+}
+.wpcf7 form .wpcf7-response-output {
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+@media only screen and (max-width: 767px) {
+.rtl h1.pxp-page-header {
+    text-align:right;
+}
+}
+
+.pxp-posts-1-item-details {
+    text-align:right;
 }
 
