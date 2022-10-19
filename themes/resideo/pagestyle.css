@@ -1,0 +1,1206 @@
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.ct_animated_timeline ul {
+  
+  padding: 50px 0;
+}
+
+.ct_animated_timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 2px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #fff;
+}
+
+.ct_animated_timeline ul li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: inherit;
+  z-index: 1;
+  background:none;
+}
+
+.ct_animated_timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+ font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+  
+}
+
+.ct_animated_timeline ul li div::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  /*border-style: solid;*/
+}
+
+.ct_animated_timeline ul li:nth-child(even) div {
+  left: 45px;
+    text-align:left;
+}
+
+.ct_animated_timeline ul li:nth-child(even) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  /*border-color: transparent #f45b69 transparent transparent;*/
+}
+
+.ct_animated_timeline ul li:nth-child(odd) div {
+  left: -439px;
+    text-align:right;
+}
+
+.ct_animated_timeline ul li:nth-child(odd) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #f45b69;
+}
+
+.loan_process_stepbystep .ct_animated_timeline ul li:nth-child(odd) div {
+    top:-60px;
+}
+.loan_process_stepbystep .ct_animated_timeline ul li:nth-child(even) div {
+
+     top:-60px;
+}
+
+.loan_process_stepbystep .ct_animated_timeline ul li:nth-child(odd) div {
+    top:-60px;
+}
+.loan_process_stepbystep .ct_animated_timeline ul li:nth-child(even) div {
+
+     top:-60px;
+}
+.services_key_stepbystep .ct_animated_timeline ul li:nth-child(odd) div {
+    top:-60px;
+}
+.services_key_stepbystep .ct_animated_timeline ul li:nth-child(even) div {
+     top:-60px;
+}
+.loan_process_stepbystep .ct_animated_timeline ul li:last-child:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+    background: #C2A022;
+}
+
+.services_key_stepbystep .ct_animated_timeline ul li:last-child:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+    background: #C2A022;
+}
+
+.rtl .ct_animated_timeline ul li:nth-child(odd) div {
+    text-align:left;
+}
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.ct_animated_timeline ul li::after {
+  transition: background 0.5s ease-in-out;
+}
+
+.ct_animated_timeline ul li.in-view::after {
+  background: #C2A022;
+}
+
+.ct_animated_timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+.ct_animated_timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+.ct_animated_timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.ct_animated_timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+.rtl .ct_animated_timeline ul li:nth-child(1) div {
+    transition-delay:.2s;
+}
+.rtl .ct_animated_timeline ul li:nth-child(2) div {
+    transition-delay:.6s;
+}
+.rtl .ct_animated_timeline ul li:nth-child(3) div {
+    transition-delay:1s;
+}
+.rtl .ct_animated_timeline ul li:nth-child(4) div {
+    transition-delay:1.4s;
+}
+.rtl .ct_animated_timeline ul li:nth-child(5) div {
+    transition-delay:1.8s;
+}
+.rtl .ct_animated_timeline ul li:nth-child(6) div {
+    transition-delay:2.2s;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  .ct_animated_timeline ul li div {
+    width: 250px;
+  }
+  .ct_animated_timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+  .ct_animated_timeline ul li:nth-child(odd) div {
+left: -300px
+}
+.ct_animated_timeline ul li:nth-child(even) div {
+    left:40px;
+}
+}
+
+@media screen and (max-width: 600px) {
+  .ct_animated_timeline ul li {
+    margin-left: 20px;
+  }
+  .ct_animated_timeline ul li div {
+    /*width: calc(100vw - 91px);*/
+    width:40vw;
+  }
+  .ct_animated_timeline ul li:nth-child(odd) div {
+  left:-190px;
+}
+  .ct_animated_timeline ul li:nth-child(even) div {
+    left: 25px;
+  }
+  .ct_animated_timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f45b69 transparent transparent;
+  }
+}
+
+
+/* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline-clippy ul li::after {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+}
+
+.timeline-rhombus ul li::after {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.timeline-rhombus ul li div::before {
+  bottom: 12px;
+}
+
+.timeline-star ul li::after {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.timeline-heptagon ul li::after {
+  clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 60%,
+    75% 100%,
+    25% 100%,
+    0% 60%,
+    10% 20%
+  );
+}
+
+.timeline-infinite ul li::after {
+  animation: scaleAnimation 2s infinite;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.25);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.services_goldkey {
+    background:#4D858D;
+    width:100%;
+    padding:50px 0;
+}
+.services_goldkey_cont {
+    margin:0 auto;
+    width: 80%;
+    max-width:660px;
+}
+.services_key_cont {
+    text-align: center;
+}
+
+.services_goldkey_cont .services_key_copy {
+  text-align:center;
+}
+.services_key_stepbystep {
+    padding-top:60px;
+}
+.services_goldkey_cont .services_key_copy p{font-size:16px; line-height:24px;color:#ffffff;padding:0;margin:0;}
+.services_goldkey_cont .services_key_copy h3{font-size:21px; line-height:26px;font-weight:bold;color:#ffffff;padding:22px 0 8px 0;}
+.services_key_stepbystep {
+    display: flex;
+    justify-content: space-evenly;
+}
+.loan_approval {
+    background: #4D858D;
+    width: 100%;
+    padding: 50px 0;
+}
+   .loan_process {
+      background:#4D858D;
+      width:100%;
+      padding:50px 0;
+  }
+  .loan_process_cont {
+      margin:0 auto;
+      width: 80%;
+      max-width:660px;
+  }
+
+  
+  .loan_process_cont .loan_process_copy {
+    text-align:center;
+  }
+  .loan_process_stepbystep {
+      padding-top:80px;
+  }
+
+.loan_process_cont .loan_process_copy h3 {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 12px;
+}
+.loan_process_cont .loan_process_copy p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+.faq_page_cont {
+   max-width:800px;
+   width:80%;
+   margin:0 auto;
+}
+
+.faq_page_cont .accordion .card {
+   border:none;
+}
+.faq_page_cont .accordion>.card .btn.btn-link:focus {
+    text-decoration:none;
+}
+.faq_page_cont .accordion .card .card-header{
+  border-bottom:solid 1px #4D858D;
+  background-color: #fff;
+  padding-left:0;
+}
+.faq_page_cont .accordion>.card .card-header {
+ margin-bottom:0;
+}
+.faq_page_cont .accordion>.card .card-body {
+   padding-left:0;
+}
+   
+.faq_page_cont .accordion>.card .btn.btn-link {
+   border:none;
+   font-size:21px;
+   text-transform: uppercase;
+   font-weight:bold;
+   color:#4D858D;
+   padding-left:0;
+}
+.faq_page_cont .accordion>.card .btn.btn-link.btn-block {
+   width:auto;
+}
+.faq_page_cont .accordion>.card .btn.btn-link:hover {
+text-decoration:none;
+}
+
+.faq_page_cont .accordion>.card .btn.btn-link span{
+   display: block;
+   position:relative;
+}
+.faq_page_cont .accordion>.card .btn.btn-link span:after{
+  position:absolute;
+  right:-20px;
+  top:50%;
+  transform: translateY(-50%);
+ 
+    width: 12px;
+    height: 7px;
+    content: '';
+    background:url(images/arrow_down_24px.svg);
+    transform: rotate(180deg);
+   
+}
+.faq_page_cont .accordion>.card .btn.btn-link.collapsed span:after{
+   background:url(images/arrow_down_24px.svg);
+   transform: rotate(0deg);
+   
+}
+.faq_page_cont h2{
+   font-size:32px;
+   font-weight: bold;
+   color:#1D252C;
+   text-align: center;
+}
+.faq_page_cont h3{
+   text-transform: uppercase;
+   font-weight:bold;
+   color:#4D858D;
+   font-size: 16px;
+   text-align: center;
+}
+
+
+.finance_list{
+   
+   color: #fff;
+   line-height: 30px;
+   margin-left: 21px;
+   font-size: 14px;
+}
+.fin_basic_req img {
+margin:0 auto;
+text-align: center;
+display: block;
+}
+.fin_basic_req h4{
+   color:#fff;
+   font-size:14px;
+   line-height:18px;
+   font-weight:bold;
+   text-align: center;
+}
+
+.fin_basic_req p{
+   color:#fff;
+   font-size:14px;
+   line-height:16px;
+   text-align:center;
+}
+
+.fin_img_cnt {
+   height:45px;
+}
+.svg_margin{
+   margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px;
+}
+.pxp-section-h2{
+   text-transform: uppercase;
+}
+.about_comp_strip {
+    background: url(images/aboutusbg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height:470px;
+}
+
+.about_comp_sec {
+    position: relative;
+    width:100%;
+    max-width:780px;
+}
+.about_comp_sec_cont {
+    width:100%;
+    position: relative;
+}
+.atr_logo_cnt {
+    position: absolute;
+    left:50%;
+    
+    top:10%;
+}
+.cmp_line_bottom {
+    width:1px;
+    height: 60px;
+    position: absolute;
+    background:#fff;
+}
+.cmp_line_bottom2 {
+    position: absolute;
+    /* background: url(images/lined2.svg); */
+    border-top:1px solid #fff;
+    border-bottom:none;
+    border-left:none;
+    border-right:1px solid #fff;
+    height:60px;
+}
+.cmp_line_bottom3{
+    position: absolute;
+    /* background: url(images/lined3.svg); */
+    border-top:1px solid #fff;
+    border-bottom:none;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    height:60px;
+    float:right;
+}
+.atr_logo_cnt img {
+    max-width:100%;
+}
+.khov_logo_cnt img{ max-width:100%; }
+.ahcc_logo_cnt img{ max-width: 100%; }
+.khov_logo_cnt{
+    position: absolute;
+}
+.ahcc_logo_cnt{
+    position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+    .atr_logo_cnt {
+        width:60px;
+        transform: translateX(-50%);
+       }
+       .cmp_line_bottom {
+           
+           left:50%;
+           top:46px;
+           height:30px;
+       }
+       .cmp_line_bottom2 {
+        width:200px;
+        left:27%;
+        top:76px;
+        height:30px;
+       }
+       .cmp_line_bottom3{
+       
+           width:74px;
+           height:30px;
+           top:76px;
+           right:72%;
+           
+        }
+        .khov_logo_cnt{
+           position: absolute;
+           width:146px;
+           height:64px;
+           left:37px;
+           top:99px;
+        }
+        .ahcc_logo_cnt{
+           position: absolute;
+           width:125px;
+           height:77px;
+           left:56%;
+           top:93px;
+        }
+    /* .cmp_line_bottom2 {
+    width:200px;
+    left:27%;
+    }
+    .cmp_line_bottom3{
+   right:72%;
+    } */
+}
+@media only screen and (max-width: 400px) {
+      .atr_logo_cnt {
+        width:60px;
+        transform: translateX(-50%);
+       }
+       .cmp_line_bottom {
+           
+           left:50%;
+           top:46px;
+           height:30px;
+       }
+       .cmp_line_bottom2 {
+           width:180px;          
+           left:31.5%;
+           
+       }
+       .cmp_line_bottom3{                 
+           right:68%;           
+        }
+        .khov_logo_cnt{                      
+           left:20px;
+           top:99px;
+        }
+        .ahcc_logo_cnt{                   
+           left:65%;
+           top:93px;
+        }
+}
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+    .atr_logo_cnt {
+        width:96px;
+        left:55%;
+       }
+       
+       .cmp_line_bottom {
+           left:calc(55% + 48px);
+           top:75px;
+       }
+       .cmp_line_bottom2 {
+           width:329px;
+           top:135px;
+           left:36.5%;
+       }
+       .cmp_line_bottom3{
+       
+           width:134px;
+           
+           top:135px;
+           right:63%;
+           
+        }
+        .khov_logo_cnt{
+           position: absolute;
+           width:235px;
+           height:102px;
+           left:85px;
+           top:180px;
+        }
+        .ahcc_logo_cnt{
+           position: absolute;
+           width:200px;
+           height:122px;
+           left:70%;
+           top:169px;
+        }
+}
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+    .atr_logo_cnt {
+     width:96px;
+     left:55%;
+    }
+    .cmp_line_bottom {
+        left:calc(55% + 48px);
+        top:75px;
+    }
+    .cmp_line_bottom2 {
+        width:256px;
+        top:135px;
+        left:36.5%;
+    }
+    .cmp_line_bottom3{
+    
+        width:134px;
+        
+        top:135px;
+        right:63%;
+        
+     }
+     .khov_logo_cnt{
+        position: absolute;
+        width:235px;
+        height:102px;
+        left:0;
+        top:180px;
+     }
+     .ahcc_logo_cnt{
+        position: absolute;
+        width:200px;
+        height:122px;
+        left:70%;
+        top:169px;
+     }
+ 
+
+}
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+    .atr_logo_cnt {
+        width:120px;
+        left:55%;
+       }
+    .cmp_line_bottom {
+        left:calc(55% + 60px);
+        top:90px;
+    }
+    .cmp_line_bottom2 {
+        width:304px;
+        top:150px;
+        left:36.5%;
+    }
+    .cmp_line_bottom3{
+    
+        width:160px;
+        
+        top:150px;
+        right:63%;
+        
+     }
+     .khov_logo_cnt{
+        position: absolute;
+        width:271px;
+        height:118px;
+        left:0;
+        top:195px;
+     }
+     .ahcc_logo_cnt{
+        position: absolute;
+        width:230px;
+        height:142px;
+        left:70%;
+        top:184px;
+     }
+}
+@media only screen and (min-width: 1440px) {
+
+    .atr_logo_cnt {
+        width:120px;
+        left:55%;
+       }
+
+.cmp_line_bottom {
+ 
+    left:calc(55% + 60px);
+    top:90px;
+
+}
+.cmp_line_bottom2 {
+   
+    width:367px;
+    top:150px;
+    left:36.5%;
+ }
+ .cmp_line_bottom3{
+    
+    width:153px;
+    
+    top:150px;
+    right:63%;
+    
+ }
+
+ .khov_logo_cnt{
+    position: absolute;
+    width:294px;
+    height:128px;
+    left:0;
+    top:195px;
+ }
+ .ahcc_logo_cnt{
+    position: absolute;
+    width:250px;
+    height:154px;
+    left:80%;
+    top:184px;
+ }
+}
+
+.joblisthalf {
+    background:#4D858D;
+    padding-left:66px;
+}
+
+
+.careers_joblist .accordion .card {
+    border:none;
+ }
+ .careers_joblist .accordion .card {
+    background-color: #4D858D;
+ }
+ .careers_joblist .accordion .card .card-header{
+   border-bottom:solid 1px #fff;
+   background-color: #4D858D;
+   padding-left:0;
+ }
+ .careers_joblist .accordion>.card .card-header {
+  margin-bottom:0;
+ }
+ .careers_joblist .accordion>.card .card-body {
+    padding-left:0;
+    color:#fff;
+ }
+    
+ .careers_joblist .accordion>.card .btn.btn-link {
+    border:none;
+    font-size:21px;
+    text-transform: uppercase;
+    font-weight:bold;
+    color:#fff;
+    padding-left:0;
+ }
+ .careers_joblist .accordion>.card .btn.btn-link.btn-block {
+    width:auto;
+ }
+ .careers_joblist .accordion>.card .btn.btn-link:hover {
+ text-decoration:none;
+ }
+ 
+ .careers_joblist .accordion>.card .btn.btn-link span{
+    display: block;
+    position:relative;
+ }
+ .careers_joblist .accordion>.card .btn.btn-link span:after{
+   position:absolute;
+   right:-20px;
+   top:50%;
+   transform: translateY(-50%);
+  
+     width: 12px;
+     height: 7px;
+     content: '';
+     background:url(images/arrow_down_24px.svg);
+     transform: rotate(180deg);
+    
+ }
+ .careers_joblist .accordion>.card .btn.btn-link.collapsed span:after{
+    background:url(images/arrow_down_24px.svg);
+    transform: rotate(0deg);
+    
+ }
+ .careers_joblist h2{
+    font-size:32px;
+    font-weight: bold;
+    color:#1D252C;
+    text-align: center;
+ }
+ .careers_joblist h3{
+    text-transform: uppercase;
+    font-weight:bold;
+    color:#4D858D;
+    font-size: 16px;
+    text-align: center;
+ }
+ .about_comp_strip {
+    background: url(images/aboutusbg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height:470px;
+}
+
+.about_comp_sec {
+    position: relative;
+    width:100%;
+    max-width:780px;
+}
+.about_comp_sec_cont {
+    width:100%;
+    position: relative;
+}
+.atr_logo_cnt {
+    position: absolute;
+    left:50%;
+    
+    top:10%;
+}
+.cmp_line_bottom {
+    width:1px;
+    height: 60px;
+    position: absolute;
+    background:#fff;
+}
+.cmp_line_bottom2 {
+    position: absolute;
+    /* background: url(images/lined2.svg); */
+    border-top:1px solid #fff;
+    border-bottom:none;
+    border-left:none;
+    border-right:1px solid #fff;
+    height:60px;
+}
+.cmp_line_bottom3{
+    position: absolute;
+    /* background: url(images/lined3.svg); */
+    border-top:1px solid #fff;
+    border-bottom:none;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    height:60px;
+    float:right;
+}
+.atr_logo_cnt img {
+    max-width:100%;
+}
+.khov_logo_cnt img{ max-width:100%; }
+.ahcc_logo_cnt img{ max-width: 100%; }
+.khov_logo_cnt{
+    position: absolute;
+}
+.ahcc_logo_cnt{
+    position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+      .careers_page .pt-100{
+          background: linear-gradient(90deg, #4D858D 50%, #4D858D 50%) !important;
+      }
+      ..pt-100{
+         background: linear-gradient(90deg, #7B868C 50%, #7B868C 50%) !important; 
+      }
+     .home_services_bg{
+        background: linear-gradient(90deg, #7B868C 50%, #7B868C 50%) !important;
+         
+     }
+      .home_services_m{
+         padding: 0px 16px !important;
+      }
+      .pxp-text-light{
+         color: #000;
+      }
+      .owl-carousel.owl-drag .owl-item {
+          width: 290px !important;
+      }
+      .joblisthalf {
+          padding-left: 16px !important;
+      }
+      .service_img_min_height {
+          min-height: 360px !important;
+      }
+      .pxp-section-h2{
+         color: black !important;
+      }
+      .atr_logo_cnt {
+        width:60px;
+        transform: translateX(-50%);
+       }
+       .cmp_line_bottom {
+           
+           left:50%;
+           top:46px;
+           height:30px;
+       }
+       .cmp_line_bottom2 {
+        width:200px;
+        left:27%;
+        top:76px;
+        height:30px;
+       }
+       .cmp_line_bottom3{
+       
+           width:74px;
+           height:30px;
+           top:76px;
+           right:72%;
+           
+        }
+        .khov_logo_cnt{
+           position: absolute;
+           width:146px;
+           height:64px;
+           left:37px;
+           top:99px;
+        }
+        .ahcc_logo_cnt{
+           position: absolute;
+           width:125px;
+           height:77px;
+           left:56%;
+           top:93px;
+        }
+      .pxp-text-light{
+         color: #fff !important;
+      }
+    /* .cmp_line_bottom2 {
+    width:200px;
+    left:27%;
+    }
+    .cmp_line_bottom3{
+   right:72%;
+    } */
+}
+@media only screen and (max-width: 400px) {
+    .owl-carousel.owl-drag .owl-item {
+        width: 350px !important;
+    }
+    .pxp-content{
+        overflow: hidden;
+    }
+    .container{ width: 100% !important;}
+     .pxp-footer{width: 100% !important;}
+     h1.pxp-page-header {text-align: left;}
+     .careers_page .pt-100{
+          background: linear-gradient(90deg, #4D858D 50%, #4D858D 50%) !important;
+      }
+      /*.pxp-hero-caption{
+        bottom: 495px !important;
+      }*/
+      .joblisthalf {
+          padding-left: 16px !important;
+      }
+      .service_img_min_height {
+          min-height: 250px !important;
+      }
+      .atr_logo_cnt {
+        width:60px;
+        transform: translateX(-50%);
+       }
+      .pxp-text-light{
+         color: #fff !important;
+      }
+      .pxp-hero {
+            height: 300px !important;
+            min-height: 300px;
+        }
+       .cmp_line_bottom {
+           
+           left:50%;
+           top:46px;
+           height:30px;
+       }
+       .cmp_line_bottom2 {
+           width:180px;          
+           left:31.5%;
+           
+       }
+       .cmp_line_bottom3{                 
+           right:68%;           
+        }
+        .khov_logo_cnt{                      
+           left:20px;
+           top:99px;
+        }
+        .ahcc_logo_cnt{                   
+           left:65%;
+           top:93px;
+        }
+        .loan_process_sbs_col {
+             width: 160px;
+         }
+         .loan_process_sbs_col1-r2 {
+             margin-top: 80px;
+         }
+        .services_sbs_col {
+            width: 160px;
+         }
+         .home_services_bg{
+            background: linear-gradient(90deg, #7B868C 50%, #7B868C 50%) !important; 
+         }
+         .home_services_m{
+            padding: 0px 16px !important;
+         }
+}
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+    .atr_logo_cnt {
+        width:96px;
+        left:55%;
+       }
+       
+       .cmp_line_bottom {
+           left:calc(55% + 48px);
+           top:75px;
+       }
+       .cmp_line_bottom2 {
+           width:329px;
+           top:135px;
+           left:36.5%;
+       }
+       .cmp_line_bottom3{
+       
+           width:134px;
+           
+           top:135px;
+           right:63%;
+           
+        }
+        .khov_logo_cnt{
+           position: absolute;
+           width:235px;
+           height:102px;
+           left:85px;
+           top:180px;
+        }
+        .ahcc_logo_cnt{
+           position: absolute;
+           width:200px;
+           height:122px;
+           left:70%;
+           top:169px;
+        }
+}
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+    .atr_logo_cnt {
+     width:96px;
+     left:55%;
+    }
+    .cmp_line_bottom {
+        left:calc(55% + 48px);
+        top:75px;
+    }
+    .cmp_line_bottom2 {
+        width:256px;
+        top:135px;
+        left:36.5%;
+    }
+    .cmp_line_bottom3{
+    
+        width:134px;
+        
+        top:135px;
+        right:63%;
+        
+     }
+     .khov_logo_cnt{
+        position: absolute;
+        width:235px;
+        height:102px;
+        left:0;
+        top:180px;
+     }
+     .ahcc_logo_cnt{
+        position: absolute;
+        width:200px;
+        height:122px;
+        left:70%;
+        top:169px;
+     }
+ 
+
+}
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+    .atr_logo_cnt {
+        width:120px;
+        left:55%;
+       }
+    .cmp_line_bottom {
+        left:calc(55% + 60px);
+        top:90px;
+    }
+    .cmp_line_bottom2 {
+        width:304px;
+        top:150px;
+        left:36.5%;
+    }
+    .cmp_line_bottom3{
+    
+        width:160px;
+        
+        top:150px;
+        right:63%;
+        
+     }
+     .khov_logo_cnt{
+        position: absolute;
+        width:271px;
+        height:118px;
+        left:0;
+        top:195px;
+     }
+     .ahcc_logo_cnt{
+        position: absolute;
+        width:230px;
+        height:142px;
+        left:70%;
+        top:184px;
+     }
+}
+@media only screen and (min-width: 1440px) {
+
+    .atr_logo_cnt {
+        width:120px;
+        left:55%;
+       }
+
+.cmp_line_bottom {
+ 
+    left:calc(55% + 60px);
+    top:90px;
+
+}
+.cmp_line_bottom2 {
+   
+    width:367px;
+    top:150px;
+    left:36.5%;
+ }
+ .cmp_line_bottom3{
+    
+    width:153px;
+    
+    top:150px;
+    right:63%;
+    
+ }
+
+ .khov_logo_cnt{
+    position: absolute;
+    width:294px;
+    height:128px;
+    left:0;
+    top:195px;
+ }
+ .ahcc_logo_cnt{
+    position: absolute;
+    width:250px;
+    height:154px;
+    left:80%;
+    top:184px;
+ }
+}
+
+.services-col2-bot-line {
+    margin-top:-10px;
+}
+.services_sbs_col2_inner span.services_round_sep {
+    top:-12px !important;
+}
+.services-col2-left-line {
+   top:-16px !important;
+}
+.services-col2-right-line {
+    top:-16px !important;
+}
+.loan_process-col2-bot-line {
+    margin-top:-6px;
+}

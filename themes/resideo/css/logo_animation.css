@@ -1,0 +1,358 @@
+
+.about_comp_sec {
+    position: relative;
+    width:100%;
+    max-width:780px;
+    min-height:420px;
+}
+.about_comp_sec_cont {
+    width:100%;
+    position: relative;
+}
+.atr_logo_cnt {
+    position: absolute;
+    left:calc(33% + 10px);
+   
+    top:198px;
+}
+
+.khov_logo_cnt{
+    position: absolute;
+    left:50%;
+    transform: translateX(-60%);
+    top:0%;
+}
+.ahcc_logo_cnt{
+    position: absolute;
+    left:33%;
+    transform: translateX(-20%);
+    top:310px;
+}
+.cmp_line_bottom {
+    width: 140px;
+    height: 50px;
+    position: absolute;
+    /* background:#fff; */
+    left:33%;
+    top:98px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
+}
+.cmp_line_bottom4 {
+    width: 140px;
+    height: 1px;
+    position: absolute;
+    background:#fff;
+    left:33%;
+    top:148px;
+    transform: scale(1);
+    transform-origin: center center;
+    
+}
+.cmp_line_bottom2 {
+    position: absolute;    
+    
+    border-bottom:none;
+    border-left:none;
+    width:1px;
+    background:#fff;
+    height:50px;
+    left:calc(33% + 70px);    
+    top:148px;
+}
+.cmp_line_bottom3{
+    position: absolute;    
+    
+    border-bottom:none;
+    border-left:none;
+    width:1px;
+    background:#fff;
+    height:50px;
+    left:calc(33% + 70px);    
+    top:290px;
+
+}
+.atr_logo_cnt img {
+    max-width:100%;
+}
+.khov_logo_cnt img{ max-width:100%; }
+.ahcc_logo_cnt img{ max-width: 100%; }
+@media only screen and (max-width: 768px) {
+    .atr_logo_cnt {
+        left:calc(7% + 10px);
+    }
+    .khov_logo_cnt{
+        left:0;
+        transform:translateX(0);
+        
+    }
+    .ahcc_logo_cnt{
+        left:7%;
+    }
+    .cmp_line_bottom{
+        left:7%;
+    }
+    .cmp_line_bottom2{
+        left:calc(7% + 70px);
+    }
+    .cmp_line_bottom3{
+         left:calc(7% + 70px);
+    }
+    .cmp_line_bottom4{
+    left:7%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .atr_logo_cnt {
+        left:calc(13% + 10px);
+    }
+    .khov_logo_cnt{
+        left:0;
+        transform:translateX(0);
+        
+    }
+    .ahcc_logo_cnt{
+        left:13%;
+    }
+    .cmp_line_bottom{
+        left:13%;
+    }
+    .cmp_line_bottom2{
+        left:calc(13% + 70px);
+    }
+    .cmp_line_bottom3{
+         left:calc(13% + 70px);
+    }
+    .cmp_line_bottom4{
+    left:13%;
+    }
+}
+
+/*@media only screen and (max-width: 768px) {*/
+/*    .atr_logo_cnt {*/
+/*        width:60px;*/
+/*        transform: translateX(-50%);*/
+/*       }*/
+/*       .cmp_line_bottom {*/
+           
+/*           left:50%;*/
+/*           top:46px;*/
+/*           height:30px;*/
+/*       }*/
+/*       .cmp_line_bottom2 {*/
+/*        width:200px;*/
+/*        left:27%;*/
+/*        top:76px;*/
+/*        height:30px;*/
+/*       }*/
+/*       .cmp_line_bottom3{*/
+       
+/*           width:74px;*/
+/*           height:30px;*/
+/*           top:76px;*/
+/*           right:72%;*/
+           
+/*        }*/
+/*        .khov_logo_cnt{*/
+/*           position: absolute;*/
+/*           width:146px;*/
+/*           height:64px;*/
+/*           left:62px;*/
+/*           top:99px;*/
+/*        }*/
+/*        .ahcc_logo_cnt{*/
+/*           position: absolute;*/
+/*           width:125px;*/
+/*           height:77px;*/
+/*           left:51%;*/
+/*           top:93px;*/
+/*        }*/
+ 
+/*}*/
+/*@media only screen and (max-width: 400px) {*/
+/*    .atr_logo_cnt {*/
+/*        width:60px;*/
+/*        transform: translateX(-50%);*/
+/*       }*/
+/*       .cmp_line_bottom {*/
+           
+/*           left:50%;*/
+/*           top:46px;*/
+/*           height:30px;*/
+/*       }*/
+/*       .cmp_line_bottom2 {*/
+/*           width:180px;          */
+/*           left:31.5%;*/
+           
+/*       }*/
+/*       .cmp_line_bottom3{                 */
+/*           right:68%;           */
+/*        }*/
+/*        .khov_logo_cnt{                      */
+/*           left:20px;*/
+/*           top:99px;*/
+/*        }*/
+/*        .ahcc_logo_cnt{                   */
+/*           left:65%;*/
+/*           top:93px;*/
+/*        }*/
+/*}*/
+/*@media only screen and (min-width: 768px) and (max-width: 990px) {*/
+/*    .atr_logo_cnt {*/
+/*        width:96px;*/
+/*        left:55%;*/
+/*       }*/
+       
+/*       .cmp_line_bottom {*/
+/*           left:calc(55% + 48px);*/
+/*           top:75px;*/
+/*       }*/
+/*       .cmp_line_bottom2 {*/
+/*           width:329px;*/
+/*           top:135px;*/
+/*           left:36.5%;*/
+/*       }*/
+/*       .cmp_line_bottom3{*/
+       
+/*           width:134px;*/
+           
+/*           top:135px;*/
+/*           right:63%;*/
+           
+/*        }*/
+/*        .khov_logo_cnt{*/
+/*           position: absolute;*/
+/*           width:235px;*/
+/*           height:102px;*/
+/*           left:113px;*/
+/*           top:180px;*/
+/*        }*/
+/*        .ahcc_logo_cnt{*/
+/*           position: absolute;*/
+/*           width:200px;*/
+/*           height:122px;*/
+/*           left:67%;*/
+/*           top:169px;*/
+/*        }*/
+/*}*/
+/*@media only screen and (min-width: 990px) and (max-width: 1200px) {*/
+/*    .atr_logo_cnt {*/
+/*     width:96px;*/
+/*     left:55%;*/
+/*    }*/
+/*    .cmp_line_bottom {*/
+/*        left:calc(55% + 48px);*/
+/*        top:75px;*/
+/*    }*/
+/*    .cmp_line_bottom2 {*/
+/*        width:256px;*/
+/*        top:135px;*/
+/*        left:36.5%;*/
+/*    }*/
+/*    .cmp_line_bottom3{*/
+    
+/*        width:134px;*/
+        
+/*        top:135px;*/
+/*        right:63%;*/
+        
+/*     }*/
+/*     .khov_logo_cnt{*/
+/*        position: absolute;*/
+/*        width:235px;*/
+/*        height:102px;*/
+/*        left:102px;*/
+/*        top:180px;*/
+/*     }*/
+/*     .ahcc_logo_cnt{*/
+/*        position: absolute;*/
+/*        width:200px;*/
+/*        height:122px;*/
+/*        left:57%;*/
+/*        top:169px;*/
+/*     }*/
+ 
+
+/*}*/
+/*@media only screen and (min-width: 1200px) and (max-width: 1440px) {*/
+/*    .atr_logo_cnt {*/
+/*        width:120px;*/
+/*        left:55%;*/
+/*       }*/
+/*    .cmp_line_bottom {*/
+/*        left:calc(55% + 60px);*/
+/*        top:90px;*/
+/*    }*/
+/*    .cmp_line_bottom2 {*/
+/*        width:304px;*/
+/*        top:150px;*/
+/*        left:36.5%;*/
+/*    }*/
+/*    .cmp_line_bottom3{*/
+    
+/*        width:160px;*/
+        
+/*        top:150px;*/
+/*        right:63%;*/
+        
+/*     }*/
+/*     .khov_logo_cnt{*/
+/*        position: absolute;*/
+/*        width:271px;*/
+/*        height:118px;*/
+/*        left:12%;*/
+/*        top:195px;*/
+/*     }*/
+/*     .ahcc_logo_cnt{*/
+/*        position: absolute;*/
+/*        width:230px;*/
+/*        height:142px;*/
+/*        left:61%;*/
+/*        top:184px;*/
+/*     }*/
+/*}*/
+/*@media only screen and (min-width: 1440px) {*/
+
+/*    .atr_logo_cnt {*/
+/*        width:120px;*/
+/*        left:55%;*/
+/*       }*/
+
+/*.cmp_line_bottom {*/
+ 
+/*    left:calc(55% + 60px);*/
+/*    top:90px;*/
+
+/*}*/
+/*.cmp_line_bottom2 {*/
+   
+/*    width:367px;*/
+/*    top:150px;*/
+/*    left:36.5%;*/
+/* }*/
+/* .cmp_line_bottom3{*/
+    
+/*    width:153px;*/
+    
+/*    top:150px;*/
+/*    right:63%;*/
+    
+/* }*/
+
+/* .khov_logo_cnt{*/
+/*    position: absolute;*/
+/*    width:294px;*/
+/*    height:128px;*/
+/*    left:90px;*/
+/*    top:195px;*/
+/* }*/
+/* .ahcc_logo_cnt{*/
+/*    position: absolute;*/
+/*    width:250px;*/
+/*    height:154px;*/
+/*    left:67%;*/
+/*    top:184px;*/
+/* }*/
+/*}*/
