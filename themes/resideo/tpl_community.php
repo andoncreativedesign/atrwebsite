@@ -110,6 +110,12 @@ function closeGallery() {
         .pxp-props-carousel-right.pxp-has-intro .pxp-props-carousel-right-container{
             width: 74.9% !important;
         }
+        @media only screen and (max-width: 991px) {
+        .pxp-props-carousel-right.pxp-has-intro.ct_communities_cont .pxp-props-carousel-right-container{
+            width: 100% !important;
+        }
+    }
+         
         .pxp-props-carousel-right-intro{
                 padding-right: calc((100% - 1140px) / 2 + 15px);
         }
@@ -145,6 +151,9 @@ function closeGallery() {
      .page_service1_community .pxp-services-h-fig .pxp-service-h-img {
     height:250px !important;
      }
+     .page_service_community .pxp-services-h-fig > div > img{
+    height:250px !important;
+     }
      .technical-spc.pt-100 {
         padding-top:30px;
      }
@@ -170,8 +179,34 @@ function closeGallery() {
         .page_service1_community .pxp-services-h-container {
    display:block;
     }
-    .ct_communities_cont {
+    /* .ct_communities_cont {
         max-width:720px;
+    } */
+
+    .rtl .technical-spc .row > div{
+         text-align:right;
+    }
+    .technical-spc .row > div{
+         text-align:left;
+    }
+    .technical-spc .tech_list ul li {
+        font-size:14px;
+    }
+    .technical-spc .row > div:nth-child(2) {
+        margin-bottom:0 !important;
+        padding-bottom:0 !important;
+    }
+    .technical-spc .row > div:nth-child(2) .tech_list{
+        margin-bottom:0 !important;
+        padding-bottom:0 !important;
+    }
+    .technical-spc .row > div:nth-child(3) {
+        margin-top:0 !important;
+        padding-top:0 !important;
+    }
+    .technical-spc .row > div:nth-child(3) .tech_list{
+        margin-top:0 !important;
+        padding-top:0 !important;
     }
     }
     @media only screen and (max-width: 990px) {
@@ -179,18 +214,38 @@ function closeGallery() {
         margin-top:0;
     }
     .page_service_community .pxp-services-h-container {
-   display:block;
+        display:flex;
+   flex-direction:column;
+   align-items:baseline;
     }
     .page_service1_community.service1_interior .pxp-services-h-container {
-   display:block;
+   display:flex;
+   flex-direction:column;
+    }
+    .page_service1_community.service1_interior .pxp-services-h-container .pxp-services-h-fig{
+     order:2;
+     margin-bottom:40px;
+     width:100%;
+    }
+    .page_service1_community.service1_interior .pxp-services-h-container .pxp-services-h-items{ 
+        order:1;
     }
     .ct_communities_cont {
         max-width:600px;
         padding-left:15px !important;
         padding-right:15px !important
     }
+    .com_text {
+        font-size:12px;
+    }
 }
-
+/* @media only screen and (min-width: 768px) {
+.ct_communities_cont {
+        max-width:720px;
+        padding-left:15px !important;
+        padding-right:15px !important
+    }
+} */
 @media only screen and (min-width: 991px) and (max-width: 1200px) { 
     .page_service_community .pxp-services-h-container {
    display:flex;
@@ -205,11 +260,30 @@ function closeGallery() {
     }
 }
 @media only screen and (max-width: 1024px) {
+    .page_service1_community.comm_map {
+        padding-top:0px;
+    }
     .ct_communities_cont.pxp-props-carousel-right.mt-100 {
-        margin-top:40px !important;
+        margin-top:100px !important;
     }
     .pxp-services-h-container {
    display:block;
+    }
+    .page_service1_community.comm_map .pxp-services-h-container {
+   display:flex;
+   flex-direction:column;
+    }
+    .page_service1_community.comm_map .pxp-services-h-container .pxp-services-h-items {
+    order:1;
+    width:100%;
+    min-height:auto !important;
+    }
+    .page_service1_community.comm_map .pxp-services-h-container .pxp-services-h-items .pxp-primary-cta{
+     margin-bottom:30px;
+    }
+    .page_service1_community.comm_map .pxp-services-h-container .pxp-services-h-fig {
+    order:2;
+    width:100%;
     }
     .page_service {
         background:none;
@@ -235,11 +309,13 @@ function closeGallery() {
         padding-top:10px;
         margin-top:0px !important;
     }
-    .service1_interior .pxp-services-h-items {
-        padding-left:0 !important;
-    }
+    
+   
     .page_service1_community.comm_map .pxp-services-h-items{
         padding-left:0 !important;
+    }
+    .rtl .page_service1_community.comm_map .pxp-services-h-items{
+        padding-right:0 !important;
     }
     .pxp-props-carousel-right.mt-100 {
         margin-top:80px;
@@ -248,11 +324,32 @@ function closeGallery() {
     .page_service_community .pxp-services-h-items {
         min-height:auto !important;
     }
+    .page_service1_community.service1_interior {
+        margin-bottom:50px !important;
+    }
 }
-
-
+@media only screen and (max-width: 990px) {
+.rtl .page_service1_community.service1_interior .pxp-services-h-items{
+       margin-right:0px !important;
+    }
+    .ct_communities_cont {
+        max-width:600px;
+    }
+    .service1_interior .pxp-services-h-items {
+        padding-left:0 !important;
+    }
+}
+@media only screen and (max-width: 768px) {  
+    .ct_communities_cont.pxp-props-carousel-right.mt-100 {
+        margin-top:40px !important;
+    }
+    .page_service1_community.comm_map  {
+      padding-top:0 !important;
+    }
+}
 .comm_map iframe {
     border:0 !important;
+    width:100%;
 }
 
 </style>
@@ -507,7 +604,7 @@ function closeGallery() {
                         <div class="container">
                             
                             <div class="pxp-services-h-container mt-4 mt-md-5" style="margin-top:0px !important;">
-                                <div class="pxp-services-h-items pxp-animate-in mt-4 mt-md-5 mt-lg-0 pxp-in <?php echo (get_locale() == 'ar' ? '' : 'ml-0 mr-lg-5'); ?>" style="min-height: 284px">
+                                <div class="pxp-services-h-items pxp-animate-in mt-4 mt-md-5 mt-lg-0 pxp-in <?php echo (get_locale() == 'ar' ? 'mr-0 ml-lg-5' : 'ml-0 mr-lg-5'); ?>" style="">
                                     <p class="pxp-text-light" style="color: "><?php echo pll__( $welcome_heading ); ?></p>
                                     <h3 class="pxp-section-h2 pxp-section-new" style="color: ">
                                         <?php echo pll__( $welcome_sub_heading ); ?>
@@ -839,7 +936,7 @@ function closeGallery() {
                     <div class="container">
 
                         <div class="pxp-services-h-container mt-4 mt-md-5" style="margin-top:0px !important;">
-                            <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 pxp-in" style="min-height: 284px">
+                            <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 pxp-in" style="min-height: 284px;<?php echo (get_locale() == 'ar' ? 'margin-left: 60px !important' : ''); ?>">
                                 <p class="pxp-text-light" style="color: "><?php echo  pll__( $heading );?></p>
                                 <h3 class="pxp-section-h2" style="color: "><?php echo  pll__( $sub_heading );?></h3>
                                 <div>
@@ -847,7 +944,7 @@ function closeGallery() {
                                 </div>
                             </div>
                             <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: auto;">
-                                <div class="" style="margin-top: 36px; background-color:#000">
+                                <div class="" style="margin-top: 0px; background-color:#000">
                                     <img src="<?php echo $image; ?>" class="design_img">
                                     <div style="width: 40px; height: 40px; background-color: #fff; position: absolute; bottom: 20px; right: 30px">
                                         <img style="padding: 12px; cursor: pointer;" id="gallery" data-toggle="modal" onclick="jQuery('.group<?php echo $s; ?>:first').click()" src="<?php echo site_url(); ?>/wp-content/uploads/2022/08/ic_zoom_out_map_24px.png" style="padding: 12px;">
@@ -887,7 +984,7 @@ function closeGallery() {
                         <div class="pxp-services-h-container mt-4 mt-md-5" style="margin-top:0px !important;">
                             <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in" style="height: auto;">
                                 
-                                <div class="pxp-service-h-img" style="margin-top: 36px; background-color:#000">
+                                <div class="pxp-service-h-img" style="margin-top: 0px; background-color:#000">
                                     <img src="<?php echo $image; ?>" class="pxp-service-h-img">
                                     <div style="width: 40px; height: 40px; background-color: #fff; position: absolute; bottom: 20px; right: 30px">
                                         <img style="padding: 12px; cursor: pointer;" id="gallery" data-toggle="modal" onclick="jQuery('.group<?php echo $s; ?>:first').click()" src="<?php echo site_url(); ?>/wp-content/uploads/2022/08/ic_zoom_out_map_24px.png" style="padding: 12px;">
@@ -896,7 +993,7 @@ function closeGallery() {
                                 </div>
 
                             </div>
-                            <div class="pxp-services-h-items pxp-services-height pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 pxp-in" style="min-height: 284px;<?php echo (get_locale() == 'ar' ? 'padding-left:0px; margin-right: 25px !important' : 'padding-left: 60px; margin-right: 0px !important'); ?>">
+                            <div class="pxp-services-h-items pxp-services-height pxp-animate-in ml-0 mt-4 mt-md-5 mt-lg-0 pxp-in" style="min-height: 284px;<?php echo (get_locale() == 'ar' ? 'padding-left:0px; margin-right: 60px' : 'padding-left: 60px; margin-right: 0px !important'); ?>">
                                 <p class="pxp-text-light" style="color: "><?php echo  pll__( $heading );?></p>
                                 <h3 class="pxp-section-h2" style="color: "><?php echo  pll__( $sub_heading );?></h3><div>
                                    <p style="padding-right: 10px; text-align: left;" class="decoration-txt">
@@ -987,14 +1084,14 @@ function closeGallery() {
 
     <!-- Technical specification -->
 
-    <div class="pt-100 mt-100 technical-spc" style="background-color: #7B868C; background-size: cover; padding-bottom: 50px;">
+    <div class="pt-100 mt-100 technical-spc" style="background-color: #7B868C; background-size: cover;">
         <div class="container" style="padding-top: 30px;">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="pxp-testim-1-intro">
                         <h5 class="pxp-section-h2" style="color: "><?php echo pll__( $tech_heading ); ?></h5>
-                    </div><a href="#" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in tech_cta pxp-in" id="cta-6308a821e3ae7" style="color: #ffffff; margin-top: 15px !important"><?php echo pll__( "DOWNLOAD THE BROCHURE" ); ?></a><style>.pxp-primary-cta#cta-6308a821e3ae7:after { border-top: 2px solid #ffffff; }</style></div>
-                <div class="col-md-4">
+                    </div><a href="#" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in tech_cta pxp-in" id="cta-6308a821e3ae7" style="color: #ffffff !important; margin-top: 15px !important"><?php echo pll__( "DOWNLOAD THE BROCHURE" ); ?></a><style>.pxp-primary-cta#cta-6308a821e3ae7:after { border-top: 2px solid #ffffff; }</style></div>
+                <div class="col-md-4 col-sm-12">
                     <div class="tech_list">
                         <ul>
                             <?php if( have_rows('tech_list_one',$tt) ): ?>
@@ -1012,7 +1109,7 @@ function closeGallery() {
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="tech_list">
                         <ul>
                             <?php if( have_rows('tech_list_two',$tt) ): ?>

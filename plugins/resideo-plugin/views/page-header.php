@@ -585,7 +585,7 @@ if (!function_exists('resideo_get_page_header')):
                 if ($hero_height == 'half') { 
                     
                     $class='';
-                    if( strtolower(get_field('page_slug'))=="partnership")
+                    if( strtolower(get_field('page_slug'))=="partnership" || strtolower(get_field('page_slug'))=="partnership ar")
                     {
                         $class = "partnership_slider";
                        

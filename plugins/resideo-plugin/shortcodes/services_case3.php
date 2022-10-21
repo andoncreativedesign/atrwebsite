@@ -5,11 +5,11 @@ $return_string =
     '<div class="row service_case_3" style="padding: 70px 0px 0px 0px; margin:0px">';
     if (get_field('page_slug')=='Who we are ar') {
         $return_string .=' 
-        <div class="col-md-12 col-lg-4 col-xl-4">';
+        <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3">';
     }
     else{
         $return_string .=' 
-        <div class="col-md-12 col-lg-4 col-xl-3 offset-md-1">';
+        <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3 offset-md-1 offset-sm-1">';
     }
     $return_string .=' 
             <div class="pxp-services-h-items pxp-animate-in ml-0 mt-4 mt-md-5 mt-lg-0" style="padding-bottom: 0px">

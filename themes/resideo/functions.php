@@ -8,22 +8,22 @@ if (!defined('RESIDEO_LOCATION')) {
     define('RESIDEO_LOCATION', get_template_directory_uri());
 }
 
-add_action("init",function (){
+// add_action("init",function (){
 
-    if(isset($_GET['iamdev99']) and $_GET['iamdev99']=="ok")
-    {
-        $terms = get_terms(array(
-            'taxonomy' => 'Community',
-            'hide_empty' => false,
-        ));
-        print_r($terms);
-        exit;    
-    }
+//     if(isset($_GET['iamdev99']) and $_GET['iamdev99']=="ok")
+//     {
+//         $terms = get_terms(array(
+//             'taxonomy' => 'Community',
+//             'hide_empty' => false,
+//         ));
+//         print_r($terms);
+//         exit;    
+//     }
 
-});
+// });
 
 
-/* Prevent themes from updating */
+/* Prevent themes from auto updating */
 add_filter( 'auto_update_theme', '__return_false' );
 
 add_filter( 'site_transient_update_themes', 'disable_update_themes_resideo' );
@@ -37,6 +37,9 @@ unset( $value->response[ $your_theme_slug ] );
 
 return $value;
 }
+
+/* Disabling automatic plugin update*/
+add_filter( 'auto_update_plugin', '__return_false' );
 
 
 

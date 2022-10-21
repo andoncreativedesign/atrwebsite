@@ -133,6 +133,9 @@ textarea.form-control {
     background-position: center center;
     background-repeat: no-repeat;
 }
+.page-id-626 .pxp-hero .pxp-cover {
+    background-position: right;
+}
 .pxp-content{
     overflow: hidden;
 }
@@ -353,6 +356,14 @@ textarea.form-control {
     #menu-top-menu-ar{
     direction: ltr;
     }
+
+    .service_case2.page_service {
+        background: #fff !important;
+    }
+
+    .page-id-626 .pxp-hero .pxp-cover {
+        background-position: right center;
+    } 
 }
 .pxp-nav-tabs .nav-link:hover {
     border-color: transparent;
@@ -1122,6 +1133,7 @@ code {
 }
 .pxp-nav > div > ul > li > ul li {
     position: relative;
+    background: #fff;
 }
 .pxp-nav > div > ul > li > ul > li > a {
     display: block;
@@ -3110,6 +3122,9 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
 .pxp-similar-properties-container .owl-carousel .owl-stage {
     padding-left: 0 !important;
 }
+.home .pxp-props-carousel-right-container .owl-carousel .owl-stage {
+    padding-right: 0 !important;
+}
 .pxp-props-carousel-right.pxp-has-intro {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3117,7 +3132,7 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
     align-items: center;
 }
 .pxp-props-carousel-right-intro {
-    margin-right: 30px;
+    margin-left: 30px;
     width: 25%;
 }
 .pxp-props-carousel-right.pxp-has-intro .pxp-props-carousel-right-container {
@@ -3261,7 +3276,7 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
     background: linear-gradient(90deg, #fff 50%, #F7F7F7 50%);
 }
 .pxp-dark-mode .pxp-services-h {
-    background: linear-gradient(90deg, #F7F7F7 50%, #000 50%);
+    background: linear-gradient(90deg, #ffffff 50%, #000 50%);
 }
 .pxp-services-h-container {
     display: -webkit-box;
@@ -3312,6 +3327,10 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
     .pxp-services-h-items.ml-lg-5 {
         margin-left: 0 !important;
         margin-right: 3rem !important;
+    }
+    .page-template-tpl_community .page_service .pxp-services-h-items.ml-lg-5 {
+        margin-left: 3rem !important;
+        margin-right: 0 !important;
     }
 }
 .pxp-services-h-items.pxp-animate-in .pxp-services-h-item {
@@ -11749,6 +11768,12 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     }
 }
 @media screen and (max-width: 991px) {
+    .pxp-nav > div > ul > li > ul li {
+        background:transparent;
+    }
+    .pxp-nav > div > ul > li > ul {
+        background:transparent;
+    }
     .admin-bar .pxp-header.pxp-mobile:after {
         top: 32px;
     }
@@ -11988,7 +12013,7 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     }
     .pxp-props-carousel-right-intro {
         width: 100%;
-        margin-right: 0;
+        margin-left: 0;
     }
     .pxp-props-carousel-right.pxp-has-intro .pxp-props-carousel-right-container {
         width: 100%;
@@ -12124,6 +12149,7 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     }
     .pxp-hero-caption h1 {
         font-size: 2.5rem;
+        width:90%;
     }
     .pxp-hero-props-carousel-1 .pxp-caption-prop-title {
         font-size: 2.5rem;
@@ -12394,7 +12420,7 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
         right: calc((100% - 540px) / 2 + 15px);
     }
     .pxp-nav > div > ul > li {
-        padding-left: calc((100% - 540px) / 2 + 15px);
+        padding-right: calc((100% - 540px) / 2 + 15px);
     }
     .pxp-hero-props-carousel-2-left {
         -webkit-flex: 2;
@@ -13024,9 +13050,13 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     color: #000;
 }
 .page_service .container .pxp-text-light{
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
     color: #4D858D;
     font-weight: 700;
+}
+
+.page-template-tpl_community .page_service .container .pxp-text-light {
+    padding-top: 0px;
 }
 .contact_bg {
     background-attachment: fixed;
@@ -13091,9 +13121,13 @@ color: #fff; }
 .page_service_community{
     padding-bottom: 0px;
     padding-top: 60px;
-    background-image: url(https://wordpress-823234-2829680.cloudwaysapps.com/wp-content/uploads/2022/08/Group-823.png);
+    /* background-image: url(https://wordpress-823234-2829680.cloudwaysapps.com/wp-content/uploads/2022/08/Group-823.png);
     background-position: top right;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+}
+
+.page-template-tpl_community .page_service_community {
+    padding-top: 100px;
 }
 .page_service_community .container .pxp-section-h2{
     color: #000;
@@ -13104,7 +13138,7 @@ color: #fff; }
 }
 .page_service1_community{
     padding-bottom: 0px;
-    padding-top: 60px;
+    padding-top: 0px;
 }
 .page_service1_community .container .pxp-section-h2{
     color: #000;
@@ -13231,10 +13265,13 @@ color: #fff; }
         color: #333;
     }
     .pxp-services-h-fig{
-        margin-bottom: 4rem;
+        /* margin-bottom: 4rem; */
+    }
+    .service_case_3 .pxp-services-h-fig {
+        margin-bottom:0 !important;
     }
     .iframe_video img {
-        margin-top: -5rem;
+        margin-top: 0px;
         width: 100%;
     }
     .ct_animated_timeline ul li:nth-child(odd) div {
@@ -13349,3 +13386,72 @@ color: #fff; }
     text-align:right;
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+     .page-template-tpl_community .page_service_community {
+        padding-top: 60px;
+        
+     }
+    }
+
+@media only screen and (max-width: 768px) {
+    .page-template-tpl_community .page_service_community {
+        padding-top: 20px;
+    }
+    .page-template-tpl_community .technical-spc {
+        padding-bottom:60px !important;
+    }
+}
+
+
+.page-template-tpl_community .technical-spc {
+    padding-bottom:100px;
+}
+.page-template-tpl_community .technical-spc .pxp-testim-1-intro {
+    margin-top: 0px;
+
+}
+.page-template-tpl_community .technical-spc .tech_list {
+    margin-top: 0px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .service_case_3 > div:nth-child(2){
+      margin-right:8.3%;
+    }
+    
+    }
+@media only screen and (max-width: 1024px) {
+    .page_service {
+        background: none !important;
+    }
+    .page_service .pxp-services-h-container {
+   display: block;
+    }
+    .service_case2 .iframe_video img{
+        width:100%;
+    }
+    }
+
+    .partnership_slider .pxp-hero-caption p {    
+        color: #4D858D !important;
+        font-weight: 600;}
+    .partnership_slider .pxp-hero-caption h1{ color: #1D252C !important; }
+
+
+    .page-id-1539 .service_case2_intro ul li {
+        color:#000 !important;
+     }
+
+     @media only screen and (max-width: 576px) {
+        .page-id-1539 .iframe_video {
+        margin-top:-50px !important;
+      }
+     }
+     @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .page-id-1539 .iframe_video {
+            margin-top:-50px !important;
+          }
+          .page-id-1539 .page_service .pxp-services-h-container {
+            padding-bottom: 50px;
+          }
+     }

@@ -78,12 +78,13 @@
            .pxp-section-h2{ color: #333 !important ; }
            .technical-spc .pxp-section-h2 {color:#fff !important;}
            .service_case2_intro{color: #fff !important;}
-           .service_case2_intro p{color: #fff !important; }
-          
+           .service_case2_intro p{color: #000 !important; }
+           
            <?php if(is_home() or is_front_page()){ ?>
               .pxp-services-h-fig {height: 400px; background-size: cover; }
            <?php }else { ?> 
-              .pxp-services-h-fig {height: 200px}
+              /* .pxp-services-h-fig {height: 200px} */
+              .pxp-services-h-fig {height: auto;}
            <?php } ?>
          
            
@@ -94,7 +95,28 @@
            .com_heading { color: #fff !important; }
            .centrally_p,.centrally_p_color{color: #fff !important;}
         }
-   
+        @media screen and (max-width: 980px) {
+           
+           .service_case2 h3 {color:#000 !important;}
+           .pxp-services-h.service_case2 .pxp-primary-cta { color:#000 !important; }
+           .service_case2 .pxp-primary-cta { color:#000 !important; }
+           .pxp-services-h.service_case2 {
+            margin-top:0 !important;
+            padding-bottom:60px;
+           }
+           .rtl .service_case2.page_service {
+            padding-bottom:60px;
+           }
+           .service_case_3 .pxp-services-h-items {
+            padding-right:0;
+           }
+           .cust_people_info_cont.mt-100 {
+            margin-top:0px !important;
+           }
+           .cust_people_info_cont .pxp-section-h2 {
+            color:#fff !important;
+           }
+        }
     </style>
     <?php
     if(get_the_ID() == '1534'){
@@ -162,7 +184,7 @@
         ?>
             <style type="text/css">
                 .iframe_video{
-                    margin-top: 82px !important;
+                    margin-top: 36px !important;
                 }
             </style>
         <?php
@@ -180,9 +202,21 @@
 
                 .pxp-services-h-fig {
                     height: 400px !important;
+                    background-size:100%;
                 }
             </style>
         <?php
+    }
+    if(get_the_ID() == '10'){
+      ?>
+ <style type="text/css">
+
+.pxp-services-h-fig {
+    height: 400px !important;
+    background-size:100%;
+}
+</style>
+      <?php
     }
     if(get_the_ID() == '634'){
 
@@ -428,7 +462,7 @@
                     width: 100% !important;
                 }
                 .iframe_video{
-                    margin-top: 100px !important;
+                    margin-top: 0px !important;
                     height: 300px !important;
                 }
                 .pxp-services-h-fig{
@@ -461,7 +495,7 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="partnership")
+    if( strtolower(get_field('page_slug'))=="partnership" || strtolower(get_field('page_slug')) =="partnership ar" )
     {
         
         ?>
@@ -552,18 +586,18 @@
                 }
                 @media (max-width: 400px)
                 {
-                    .pxp-dark-mode .pxp-services-h {
+                    /* .pxp-dark-mode .pxp-services-h {
                         height: 1100px !important;
-                    }
+                    } */
                     .pxp-services-h-items .pxp-primary-cta{
                         color: #fff;
                     }
                     .service_case_3_intro p{
                         color: #00000 !important;
                     }
-                    .iframe_video{
+                    /* .iframe_video{
                         margin-top: 32rem !important;
-                    }
+                    } */
                     .mt-60{
                         margin-top: 0px !important;
                     }
@@ -656,6 +690,16 @@
                 color: #fff;
             }
         }
+        @media only screen and (min-width: 1441px) and (max-width: 2500px) {
+            .com_heading{
+                font-size: 1.55rem !important;
+            }
+        }
+        @media only screen and (min-width: 981px) and (max-width: 1440px) {
+            .com_heading{
+                font-size: 1.25rem !important;
+            }
+        }
         @media only screen and (max-width: 980px)
         {
             .page_service{
@@ -669,7 +713,7 @@
                 bottom: 21px !important;
             }
             .com_heading{
-                font-size: 1.1rem !important;
+                font-size: .8rem !important;
             }
             .pxp-services-h-items {
                 flex: 1 !important;
@@ -701,6 +745,9 @@
             .page_service1_community{
                 padding-top: 10px !important;
                 margin-bottom: 20px !important;
+            }
+            .page_service1_community.comm_map{
+                padding-top: 50px !important;
             }
             .container{
                 max-width: 600px !important;
@@ -1061,10 +1108,19 @@
             .caption_new{
 
             }
+            .service_img_min_height {
+                min-height:auto !important;
+            }
         </style>
         <?php
     }
-
+    if( strtolower(get_field('page_slug'))=="Our history ar") {?>
+        <!-- <style type="text/css">
+        .rtl .service_case2.page_service {
+        padding-bottom:0;
+        }
+         </style> -->
+   <?php }
     if( strtolower(get_field('page_slug'))=="property search" or strtolower(get_field('page_slug'))=="property search-ar") { ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
         <script type="text/javascript">

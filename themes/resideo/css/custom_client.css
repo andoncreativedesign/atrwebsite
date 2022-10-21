@@ -68,7 +68,7 @@ body.single-property #compare_floor_plan.modal.show .modal-dialog {
     max-height:100% !important;
 }
 .page-template-tpl_community .cus_community_bar {
-transform:translateY(-105px);
+transform:translateY(-95px);
 }
 .custom_mouse_scroll_anim{
     position: absolute;
@@ -953,6 +953,12 @@ display:none;
         left:0%;
     }
 }
+@media only screen and (max-width: 575px) {
+.boardofdir_cont {
+    height:120px;
+    max-height:200px;
+  }
+}
 
 .pxp-single-property-gallery-container + .container {
    
@@ -984,6 +990,12 @@ display:none;
 /*}*/
 .cust_people_info_cont .pxp-testim-1-intro {
     width:22% !important;
+}
+@media only screen and (max-width: 980px){
+    .cust_people_info_cont .pxp-testim-1-intro {
+    width:100% !important;
+    }
+
 }
 @media only screen and (min-width: 1500px){
     .cust_people_info_cont .pxp-testim-1-stage .owl-item {

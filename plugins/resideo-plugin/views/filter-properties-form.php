@@ -74,7 +74,7 @@ if (!function_exists('resideo_get_filter_properties_form')):
                             <div class="col-sm-5 col-md-5 col-lg-5 pxp-content-side-search-form-col">
                                 <?php if($address_type == 'auto'  || 1) { 
                                         icl_register_string("resideo", 'Search...','Search...');
-                                        
+                                        icl_register_string("resideo", 'Search city','Search city');
                                          $locations = get_terms( array(
                                             'taxonomy' => 'locations',
                                             'hide_empty' => false,
