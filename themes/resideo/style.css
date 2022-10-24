@@ -13394,7 +13394,7 @@ color: #fff; }
     .exterior_interior_tab_btn{float: right; margin-top:45px ;}
 }
 
-.service_img_min_height{ min-height: 465px; }
+/* .service_img_min_height{ min-height: 465px; } */
 
 
 @media only screen and (max-width: 512px) and (min-width: 400px) 
