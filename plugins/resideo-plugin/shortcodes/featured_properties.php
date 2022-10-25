@@ -120,7 +120,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                 if ($s_array['subtitle'] != '') {
                     icl_register_string('resideo','FEATURED PROPERTIES','FEATURED PROPERTIES');
                     $return_string .= '
-                        <h2 class="pxp-section-featured-h2" style="'.(get_locale() == 'ar' ? 'margin-right: 9rem !important;' : '').'">' .pll__("FEATURED PROPERTIES"). '</h2>';
+                        <h2 class="pxp-section-featured-h2" style="'.(get_locale() == 'ar' ? 'margin-right: 0 !important;' : '').'">' .pll__("FEATURED PROPERTIES"). '</h2>';
                 }
                 $return_string .= '
                         <div class="pxp-props-carousel-right-container mt-4 mt-md-5">

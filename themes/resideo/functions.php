@@ -1220,12 +1220,12 @@ function choosing_your_home()
     ob_start();
     icl_register_string("resideo", 'KEY POINTS:','KEY POINTS:'); 
     ?>
-    <div class="pt-100 home_services_bg home-ar" style="<?php if (strtolower(get_field('page_slug'))=="choosing your home") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
+    <div class="pt-100 home_services_bg home-ar ct-warranty" style="<?php if (strtolower(get_field('page_slug'))=="choosing your home") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
     <div class="container" style="padding-top: 30px;">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 ">
                 <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 service_img_min_height pxp-in"><p class="pxp-text-light" style="color: #4D858D; font-weight: 700; "><?php echo get_field('warrenty_title'); ?></p>
-                <h3 class="pxp-section-featured-h2" style="color: "><?php echo get_field('warrenty_sub_title'); ?></h3><div class="service_case2_intro">
+                <h3 class="pxp-section-featured-h2" style=""><?php echo get_field('warrenty_sub_title'); ?></h3><div class="service_case2_intro">
                    <p style="padding-right: 20px; text-align: left;"><?php echo get_field('warrenty_description'); ?></p><p></p>
                    </div>
             </div>

@@ -3061,7 +3061,11 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
 }
 .pxp-similar-properties-container .pxp-props-carousel-right-arrow {
     transform: translate(50%, -50%) scale(1, 1);
-    right: 0;
+    right: unset !important;
+    left:-30px;
+}
+.pxp-similar-properties-container  .pxp-props-carousel-left-arrow {
+    right:-30px;
 }
 .pxp-similar-properties-container .owl-next.disabled .pxp-props-carousel-right-arrow {
     opacity: 0;
@@ -13274,9 +13278,9 @@ color: #fff; }
         margin-top: 0px;
         width: 100%;
     }
-    .ct_animated_timeline ul li:nth-child(odd) div {
-        left: 269px !important;
-    }
+    /* .ct_animated_timeline ul li:nth-child(odd) div {
+        left: 200px !important;
+    } */
     .pxp-posts-1-item-details {
         margin-top: -14px;
     }
@@ -13301,9 +13305,18 @@ color: #fff; }
         margin-bottom: 10px !important;
     }
 }
+/* .ct_animated_timeline ul li:nth-child(odd) div { 
+    text-align: right !important;
+}
+.ct_animated_timeline ul li:nth-child(even) div { 
+    text-align: left !important;
+} */
 @media screen and (max-width: 575px) {
     .pxp-content-side-search-form + .d-flex {
         padding-bottom: 32px !important;
+    }
+    .page-template-property-search .pxp-content-side-search-form + .d-flex {
+        padding-bottom: 36px !important;
     }
     .pxp-single-property-fig {
         height: 360px;
@@ -13314,17 +13327,46 @@ color: #fff; }
         min-height:250px !important; 
         max-height: 300px !important;
     }
+    /* .ct_animated_timeline ul li:nth-child(odd) div {
+        left: 180px !important;
+    } */
 }
 @media (max-width: 500px) {
   .timeline-wrapper {
     height: 1000px;
     max-height: 900px;
   }
+
 }
+/* @media (max-width: 768px) {
+.ct_animated_timeline ul li:nth-child(even) div {
+   left:280px !important;
+}
+.ct_animated_timeline ul li:nth-child(odd) div {
+   left:-35px !important;
+}
+}
+@media (max-width: 600px) {
+    .ct_animated_timeline ul li:nth-child(even) div {
+        left:-25px !important;
+    }
+
+} */
+/* @media (max-width: 400px) {
+    .ct_animated_timeline ul li:nth-child(odd) div {
+        left: 170px !important;
+    }
+    .ct_animated_timeline ul li:nth-child(even) div {
+        left:-25px !important;
+    }
+} */
 @media only screen and (max-width: 512px) and (min-width: 400px) 
 {
     .pxp-section-featured-h2{
         color: #fff !important;
+    }
+    .page-id-1534 .pxp-section-featured-h2 {
+        color: #000 !important;
     }
     .caption_new{
         top: 27%;
@@ -13385,7 +13427,14 @@ color: #fff; }
 .pxp-posts-1-item-details {
     text-align:right;
 }
-
+@media only screen and (max-width: 980px) and (min-width: 768px) {
+    .page-template-property-search .pxp-results-filter-form  .d-flex .d-flex .pxp-adv-toggle {
+        margin-top:0;
+    }
+    .page-template-property-search .pxp-results-filter-form {
+        margin-top:40px;
+      }
+}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
      .page-template-tpl_community .page_service_community {
         padding-top: 60px;
@@ -13394,12 +13443,73 @@ color: #fff; }
     }
 
 @media only screen and (max-width: 768px) {
+    .page-template-property-search .pxp-results-filter-form  .d-flex .d-flex .pxp-adv-toggle {
+        margin-top:0;
+    }
     .page-template-tpl_community .page_service_community {
         padding-top: 20px;
     }
     .page-template-tpl_community .technical-spc {
         padding-bottom:60px !important;
     }
+    .pxp-calculator-data-label{
+        text-align: right;
+    }
+    .pxp-calculator-form .form-group {
+        text-align: right;
+     }
+     .page-id-1528 .pxp-section-h2 {
+        width:100%;
+        text-align: right;
+     }
+
+     .page-template-property-search .search_property_or_btn {
+        margin-bottom:0px !important;
+        margin-top:12px !important;
+     }
+     /* .page-template-property-search .pxp-content-side-search-form-col {
+        margin-top:0 !important;
+     } */
+     .page-template-property-search .pxp-content-side-h2 {
+        line-height:25px;
+     }
+     .page-template-property-search .pxp-content-side-search-form-row .col-md-4 {
+        margin-bottom:0;
+     }
+     .page-template-property-search .pxp-content-side-search-form-row .pxp-content-side-search-form-col {
+        margin-top:5px;
+     }
+     .page-template-property-search .pxp-results-filter-form .d-flex > .d-flex {
+        margin-top:5px;
+     }
+     .page-template-property-search .ct_amenities_search .form-group{
+        margin-bottom:10px;
+     }
+     .page-template-property-search .pxp-results-filter-form {
+       margin-top:40px;
+     }
+
+     .pxp-single-property-top .pxp-sp-top-title{
+        text-align:left;
+      }
+      .pxp-single-property-top .pxp-sp-top-address{
+         text-align:left;
+       }
+       .pxp-single-property-top .pxp-sp-top-price {
+         float:left
+       }
+       .pxp-single-property-top .container .row div:nth-child(2) {
+           margin-top:0 !important;
+       }
+       .pxp-single-property-top {
+         margin-bottom:30px;
+       }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 980px) {
+    .page-template-property-search .pxp-results-filter-form .d-flex > .d-flex {
+        margin-top:18px;
+     }
 }
 
 
@@ -13430,6 +13540,9 @@ color: #fff; }
     .service_case2 .iframe_video img{
         width:100%;
     }
+    .pxp-dark-mode .pxp-full .pxp-nav > div > ul > li ul,.pxp-dark-mode .pxp-no-bg .pxp-nav > div > ul > li ul {
+        background: none !important;
+    }
     }
 
     .partnership_slider .pxp-hero-caption p {    
@@ -13451,7 +13564,20 @@ color: #fff; }
         .page-id-1539 .iframe_video {
             margin-top:-50px !important;
           }
-          .page-id-1539 .page_service .pxp-services-h-container {
+          .page-id-1539 .page_service .pxp-services-h-container, .page-id-1537 .page_service .pxp-services-h-container {
             padding-bottom: 50px;
           }
+     }
+
+     .pxp-single-property-section .padding_fix a{ padding-right: 0px; }
+
+     .pxp-single-property-section .nav { padding-right: 0;}
+     .pxp-calculator-form .form-check-inline .form-check-input {
+        margin-left:5px;
+     }
+
+     .pxp-calculator-form div .form-check {
+        padding-right: 0;
+        margin-right:0;
+        padding-left:10px;
      }

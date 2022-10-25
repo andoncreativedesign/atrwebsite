@@ -54,7 +54,7 @@ function agent_email_shoot_fn() {
 }
 
 
-function get_dropdown($project_name='Select project 1',$floor_index='0',$selected_img_src='')
+function get_dropdown($project_name='Select project 1',$floor_index='0',$selected_img_src='', $community = '')
 {
 	icl_register_string("resideo",$project_name,$project_name);
 	echo "<option value='' data_text=''>".pll__($project_name)."</option>";
@@ -62,6 +62,12 @@ function get_dropdown($project_name='Select project 1',$floor_index='0',$selecte
 	    'post_type'      => 'property',
 	    'posts_per_page' => -1,
 	);
+	$args['tax_query'] = array('relation' => 'AND');
+	array_push($args['tax_query'], array(
+		'taxonomy' => 'Community',
+		'field'    => 'term_id',
+		'terms'    => $community,
+	));
 	$loop = new WP_Query($args);
 	while ( $loop->have_posts() ) {
 	    $loop->the_post();
@@ -100,13 +106,14 @@ function get_floor_images_fn() {
 
 	$select_f 			= $_POST['select_f'];
 	$selected_img_src 	= $_POST['selected_img_src'];
+	$current_commumity  = $_POST['current_comm'];
 
 
 
-	get_dropdown('Select project 1', $select_f , $selected_img_src);
+	get_dropdown('Select project 1', $select_f , $selected_img_src,$current_commumity );
 	
 	echo "|^***^|";
-	get_dropdown('Select project 2', $select_f , $selected_img_src );
+	get_dropdown('Select project 2', $select_f , $selected_img_src,$current_commumity  );
 	
 	die();
 }

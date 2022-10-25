@@ -500,7 +500,7 @@ if (!function_exists('resideo_get_filter_properties_form')):
 
                         <div class="form-group">
                             <label class="mb-2"><?php esc_html_e('Amenities', 'resideo'); ?></label>
-                            <div class="row pxp-content-side-search-form-row">
+                            <div class="row pxp-content-side-search-form-row ct_amenities_search">
                                 <?php foreach ($amenities_settings as $key => $value) {
                                     $am_label = $value['label'];
 

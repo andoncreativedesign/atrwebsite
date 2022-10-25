@@ -57,6 +57,10 @@
     text-align:left;
 }
 
+.rtl .ct_animated_timeline ul li:nth-child(even) div {
+    left: -45px;
+      text-align:left;
+  }
 .ct_animated_timeline ul li:nth-child(even) div::before {
   left: -15px;
   border-width: 8px 16px 8px 0;
@@ -67,6 +71,10 @@
   left: -439px;
     text-align:right;
 }
+.rtl .ct_animated_timeline ul li:nth-child(odd) div {
+    left: 439px;
+      text-align:right;
+  }
 
 .ct_animated_timeline ul li:nth-child(odd) div::before {
   right: -15px;
@@ -191,11 +199,22 @@
   .ct_animated_timeline ul li:nth-child(odd) div {
 left: -300px
 }
+.rtl .ct_animated_timeline ul li:nth-child(odd) div {
+    left: 300px
+    }
 .ct_animated_timeline ul li:nth-child(even) div {
     left:40px;
 }
+.rtl .ct_animated_timeline ul li:nth-child(even) div {
+    left:-40px;
 }
-
+}
+ .rtl .ct_animated_timeline ul li:nth-child(even) div {
+    text-align: right !important;
+}
+.rtl .ct_animated_timeline ul li:nth-child(odd) div {
+    text-align: left !important;
+}
 @media screen and (max-width: 600px) {
   .ct_animated_timeline ul li {
     margin-left: 20px;
@@ -207,8 +226,14 @@ left: -300px
   .ct_animated_timeline ul li:nth-child(odd) div {
   left:-190px;
 }
+.rtl .ct_animated_timeline ul li:nth-child(odd) div {
+    left:190px;
+  }
   .ct_animated_timeline ul li:nth-child(even) div {
     left: 25px;
+  }
+  .rtl .ct_animated_timeline ul li:nth-child(even) div {
+    left: -25px;
   }
   .ct_animated_timeline ul li:nth-child(even) div::before {
     left: -15px;
@@ -216,7 +241,16 @@ left: -300px
     border-color: transparent #f45b69 transparent transparent;
   }
 }
-
+@media screen and (max-width: 500px) {
+    .rtl .ct_animated_timeline ul li:nth-child(odd) div {
+        left:180px;
+      }
+}
+@media screen and (max-width: 400px) {
+    .rtl .ct_animated_timeline ul li:nth-child(odd) div {
+        left:170px;
+      }
+}
 
 /* EXTRA/CLIP PATH STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -325,6 +359,8 @@ left: -300px
   }
   .loan_process_stepbystep {
       padding-top:80px;
+      display: flex;
+    justify-content: space-evenly;
   }
 
 .loan_process_cont .loan_process_copy h3 {
@@ -563,6 +599,13 @@ display: block;
     } */
 }
 @media only screen and (max-width: 400px) {
+    .page-id-861 .pxp-props-carousel-right .pxp-section-featured-h2 {
+        color: #000 !important;
+    }
+    .page-id-1534 .pxp-props-carousel-right .pxp-section-featured-h2 {
+        color: #000 !important;
+        margin-right:0 !important;
+    }
       .atr_logo_cnt {
         width:60px;
         transform: translateX(-50%);
@@ -881,16 +924,27 @@ display: block;
 .ahcc_logo_cnt{
     position: absolute;
 }
-
+@media only screen and (max-width: 980px) {
+.page-id-861 .pxp-testim-1-intro .pxp-section-h2{
+    color: #fff !important;
+ }
+ .page-id-1534 .pxp-testim-1-intro .pxp-section-h2{
+    color: #fff !important;
+ }
+}
 @media only screen and (max-width: 768px) {
       .careers_page .pt-100{
           background: linear-gradient(90deg, #4D858D 50%, #4D858D 50%) !important;
       }
-      ..pt-100{
+      /* .pt-100{
          background: linear-gradient(90deg, #7B868C 50%, #7B868C 50%) !important; 
-      }
+      } */
      .home_services_bg{
-        background: linear-gradient(90deg, #7B868C 50%, #7B868C 50%) !important;
+        background: linear-gradient(90deg, #fff 50%, #7B868C 50%) !important;
+         
+     }
+     .rtl .home_services_bg{
+        background: linear-gradient(90deg, #7B868C 50%, #fff 50%) !important;
          
      }
       .home_services_m{
@@ -899,18 +953,36 @@ display: block;
       .pxp-text-light{
          color: #000;
       }
-      .owl-carousel.owl-drag .owl-item {
+      /* .owl-carousel.owl-drag .owl-item {
           width: 290px !important;
       }
+      .page-id-861 .owl-carousel.owl-drag .owl-item {
+        width: auto !important;
+      }
+      .page-id-1534 .owl-carousel.owl-drag .owl-item {
+        width: auto !important;
+      } */
       .joblisthalf {
           padding-left: 16px !important;
       }
       .service_img_min_height {
           min-height: 360px !important;
       }
+      .ct-warranty .service_img_min_height {
+        min-height: auto !important;
+    }
       .pxp-section-h2{
          color: black !important;
       }
+      .page-id-861 .pxp-testim-1-intro .pxp-section-h2, .page-id-1534 .pxp-testim-1-intro .pxp-section-h2{
+        color: #fff !important;
+     }
+     .page-id-861 .pxp-cover .row div:nth-child(2), .page-id-1534 .pxp-cover .row div:nth-child(2)  {
+        padding-top:25px;
+     }
+     .page-id-861 .pxp-cover .row div:nth-child(2) .pxp-section-h2, .page-id-1534 .pxp-cover .row div:nth-child(2) .pxp-section-h2  {
+        text-align: center;
+     }
       .atr_logo_cnt {
         width:60px;
         transform: translateX(-50%);
@@ -949,9 +1021,9 @@ display: block;
            left:56%;
            top:93px;
         }
-      .pxp-text-light{
+      /* .pxp-text-light{
          color: #fff !important;
-      }
+      } */
     /* .cmp_line_bottom2 {
     width:200px;
     left:27%;
@@ -961,9 +1033,15 @@ display: block;
     } */
 }
 @media only screen and (max-width: 400px) {
-    .owl-carousel.owl-drag .owl-item {
+    /* .owl-carousel.owl-drag .owl-item {
         width: 350px !important;
     }
+    .page-id-861 .owl-carousel.owl-drag .owl-item {
+        width: auto !important;
+      }
+      .page-id-1534 .owl-carousel.owl-drag .owl-item {
+        width: auto !important;
+      } */
     .pxp-content{
         overflow: hidden;
     }
@@ -986,9 +1064,9 @@ display: block;
         width:60px;
         transform: translateX(-50%);
        }
-      .pxp-text-light{
+      /* .pxp-text-light{
          color: #fff !important;
-      }
+      } */
       .pxp-hero {
             height: 300px !important;
             min-height: 300px;
@@ -1203,4 +1281,37 @@ display: block;
 }
 .loan_process-col2-bot-line {
     margin-top:-6px;
+}
+@media screen and (max-width: 767px) {
+.ct-warranty .pxp-text-light {
+    color: #fff !important
+}
+
+.ct-warranty .service_case2_intro p {
+    color: #fff !important
+}
+.ct-warranty.home_services_bg {
+    background: linear-gradient(90deg, #7B868C 50%, #7B868C 50%) !important;
+}
+.ct-warranty.service_img_min_height {
+  min-height: auto !important;
+}
+.ct-warranty .container {
+    padding-top:0 !important;
+}
+}
+@media screen and (min-width: 768px) {
+    .ct-warranty .pxp-text-light.text-white {
+        color: #000 !important
+    }
+    
+    .ct-warranty .service_case2_intro p {
+        color: #000 !important
+    }
+    
+    }
+@media screen and (max-width: 980px) {
+.finance_list {
+  margin-left: 0;
+}
 }

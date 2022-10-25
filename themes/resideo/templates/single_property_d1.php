@@ -139,7 +139,9 @@ while (have_posts()) : the_post();
     $beds  = get_post_meta($prop_id, 'property_beds', true);
     $baths = get_post_meta($prop_id, 'property_baths', true);
     $size  = get_post_meta($prop_id, 'property_size', true);
-
+  
+    $prop_lat = get_post_meta($prop_id, 'property_lat', true);
+    $prop_lng = get_post_meta($prop_id, 'property_lng', true);
     $gallery = get_post_meta($prop_id, 'property_gallery', true);
     $photos  = explode(',', $gallery);
 
@@ -147,7 +149,14 @@ while (have_posts()) : the_post();
 
     $status = wp_get_post_terms($prop_id, 'property_status');
     $type   = wp_get_post_terms($prop_id, 'property_type');
+    $findCommunity = wp_get_post_terms($prop_id, 'Community');
+   
+    if(!empty( $findCommunity )) {
 
+       
+        $current_comm = $findCommunity[0]->term_id;
+    }
+   
     $custom_fields_settings = get_option('resideo_fields_settings');
 
     $overview = get_the_content();
@@ -941,6 +950,8 @@ while (have_posts()) : the_post();
                             
 
                                 case 'explore_area':
+                                    // https://maps.google.com/?q=<lat>,<lng>prop_lat
+
                                     if (wp_script_is('gmaps', 'enqueued')) { ?>
                                         <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
                                             <div class="row">
@@ -951,7 +962,7 @@ while (have_posts()) : the_post();
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <a class="pxp-primary-cta pull-right" href="#"
+                                                    <a class="pxp-primary-cta pull-right" target="_blank" href="https://maps.google.com/?q=<?php echo $prop_lat.','.$prop_lng.'';?>"
                                                      style="color:#fff;"><?php echo pll__( "View on google maps" ); ?></a>
                                                 </div>
                                             </div>
@@ -1505,7 +1516,7 @@ while (have_posts()) : the_post();
                               if ( scrollTop > 950  && scrollTop < 3313 ) 
                               { 
                                 
-                                if(jQuery(window).width()>768)
+                                if(jQuery(window).width()>980)
                                 {
                                     if(jQuery(".addition_info").css("position")!="fixed")
                                     {
@@ -1517,7 +1528,7 @@ while (have_posts()) : the_post();
                                 }
                                 else
                                 {
-                                    jQuery(".addition_info").css("position","absolute");
+                                    jQuery(".addition_info").css("position","static");
                                     jQuery(".addition_info").css("top","auto");
                                 }
                               }
@@ -1591,7 +1602,7 @@ while (have_posts()) : the_post();
                             {
                                 var h = jQuery(window).height()-150;
                                 var selected_img_src2 = selected_img_src;
-
+                                var current_comm = jQuery("#ct_comm_name").val();
                                 // jQuery(".floor_image .sub img").css("height",h+"px");
                                 var select_f=jQuery(".select_floor").val();
                                 jQuery.ajax({
@@ -1600,7 +1611,9 @@ while (have_posts()) : the_post();
                                     data:{
                                         action: "get_floor_images",
                                         select_f:select_f,
-                                        selected_img_src:selected_img_src2
+                                        selected_img_src:selected_img_src2,
+                                        current_comm:current_comm
+                                        
                                         
                                     },
                                     success: function(data) {
@@ -1745,7 +1758,7 @@ while (have_posts()) : the_post();
                                 <select class="project_2">
                                     <option><?php echo pll__( "Select Floor" ); ?></option>
                                 </select>
-                                
+                                <input type="hidden" name="communityname" id="ct_comm_name" value="<?php echo $current_comm;?>">
                             </form>
 
                         </div>

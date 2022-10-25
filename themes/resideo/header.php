@@ -79,7 +79,7 @@
            .technical-spc .pxp-section-h2 {color:#fff !important;}
            .service_case2_intro{color: #fff !important;}
            .service_case2_intro p{color: #000 !important; }
-           
+           /* .service_case2_intro.ct-cyh p{ color:#fff !important;} */
            <?php if(is_home() or is_front_page()){ ?>
               .pxp-services-h-fig {height: 400px; background-size: cover; }
            <?php }else { ?> 
@@ -89,7 +89,7 @@
          
            
            .iframe_video img{ width: 100%; }
-           .service_img_min_height{ min-height: 400px; }
+           /* .service_img_min_height{ min-height: 400px; } */
            .pxp-section-h2{ color: #333 !important; }
            .caption_new{ padding: 10px !important; }
            .com_heading { color: #fff !important; }
@@ -287,14 +287,14 @@
             .home-ar{
                 background: linear-gradient(90deg, #7B868C 50%, #fff 50%);
             }
-            .ct_animated_timeline ul li:nth-child(even) div {
+            /* .ct_animated_timeline ul li:nth-child(even) div {
                 left: -45px;
                 text-align: right;
             }
             .ct_animated_timeline ul li:nth-child(odd) div {
                 left: 439px;
                 text-align: right;
-            }
+            } */
         </style>
         <?php    
         }
