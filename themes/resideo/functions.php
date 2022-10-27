@@ -1178,9 +1178,10 @@ function have_property_in_mind_calculator()
                             ?>
                             </div>
 
-
-                            <button class="pxp-sp-top-btn" style=" background-color: #af8814; color: #fff; border: 0px solid #af8814"><?php echo pll__( "ASK OUR TEAM FOR HELP" ); ?></button>
-                            <button class="pxp-sp-top-btn" style=" background-color: lightgray; color: #fff; border: 0px solid #af8814"><?php echo pll__( "SEE DETAILS" ); ?></button>
+                            <?php (get_locale() == "ar") ? $ct_cta_contact = "/contact-us-ar":$ct_cta_contact = "/contact-us"; ?>
+                            <?php (get_locale() == "ar") ? $ct_cta_finance = "/finance-your-home-ar":$ct_cta_finance = "/finance-your-home"; ?>
+                            <button class="pxp-sp-top-btn" style=" background-color: #af8814; color: #fff; border: 0px solid #af8814" onclick="location.href='<?php echo $ct_cta_contact;?>'"><?php echo pll__( "ASK OUR TEAM FOR HELP" ); ?></button>
+                            <button class="pxp-sp-top-btn" style=" background-color: lightgray; color: #fff; border: 0px solid #af8814" onclick="location.href='<?php echo $ct_cta_finance;?>'"><?php echo pll__( "SEE DETAILS" ); ?></button>
                         </div>
                     </div>
                 </div>

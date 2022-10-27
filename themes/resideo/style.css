@@ -131,6 +131,18 @@ textarea.form-control {
     background-position: right;
     background-repeat: no-repeat;
 }
+/*history*/
+.page-id-530 .pxp-hero .pxp-cover {
+    background-position: center center;
+}
+/*careers*/
+.page-id-1198 .pxp-hero .pxp-cover {
+    background-position: center center;
+}
+/*contact*/
+.page-id-197 .pxp-hero .pxp-cover {
+    background-position: center center;
+}
 .pxp-cover-bottom {
     background-position: center bottom;
 }
@@ -13578,6 +13590,11 @@ color: #fff; }
 .pxp-dark-mode .pxp-full .pxp-nav > div > ul > li ul,.pxp-dark-mode .pxp-no-bg .pxp-nav > div > ul > li ul {
     background: none !important;
 }
+.partnership_slider .pxp-hero-caption p {    
+    color: #fff !important;
+    font-weight: 600;}
+.partnership_slider .pxp-hero-caption h1{ color: #fff !important; }
+
 }
 .fa{
     font-size: 22px;
@@ -13706,6 +13723,36 @@ color: #fff; }
     .page-id-545 .iframe_video {
     margin-top:-50px !important;
   }
+  /*how can we help */
+  .page-id-567 .pxp-hero .pxp-cover {
+    background-position: 85% 0;
+}
+/*testimonials */
+.page-id-947 .pxp-hero .pxp-cover {
+    background-position: 72% 0;
+}
+/*choose your home */
+.page-id-859 .pxp-hero .pxp-cover {
+    background-position: 42% 0;
+}
+/*finance your home */
+.page-id-861 .pxp-hero .pxp-cover {
+    background-position: 82% 0;
+}
+ }
+
+ @media only screen and (min-width: 576px) {
+    /*choose your home */
+    .page-id-859 .pxp-hero .pxp-cover {
+        background-position: center;
+    }
+ }
+
+ @media only screen and (min-width: 576px) and (max-width: 767px) {
+    /*finance your home */
+    .page-id-861 .pxp-hero .pxp-cover {
+        background-position: 90% 0;
+    }
  }
 
  @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -13716,4 +13763,22 @@ color: #fff; }
       .page-id-545 .page_service .pxp-services-h-container,.page-id-567 .page_service .pxp-services-h-container {
         padding-bottom: 50px;
       }
+      /*testimonials */
+      .page-id-947 .pxp-hero .pxp-cover {
+        background-position: 80% 0;
+    }
+    /*choose your home */
+    .page-id-859 .pxp-hero .pxp-cover {
+        background-position: center;
+    }
+    
+ }
+
+
+ @media only screen and (max-width: 980px) {
+ /*Mission vision*/
+.page-id-545 .pxp-hero .pxp-cover {
+    background-position: 80% 0;
+}
+
  }

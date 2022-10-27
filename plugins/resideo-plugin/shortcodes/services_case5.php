@@ -5,7 +5,7 @@
 <div class="pxp-testim-1-intro" style="margin-top:0px">
         
    <p class="pxp-text-light text-uppercase" style="font-weight:600"> OUR FAMILY </p>
-   <h3 class="pxp-section-h2 text-uppercase">OUR FAMILIES OF COMPANIES</h3>
+   <h3 class="pxp-section-h2 text-uppercase">OUR FAMILIES OF COMPANIESs</h3>
    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-3 pxp-animate" >How it all started</a>
 </div>
 

@@ -1327,9 +1327,11 @@ while (have_posts()) : the_post();
                                         <?php
                                     }
                                     ?>
+                                     <?php (get_locale() == "ar") ? $ct_cta_contact = "/contact-us-ar":$ct_cta_contact = "/contact-us"; ?>
+                            <?php (get_locale() == "ar") ? $ct_cta_finance = "/finance-your-home-ar":$ct_cta_finance = "/finance-your-home"; ?>
                                             <div class="mt-2">
-                                                <button class="pxp-sp-top-btn" style=" background-color: #af8814; color: #fff; border: 0px solid #af8814"><a href="/contact-us" style="color:#fff;text-decoration:none;"><?php echo pll__( "ASK OUR TEAM FOR HELP" ); ?></a></button>
-                                                <button class="pxp-sp-top-btn" style=" background-color: lightgray; color: #fff; border: 0px solid #af8814"><a href="/finance-your-home/" style="color:#fff;text-decoration:none;"><?php echo pll__( "SEE DETAILS" ); ?></a></button>
+                                                <button class="pxp-sp-top-btn" style=" background-color: #af8814; color: #fff; border: 0px solid #af8814"><a href="<?php echo $ct_cta_contact;?>" style="color:#fff;text-decoration:none;"><?php echo pll__( "ASK OUR TEAM FOR HELP" ); ?></a></button>
+                                                <button class="pxp-sp-top-btn" style=" background-color: lightgray; color: #fff; border: 0px solid #af8814"><a href="<?php echo $ct_cta_finance;?>" style="color:#fff;text-decoration:none;"><?php echo pll__( "SEE DETAILS" ); ?></a></button>
                                             </div>
                                         </div>
                                     </div>

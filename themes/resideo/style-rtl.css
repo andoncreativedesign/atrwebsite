@@ -130,12 +130,24 @@ textarea.form-control {
 }
 .pxp-cover {
     background-size: cover;
-    background-position: center center;
+    background-position: right;
     background-repeat: no-repeat;
 }
-.page-id-626 .pxp-hero .pxp-cover {
-    background-position: right;
+/*history*/
+.page-id-630 .pxp-hero .pxp-cover {
+    background-position: center center;
 }
+/*careers*/
+.page-id-1522 .pxp-hero .pxp-cover {
+    background-position: center center;
+}
+/*contact*/
+.page-id-1528 .pxp-hero .pxp-cover {
+    background-position: center center;
+}
+/* .page-id-626 .pxp-hero .pxp-cover {
+    background-position: right;
+} */
 .pxp-content{
     overflow: hidden;
 }
@@ -13523,7 +13535,10 @@ color: #fff; }
 .page-template-tpl_community .technical-spc .tech_list {
     margin-top: 0px;
 }
-
+.partnership_slider .pxp-hero-caption p {    
+    color: #4D858D !important;
+    font-weight: 600;}
+.partnership_slider .pxp-hero-caption h1{ color: #1D252C !important; }
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
     .service_case_3 > div:nth-child(2){
       margin-right:8.3%;
@@ -13543,12 +13558,14 @@ color: #fff; }
     .pxp-dark-mode .pxp-full .pxp-nav > div > ul > li ul,.pxp-dark-mode .pxp-no-bg .pxp-nav > div > ul > li ul {
         background: none !important;
     }
+    .partnership_slider .pxp-hero-caption p {    
+        color: #fff !important;
+        font-weight: 600;}
+    .partnership_slider .pxp-hero-caption h1{ color: #fff !important; }
+
     }
 
-    .partnership_slider .pxp-hero-caption p {    
-        color: #4D858D !important;
-        font-weight: 600;}
-    .partnership_slider .pxp-hero-caption h1{ color: #1D252C !important; }
+    
 
 
     .page-id-1539 .service_case2_intro ul li {
@@ -13559,6 +13576,34 @@ color: #fff; }
         .page-id-1539 .iframe_video {
         margin-top:-50px !important;
       }
+      /*how can we help */
+      .page-id-1537 .pxp-hero .pxp-cover {
+        background-position: 85% 0;
+    }
+    /*testimonials */
+    .page-id-1545 .pxp-hero .pxp-cover {
+        background-position: 72% 0;
+    }
+    /*choose your home */
+    .page-id-1524 .pxp-hero .pxp-cover {
+        background-position: 42% 0;
+    }
+    /*finance your home */
+    .page-id-1534 .pxp-hero .pxp-cover {
+        background-position: 82% 0;
+    }
+     }
+     @media only screen and (min-width: 576px) {
+       /*choose your home */
+        .page-id-1524 .pxp-hero .pxp-cover {
+            background-position: center;
+        }
+     }
+     @media only screen and (min-width: 576px) and (max-width: 767px) {
+        /*finance your home */
+        .page-id-1534 .pxp-hero .pxp-cover {
+            background-position: 90% 0;
+        }
      }
      @media only screen and (min-width: 768px) and (max-width: 1024px) {
         .page-id-1539 .iframe_video {
@@ -13567,7 +13612,23 @@ color: #fff; }
           .page-id-1539 .page_service .pxp-services-h-container, .page-id-1537 .page_service .pxp-services-h-container {
             padding-bottom: 50px;
           }
+           /*testimonials */
+          .page-id-1545 .pxp-hero .pxp-cover {
+            background-position: 80% 0;
+        }
+        /*choose your home */
+        .page-id-1524 .pxp-hero .pxp-cover {
+            background-position: center;
+        }
+        
      }
+
+     @media only screen and (max-width: 980px) {
+         /*Mission vision*/
+     .page-id-1539 .pxp-hero .pxp-cover {
+        background-position: 80% 0;
+    }
+}
 
      .pxp-single-property-section .padding_fix a{ padding-right: 0px; }
 

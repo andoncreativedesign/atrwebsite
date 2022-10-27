@@ -160,8 +160,8 @@ function show_communities_how_we_can_help_fn()
             ?>
         </div>
 
-
-        <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__("VIEW ALL"); ?></a>
+        <?php (get_locale() == "ar") ? $cta_url = "/home-search-ar":$cta_url = "/home-search"; ?>
+        <a href="<?php echo $cta_url;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__("VIEW ALL"); ?></a>
         <style>
         .pxp-primary-cta#cta-62ec109a104a3:after {
             border-top: 2px solid #333333;

@@ -3,9 +3,10 @@
 function show_explore_community_properties_home_fn()
 {
     ob_start();
+    $post_id = get_the_ID();
     $general_settings = get_option('resideo_general_settings'); 
-
-
+    $comm_view_cta = get_field("view_all_cta_link",$post_id);
+    
     $currency = isset($general_settings['resideo_currency_symbol_field']) ? $general_settings['resideo_currency_symbol_field'] : '';
 
     $terms = get_terms( array(
@@ -24,7 +25,7 @@ function show_explore_community_properties_home_fn()
     <div class="container-fluid pxp-props-carousel-right pxp-has-intro mt-100 ">
         <div class="pxp-props-carousel-right-intro">
             <p class="pxp-text-light color_green"><?php echo get_field('explore_title'); ?></p>
-            <h2 class="pxp-section-h2 heading_col"><?php echo get_field('explore_subtitle'); ?></h2> <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo get_field('explore_cta_text'); ?></a>
+            <h2 class="pxp-section-h2 heading_col"><?php echo get_field('explore_subtitle'); ?></h2> <a href="<?php echo $comm_view_cta;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo get_field('explore_cta_text'); ?></a>
             <style>
             .pxp-primary-cta#cta-62ec109a104a3:after {
                 border-top: 2px solid #333333;

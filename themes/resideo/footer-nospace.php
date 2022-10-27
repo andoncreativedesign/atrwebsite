@@ -11,9 +11,11 @@ $copyright        = isset($general_settings['resideo_copyright_field']) ? $gener
         <div class="container pt-100" style="padding-bottom: 25px;"><?php get_sidebar('footer'); ?><?php if ($copyright != '') { ?>
             <div class="pxp-footer-bottom mt-4 mt-md-5" style="border-top: 1px solid #4D858D; padding-top:8px">
                 <div>
-                    <a href="#" style="color: gray;">Cookies & Privacy policy</a>
+                    <!-- Menu for privacy and cooie policy-->
+                <?php ((get_locale() == "ar") ? wp_nav_menu(array('menu' => 176,'container_class'=>'ct_bottom_menu')):wp_nav_menu(array('menu' => 175,'container_class'=>'ct_bottom_menu'))); ?>
+                    <!-- <a href="#" style="color: gray;">Cookies & Privacy policy</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" style="color: gray;">Terms & Conditions</a>
+                    <a href="#" style="color: gray;">Terms & Conditions</a> -->
                 </div>
 
                 <div class="pxp-footer-copyright"><?php echo esc_html($copyright); ?></div>
