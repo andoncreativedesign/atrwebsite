@@ -13321,6 +13321,17 @@ color: #fff; }
     padding-top: 100px;
     
 }
+.page-template-tpl_community .page_service_community .pxp-services-h-fig img{
+    width:100%;
+    
+}
+
+.page-template-tpl_community .page_service1_community.service1_interior .pxp-services-h-fig img{
+    width:100%;
+    
+}
+
+
 .page_service_community .container .pxp-section-h2{
     color: #000;
 }
@@ -13594,7 +13605,9 @@ color: #fff; }
     color: #fff !important;
     font-weight: 600;}
 .partnership_slider .pxp-hero-caption h1{ color: #fff !important; }
-
+.page-template-tpl_community .page_service .pxp-primary-cta {
+    margin-bottom:30px;
+}
 }
 .fa{
     font-size: 22px;
@@ -13712,6 +13725,10 @@ color: #fff; }
 .service_case2 .iframe_video img{
         width:100%;
     }
+    .ct_padding_bottom{
+        padding-bottom: 0px;
+        margin-top:1.5rem !important;
+    }
 }
 
 
@@ -13771,7 +13788,9 @@ color: #fff; }
     .page-id-859 .pxp-hero .pxp-cover {
         background-position: center;
     }
-    
+    .pxp-footer .row .row {
+        padding-top: 25px;
+    }
  }
 
 
@@ -13782,3 +13801,20 @@ color: #fff; }
 }
 
  }
+
+ @media only screen and (min-width: 980px) and (max-width: 1024px) {
+     /* tab view gap issue for careers and partnership page*/
+    .page-id-538 .service_case2 {
+    padding-bottom:60px;
+ }
+     .page-id-1198 .service_case2 {
+    padding-bottom:60px;
+ }
+/* tab view gap issue for finance and choose home pages*/
+ .page-id-861 .service_case2 {
+    padding-bottom:60px;
+ }
+ .page-id-859 .service_case2 {
+    padding-bottom:60px;
+ }
+}

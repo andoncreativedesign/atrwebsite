@@ -298,7 +298,10 @@ function closeGallery() {
         height:auto !important;
     }
     .page_service1_community {padding-top:0;margin-bottom:0 !important;}
-    .page_service1_community .pxp-services-h-fig{
+    .page_service1_community.service1_interior .pxp-services-h-fig{
+       height:auto !important;
+    }
+    .page_service_community .pxp-services-h-fig{
        height:auto !important;
     }
     .page_service1_community .pxp-services-h-items {
@@ -611,6 +614,7 @@ function closeGallery() {
                                     </h3>
                                     <div>
                                    <p style="padding-right: 10px; text-align: left;"></p>
+                                   <?php ((get_locale() == 'ar') ? $welcome_cta_link = "/home-search-ar":'')?>
                                    <p><?php echo $welcome_description; ?></p>
                                    </div><a href="<?php echo $welcome_cta_link; ?>" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in pxp-in" id="cta-6308a411ab9ef" style="color: "><?php echo pll__( "SEARCH ALL PROPERTIES" ); ?></a>
                                 </div>
@@ -685,7 +689,8 @@ function closeGallery() {
     <div class="container-fluid pxp-props-carousel-right pxp-has-intro mt-100 ct_communities_cont">
         <div class="pxp-props-carousel-right-intro">
             <p class="pxp-text-light color_green"><?php echo pll__( $explore_title ); ?></p>
-            <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL PROJECTS" ); ?></a>
+
+            <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> <a href="<?php echo $welcome_cta_link;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL PROJECTS" ); ?></a>
             <style>
             .pxp-primary-cta#cta-62ec109a104a3:after {
                 border-top: 2px solid #333333;

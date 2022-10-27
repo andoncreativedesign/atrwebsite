@@ -130,7 +130,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                 $dd = ob_get_clean(); style="'"
                  $return_string .=   $dd;*/
                 if ($s_array['cta_label'] != '' && $s_array['cta_link'] != '') {
-                    $shortcode_after = '</div></div><a href="' . esc_url($s_array['cta_link']) . '" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate" id="cta-' . esc_attr($cta_id) . '" style=" '.(get_locale() == 'ar' ? 'margin-right: 9rem !important;' : '').';color: ' . esc_attr($cta_color) . '">' .pll__("VIEW ALL"). '</a></div>
+                    $shortcode_after = '</div></div><a href="' . esc_url($s_array['cta_link']) . '" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate" id="cta-' . esc_attr($cta_id) . '" style="color: ' . esc_attr($cta_color) . '">' .pll__("VIEW ALL"). '</a></div>
                     <style>.pxp-primary-cta#cta-' . esc_attr($cta_id) . ':after { border-top: 2px solid ' . esc_html($cta_color) . '; }</style>';
                 } else {
                     $shortcode_after = '</div></div></div>';

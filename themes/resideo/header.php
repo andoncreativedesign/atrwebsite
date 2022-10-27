@@ -733,7 +733,7 @@
                 padding-top: 0px;
             }
             .service-txt-data{
-                 margin-left: 3rem;
+                 margin-left: 2.5rem;
                  margin-bottom: 1.9rem;
             }
             .centrally_h{

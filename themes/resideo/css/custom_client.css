@@ -1131,7 +1131,7 @@ display:none;
     transition:none!important;
 }
 /*Testimonial section*/
-.fr_ct_testim_container .col-md-4 div {
+.fr_ct_testim_container .col-md-4 > div {
     margin-top:25px;
 }
  @media only screen and (max-width: 990px) {
@@ -1160,6 +1160,11 @@ display:none;
  .pxp-dark-mode .pxp-mobile .pxp-nav > div > ul > li > ul li > ul > li > a {
      color:#fff !important;
  }
+
+ .fr_ct_testim_container .pxp-testim-1-item-message {
+  padding-top:15px;
+  padding-bottom:15px;
+ }
  }
  
  /*Responsive menu style here*/
@@ -1183,6 +1188,9 @@ display:none;
     .pxp-similar-properties-container .pxp-prop-card-1:hover .pxp-prop-card-1-details-title {
         display: block;
     }
+    /* .fr_ct_testim_container .col-md-4 div {
+        margin-top:0px;
+    } */
  }
 .rtl.pxp-dark-mode .pxp-is-sticky .pxp-user-menu {
       background:#fff !important;
@@ -1289,4 +1297,8 @@ display:none;
 
   .owl-theme .owl-nav [class*=owl-]:hover {
     background: none !important;
+  }
+
+  .policy-pages {
+    padding-bottom:50px;
   }

@@ -965,9 +965,9 @@ display: block;
       .joblisthalf {
           padding-left: 16px !important;
       }
-      .service_img_min_height {
+      /* .service_img_min_height {
           min-height: 360px !important;
-      }
+      } */
       .ct-warranty .service_img_min_height {
         min-height: auto !important;
     }

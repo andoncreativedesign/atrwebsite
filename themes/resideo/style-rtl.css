@@ -3138,6 +3138,9 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
 .pxp-similar-properties-container .owl-carousel .owl-stage {
     padding-left: 0 !important;
 }
+.page-id-1534 .pxp-props-carousel-right-container .owl-carousel .owl-stage {
+    padding-right: 0 !important;
+}
 .home .pxp-props-carousel-right-container .owl-carousel .owl-stage {
     padding-right: 0 !important;
 }
@@ -13145,6 +13148,14 @@ color: #fff; }
 .page-template-tpl_community .page_service_community {
     padding-top: 100px;
 }
+.page-template-tpl_community .page_service_community .pxp-services-h-fig img{
+    width:100%;
+    
+}
+.page-template-tpl_community .page_service1_community.service1_interior .pxp-services-h-fig img{
+    width:100%;
+    
+}
 .page_service_community .container .pxp-section-h2{
     color: #000;
 }
@@ -13563,6 +13574,13 @@ color: #fff; }
         font-weight: 600;}
     .partnership_slider .pxp-hero-caption h1{ color: #fff !important; }
 
+    .page-template-tpl_community .page_service .pxp-primary-cta {
+        margin-bottom:30px;
+    }
+    .ct_padding_bottom{
+        padding-bottom: 0px;
+        margin-top:1.5rem !important;
+    }
     }
 
     
@@ -13620,7 +13638,9 @@ color: #fff; }
         .page-id-1524 .pxp-hero .pxp-cover {
             background-position: center;
         }
-        
+        .pxp-footer .row .row {
+            padding-top: 25px;
+        }
      }
 
      @media only screen and (max-width: 980px) {
@@ -13642,3 +13662,28 @@ color: #fff; }
         margin-right:0;
         padding-left:10px;
      }
+
+
+     @media only screen and (min-width: 980px) and (max-width: 1024px) {
+        /* tab view gap issue for careers and partnership page*/
+        .page-id-634 .service_case2 {
+        padding-bottom:60px;
+     }
+         .page-id-1522 .service_case2 {
+        padding-bottom:60px;
+     }
+     
+     /* tab view gap issue for finance and choose home pages*/
+     .page-id-1524 .service_case2 {
+        padding-bottom:60px;
+     }
+     .page-id-1534 .service_case2 {
+        padding-bottom:60px;
+     }
+    }
+
+
+    .pxp-posts-1-item, .listing_item {
+        margin-bottom:30px;
+        display: block;
+    }
