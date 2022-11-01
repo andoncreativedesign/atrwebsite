@@ -57,7 +57,7 @@ if (!function_exists('resideo_contact_shortcode')):
                         <div class="col-lg-1 col-xl-1 order-2">
                         </div>
                         <div class="col-lg-7 align-left ' . esc_attr($form_column_class) . '">';
-                            $return_string .= apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' ) .'
+                            $return_string .= apply_shortcodes( '[contact-form-7 id="654" title="Contact form 1"]' ) .'
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ if (!function_exists('resideo_contact_shortcode')):
                         <div class="col-lg-1 col-xl-1 order-2">
                         </div>
                         <div class="col-lg-7 align-left ' . esc_attr($form_column_class) . '">';
-                            $return_string .= apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' ) .'
+                            $return_string .= apply_shortcodes( '[contact-form-7 id="654" title="Contact form 1"]' ) .'
                         </div>
                     </div>
                 </div>

@@ -100,6 +100,7 @@ function closeGallery() {
     .page_service1_community.comm_map {
         padding-top:100px;
     }
+    
     <?php 
     
     if (get_locale()=='ar') {
@@ -119,6 +120,7 @@ function closeGallery() {
         .pxp-props-carousel-right-intro{
                 padding-right: calc((100% - 1140px) / 2 + 15px);
         }
+        .pxp-props-carousel-left-arrow{left: unset !important; right:-30px;}
         .pxp-props-carousel-right-arrow{right: unset !important; left:30px;}
         <?php
     }
@@ -779,8 +781,9 @@ function closeGallery() {
                                                     <?php 
                                                         // echo $p_price." ".$currency; 
                                                         $p_priceget = $p_price." ".$currency; 
-                                                        icl_register_string("resideo", $p_priceget,$p_priceget);
-                                                        echo pll__( $p_priceget );
+                                                        icl_register_string("resideo", $p_price,$p_price);
+                                                        icl_register_string("resideo", $currency,$currency);
+                                                        echo pll__( $p_price )." ".pll__( $currency );
                                                     ?> 
                                                 </div>
                                             </div>
@@ -841,7 +844,7 @@ function closeGallery() {
 
                     </div>
                 </div>
-                <div class="owl-nav">
+                <!-- <div class="owl-nav">
                     <button type="button" role="presentation" class="owl-prev disabled">
                         <div class="pxp-props-carousel-left-arrow pxp-animate">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828" class="pxp-arrow-1">
@@ -864,7 +867,7 @@ function closeGallery() {
                             </svg>
                         </div>
                     </button>
-                </div>
+                </div> -->
                 <div class="owl-dots disabled"></div>
             </div>
         </div>
@@ -1173,12 +1176,12 @@ function closeGallery() {
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <span class="wpcf7-form-control-wrap" data-name="your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-phone" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Phone number" ); ?>"></span>
+                                            <span class="wpcf7-form-control-wrap" data-name="your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-phone" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Phone number" ); ?>"></span>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <span class="wpcf7-form-control-wrap" data-name="your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-email" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Email" ); ?>"></span>
+                                            <span class="wpcf7-form-control-wrap" data-name="your-email"><input type="text" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-email" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Email" ); ?>"></span>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">

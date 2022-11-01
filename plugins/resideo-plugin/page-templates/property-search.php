@@ -18,7 +18,7 @@ $content_class = '';
 $wrapper_class = '';
 $column_class = 'col-sm-6 col-lg-12 col-xl-6 col-xxxl-4';
 
-$column_class = 'col-sm-4 col-lg-12 col-xl-4 col-xxxl-4';
+$column_class = 'col-sm-4 col-lg-6 col-xl-6 col-xxxl-4';
 $has_sidebar = false;
 $sidebar_class = '';
 $container_class = 'container';
@@ -179,6 +179,8 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                 <?php } 
                                 
                                 icl_register_string("resideo", 'Default Sort','Default Sort'); 
+                                icl_register_string("resideo", 'Beds','Beds'); 
+                                icl_register_string("resideo", 'Baths','Baths'); 
                                 ?>
                                 <div class="d-block d-sm-none w-100"></div>
                                 <div class="form-group pxp-sort-select">
@@ -189,10 +191,10 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                             <option value="price_hi" <?php if ($sort && $sort != '' && $sort == 'price_hi') { echo 'selected="selected"'; } ?>><?php esc_html_e('Price (Hi-Lo)', 'resideo'); ?></option>
                                         <?php }
                                         if ($p_beds != '' && $p_beds == 'enabled') { ?>
-                                            <option value="beds" <?php if ($sort && $sort != '' && $sort == 'beds') { echo 'selected="selected"'; } ?>><?php esc_html_e('Beds', 'resideo'); ?></option>
+                                            <option value="beds" <?php if ($sort && $sort != '' && $sort == 'beds') { echo 'selected="selected"'; } ?>><?php echo pll__("Beds");//esc_html_e('Beds', 'resideo'); ?></option>
                                         <?php }
                                         if ($p_baths != '' && $p_baths == 'enabled') { ?>
-                                            <option value="baths" <?php if ($sort && $sort != '' && $sort == 'baths') { echo 'selected="selected"'; } ?>><?php esc_html_e('Baths', 'resideo'); ?></option>
+                                            <option value="baths" <?php if ($sort && $sort != '' && $sort == 'baths') { echo 'selected="selected"'; } ?>><?php echo pll__("Baths");//esc_html_e('Baths', 'resideo'); ?></option>
                                         <?php }
                                         if ($p_size != '' && $p_size == 'enabled') { ?>
                                             <option value="size" <?php if ($sort && $sort != '' && $sort == 'size') { echo 'selected="selected"'; } ?>><?php esc_html_e('Size', 'resideo'); ?></option>

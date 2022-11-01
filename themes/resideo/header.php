@@ -70,7 +70,7 @@
     </script>
 
     <style type="text/css">
-        
+      
         @media (min-width: 350px) and (max-width: 980px)
         {
             .home .pxp-testim-1-intro .pxp-section-h2 {color:#fff !important;}
@@ -82,6 +82,7 @@
            /* .service_case2_intro.ct-cyh p{ color:#fff !important;} */
            <?php if(is_home() or is_front_page()){ ?>
               .pxp-services-h-fig {height: 400px; background-size: cover; }
+
            <?php }else { ?> 
               /* .pxp-services-h-fig {height: 200px} */
               .pxp-services-h-fig {height: auto;}
@@ -387,6 +388,9 @@
             .carousel-inner{
                 min-height: 400px;
             }
+            .rtl .carousel-inner{
+                min-height: 370px;
+            }
         </style>
         <?php
     }
@@ -651,7 +655,7 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="explore our communities")
+    if( strtolower(get_field('page_slug'))=="explore our communities" || strtolower(get_field('page_slug'))=="explore our communities ar")
     {
         ?>
         <style type="text/css">

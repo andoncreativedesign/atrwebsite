@@ -227,7 +227,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
             $p_price_label = get_post_meta($post['ID'], 'property_price_label', true);
 
             $currency_str = $currency;
-
+              //echo "CURRPR".$p_price;
             if (is_numeric($p_price)) {
                 if ($decimals == '1') {
                     $p_price = money_format('%!i', $p_price);
@@ -235,14 +235,14 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                     $p_price = money_format('%!.0i', $p_price);
                 }
             } else {
-                $p_price_label = '';
-                $currency_str = '';
+               // $p_price_label = '';
+                //$currency_str = '';
             }
-
+            //echo "CURRPRafter".$currency_str;
             $p_beds  = get_post_meta($post['ID'], 'property_beds', true);
             $p_baths = get_post_meta($post['ID'], 'property_baths', true);
             $p_size  = get_post_meta($post['ID'], 'property_size', true);
-
+            icl_register_string("resideo", $currency_str,$currency_str);
             $return_string .= '
                 <div class="' . esc_attr($column_class) . '">
                     <a href="' . esc_url($p_link) . '" class="pxp-prop-card-1 rounded-lg ' . esc_attr($card_margin_class) . '">
@@ -252,9 +252,9 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                             <div class="pxp-prop-card-1-details-title">' . esc_html($p_title) . '</div>
                             <div class="pxp-prop-card-1-details-price">';
             if ($currency_pos == 'before') {
-                $return_string .= '<p style="font-weight: 300; float: left;">'.pll__('From').'  &nbsp;</p> '.esc_html($currency_str) . esc_html($p_price) . ' <span>' . esc_html($p_price_label) . '</span>';
+                $return_string .= '<p style="font-weight: 300;margin-bottom:0;'. (get_locale() == 'ar' ? 'float: right':'float:left').'">'.pll__('From').'  &nbsp;</p> <span style="'.(get_locale() == 'ar' ? 'float: right':'float:left').'">'.esc_html($currency_str) .'</span><span>'. esc_html($p_price) . '</span> <span>' . esc_html($p_price_label) . '</span>';
             } else {
-                $return_string .= '<p style="font-weight: 300; float: left;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . esc_html($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
+                $return_string .= '<p style="font-weight: 300;margin-bottom:0;'.(get_locale() == 'ar' ? 'float: right':'float:left').'">'.pll__('From').'  &nbsp;</p> <span style="'.(get_locale() == 'ar' ? 'float: right':'float:left').'">'. esc_html($p_price) .'</span><span>&nbsp;' . pll__($currency_str) . ' </span> <span>' . esc_html($p_price_label) . '</span>';
             }
             $return_string .= '
                             </div>
