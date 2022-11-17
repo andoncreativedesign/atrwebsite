@@ -69,10 +69,10 @@ if (!function_exists('resideo_get_similar_properties')):
             $card_size_class = 'pxp-is-small';
             $carousel_stage_class = 'pxp-is-side';
         }
-        icl_register_string("resideo","Similar Properties","Similar Properties");
+        icl_register_string("resideo","Similar Homes","Similar Homes");
         if (is_array($similars_arr['posts']) && count($similars_arr['posts']) > 0) { ?>
             <div class="pxp-similar-properties <?php echo esc_attr($container_class); ?>">
-                <h2 class="ct_similar_prop_h2"><?php echo pll__("Similar Properties"); ?></h2>
+                <h2 class="ct_similar_prop_h2"><?php echo pll__("Similar Homes"); ?></h2>
 
                 <div class="pxp-similar-properties-container <?php echo esc_attr($list_container_margin); ?>">
                     <div class="owl-carousel pxp-similar-properties-stage <?php echo esc_attr($carousel_stage_class); ?>">

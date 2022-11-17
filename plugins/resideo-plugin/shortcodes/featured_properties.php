@@ -85,7 +85,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
         $resideo_general_settings = get_option('resideo_general_settings');
         $beds_label               = isset($resideo_general_settings['resideo_beds_label_field']) ? $resideo_general_settings['resideo_beds_label_field'] : 'BD';
         $baths_label              = isset($resideo_general_settings['resideo_baths_label_field']) ? $resideo_general_settings['resideo_baths_label_field'] : 'BA';
-        $unit                     = isset($resideo_general_settings['resideo_unit_field']) ? $resideo_general_settings['resideo_unit_field'] : '';
+        $unit                     = isset($resideo_general_settings['resideo_unit_field']) ? $resideo_general_settings['resideo_unit_field'] : 'SQM';
         $currency                 = isset($resideo_general_settings['resideo_currency_symbol_field']) ? $resideo_general_settings['resideo_currency_symbol_field'] : '';
         $currency_pos             = isset($resideo_general_settings['resideo_currency_symbol_pos_field']) ? $resideo_general_settings['resideo_currency_symbol_pos_field'] : '';
         $locale                   = isset($resideo_general_settings['resideo_locale_field']) ? $resideo_general_settings['resideo_locale_field'] : '';
@@ -118,9 +118,9 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                         <p class="pxp-text-light">' . esc_html($s_array['title']) . '</p>';
                 }
                 if ($s_array['subtitle'] != '') {
-                    icl_register_string('resideo','FEATURED PROPERTIES','FEATURED PROPERTIES');
+                    icl_register_string('resideo','FEATURED HOMES','FEATURED HOMES');
                     $return_string .= '
-                        <h2 class="pxp-section-featured-h2" style="'.(get_locale() == 'ar' ? 'margin-right: 0 !important;' : '').'">' .pll__("FEATURED PROPERTIES"). '</h2>';
+                        <h2 class="pxp-section-featured-h2" style="'.(get_locale() == 'ar' ? 'margin-right: 0 !important;' : '').'">' .pll__("FEATURED HOMES"). '</h2>';
                 }
                 $return_string .= '
                         <div class="pxp-props-carousel-right-container mt-4 mt-md-5">
@@ -260,7 +260,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                             </div>
                             <div class="pxp-prop-card-1-details-features feature_prop text-uppercase">';
             if ($p_beds != '') {
-                $return_string .= esc_html($p_beds) . '' . esc_html($beds_label) . ' | ';
+                $return_string .= esc_html($p_beds) . ' ' . esc_html($beds_label) . ' | ';
             }
             if ($p_baths != '') {
                 $return_string .= esc_html($p_baths) . ' ' . esc_html($baths_label) . ' | ';

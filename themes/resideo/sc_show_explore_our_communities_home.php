@@ -40,6 +40,7 @@ function show_explore_community_properties_home_fn()
                 <div class="owl-stage-outer">
                     <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1972px; padding-left: 30px; padding-right: 30px;">
                         <?php
+                        icl_register_string("resideo", 'SQM','SQM'); 
                         foreach ($terms as $term) {
 
                             $term_id = $term->term_id;
@@ -118,7 +119,7 @@ function show_explore_community_properties_home_fn()
                                                         <div class="col-md-6 p-1">
                                                             <span class="more_dtl"><?php echo pll__( $area_label );?></span></br>
                                                             <span class="more_dtl_val">
-                                                                <?php echo pll__($area_sqf);?>
+                                                                <?php echo pll__($area_sqf).' '.pll__("SQM");?>
                                                             </span>
                                                         </div>
                                                         <div class="col-md-6 p-1">
@@ -130,7 +131,7 @@ function show_explore_community_properties_home_fn()
                                                         <div class="col-md-6 p-1">
                                                             <span class="more_dtl"><?php echo pll__("Buildup Area"); ?></span></br>
                                                             <span class="more_dtl_val">
-                                                                <?php echo $size;?>&nbsp;<?php echo pll__("SQF");?> 
+                                                                <?php echo $size;?>&nbsp;<?php echo pll__("SQM");?> 
                                                             </span>
                                                         </div>
                                                         <div class="col-md-6 p-1">

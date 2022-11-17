@@ -242,6 +242,7 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                             $p_price_label = get_post_meta($prop_id, 'property_price_label', true);
 
                             $currency_str = $currency;
+                            icl_register_string('resideo',$currency_str,$currency_str);
 
                             if (is_numeric($p_price)) {
                                 if ($decimals == '1') {
@@ -250,8 +251,8 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                     $p_price = money_format('%!.0i', $p_price);
                                 }
                             } else {
-                                $p_price_label = '';
-                                $currency_str = '';
+                                // $p_price_label = '';
+                                // $currency_str = '';
                             }
 
                             $p_beds  = get_post_meta($prop_id, 'property_beds', true);
@@ -295,18 +296,18 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                                 <div class="pxp-results-card-1-details-price">
                                                     <?php if ($currency_pos == 'before') {
                                                         if(get_locale() == 'ar'){
-                                                            echo '<p style="font-weight: 300; float: right;">'.pll__('From').'  &nbsp;</p> '. esc_html($currency_str) . esc_html($p_price) . ' <span>' . esc_html($p_price_label) . '</span>';
+                                                            echo '<p style="font-weight: 300; float: right;">'.pll__('From').'  &nbsp;</p> '. ' ' .pll__($currency_str) . esc_html($p_price) . ' <span>' . esc_html($p_price_label) . '</span>';
                                                         }
                                                         else{
-                                                               echo '<p style="font-weight: 300; float: left;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . esc_html($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
+                                                               echo '<p style="font-weight: 300; float: left;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . ' ' . pll__($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
 
                                                         }
                                                     } else {
                                                         if(get_locale() == 'ar'){
-                                                            echo '<p style="font-weight: 300; float: right;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . esc_html($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
+                                                            echo '<p style="font-weight: 300; float: right;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . ' ' .pll__($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
                                                         }
                                                         else{
-                                                             echo '<p style="font-weight: 300; float: left;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . esc_html($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
+                                                             echo '<p style="font-weight: 300; float: left;">'.pll__('From').'  &nbsp;</p> '. esc_html($p_price) . ' ' .pll__($currency_str) . ' <span>' . esc_html($p_price_label) . '</span>';
 
                                                         }
                                                     } ?>

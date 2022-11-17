@@ -23,12 +23,12 @@ function show_communities_how_we_can_help_fn()
         <p class="pxp-text-light color_green"></p>
             <h2 class="pxp-section-h2 how_we_help_you" style="padding-bottom: 30px;">
                 <?php 
-                    if(get_the_ID() == '859' or get_the_ID() == '1524'){
+                   // if(get_the_ID() == '859' or get_the_ID() == '1524'){
                         echo  pll__( "FEATURED COMMUNITIES" ); 
-                    }
-                    else{
-                        echo  pll__( "FEATURED PROPERTIES" ); 
-                    }
+                   // }
+                   // else{
+                        //echo  pll__( "FEATURED COMMUNITIES" ); 
+                   // }
                 ?>
             </h2> 
         <div class="row">
@@ -111,7 +111,7 @@ function show_communities_how_we_can_help_fn()
                                         <div class="col-md-6 p-1">
                                             <span class="more_dtl"><?php echo pll__($area_label);?></span></br>
                                             <span class="more_dtl_val">
-                                                <?php echo pll__($area_sqf);?>
+                                                <?php echo pll__($area_sqf).' '.pll__("SQM");;?>
                                             </span>
                                         </div>
                                         <div class="col-md-6 p-1">

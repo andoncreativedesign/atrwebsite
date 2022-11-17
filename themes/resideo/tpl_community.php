@@ -472,7 +472,9 @@ function closeGallery() {
                 icl_register_string("resideo", 'DOWNLOAD THE BROCHURE','DOWNLOAD THE BROCHURE');
                 icl_register_string("resideo", 'VIEW GALLERY','VIEW GALLERY');
                 icl_register_string("resideo", 'VIEW ALL PROJECTS','VIEW ALL PROJECTS');
+                icl_register_string("resideo", 'VIEW ALL COMMUNITIES','VIEW ALL COMMUNITIES');
                 icl_register_string("resideo", 'SEARCH ALL PROPERTIES','SEARCH ALL PROPERTIES');
+                icl_register_string("resideo", 'SEARCH ALL HOMES','SEARCH ALL HOMES');
                 icl_register_string("resideo", 'From','From');
                 icl_register_string("resideo", 'Land Area','Land Area');
                 icl_register_string("resideo", 'Units Remaining','Units Remaining');
@@ -618,7 +620,7 @@ function closeGallery() {
                                    <p style="padding-right: 10px; text-align: left;"></p>
                                    <?php ((get_locale() == 'ar') ? $welcome_cta_link = "/home-search-ar":'')?>
                                    <p><?php echo $welcome_description; ?></p>
-                                   </div><a href="<?php echo $welcome_cta_link; ?>" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in pxp-in" id="cta-6308a411ab9ef" style="color: "><?php echo pll__( "SEARCH ALL PROPERTIES" ); ?></a>
+                                   </div><a href="<?php echo $welcome_cta_link; ?>" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in pxp-in" id="cta-6308a411ab9ef" style="color: "><?php echo pll__( "SEARCH ALL HOMES" ); ?></a>
                                 </div>
                                     <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in <?php echo (get_locale() == 'ar' ? 'ml-0 mr-lg-5' : ''); ?>" style="height: 400px">
                                         <div style="display:none"><textarea class="my_iframe"><?php echo $welcome_video; ?></textarea></div>
@@ -692,7 +694,7 @@ function closeGallery() {
         <div class="pxp-props-carousel-right-intro">
             <p class="pxp-text-light color_green"><?php echo pll__( $explore_title ); ?></p>
 
-            <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> <a href="<?php echo $welcome_cta_link;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL PROJECTS" ); ?></a>
+            <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> <a href="<?php echo $welcome_cta_link;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL COMMUNITIES" ); ?></a>
             <style>
             .pxp-primary-cta#cta-62ec109a104a3:after {
                 border-top: 2px solid #333333;
@@ -794,7 +796,7 @@ function closeGallery() {
                                                         <div class="col-md-6 p-1">
                                                             <span class="more_dtl"><?php echo pll__( "Land Area" ); ?></span></br>
                                                             <span class="more_dtl_val">
-                                                                <?php echo (isset($more_details['land_area']) && $more_details['land_area'] > 0 ? $more_details['land_area'] : 0); ?> <?php  echo pll__( "SQF" ); ?>
+                                                                <?php echo (isset($more_details['land_area']) && $more_details['land_area'] > 0 ? $more_details['land_area'] : 0); ?> <?php echo (($more_details['land_area'] != 'N/A')? pll__( "SQF" ):''); ?>
                                                             </span>
                                                         </div>
                                                         <div class="col-md-6 p-1">

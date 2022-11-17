@@ -177,6 +177,7 @@ if (!function_exists('resideo_setup')):
 
         register_nav_menus(array(
             'primary' => esc_html__('Top primary menu', 'resideo'),
+            'footer' => esc_html__('Bottom footer menu', 'resideo')
         ));
     }
 endif;
@@ -1038,7 +1039,7 @@ function create_subjects_hierarchical_taxonomy() {
  
 }
 
-icl_register_string("resideo", 'HAVE A PROPERTY IN MIND?','HAVE A PROPERTY IN MIND?');
+icl_register_string("resideo", 'HAVE A HOME IN MIND?','HAVE A HOME IN MIND?');
 icl_register_string("resideo", 'SR','SR');
 
 function have_property_in_mind_calculator()
@@ -1046,7 +1047,7 @@ function have_property_in_mind_calculator()
     ob_start();
     ?>
     <div class="container mt-100">
-        <h2 class="pxp-section-h2"><?php echo pll__("HAVE A PROPERTY IN MIND?"); ?></h2>
+        <h2 class="pxp-section-h2"><?php echo pll__("HAVE A HOME IN MIND?"); ?></h2>
         <div class="row">
             <div class="col-lg-8">
                 <div class="pxp-single-property-section">
@@ -1127,7 +1128,7 @@ function have_property_in_mind_calculator()
                                     <label for="pxp-calculator-form-term"><?php echo pll__( "Term" ); ?></label>
                                     <select class="custom-select" id="pxp-calculator-form-term">
                                         <option value="20">20 <?php echo pll__( "Years Fixed" ); ?></option>
-                                        <option value="30">30 <?php echo pll__( "Years Fixed" ); ?></option>
+                                        <option value="30" selected>30 <?php echo pll__( "Years Fixed" ); ?></option>
                                         
                                     </select>
                                 </div>

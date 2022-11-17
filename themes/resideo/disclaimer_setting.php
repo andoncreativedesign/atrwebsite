@@ -26,13 +26,13 @@ add_action('admin_menu', 'resideo_new_register_options_page');
  
   <table>
   <tr valign="top">
-  <th scope="row"><label for="resideo_new_disclimer">Disclimer EN</label></th>
+  <th scope="row"><label for="resideo_new_disclimer">Disclaimer EN</label></th>
   <td>
   	<textarea  id="resideo_new_disclimer" name="resideo_new_disclimer" style="width:400px" ><?php echo get_option('resideo_new_disclimer'); ?></textarea> </td>
   </tr>
 
   <tr valign="top">
-  <th scope="row"><label for="resideo_new_disclimer_ar">Disclimer Ar</label></th>
+  <th scope="row"><label for="resideo_new_disclimer_ar">Disclaimer AR</label></th>
   <td>
   	<textarea  id="resideo_new_disclimer_ar" name="resideo_new_disclimer_ar" style="width:400px" ><?php echo get_option('resideo_new_disclimer_ar'); ?></textarea> </td>
   </tr>

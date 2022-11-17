@@ -37,6 +37,7 @@ while (have_posts()) : the_post();
    
 
     if (is_array($address_settings)) {
+        echo "ADDRESSSEtings_arr";
         uasort($address_settings, "resideo_compare_position");
 
         $address_default = array(
@@ -54,6 +55,7 @@ while (have_posts()) : the_post();
             }
         }
     } else {
+        echo "ADDRESSSEtings_notarr";
         if ($street_no != '') array_push($address_arr, $street_no);
         if ($street != '') array_push($address_arr, $street);
         if ($neighborhood_value != '') array_push($address_arr, $neighborhood_value);
@@ -1258,7 +1260,7 @@ while (have_posts()) : the_post();
                                                         <label for="pxp-calculator-form-term"><?php echo pll__( "Term" ); ?></label>
                                                         <select class="custom-select" id="pxp-calculator-form-term">
                                                             <option value="20">20 <?php echo pll__( "Years Fixed" ); ?></option>
-                                                            <option value="30">30 <?php echo pll__( "Years Fixed" ); ?></option>
+                                                            <option value="30" selected>30 <?php echo pll__( "Years Fixed" ); ?></option>
                                                         </select>
                                                     </div>
                                                 </div>
