@@ -163,12 +163,16 @@ textarea.form-control {
     color: #333;
     font-weight: 700;
     display: inline-block;
+    border:2px solid #a98913;
+    padding:12px;
 }
 .pxp-primary-cta:hover {
     color: #333;
     text-decoration: none;
+    background: #a98913;
+    opacity:.3;
 }
-.pxp-primary-cta:after {
+/* .pxp-primary-cta:after {
     content: " ";
     border-top: 2px solid #C2A022 !important;
     width: 36px;
@@ -179,7 +183,7 @@ textarea.form-control {
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
     transform-origin: top left;
-}
+} */
 .pxp-primary-cta.text-white:after {
     border-top: 2px solid #fff;
 }
@@ -13818,4 +13822,17 @@ color: #fff; }
  .page-id-859 .service_case2 {
     padding-bottom:60px;
  }
+}
+
+
+.ct_search_form_intro {
+  
+    color:#333333;
+    padding-top:20px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.ct_contactdetails p a{
+  color:#4d858d;
 }

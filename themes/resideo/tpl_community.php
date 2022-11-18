@@ -694,7 +694,8 @@ function closeGallery() {
         <div class="pxp-props-carousel-right-intro">
             <p class="pxp-text-light color_green"><?php echo pll__( $explore_title ); ?></p>
 
-            <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> <a href="<?php echo $welcome_cta_link;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL COMMUNITIES" ); ?></a>
+            <h2 class="pxp-section-h2 main_heading_style"><?php echo pll__( $explore_subtitle );?></h2> 
+            <!-- <a href="<?php echo $welcome_cta_link;?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ec109a104a3" style="color: #333333"><?php echo pll__( "VIEW ALL COMMUNITIES" ); ?></a> -->
             <style>
             .pxp-primary-cta#cta-62ec109a104a3:after {
                 border-top: 2px solid #333333;

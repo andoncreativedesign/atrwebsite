@@ -690,49 +690,9 @@ while (have_posts()) : the_post();
                                                     if (function_exists('icl_translate')) {
                                                         $am_label = icl_translate('resideo', 'resideo_property_amenity_' . $value['label'], $value['label']);
                                                     }
-                                                    if ($am_label == "Garage" or $am_label == "موقف سيارة") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/garage.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif ($am_label == "Grocery Store nearby" or $am_label == "متجر قريب") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/grocerynearby.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif ($am_label == "Coffee Shop nearby" or $am_label == "مقهى قريب") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/coffenearby.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif ($am_label == "Restaurant nearby" or $am_label == "مطعم قريب") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/restaurantnearby.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif ($am_label == "Central A/C" or $am_label == "تكييف مركزي") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/centralac.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif ($am_label == "Maid's room" or $am_label == "غرفة للخادمة") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/maidsroom.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif ($am_label == "Driver's room" or $am_label == "غرفة السائق") {?>
-                                                        <div class="col-sm-6 col-lg-4">
-                                                            <div class="pxp-sp-amenities-item"><img src="<?php echo get_template_directory_uri();?>/images/driversroom.svg"> <?php echo esc_html($am_label); ?></div>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    elseif (get_post_meta($prop_id, $key, true) == 1) { ?>
+                                                    //echo $am_label;
+                                                    
+                                                    if (get_post_meta($prop_id, $key, true) == 1) { ?>
                                                         <div class="col-sm-6 col-lg-4">
                                                             <div class="pxp-sp-amenities-item"><span class="<?php echo esc_attr($value['icon']); ?>"></span> <?php echo esc_html($am_label); ?></div>
                                                         </div>
