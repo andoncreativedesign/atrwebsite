@@ -13,6 +13,7 @@ get_header();
 
 $template = get_post_meta($post->ID, 'page_template_type', true);
 $listing_type = get_post_meta($post->ID, 'page_listing_type', true);
+$search_top_info = get_field('search_top_info');
 $no_map = false;
 $content_class = '';
 $wrapper_class = '';
@@ -107,6 +108,7 @@ $cities            = get_option('resideo_cities_settings');
 $address_settings = get_option('resideo_address_settings'); 
 icl_register_string("resideo", 'Featured','Featured'); ?>
 <div class="pxp-content <?php echo esc_attr($content_class); ?>">
+
     <?php if ($no_map === false) { ?>
         <div class="<?php echo esc_attr($map_class); ?>">
             <div id="results-map">
@@ -118,7 +120,9 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
     <?php } ?>
 
     <div class="<?php echo esc_attr($list_class); ?>">
+    
         <div class="pxp-content-side-wrapper <?php echo esc_attr($wrapper_class); ?>">
+        <div class="ct_search_form_intro"><?php echo $search_top_info;?></div>
             <?php if ($no_map === true) { ?>
                 <div class="container">
                     <div class="row">

@@ -164,14 +164,29 @@ textarea.form-control {
     font-weight: 700;
     display: inline-block;
     border:2px solid #a98913;
-    padding:12px;
+    padding:12px 20px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    transform-origin: top left;
+    transition-delay: .1s !important;
 }
 .pxp-primary-cta:hover {
-    color: #333;
+    color: #fff !important;
     text-decoration: none;
     background: #a98913;
-    opacity:.3;
+    /* opacity:.3; */
 }
+/* .pxp-primary-cta:hover:after {
+    opacity:.3 !important;
+    content: " ";
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display: block;
+} */
 /* .pxp-primary-cta:after {
     content: " ";
     border-top: 2px solid #C2A022 !important;
@@ -13637,11 +13652,15 @@ color: #fff; }
     color: #4D858D;
 }
 .ct_padding_bottom{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 
 .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+    border:none !important;
+    color: #dc3232;
+}
+.wpcf7 form.failed .wpcf7-response-output, .wpcf7 form.aborted .wpcf7-response-output {
     border:none !important;
     color: #dc3232;
 }
@@ -13836,3 +13855,4 @@ color: #fff; }
 .ct_contactdetails p a{
   color:#4d858d;
 }
+

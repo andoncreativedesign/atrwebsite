@@ -482,6 +482,7 @@ function closeGallery() {
                 icl_register_string("resideo", 'CONTACT US','CONTACT US');
                 icl_register_string("resideo", 'INTERESTED IN ISHRAQ LIVING?','INTERESTED IN ISHRAQ LIVING?');
                 icl_register_string("resideo", 'REQUEST A CALL BACK','REQUEST A CALL BACK');
+                icl_register_string("resideo", 'SUBMIT','SUBMIT');
                 icl_register_string("resideo", 'Your name','Your name');
                 icl_register_string("resideo", 'Phone number','Phone number');
                 icl_register_string("resideo", 'Email','Email');
@@ -655,7 +656,7 @@ function closeGallery() {
                                     </p>
                                     <h3 class="pxp-section-h2" style="color: "><?php echo pll__( $map_sub_heading ); ?></h3>
                                     
-                                   <a href="<?php echo $map_cta_link; ?>" target="_blank" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ebbdb9f0542" style="color: #333333">
+                                   <a href="<?php echo $map_cta_link; ?>" target="_blank" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-62ebbdb9f0542" >
                                    <?php //echo $map_cta_text;
                                         echo pll__( "View on google maps" ); 
                                    ?>
@@ -710,7 +711,7 @@ function closeGallery() {
                 <div class="owl-stage-outer">
                     <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1972px; padding-left: 30px; padding-right: 30px;">
                         <?php
-                        $comm_props_array = Array();
+                        //$comm_props_array = Array();
                         while ( $the_query->have_posts() ) {
                             $the_query->the_post();
                             $post_id=get_the_ID();
@@ -723,7 +724,7 @@ function closeGallery() {
                             $first_photo = wp_get_attachment_image_src($photos[0], 'pxp-gallery');
                             $thumbnail   = get_field('thumbnail_image',$post_id);
 
-                            array_push($comm_props_array,$title);
+                            //array_push($comm_props_array,$title);
                             
                             if (!empty($thumbnail)) {
                                 $p_photo = $thumbnail;
@@ -1145,7 +1146,12 @@ function closeGallery() {
 
 
     <!-- Contact Form -->
-
+  <?php 
+  icl_register_string("resideo",  "New Homes", "New Homes");
+  icl_register_string("resideo",  "Customer Support", "Customer Support");
+  icl_register_string("resideo",  "Partnerships", "Partnerships");
+  icl_register_string("resideo",  "Other", "Other");
+  ?>
     <div class="pxp-contact-section pxp-cover pt-50 pb-100" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/07/contact_bg.png)">
         <div class="container">
             <div class="row align-items-center">
@@ -1191,16 +1197,20 @@ function closeGallery() {
                                          <div class="form-group">
                                        <span class="wpcf7-form-control-wrap" data-name="your-project">
                                           <select name="your-project" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false">
-                                             <?php  foreach ($comm_props_array as $value) { ?>
-                                               <option value="<?php echo $value;?>"><?php echo $value;?></option>
+                                          <option value="New Homes"><?php echo pll__( "New Homes" );?></option>
+                                          <option value="Customer Support"><?php echo pll__( "Customer Support" );?></option>
+                                          <option value="Partnerships"><?php echo pll__( "Partnerships" );?></option>
+                                          <option value="Other"><?php echo pll__( "Other" );?></option>   
+                                          <?php  //foreach ($comm_props_array as $value) { ?>
+                                               <!-- <option value="<?php echo $value;?>"><?php echo $value;?></option> -->
                                             
-                                             <?php } ?>
+                                             <?php //} ?>
                                             </select>
                                         </span>
                                     </div> 
                                     </div>
                                 </div>
-                                <p>                                    <a href="javascript:void(0);" id="submit_1" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color: ; float: right; padding-right:5px"><img src="<?php echo site_url(); ?>/wp-content/plugins/resideo-plugin/images/loader-dark.svg" class="pxp-loader pxp-is-btn" alt="..." style="display:none"> <?php echo pll__( "REQUEST A CALL BACK" ); ?></a></p>
+                                <p>                                    <a href="javascript:void(0);" id="submit_1" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color: ; float: right;"><img src="<?php echo site_url(); ?>/wp-content/plugins/resideo-plugin/images/loader-dark.svg" class="pxp-loader pxp-is-btn" alt="..." style="display:none"> <?php echo pll__( "SUBMIT" ); ?></a></p>
                                 <div style="display:none">
                                     <input type="submit" value="Send" class="wpcf7-form-control has-spinner wpcf7-submit ddd" id="main_submit"><span class="wpcf7-spinner"></span>
                                 </div>
