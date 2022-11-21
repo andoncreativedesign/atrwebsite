@@ -13377,6 +13377,7 @@ color: #fff; }
 
 .custom-select:focus{ border: 0px !important; }
 .custom-select{ border: 0px !important; }
+.page-template-property-search .custom-select:focus{border: 1px solid #000 !important;}
 .partnership_slider .pxp-hero-caption p{color: #4D858D !important; font-weight: 600;}
 .partnership_slider .pxp-hero-caption h1{ color: #1D252C !important; }
 .feature_carousal_22 h5{ font-weight: 600; }
@@ -13854,5 +13855,18 @@ color: #fff; }
 
 .ct_contactdetails p a{
   color:#4d858d;
+}
+
+.page-id-2418 h1.pxp-page-header {
+    text-transform: uppercase;
+    
+}
+
+#post-2418 .pxp-section-h2 {
+    display: none;
+}
+
+#post-2418 .container.mt-100 {
+    margin-top:60px;
 }
 

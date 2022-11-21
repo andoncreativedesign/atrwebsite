@@ -1383,7 +1383,44 @@ display:none;
     text-decoration: none;
 }
 
-body.rtl #qlwapp.qlwapp-button .qlwapp-toggle .qlwapp-icon 
-{
-margin:0 !important;
+
+#qlwapp.qlwapp-button .qlwapp-toggle .qlwapp-icon {
+    margin-right:0px !important;
 }
+#qlwapp.qlwapp-button .qlwapp-toggle {
+    padding:12px !important;
+}
+body.rtl #qlwapp.qlwapp-button .qlwapp-toggle .qlwapp-icon {
+    margin-left:0px !important;
+}
+
+.ct_callBtn_cnt {
+ position:fixed;
+ left:auto;
+ right:0;
+ bottom:70px;
+ top:auto;
+
+ z-index:9999999;
+ display: block;
+}
+.ct_callBtn_cnt .ct_callBtn_cont {
+    display: flex;
+    flex-direction: column;
+}
+.ct_callBtn_cnt .ct_callBtn_cont a.ct_call_toggle{
+    border-radius:50px;
+    background:#4D858D;
+    height: 40px;
+    white-space: nowrap;
+    padding: 12px 12px;
+    margin-right:20px;
+    color:#fff;
+    text-decoration: none;
+}
+.ct_callBtn_cnt .ct_callBtn_cont a.ct_call_toggle i
+{
+  color:#fff;
+  font-size:23px;
+  line-height:1px;
+ }
