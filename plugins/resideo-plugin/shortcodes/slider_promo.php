@@ -65,7 +65,7 @@ if (!function_exists('resideo_slider_promo_shortcode')):
                 $caption_class = '';
             break;
         }
-        if ( get_field('page_slug')=='Single Community' or get_field('page_slug')=='Community dynamic' or get_field('page_slug')=='Single Community-ar' or is_tax('Community')) {
+        if ( get_field('page_slug')=='single-community' or get_field('page_slug')=='Community dynamic' or get_field('page_slug')=='single-community-ar' or is_tax('Community')) {
             
             if(@$_GET['term_id']!="")
             {

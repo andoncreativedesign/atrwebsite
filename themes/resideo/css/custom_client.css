@@ -276,6 +276,24 @@ display:none;
     transform: translateX(0px);
     opacity:1;
 }
+
+
+.ct_contact_intro,.ct_business_hours {
+    -webkit-transition: all .7s ease-in-out !important;
+    -o-transition: all .7s ease-in-out !important;
+    transition: all .7s ease-in-out !important;
+    transform: translateY(50px);
+    -webkit-transition-delay: .4s !important;
+    transition-delay: .4s!important;
+    opacity: 0;
+}
+
+.ct_contact_intro.pxp-in,.ct_business_hours.pxp-in {
+    transform: translateY(0px);
+    opacity:1;
+}
+
+
 .home .pxp-props-carousel-right-stage-1 .owl-item {
      -webkit-transition: all .7s ease-in-out;
     -o-transition: all .7s ease-in-out;

@@ -586,7 +586,7 @@ if (!function_exists('resideo_get_page_header')):
                 if ($hero_height == 'half') { 
                     
                     $class='';
-                    if( strtolower(get_field('page_slug'))=="partnership" || strtolower(get_field('page_slug'))=="partnership ar")
+                    if( strtolower(get_field('page_slug'))=="partnership" || strtolower(get_field('page_slug'))=="partnership-ar")
                     {
                         $class = "partnership_slider";
                        
@@ -612,7 +612,7 @@ if (!function_exists('resideo_get_page_header')):
                         </div>
                     </div>
                 <?php } else { 
-                    if(strtolower(get_field('page_slug')) == 'single community' or strtolower(get_field('page_slug'))=='single community-ar' or is_tax('Community')){
+                    if(strtolower(get_field('page_slug')) == 'single-community' or strtolower(get_field('page_slug'))=='single-community-ar' or is_tax('Community')){
                         $term_id    = @$_GET['term_id'];
                         $term_id    = !empty($term_id) ? $term_id : get_the_ID();
                         $tt         = 'term_'.$term_id;

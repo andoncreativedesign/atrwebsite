@@ -404,6 +404,10 @@ function closeGallery() {
 
                 $price_from      =   get_field("price_from",$tt);
                 $price_from      =   explode("|", $price_from);
+                $ct_intro = get_field("ct_intro_text");
+                $ct_form_intro = get_field("ct_form_intro");
+                if(!isset($ct_intro))  $ct_intro= '';
+                if(!isset($ct_form_intro))  $ct_form_intro= '';
                 if(count($price_from)>1)
                 {
                     $price_from2 = $price_from[1]; 
@@ -504,7 +508,7 @@ function closeGallery() {
                         <div class="container">
                             <div class="row">
                                 <?php
-                                if (get_field('page_slug')=='Single Community-ar') {
+                                if (get_field('page_slug')=='single-community-ar') {
                                     $first_col = 'col-md-3';
                                     $last_col = 'col-md-5';
                                 }
@@ -1158,10 +1162,13 @@ function closeGallery() {
                 <div class="col-lg-6 col-xl-4 align-left order-1">
                     <p class="pxp-text-light" style="color: ; color: #4D858D; font-weight: 700;"><?php echo pll__( "CONTACT US" ); ?></p>
                     <h2 class="pxp-section-h2 main_heading_style" style="text-transform:uppercase; "><?php echo pll__( $contact_community_title ); ?></h2>
+                   <?php echo $ct_intro; ?>
                 </div>
                 <div class="col-lg-1 col-xl-1 order-2">
                 </div>
-                <div class="col-lg-7 align-left order-3"><div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" lang="en-US" dir="ltr">
+                <div class="col-lg-7 align-left order-3">
+                <p class="ct_form_intro"><?php  echo $ct_form_intro; ?> </p>   
+                <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" lang="en-US" dir="ltr">
                     <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
                     <form action="/single-community/?term_id=48#wpcf7-f654-p719-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
                         <div style="display: none;">

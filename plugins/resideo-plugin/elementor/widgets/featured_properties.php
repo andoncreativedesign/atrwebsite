@@ -291,7 +291,7 @@ class Elementor_Resideo_Featured_Properties_Widget extends \Elementor\Widget_Bas
 
         $widget_html = '';
         //How we can help you
-        if( strtolower(get_field('page_slug'))==strtolower("How we can help you"))
+        if( strtolower(get_field('page_slug'))==strtolower("howwecanhelpyou"))
         {
              $margin_class = $settings['margin'] == 'yes' ? 'mt-60' : '';
         }

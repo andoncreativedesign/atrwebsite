@@ -26,7 +26,8 @@ if (!function_exists('resideo_contact_shortcode')):
         } else {
             $photo_src = '';
         }
-
+        $ct_intro = get_field("ct_intro_text");
+        $ct_form_intro = get_field("ct_form_intro");
         $text_color    = isset($s_array['text_color']) ? 'color: ' . $s_array['text_color'] : '';
         $form_title    = isset($s_array['form_title']) ? $s_array['form_title']: '';
         $form_subtitle = isset($s_array['form_subtitle']) ? $s_array['form_subtitle']: '';
@@ -41,8 +42,9 @@ if (!function_exists('resideo_contact_shortcode')):
         }
 
         $nonce_field = wp_nonce_field('contact_section_form_ajax_nonce', 'contact_section_security', true, false);
-        
-        if ( is_front_page() or get_the_ID() == '614') {
+        if(!isset($ct_intro))  $ct_intro= '';
+        if(!isset($ct_form_intro))  $ct_form_intro= '';
+        if ( is_front_page() or get_field('page_slug') == 'home-ar') {
             $return_string = 
             '
            
@@ -53,10 +55,14 @@ if (!function_exists('resideo_contact_shortcode')):
                         <div class="col-lg-6 col-xl-4 align-left ' . esc_attr($intro_column_class) . '">
                             <p class="pxp-text-light contact_color" style=" font-weight: 700;">' . esc_html($s_array['title']) . '</p>
                             <h2 class="pxp-section-h2 contact_color" style=" ">' . esc_html($s_array['subtitle']) . '</h2>
+                           '.$ct_intro.'
+                           
                         </div>
                         <div class="col-lg-1 col-xl-1 order-2">
                         </div>
-                        <div class="col-lg-7 align-left ' . esc_attr($form_column_class) . '">';
+                        <div class="col-lg-7 align-left ' . esc_attr($form_column_class) . '">
+                        <p class="ct_form_intro">'.$ct_form_intro.'</p>
+                        ';
                             $return_string .= apply_shortcodes( '[contact-form-7 id="654" title="Contact form 1"]' ) .'
                         </div>
                     </div>
@@ -77,10 +83,12 @@ if (!function_exists('resideo_contact_shortcode')):
                         <div class="col-lg-6 col-xl-4 align-left ' . esc_attr($intro_column_class) . '">
                             <p class="pxp-text-light " style=" font-weight: 700;">' . esc_html($s_array['title']) . '</p>
                             <h2 class="pxp-section-h2 " style=" ">' . esc_html($s_array['subtitle']) . '</h2>
+                            '.$ct_intro.'
                         </div>
                         <div class="col-lg-1 col-xl-1 order-2">
                         </div>
-                        <div class="col-lg-7 align-left ' . esc_attr($form_column_class) . '">';
+                        <div class="col-lg-7 align-left ' . esc_attr($form_column_class) . '">
+                        <p class="ct_form_intro">'.$ct_form_intro.'</p>';
                             $return_string .= apply_shortcodes( '[contact-form-7 id="654" title="Contact form 1"]' ) .'
                         </div>
                     </div>

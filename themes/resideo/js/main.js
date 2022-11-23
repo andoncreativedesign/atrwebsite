@@ -207,7 +207,7 @@
         var windowHeight;
 
         function init() {
-            elems = document.querySelectorAll('.pxp-animate-in,.pxp-text-light,.pxp-section-h2,.home_service .pxp-section-featured-h2,.pxp-primary-cta,.home .pxp-props-carousel-right-stage-1 .owl-item,.pxp-testim-1,.feature_carousal_22,.pxp-contact-section-form,.pxp-section-featured-h2,.finance_list,.fin_basic_req,.service_case2_intro,.row div .pxp-prop-card-1,.pxp-services-h-items div,.pxp-hero .pxp-hero-caption p,.tech_list,.pxp-page-header,.fix_margin_show_community_listing, .fr_ct_testim_container,.cus_community_bar #gallery,.ct_homevidcta');
+            elems = document.querySelectorAll('.pxp-animate-in,.pxp-text-light,.pxp-section-h2,.home_service .pxp-section-featured-h2,.pxp-primary-cta,.home .pxp-props-carousel-right-stage-1 .owl-item,.pxp-testim-1,.feature_carousal_22,.pxp-contact-section-form,.pxp-section-featured-h2,.finance_list,.fin_basic_req,.service_case2_intro,.row div .pxp-prop-card-1,.pxp-services-h-items div,.pxp-hero .pxp-hero-caption p,.tech_list,.pxp-page-header,.fix_margin_show_community_listing, .fr_ct_testim_container,.cus_community_bar #gallery,.ct_homevidcta,.ct_contact_intro,.ct_business_hours');
             console.log(elems);
             windowHeight = window.innerHeight;
             addEventHandlers();

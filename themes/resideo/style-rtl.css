@@ -905,6 +905,13 @@ code {
     padding: 20px 0;
     box-shadow: 0px 15px 30px rgba(0,0,0,0.16);
 }
+.pxp-header.pxp-is-sticky {
+    padding:0;
+}
+.pxp-header.pxp-is-sticky .pxp-logo > img {
+    max-height:40px;
+    object-position: 0 6px;
+}
 .pxp-header.pxp-is-opaque {
     background-color: #fff;
 }
@@ -12372,6 +12379,15 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     .pxp-services-tabs .carousel-indicators {
         margin-top: 3rem;
     }
+    .pxp-header .text-right > div {
+        display:inline-block;
+    }
+    .pxp-header-nav-trigger {     
+        display:inline-block;
+    }
+    .pxp-header.pxp-is-sticky {
+        padding:5px 0;
+    }
 }
 @media screen and (max-width: 782px) {
     .admin-bar .pxp-header.pxp-mobile:after {
@@ -12835,6 +12851,9 @@ fieldset[disabled] .checkbox.custom-checkbox input:checked+span {
     .pxp-header,
     .pxp-header.pxp-is-sticky {
         padding: 15px 0;
+    }
+    .pxp-header.pxp-is-sticky {
+        padding: 5px 0;
     }
     .pxp-header.pxp-mobile:after,
     .pxp-header.pxp-is-sticky.pxp-mobile:after {
@@ -13755,4 +13774,49 @@ color: #fff; }
 
 #post-2420 .container.mt-100 {
     margin-top:60px;
+}
+
+.home .ct_contact_intro,.home .ct_business_hours {
+    color:#fff;
+}
+.home .ct_contact_intro a,.home .ct_business_hours a {
+    font-weight:bold;
+    color:#fff;
+}
+
+.home .contact_bg {
+    background-size:60% 100% !important;
+    background-color: #4D858D;
+    background-position: left !important;
+}
+
+.home .ct_form_intro {
+    padding-left:40%;
+    color:#fff;
+}
+.ct_contact_intro {
+    padding-top:20px;
+}
+.ct_contact_intro, .ct_business_hours {
+    color:#333333;
+}
+.ct_contact_intro a, .ct_business_hours a {
+    font-weight:bold;
+    color:#333333;
+}
+.ct_form_intro {
+    padding-left:40%;
+    color:#333333;
+}
+@media only screen and (max-width: 1280px) {
+.home .contact_bg {
+    background-size: 100% 100% !important;
+}
+}
+
+.page-template-tpl_choosehome .page_service .pxp-primary-cta {
+    margin-bottom:25px;
+}
+.page-template-tpl_mission .pxp-primary-cta {
+    z-index:10000;
 }

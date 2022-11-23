@@ -1222,7 +1222,7 @@ function choosing_your_home()
     ob_start();
     icl_register_string("resideo", 'KEY POINTS:','KEY POINTS:'); 
     ?>
-    <div class="pt-100 home_services_bg home-ar ct-warranty" style="<?php if (strtolower(get_field('page_slug'))=="choosing your home") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
+    <div class="pt-100 home_services_bg home-ar ct-warranty" style="<?php if (strtolower(get_field('page_slug'))=="choosing-your-home") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
     <div class="container" style="padding-top: 30px;">
         <div class="row">
             <div class="col-md-6 ">
@@ -1527,16 +1527,16 @@ add_action('init', function () { if(!session_id()) { session_start(); } }, 1);
 
 add_action('wp_head', 'custom_code_in_head', 1);
 function custom_code_in_head(){
-    if( strtolower(get_field('page_slug'))=="single community" or strtolower(get_field('page_slug'))=="single community-ar")
+    if( strtolower(get_field('page_slug'))=="single-community" or strtolower(get_field('page_slug'))=="single-community-ar")
     {
         if(isset($_GET['term_id']) && !empty($_GET['term_id']) ){
             $_SESSION['term_id'] = $_GET['term_id'];
         }
         else if(isset($_SESSION['term_id']) && !empty($_SESSION['term_id']) ){
-            if (strtolower(get_field('page_slug')) == "single community") {
+            if (strtolower(get_field('page_slug')) == "single-community") {
                 $url = site_url().'/single-community/?term_id='.$_SESSION['term_id'];
                 wp_redirect($url);
-            } else if (strtolower(get_field('page_slug')) == "single community-ar") {
+            } else if (strtolower(get_field('page_slug')) == "single-community-ar") {
                 $url = site_url().'/ar/single-community-ar/?term_id='.$_SESSION['term_id'];
                 wp_redirect($url);
             }

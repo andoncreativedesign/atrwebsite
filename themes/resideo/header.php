@@ -120,7 +120,7 @@
         }
     </style>
     <?php
-    if(get_the_ID() == '1534'){
+    if(get_field('page_slug')=="financing-your-home-ar"){ 
         ?>
             <style type="text/css">
                 .pxp-section-featured-h2.pxp-in {
@@ -142,7 +142,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '1545' or get_the_ID() == '1530'){
+    if(get_field('page_slug')=="testimonials-ar" or get_field('page_slug') == 'explore-our-communities-ar'){
         ?>
             <style type="text/css">
                 .pxp-text-light {
@@ -151,7 +151,8 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '413' or get_the_ID() == '1530'){
+    if(get_field('page_slug') == 'explore-our-communities' or get_field('page_slug') == 'explore-our-communities-ar'){
+
         ?>
             <style type="text/css">
                 .pxp-posts-1-item-details {
@@ -160,7 +161,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '1530'){
+    if(get_field('page_slug') == 'explore-our-communities-ar'){
         ?>
             <style type="text/css">
                .pxp-dark-mode .pxp-is-sticky .pxp-nav > div > ul > li ul, 
@@ -172,7 +173,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '626' or get_the_ID() == '1537'){
+    if(get_field('page_slug') == 'who-we-are-ar' or get_field('page_slug') == 'howwecanhelpyouar'){
         ?>
             <style type="text/css">
                 .pxp-section-h2,.pxp-dark-mode .pxp-testim-1-intro .pxp-primary-cta {
@@ -181,7 +182,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '626'){
+    if(get_field('page_slug') == 'who-we-are-ar'){
         ?>
             <style type="text/css">
                 .iframe_video{
@@ -190,7 +191,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '614'){
+    if(get_field('page_slug') == 'home-ar'){
         ?>
             <style type="text/css">
 
@@ -208,7 +209,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '10'){
+    if(get_field('page_slug') == 'home'){
       ?>
  <style type="text/css">
 
@@ -219,7 +220,7 @@
 </style>
       <?php
     }
-    if(get_the_ID() == '634'){
+    if(get_field('page_slug') == 'partnership-ar'){
 
 
         ?>
@@ -234,7 +235,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '1545'){
+    if(get_field('page_slug') == 'testimonials-ar'){
         ?>
             <style type="text/css">
                 .pxp-text-light {
@@ -243,7 +244,7 @@
             </style>
         <?php
     }
-    if(strtolower(get_field('page_slug'))=="who we are ar"){
+    if(strtolower(get_field('page_slug'))=="who-we-are-ar"){
         ?>
             <style type="text/css">
                .pxp-services-h-items {
@@ -255,7 +256,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '1524'){
+    if(get_field('page_slug') == 'choosing-your-home-ar'){
         ?>
             <style type="text/css">
                .service_case2_intro p{
@@ -269,7 +270,7 @@
             </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="faqs" or strtolower(get_field('page_slug'))=="choosing your home" or get_the_ID() == '1524' or strtolower(get_field('page_slug'))=="finance your home" or get_the_ID() == '1534' or strtolower(get_field('page_slug'))=="careers" or strtolower(get_field('page_slug'))=="faqs-ar" or strtolower(get_field('page_slug'))=="careers-ar")
+    if( strtolower(get_field('page_slug'))=="faqs" or strtolower(get_field('page_slug'))=="choosing-your-home" or strtolower(get_field('page_slug'))=="choosing-your-home-ar" or strtolower(get_field('page_slug'))=="financing-your-home" or strtolower(get_field('page_slug')) == 'financing-your-home-ar' or strtolower(get_field('page_slug'))=="careers" or strtolower(get_field('page_slug'))=="faqs-ar" or strtolower(get_field('page_slug'))=="careers-ar")
     {?>
         <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/pagestyle.css">
         <?php
@@ -282,7 +283,7 @@
         </style>
         <?php    
         }
-        if (get_the_ID() == '1524' or get_the_ID() == '1534') {
+        if (get_field('page_slug') == 'choosing-your-home-ar' or get_field('page_slug') == 'financing-your-home-ar') {
         ?>
         <style type="text/css">
             .home-ar{
@@ -335,7 +336,7 @@
 
    
 
-    if( strtolower(get_field('page_slug'))=="home" or get_the_ID() == '614')
+    if( strtolower(get_field('page_slug'))=="home" or strtolower(get_field('page_slug'))=="home-ar")
     {
         ?>
         <style type="text/css"> 
@@ -380,7 +381,7 @@
         <?php
     }
 
-    if( get_the_ID()=='545' or get_the_ID()=='1539')
+    if( get_field('page_slug')=='mission-vision' or get_field('page_slug')=='mission-vision-ar')
     {
         
         ?>
@@ -408,7 +409,7 @@
             </style>
         <?php
     }
-    if(get_the_ID() == '719'){
+    if(get_field('page_slug') == 'single-community'){
         ?>
         <style type="text/css">
             @media screen and (max-width: 980px) {
@@ -442,7 +443,7 @@
         </style>
         <?php
     }
-    if(get_the_ID()=='1543')
+    if(get_field('page_slug') == 'single-community-ar')
     {
         ?>
         <style type="text/css"> 
@@ -499,7 +500,7 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="partnership" || strtolower(get_field('page_slug')) =="partnership ar" )
+    if( strtolower(get_field('page_slug'))=="partnership" || strtolower(get_field('page_slug')) =="partnership-ar" )
     {
         
         ?>
@@ -509,7 +510,7 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="our history")
+    if( strtolower(get_field('page_slug'))=="our-history")
     {
         ?>
         <style type="text/css">
@@ -538,10 +539,10 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="who we are" or get_the_ID() == '626')
+    if( strtolower(get_field('page_slug'))=="who-we-are" or strtolower(get_field('page_slug'))=="who-we-are-ar")
     {
 
-        if ( get_the_ID() == '626') 
+        if ( strtolower(get_field('page_slug'))=="who-we-are-ar") 
         {?>
             <style type="text/css">
                                     
@@ -578,7 +579,7 @@
             </style>
         <?php 
         }
-        if( strtolower(get_field('page_slug'))=="who we are")
+        if( strtolower(get_field('page_slug'))=="who-we-are")
         {
             ?>
             <style type="text/css">
@@ -637,7 +638,7 @@
     }
 
 
-    if( strtolower(get_field('page_slug'))=="how we can help you" or get_the_ID() == '1537')
+    if( strtolower(get_field('page_slug'))=="howwecanhelpyou" or strtolower(get_field('page_slug')) == 'howwecanhelpyouar')
     {
         ?> 
         <style type="text/css">
@@ -655,7 +656,7 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="explore our communities" || strtolower(get_field('page_slug'))=="explore our communities ar")
+    if( strtolower(get_field('page_slug'))=="explore-our-communities" || strtolower(get_field('page_slug'))=="explore-our-communities-ar")
     {
         ?>
         <style type="text/css">
@@ -677,7 +678,7 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="single community" or strtolower(get_field('page_slug'))=="single community-ar" or is_tax('Community') )
+    if( strtolower(get_field('page_slug'))=="single-community" or strtolower(get_field('page_slug'))=="single-community-ar" or is_tax('Community') )
     {
         if (is_user_logged_in()) { ?>
             <style type="text/css">
@@ -933,7 +934,7 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="partnership" or strtolower(get_field('page_slug'))=="partnership ar")
+    if( strtolower(get_field('page_slug'))=="partnership" or strtolower(get_field('page_slug'))=="partnership-ar")
     {
         ?>
         <style type="text/css">
@@ -1103,7 +1104,7 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="our history") {
+    if( strtolower(get_field('page_slug'))=="our-history") {
         ?>
         <style type="text/css">
             .timeline-slider.slick-initialized.slick-slider .slick-list{
@@ -1118,14 +1119,14 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="Our history ar") {?>
+    if( strtolower(get_field('page_slug'))=="our-history-ar") {?>
         <!-- <style type="text/css">
         .rtl .service_case2.page_service {
         padding-bottom:0;
         }
          </style> -->
    <?php }
-    if( strtolower(get_field('page_slug'))=="property search" or strtolower(get_field('page_slug'))=="property search-ar") { ?>
+    if( strtolower(get_field('page_slug'))=="home-search" or strtolower(get_field('page_slug'))=="home-search-ar") { ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
         <script type="text/javascript">
             jQuery(document).ready(function() {
@@ -1308,7 +1309,7 @@ $account_url      = function_exists('resideo_get_account_url') ? resideo_get_acc
                     </div>
                 </div>
                 <div class="col-5 col-lg-2 text-right">
-                    <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
+                    
                     <?php $auth_settings = get_option('resideo_authentication_settings');
                     $user_nav = isset($auth_settings['resideo_user_registration_field']) ? $auth_settings['resideo_user_registration_field'] : '';
 
@@ -1369,6 +1370,7 @@ $account_url      = function_exists('resideo_get_account_url') ? resideo_get_acc
                     ?></div><?php
                     }
                     ?>
+                    <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
                     <style type="text/css">
                         .language_switch_setting { 
                             border: 0px !important; 

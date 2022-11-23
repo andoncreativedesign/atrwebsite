@@ -222,7 +222,7 @@ $currency = isset($general_settings['resideo_currency_symbol_field']) ? $general
                         <div class="container">
                             <div class="row">
                                 <?php
-                                if (get_the_title()=='Single Community-ar') {
+                                if (get_the_title()=='single-community-ar') {
                                     $first_col = 'col-md-3';
                                     $last_col = 'col-md-5';
                                 }

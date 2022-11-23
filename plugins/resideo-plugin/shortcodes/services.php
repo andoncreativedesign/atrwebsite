@@ -33,7 +33,7 @@ if (!function_exists('resideo_services_shortcode')):
 
         switch ($s_array['layout']) {
             case '1':
-                if (get_field('page_slug')=='Single Community' or get_field('page_slug')=='Single Community-ar' or is_tax('Community'))
+                if (get_field('page_slug')=='single-community' or get_field('page_slug')=='single-community-ar' or is_tax('Community'))
                 {
                     $return_string = 
                     '<div class="pt-100 pb-100 page_service1_community body_color' . esc_attr($margin_class) . '"  style="margin-bottom: 58px;">
@@ -156,9 +156,9 @@ if (!function_exists('resideo_services_shortcode')):
             break;
             case '2':
                 $item_margin = '';
-                if (get_field('page_slug') == 'Home' or get_field('page_slug') == 'Home - ar') {
+                if (get_field('page_slug') == 'home' or get_field('page_slug') == 'home-ar') {
                     
-                    if (get_field('page_slug') == 'Home - ar') {
+                    if (get_field('page_slug') == 'home-ar') {
                         $home_service = "home_service_ar";
                     }
                     else
@@ -216,7 +216,7 @@ if (!function_exists('resideo_services_shortcode')):
                         </div>
                     </div>';
                 }
-                elseif (get_field('page_slug')=='Single Community' or get_field('page_slug')=='Single Community-ar' or is_tax('Community'))
+                elseif (get_field('page_slug')=='single-community' or get_field('page_slug')=='single-community-ar' or is_tax('Community'))
                 {
 
                     $return_string = 
@@ -290,9 +290,9 @@ if (!function_exists('resideo_services_shortcode')):
                         </div>
                     </div>';
                 }
-                elseif (get_field('page_slug') == 'choosing your home ar' or get_field('page_slug') == 'ar Financing your home' or get_field('page_slug')=="Mission, Visions & Values-ar" or get_field('page_slug')=='Partnership ar' or get_field('page_slug')=='Who we are ar' or get_field('page_slug')=='Our history ar' or get_field('page_slug') == 'how we can help you ar' or get_field('page_slug') == 'Careers-ar')
+                elseif (get_field('page_slug') == 'choosing-your-home-ar' or get_field('page_slug') == 'financing-your-home-ar' or get_field('page_slug')=="mission-vision-ar" or get_field('page_slug')=='partnership-ar' or get_field('page_slug')=='who-we-are-ar' or get_field('page_slug')=='our-history-ar' or get_field('page_slug') == 'howwecanhelpyouar' or get_field('page_slug') == 'careers-ar')
                 {
-                    if (get_field('page_slug')=='Partnership ar' or get_field('page_slug') == 'choosing your home ar'  ) {
+                    if (get_field('page_slug')=='partnership-ar' or get_field('page_slug') == 'choosing-your-home-ar'  ) {
                         $ct_padding_bottom='ct_padding_bottom';
                     }
                     else
@@ -311,7 +311,7 @@ if (!function_exists('resideo_services_shortcode')):
                                 <div class="pxp-services-h-container mt-0 mt-md-0" >
                                 <div class="pxp-services-h-items pxp-animate-in ml-0 '.(get_locale() == 'ar' ? '' : 'mr-lg-5').' mt-4 mt-md-5 mt-lg-0 service_img_min_height" style="'.(get_locale() == 'ar' ? 'padding-right: 0px; padding-left: 30px;' : '').'">';
 
-                                if (get_field('page_slug')=="Mission, Visions & Values-ar"){
+                                if (get_field('page_slug')=="mission-vision-ar"){
                                     $return_string2 .= '<p class="pxp-text-light" style="' . esc_attr($text_color) . '">' . esc_html($s_array['title']) . '</p>
                                     <h3 class="pxp-section-h2 " style="' . esc_attr($text_color) . '">' . esc_html($s_array['subtitle']) . '</h3>';
                                     if ($s_array['cta_sevice_text'] != '') {
@@ -432,9 +432,9 @@ if (!function_exists('resideo_services_shortcode')):
                         $service_i++;
                     }
                     if ($s_array['cta_link'] != '') {
-                        if (get_field('page_slug')=="Mission, Visions & Values"){
+                        if (get_field('page_slug')=="mission-vision"){
                         }
-                        else if(get_field('page_slug') !="Mission, Visions & Values-ar")
+                        else if(get_field('page_slug') !="mission-vision-ar")
                         {
 
                             $faqsbtn = $s_array['cta_label'];
@@ -477,7 +477,7 @@ if (!function_exists('resideo_services_shortcode')):
                 }
                 else
                 {
-                    if (get_field('page_slug')=='Partnership' or get_field('page_slug')=='Choosing your home'  ) {
+                    if (get_field('page_slug')=='partnership' or get_field('page_slug')=='choosing-your-home'  ) {
                         $ct_padding_bottom='ct_padding_bottom';
                     }
                     else
@@ -496,7 +496,7 @@ if (!function_exists('resideo_services_shortcode')):
                             <div class="pxp-services-h-container mt-0 mt-md-0" >
                             <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 service_img_min_height" >';
 
-                                if (get_field('page_slug')=="Mission, Visions & Values"){
+                                if (get_field('page_slug')=="mission-vision"){
                                     $return_string2 .= '<p class="pxp-text-light" style="' . esc_attr($text_color) . '">' . esc_html($s_array['title']) . '</p>
                                     <h3 class="pxp-section-h2 " style="' . esc_attr($text_color) . '">' . esc_html($s_array['subtitle']) . '</h3>';
                                     if ($s_array['cta_sevice_text'] != '') {
@@ -617,7 +617,7 @@ if (!function_exists('resideo_services_shortcode')):
                     $service_i++;
                 }
                 if ($s_array['cta_link'] != '') {
-                    if (get_field('page_slug')=="Mission, Visions & Values"){
+                    if (get_field('page_slug')=="mission-vision"){
                     }
                     else
                     {
@@ -690,7 +690,7 @@ if (!function_exists('resideo_services_shortcode')):
                 }
             </style>
             <?php
-            if (get_field('page_slug')=='Single Community' or get_field('page_slug')=='Single Community-ar' or is_tax('Community'))
+            if (get_field('page_slug')=='single-community' or get_field('page_slug')=='single-community-ar' or is_tax('Community'))
                 {
                     if ($s_array['cta_link'] != '') {
                         $return_string = 

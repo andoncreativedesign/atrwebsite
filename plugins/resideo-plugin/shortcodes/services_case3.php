@@ -3,7 +3,7 @@
 $return_string = 
 
     '<div class="row service_case_3" style="padding: 70px 0px 0px 0px; margin:0px">';
-    if (get_field('page_slug')=='Who we are ar') {
+    if (get_field('page_slug')=='who-we-are-ar') {
         $return_string .=' 
         <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3">';
     }

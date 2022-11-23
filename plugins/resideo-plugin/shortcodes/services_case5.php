@@ -19,7 +19,7 @@
 
 */
 
-if (get_field('page_slug')=='FAQs' or get_field('page_slug')=='FAQs-ar') {
+if (get_field('page_slug')=='faqs' or get_field('page_slug')=='faqs-ar') {
 	$return_string = 
 	'<div class="pt-100 pb-100 mt-50 pxp-cover " style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);
 
@@ -28,7 +28,7 @@ if (get_field('page_slug')=='FAQs' or get_field('page_slug')=='FAQs-ar') {
 
 	'</div>';
 }
-elseif (get_field('page_slug')=='Choosing your home' or get_field('page_slug') == 'choosing your home ar') {
+elseif (get_field('page_slug')=='choosing-your-home' or get_field('page_slug') == 'choosing-your-home-ar') {
 	$return_string = 
 	'<div class="pxp-cover " style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);
 
@@ -37,7 +37,7 @@ elseif (get_field('page_slug')=='Choosing your home' or get_field('page_slug') =
 
 	'</div>';
 }
-elseif (get_field('page_slug')=='Finance your home' or get_field('page_slug') == 'ar Financing your home') {
+elseif (get_field('page_slug')=='financing-your-home' or get_field('page_slug') == 'financing-your-home-ar') {
 	$return_string = 
 	'<div class="pxp-cover " style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);
 
@@ -46,7 +46,7 @@ elseif (get_field('page_slug')=='Finance your home' or get_field('page_slug') ==
 
 	'</div>';
 }
-elseif (get_field('page_slug')=='Careers') {
+elseif (get_field('page_slug')=='careers') {
 	$return_string = 
 	'<div class="pxp-cover " style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);
 
@@ -55,7 +55,7 @@ elseif (get_field('page_slug')=='Careers') {
 
 	'</div>';
 }
-elseif (get_field('page_slug')=='Careers-ar') {
+elseif (get_field('page_slug')=='careers-ar') {
 	$return_string = 
 	'<div class="pxp-cover" style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);
 
@@ -74,7 +74,7 @@ elseif (get_field('page_slug')=='Careers-ar') {
  
                
              
-<?php if(get_field('page_slug')=='Partnership' or get_field('page_slug')=='Partnership ar'){?>
+<?php if(get_field('page_slug')=='partnership' or get_field('page_slug')=='partnership-ar'){?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/logo_animation.css">
 <script src='https://wordpress-823234-2829680.cloudwaysapps.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>

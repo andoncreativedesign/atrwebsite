@@ -45,7 +45,7 @@ if (!function_exists('resideo_testimonials_shortcode')):
 
         switch ($layout) {
             case '1':
-            if (get_field('page_slug')=='Testimonials') {
+            if (get_field('page_slug')=='testimonials') {
                 $return_string = 
                     '<div class="pxp-testim-1 pt-100 pb-100 pxp-cover" style="background-image: url(' . esc_url($photo_src) . ');">
                         <div class="pxp-testim-1-intro">
@@ -59,7 +59,7 @@ if (!function_exists('resideo_testimonials_shortcode')):
                             <p class="pxp-text-light" style="' . esc_attr($text_color) . '">' . esc_html($s_array['title']) . '</p>
                             <h3 class="pxp-section-h2" style="' . esc_attr($text_color) . '">' . esc_html($s_array['subtitle']) . '</h3>';
             }
-            if (get_field('page_slug')=='Testimonials') {
+            if (get_field('page_slug')=='testimonials') {
                 if ($s_array['cta_text'] != '') {
                     $return_string .=
                             '<a href="' . esc_url($s_array['cta_link']) . '" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-' . esc_attr($cta_id) . '" style="color: black">' . esc_html($s_array['cta_text']) . '</a>';
