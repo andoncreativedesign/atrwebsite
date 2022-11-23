@@ -1531,13 +1531,17 @@ function custom_code_in_head(){
     {
         if(isset($_GET['term_id']) && !empty($_GET['term_id']) ){
             $_SESSION['term_id'] = $_GET['term_id'];
+            $community_slug = get_term_by('id', $_SESSION['term_id'], 'Community');
+            //echo "tests";print_r($community_slug);
         }
         else if(isset($_SESSION['term_id']) && !empty($_SESSION['term_id']) ){
+            $community_slug = get_term_by('id', $_SESSION['term_id'], 'Community');
+            //echo "tests";print_r($community_slug);
             if (strtolower(get_field('page_slug')) == "single-community") {
-                $url = site_url().'/single-community/?term_id='.$_SESSION['term_id'];
+                $url = site_url().'/single-community/?term_id='.$_SESSION['term_id'].'&community='. $community_slug->slug;
                 wp_redirect($url);
             } else if (strtolower(get_field('page_slug')) == "single-community-ar") {
-                $url = site_url().'/ar/single-community-ar/?term_id='.$_SESSION['term_id'];
+                $url = site_url().'/ar/single-community-ar/?term_id='.$_SESSION['term_id'].'&community='. $community_slug->slug;
                 wp_redirect($url);
             }
         }

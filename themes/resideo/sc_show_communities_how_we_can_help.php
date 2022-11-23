@@ -73,7 +73,8 @@ function show_communities_how_we_can_help_fn()
                 ?>
                 <div class="col-md-4">
                     <?php 
-                        $link = site_url()."/single-community/?term_id=".$term_id;
+                    $community_slug = get_term_by('id', $term_id, 'Community');
+                        $link = site_url()."/single-community/?term_id=".$term_id."&community=".$community_slug->slug;
 
                         if(get_locale() == 'ar'){
                             $link = str_replace("/single-community","/ar/single-community-ar",$link);

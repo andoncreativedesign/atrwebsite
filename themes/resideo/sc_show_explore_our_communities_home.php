@@ -80,7 +80,8 @@ function show_explore_community_properties_home_fn()
                             <div class="owl-item active" style="width: 288.65px; margin-right: 30px;">
                                 <div class="">
                                     <?php 
-                                    $link = site_url()."/single-community/?term_id=".$term_id;
+                                    $community_slug = get_term_by('id', $term_id, 'Community');
+                                    $link = site_url()."/single-community/?term_id=".$term_id."&community=".$community_slug->slug;
 
                                     if(get_locale() == 'ar'){
                                         $link = str_replace("/single-community","/ar/single-community-ar",$link);
