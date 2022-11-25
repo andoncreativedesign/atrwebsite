@@ -558,7 +558,7 @@
     }
 
     if ($('#results-map').length > 0) {
-        console.log(map_vars);
+        console.log("mapvars",map_vars);
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -595,6 +595,7 @@
                 'page'                 : map_vars.page,
             },
             success: function(data) {
+               console.log("datavars",data)
                 var center = new google.maps.LatLng(map_vars.default_lat, map_vars.default_lng);
                 map = new google.maps.Map(document.getElementById('results-map'), options);
                 var styledMapType = new google.maps.StyledMapType(styles, {

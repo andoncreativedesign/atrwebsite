@@ -103,7 +103,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
 
         switch($s_array['layout']) {
             case '1':
-            if (get_field('page_slug')=='Testimonials') {
+            if (get_field('page_slug')=='testimonials') {
                 $return_string .= '
                     <div class="container-fluid pxp-props-carousel-right">';
             }

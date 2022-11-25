@@ -318,4 +318,20 @@ if (!function_exists('resideo_get_search_properties_link')):
         return $search_submit;
     }
 endif;
+if (!function_exists('resideo_get_search_communities_link')): 
+    function resideo_get_search_communities_link() {
+        $pages = get_pages(array(
+            'meta_key' => '_wp_page_template',
+            'meta_value' => 'community-search.php'
+        ));
+
+        if ($pages) {
+            $search_submit = get_permalink($pages[0]->ID);
+        } else {
+            $search_submit = '';
+        }
+
+        return $search_submit;
+    }
+endif;
 ?>

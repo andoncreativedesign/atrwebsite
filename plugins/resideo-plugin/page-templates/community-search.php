@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Property Search
+Template Name: Community Search
 */
 
 /**
@@ -134,13 +134,13 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                 </div>
             <?php }
 
-            if (function_exists('resideo_get_filter_properties_form') && $has_sidebar === false) {
+            if (function_exists('resideo_get_filter_communities_form') && $has_sidebar === false) {
                 if ($no_map === true) { ?>
                     <div class="mt-4 mt-md-5">
                         <div class="container">
                 <?php }
 
-                resideo_get_filter_properties_form();
+                resideo_get_filter_communities_form();
 
                 if ($no_map === true) { ?>
                         </div>

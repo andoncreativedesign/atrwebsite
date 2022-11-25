@@ -1246,7 +1246,7 @@ $account_url      = function_exists('resideo_get_account_url') ? resideo_get_acc
     $property_layout_settings = get_option('resideo_property_layout_settings');
     $property_layout = isset($property_layout_settings['resideo_property_layout_field']) ? $property_layout_settings['resideo_property_layout_field'] : 'd1';
 
-    if ((is_page_template('property-search.php') && ($template == 'half_map_left' || $template == 'half_map_right') && wp_script_is('gmaps', 'enqueued')) 
+    if (((is_page_template('property-search.php') || is_page_template('community-search.php')) && ($template == 'half_map_left' || $template == 'half_map_right') && wp_script_is('gmaps', 'enqueued')) 
         || (is_page_template('idx-map-left.php') && wp_script_is('gmaps', 'enqueued'))
         || (is_page_template('idx-map-right.php') && wp_script_is('gmaps', 'enqueued'))
         || ($post_type == 'property' && $property_layout == 'd4' && wp_script_is('gmaps', 'enqueued'))) {

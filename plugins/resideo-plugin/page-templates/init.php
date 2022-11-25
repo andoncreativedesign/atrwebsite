@@ -33,6 +33,7 @@ class ResideoPageTemplater {
             'contact-page-office.php' => 'Contact Page Office',
             'agents-list.php'         => 'Agents List',
             'property-search.php'     => 'Property Search',
+            'community-search.php'     => 'Community Search',
             'idx.php'                 => 'dsIDXPress',
             'idx-map-right.php'       => 'dsIDXPress Map Right',
             'idx-map-left.php'        => 'dsIDXPress Map Left',

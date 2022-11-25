@@ -1437,6 +1437,7 @@
             changeTemplate() {
                 $('#page-header-section').toggle(
                     this.template != 'property-search.php' && 
+                    this.template != 'community-search.php' && 
                     this.template != 'contact-page.php' && 
                     this.template != 'wish-list.php' && 
                     this.template != 'my-leads.php' && 
@@ -1449,6 +1450,7 @@
                 );
                 $('#page-settings-section').toggle(
                     this.template != 'property-search.php' && 
+                    this.template != 'community-search.php' && 
                     this.template != 'contact-page.php' && 
                     this.template != 'contact-page-office.php' && 
                     this.template != 'wish-list.php' && 
@@ -1460,7 +1462,8 @@
                     this.template != 'submit-property.php' && 
                     this.template != 'agents-list.php' 
                 );
-                $('#page-template-section').toggle(this.template == 'property-search.php');
+                $('#page-template-section').toggle(this.template == 'property-search.php' || this.template == 'community-search.php');
+                //$('#page-template-section').toggle();
                 $('#page-contact-settings-section').toggle(this.template == 'contact-page.php');
                 $('#page-contact-office-settings-section').toggle(this.template == 'contact-page-office.php');
                 $('#page-agents-settings-section').toggle(this.template == 'agents-list.php');
@@ -1472,6 +1475,7 @@
     $('#page_template, .editor-page-attributes__template select').change(function() {
         $('#page-header-section').toggle(
             $(this).val() != 'property-search.php' && 
+            $(this).val() != 'community-search.php' && 
             $(this).val() != 'contact-page.php' && 
             $(this).val() != 'contact-page-office.php' && 
             $(this).val() != 'wish-list.php' && 
@@ -1485,6 +1489,7 @@
         );
         $('#page-settings-section').toggle(
             $(this).val() != 'property-search.php' && 
+            $(this).val() != 'community-search.php' && 
             $(this).val() != 'contact-page.php' && 
             $(this).val() != 'contact-page-office.php' && 
             $(this).val() != 'wish-list.php' && 
@@ -1496,7 +1501,8 @@
             $(this).val() != 'submit-property.php' && 
             $(this).val() != 'agents-list.php'
         );
-        $('#page-template-section').toggle($(this).val() == 'property-search.php');
+        $('#page-template-section').toggle($(this).val() == 'property-search.php' || $(this).val() == 'community-search.php');
+        //$('#page-template-section').toggle();
         $('#page-contact-settings-section').toggle($(this).val() == 'contact-page.php');
         $('#page-contact-office-settings-section').toggle($(this).val() == 'contact-page-office.php');
         $('#page-agents-settings-section').toggle($(this).val() == 'agents-list.php');

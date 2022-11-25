@@ -94,6 +94,7 @@ require_once 'views/social-meta.php';
 require_once 'views/user-modal.php';
 require_once 'views/dashboard-nav.php';
 require_once 'views/filter-properties-form.php';
+require_once 'views/filter-communities-form.php';
 require_once 'views/filter-properties-form-sidebar.php';
 require_once 'views/modal-calculator.php';
 require_once 'views/similar-properties.php';

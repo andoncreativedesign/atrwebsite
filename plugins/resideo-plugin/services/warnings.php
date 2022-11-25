@@ -11,6 +11,7 @@ if (!function_exists('resideo_pages_admin_notice')) :
             'My Leads'         => 'my-leads.php',
             'My Properties'    => 'my-properties.php',
             'Property Search'  => 'property-search.php',
+            'Community Search'  => 'community-search.php',
             'Saved Searches'   => 'saved-searches.php',
             'Submit Property'  => 'submit-property.php',
             'Wish List'        => 'wish-list.php',
