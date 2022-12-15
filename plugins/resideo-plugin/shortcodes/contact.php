@@ -49,7 +49,7 @@ if (!function_exists('resideo_contact_shortcode')):
             '
            
 
-            <div class="pxp-contact-section pxp-cover pt-50 pb-100 contact_bg " style="background-image: url(' .$photo_src. ');">
+            <div class="pxp-contact-section pxp-cover pt-50 pb-100 contact_bg" >
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-xl-4 align-left ' . esc_attr($intro_column_class) . '">

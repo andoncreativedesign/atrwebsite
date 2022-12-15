@@ -531,10 +531,10 @@ function closeGallery() {
                                         </p>
                                         <h3 class="pxp-section-h2 com_heading">
                                             <?php 
-                                                $price_from1 = $price_from[1] ." ".$currency; 
+                                                $price_from1 = $price_from[1];// ." ".$currency; 
 
-                                                icl_register_string("resideo", $price_from1,$price_from1);
-                                                echo pll__( $price_from1 ); 
+                                               // icl_register_string("resideo", $price_from1,$price_from1);
+                                                echo pll__( $price_from1 ).' '.pll__( "SAR" ); 
                                             ?>
                                         
                                         </h3>
@@ -554,9 +554,10 @@ function closeGallery() {
                                     </p>
                                         <h3 class="pxp-section-h2 com_heading">
                                             <?php 
-                                                $area_from1 = $area_from[1];  
+                                                $area_from1 = $area_from[1]; 
+                                             //   icl_register_string("resideo", "SQM","SQM"); 
                                                 icl_register_string("resideo", $area_from1,$area_from1);
-                                                echo pll__( $area_from1 ); 
+                                                echo pll__( $area_from1 ).' ' .pll__("SQM"); 
                                             ?>
                                         </h3>
                                     </div>

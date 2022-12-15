@@ -408,7 +408,8 @@ if (!function_exists('resideo_get_page_header')):
                                 </video>
 
                                 <div class="pxp-hero-caption pxp-hero-caption-bottom-left pxp-is-small container pxp-no-form" style="bottom: 215px">
-                                    <p class="text-white"><?php echo get_field('header_subtitle'); ?></p>
+                                <div class="ct_home_logo_cont"><img src="<?php echo get_field('ct_home_logo_image');?>"></div>
+                                    <p class="text-white"><?php echo get_field('header_subtitle'); ?><?php  ?></p>
                                     <h1 class="pxp-text-light mb-0 text-white"><?php echo get_field('header_title'); ?></h1>
                                     <a class="ct_homevidcta" href="<?php echo get_field('home_header_cta_url');?>"><?php echo get_field('home_header_cta'); ?></a>
                                     <!-- <p style="color: #4D858D;">WHO WE ARE</p>

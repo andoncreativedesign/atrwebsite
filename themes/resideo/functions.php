@@ -1609,4 +1609,15 @@ function ct_show_call_btn() {
    
 }
 
+/* for adding addiotnal class for a tag in menu. add_a_class will become a parameter in the menu register array where we can pass the values */
+
+function add_additional_class_on_a($classes, $item, $args)
+{
+    if (isset($args->add_a_class)) {
+        $classes['class'] = $args->add_a_class;
+    }
+    return $classes;
+}
+
+add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 ?>

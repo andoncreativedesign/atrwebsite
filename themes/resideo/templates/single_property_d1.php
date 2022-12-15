@@ -284,14 +284,14 @@ while (have_posts()) : the_post();
                                     <div class="pxp-sp-top-feat mt-3 mt-md-0">
                                       <div style="font-size: 15px;">
                                         <?php if ($beds != '') { ?>
-                                            <?php echo esc_html($beds); ?><?php echo esc_html($beds_label); ?>|
+                                            <?php echo esc_html($beds); ?>&nbsp;<?php echo esc_html($beds_label); ?>&nbsp;|
 
                                         <?php }
                                         if ($baths != '') { ?>
-                                            <?php echo esc_html($baths); ?><?php echo esc_html($baths_label); ?>|
+                                            <?php echo esc_html($baths); ?>&nbsp;<?php echo esc_html($baths_label); ?>&nbsp;|
                                         <?php }
                                         if ($size != '') { ?>
-                                            <?php echo esc_html($size); ?><?php echo esc_html($unit); ?>
+                                            <?php echo esc_html($size); ?>&nbsp;<?php echo esc_html($unit); ?>
                                         <?php } ?>
                                         </div>
                                     </div>  

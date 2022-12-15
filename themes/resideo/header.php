@@ -1305,7 +1305,7 @@ $account_url      = function_exists('resideo_get_account_url') ? resideo_get_acc
                 </div>
                 <div class="col-1 col-lg-8 text-center">
                     <div class="pxp-nav">
-                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+                        <?php wp_nav_menu(array('theme_location' => 'primary','add_a_class' => 'topmenu_link')); ?>
                     </div>
                 </div>
                 <div class="col-5 col-lg-2 text-right">
