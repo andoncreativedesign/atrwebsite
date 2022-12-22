@@ -25,13 +25,15 @@ if (!function_exists('resideo_property_layout_field_render')):
     function resideo_property_layout_field_render() { 
         $options = get_option('resideo_property_layout_settings');
         $modes = array(
-            'd1' => __('1 - Grid Gallery', 'resideo'),
+            'd1' => __('1 - Grid Gallery', 'resideo'),                       
             'd2' => __('2 - Side Gallery Thumbnails', 'resideo'),
             'd3' => __('3 - Full Width Carousel', 'resideo'),
             'd4' => __('4 - Half Map', 'resideo'),
             'd5' => __('5 - Contact Agent Hero', 'resideo'),
             'd6' => __('6 - Boxed Gallery Thumbnails', 'resideo'),
-            'd7' => __('7 - Full Width Slider', 'resideo')
+            'd7' => __('7 - Full Width Slider', 'resideo'),
+            'd1_custom' => __('8 - Grid Gallery custom', 'resideo')
+            
         );
 
         $modes_select = '<select id="resideo_property_layout_settings[resideo_property_layout_field]" name="resideo_property_layout_settings[resideo_property_layout_field]">';

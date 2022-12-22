@@ -10,6 +10,7 @@ if (function_exists('register_block_type')) {
     require_once 'featured-properties.php';
     require_once 'single-property.php';
     require_once 'search-properties.php';
+    //require_once 'search-communities.php';
     require_once 'areas.php';
     require_once 'featured-agents.php';
     require_once 'membership-plans.php';

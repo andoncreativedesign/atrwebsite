@@ -663,10 +663,13 @@ ob_start();
   <div class="events-content container">
     <ol class="ol_history">
     	<?php
-			foreach ($s_array['services'] as $key => $service) { ?>
+			foreach ($s_array['services'] as $key => $service) { 
+        //print_r($service);
+        ?>
 	      <li class="<?php echo ($key == 0 ? 'selected' : ''); ?>" data-date="01/<?php echo sprintf("%02d", $key+1); ?>/2000">
 	        <h2 class="pxp-section-h2 carousel_custom_h2 pxp-in"><?php echo $service['title']; ?></h2>
 	        <p><?php echo $service['text']; ?></p>
+          <img src="<?php echo $service['bgsrc']?>"/>
 	      </li>
       	<?php
 			} ?>

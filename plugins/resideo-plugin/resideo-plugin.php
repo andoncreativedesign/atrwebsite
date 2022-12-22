@@ -63,6 +63,7 @@ require_once 'page-templates/init.php';
 require_once 'services/upload-scripts.php';
 require_once 'services/settings.php';
 require_once 'services/search-properties.php';
+require_once 'services/search-communities.php';
 require_once 'services/properties.php';
 require_once 'services/save-property.php';
 require_once 'services/print-property.php';

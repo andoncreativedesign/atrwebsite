@@ -1593,7 +1593,7 @@ function cf7_state_dropdown($tag) {
 
     return $output;
 }*/
-
+/* For adding call button next to whatsapp */
 add_action( 'wp_footer', 'ct_show_call_btn' );
 function ct_show_call_btn() {
    

@@ -242,6 +242,8 @@
 
     animateHTML().init();
 
+    $('.pxp-footer ul.menu li a').addClass('footermenu_link');
+
     if ($('.pxp-props-carousel-right-stage').length > 0) {
         $('.pxp-props-carousel-right-stage').owlCarousel({
             'rtl': (main_vars.is_rtl == '1'),
@@ -741,6 +743,8 @@
         $(this).toggleClass('pxp-active');
         $('.pxp-content-side-search-form-adv').slideToggle();
     });
+
+
 
     $('.pxp-results-card .carousel-control-next').click(function(event) {
         event.preventDefault();

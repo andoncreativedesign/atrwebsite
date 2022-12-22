@@ -130,7 +130,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                             ); 
                             icl_register_string("resideo", 'Select community','Select community');
                             $status_terms = get_terms($status_tax, $status_args); ?>
-                            
+                            <?php //print_r($status_terms);?>
                             <div class="col-sm-6 col-md-6 col-lg-6 pxp-content-side-search-form-col mb-3 mb-sm-0">
                                 <select class="custom-select" id="search_status" name="search_status">
                                     <option value="0"><?php echo pll__('Select community'); ?></option>
@@ -146,9 +146,11 @@ if (!function_exists('resideo_get_filter_communities_form')):
                         <?php }?>
                     </div>
                 </div>
+                <?php if(isset($_GET['search_location'])) {?>
                 <div class="d-flex">
                     <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
                 </div>
+                <?php } ?>
             </div>
 
             <div class="pxp-content-side-search-form-adv mb-3">

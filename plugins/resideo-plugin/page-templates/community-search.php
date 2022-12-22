@@ -85,11 +85,35 @@ switch ($template) {
         $list_features_margin_class = 'mt-3 mt-md-5';
         break;
 }
-
+$communities_listed = false;
+$properties_listed = false;
 $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
-$searched_posts = resideo_search_properties();
+//$searched_posts = resideo_search_properties();
+//$searched_communities = resideo_search_communities();
+$searched_posts = resideo_search_communities();
+// echo "results";
+// print_r($searched_posts);
 
-$total_p = $searched_posts->found_posts;
+if($searched_posts != null)
+{
+    $searchedType = $searched_posts[0];
+    if($searchedType == "communities") 
+    {
+        $communities_listed = true;
+        $properties_listed = false;
+        
+        $total_p = count($searched_posts[1]);
+    } 
+    else if($searchedType == "properties") 
+    {
+        $properties_listed = true;
+        $communities_listed = false;
+        $total_p = $searched_posts[1]->found_posts;
+    } 
+    else $communities_listed = true;
+}
+
+
 
 $fields_settings = get_option('resideo_prop_fields_settings');
 $p_price         = isset($fields_settings['resideo_p_price_field']) ? $fields_settings['resideo_p_price_field'] : '';
@@ -163,7 +187,7 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                 <?php $per_p_field = isset($appearance_settings['resideo_properties_per_page_field']) ? $appearance_settings['resideo_properties_per_page_field'] : '';
                                 $per_p             = $per_p_field != '' ? intval($per_p_field) : 10;
                                 $page_no           = get_query_var('paged') ? get_query_var('paged') : 1;
-
+                                
                                 $from_p = ($page_no == 1) ? 1 : $per_p * ($page_no - 1) + 1;
                                 $to_p   = ($total_p - ($page_no - 1) * $per_p > $per_p) ? $per_p * $page_no : $total_p;
                                 
@@ -222,6 +246,143 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                 <div class="<?php echo esc_attr($container_class); ?>">
             <?php } ?>
                     <div class="row pxp-results">
+
+                    <div>
+                        <?php
+                        icl_register_string("resideo", 'SQM','SQM'); 
+                        if($communities_listed == true) {
+                        foreach ($searched_posts[1] as $term) {
+
+                            $term_id = $term->term_id;
+                            $name   = $term->name;
+                            $bed    =  get_field('no_of_bad',$term->taxonomy . '_' . $term_id);
+
+                            $bath   =  get_field('no_of_bath',$term->taxonomy . '_' . $term_id);
+
+                            $area   =  get_field('area_from',$term->taxonomy . '_' . $term_id);
+                            $area = explode("|", $area);
+
+                            $area_label = $area[0];
+                            $area_sqf = $area[1];
+
+
+                            $price  =  get_field('price_from',$term->taxonomy . '_' . $term_id);
+                            $price = explode("|", $price);
+
+                            $price_label = $price[0];
+                            $t_price = $price[1];
+
+                            $units  =  get_field('available_units',$term->taxonomy . '_' . $term_id);
+                            $units = explode("|", $units);
+
+                            $units_label = $units[0];
+                            $t_units = $units[1];
+                            
+                            $size   =  get_field('area_size_sqft',$term->taxonomy . '_' . $term_id);
+
+                            $image  =  get_field('image',$term->taxonomy . '_' . $term_id);
+
+                            $floors     =  get_field('floors',$term->taxonomy . '_' . $term_id);
+
+                            $front_image =  get_field('community_front_image',$term->taxonomy . '_' . $term_id);
+                            ?>
+
+                            <div class="owl-item active" style="width: 288.65px; margin-right: 30px;">
+                                <div class="">
+                                    <?php 
+                                    $community_slug = get_term_by('id', $term_id, 'Community');
+                                    $link = site_url()."/single-community/?term_id=".$term_id."&community=".$community_slug->slug;
+
+                                    if(get_locale() == 'ar'){
+                                        $link = str_replace("/single-community","/ar/single-community-ar",$link);
+                                    } 
+
+                                    ?>
+                                    <a href="<?php echo $link; ?>" class="pxp-prop-card-1 rounded-lg ">
+                                        <div class="pxp-prop-card-1-fig pxp-cover" style="background-size: cover;background-image: url(<?php if ($front_image != '') {
+                                            echo $front_image;
+                                        } else { echo $image;} ?>);"></div>
+                                        <div class="pxp-prop-card-1-gradient pxp-animate">
+                                            <div class="pxp-prop-card-1-details">
+                                                <div class="pxp-prop-card-1-details-title">
+                                                    <?php echo pll__( $name ); ?>
+                                                </div>
+                                                <div class="pxp-prop-card-1-details-price">
+                                                    <?php
+                                                        if(get_locale() == 'ar'){
+                                                        ?>
+                                                            <p style="font-weight:300;float:right;"><?php echo pll__( $price_label ); ?> &nbsp;</p>
+                                                        <?php
+                                                        }
+                                                        else{
+                                                            ?>
+                                                            <p style="font-weight:300;float:left;"><?php echo pll__( $price_label ); ?> &nbsp;</p>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                    <?php echo pll__( $t_price ); ?>&nbsp;<?php echo pll__( $currency ); ?> 
+                                                </div>
+                                            </div>
+                                            <div class="pxp-prop-card-1-details-cta text-uppercase">
+                                                <div class="line" style="height: 1px;background-color: #FFFFFF;"></div>
+                                                <div class="container-fluid mt-2">
+                                                    <div class="row">
+                                                        <div class="col-md-6 p-1">
+                                                            <span class="more_dtl"><?php echo pll__( $area_label );?></span></br>
+                                                            <span class="more_dtl_val">
+                                                                <?php echo pll__($area_sqf).' '.pll__("SQM");?>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6 p-1">
+                                                            <span class="more_dtl"><?php echo pll__("Bedrooms"); ?></span></br>
+                                                            <span class="more_dtl_val">
+                                                                <?php echo pll__($bed);?>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6 p-1">
+                                                            <span class="more_dtl"><?php echo pll__("Buildup Area"); ?></span></br>
+                                                            <span class="more_dtl_val">
+                                                                <?php echo $size;?>&nbsp;<?php echo pll__("SQM");?> 
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6 p-1">
+                                                            <span class="more_dtl"><?php echo pll__("Bathrooms"); ?></span></br>
+                                                            <span class="more_dtl_val">
+                                                                <?php echo pll__($bath);?>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6 p-1">
+                                                            <span class="more_dtl"><?php echo pll__("Floors"); ?></span></br>
+                                                            <span class="more_dtl_val">
+                                                                <?php echo $floors; ?>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6 p-1">
+                                                            <span class="more_dtl"><?php echo pll__($units_label); ?></span></br>
+                                                            <span class="more_dtl_val">
+                                                                <?php echo pll__($t_units); ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php echo pll__("View Details"); ?>
+                                            </div>
+                                        </div>
+                                        
+                                    </a>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                    }
+                        wp_reset_postdata();
+                        ?>
+
+                    </div>
+
+
+
                         <?php $unit   = isset($general_settings['resideo_unit_field']) ? $general_settings['resideo_unit_field'] : '';
                         $currency     = isset($general_settings['resideo_currency_symbol_field']) ? $general_settings['resideo_currency_symbol_field'] : '';
 
@@ -231,9 +392,9 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                         $beds_label   = isset($general_settings['resideo_beds_label_field']) ? $general_settings['resideo_beds_label_field'] : 'BD';
                         $baths_label  = isset($general_settings['resideo_baths_label_field']) ? $general_settings['resideo_baths_label_field'] : 'BA';
                         setlocale(LC_MONETARY, $locale);
-
-                        while ($searched_posts->have_posts()) {
-                            $searched_posts->the_post();
+                        if($properties_listed == true) {
+                        while ($searched_posts[1]->have_posts()) {
+                            $searched_posts[1]->the_post();
 
                             $prop_id = get_the_ID();
                             $p_link  = get_permalink($prop_id);
@@ -629,10 +790,12 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                     </div>
                                     <?php break;
                             }
-                        } ?>
+                        } 
+                    } //if searched_posts != null
+                        ?>
                     </div>
 
-                    <?php resideo_pagination($searched_posts->max_num_pages);
+                    <?php if($properties_listed == true) resideo_pagination($searched_posts[1]->max_num_pages);
             if ($no_map === true) { ?>
                 </div>
             <?php }
