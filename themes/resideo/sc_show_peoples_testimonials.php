@@ -3,7 +3,7 @@
     {
     ob_start();
     ?>
-    <div class="pxp-testim-1 pt-100 pb-100 mt-100 cust_people_info_cont pxp-cover" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/09/testim-bg.jpg);">
+    <div class="pxp-testim-1 pt-100 pb-100 mt-100 cust_people_info_cont pxp-cover" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/12/testimbg-new.jpg);">
         <div class="pxp-testim-1-intro">
             <p class="pxp-text-light" style="color: "><?php the_field('testimonial_title');?></p>
             <h3 class="pxp-section-h2" style="color: "><?php the_field('testimonial_sub_title');?></h3><a href="<?php the_field('testimonial_cta_btn_url');?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-6308cf442c70f" style="color: "><?php the_field('testimonial_cta_btn_text');?></a>

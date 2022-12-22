@@ -997,6 +997,7 @@ include_once('sc_show_peoples_testimonials.php');
 include_once('sc_careers_page_dynamic.php');
 include_once('sc_show_contact_page.php');
 include_once('sc_fr_testimonials_noslider.php');
+include_once('sc_show_missionslider.php');
 
 add_action( 'init', 'create_subjects_hierarchical_taxonomy', 0 );
  
@@ -1308,6 +1309,13 @@ function single_register_settings() {
     register_setting( 'single_options_group', 'material_heading', 'single_callback' );
     add_option( 'material_desc', '');
     register_setting( 'single_options_group', 'material_desc', 'single_callback' );
+    add_option( 'property_contact_intro', '');
+    register_setting( 'single_options_group', 'property_contact_intro', 'single_callback' );
+    add_option( 'property_email_us', '');
+    register_setting( 'single_options_group', 'property_email_us', 'single_callback' );
+    add_option( 'property_call_us', '');
+    register_setting( 'single_options_group', 'property_call_us', 'single_callback' );
+    
 }
 add_action( 'admin_init', 'single_register_settings' );
 
@@ -1376,6 +1384,40 @@ function single_options_page() {
                         <input class="setting_input" type="text" id="material_desc" name="material_desc" value="<?php echo get_option('material_desc'); ?>" rows="4">
                     </td>
                 </tr>
+                
+                <tr>
+                    <th>
+                        <label for="property_contact_intro">Contact Intro</label>
+                    </th>
+                    <td>
+                        <input class="setting_input" type="text" id="property_contact_intro" name="property_contact_intro" value="<?php echo get_option('property_contact_intro'); ?>" rows="4">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="property_email_us">Email us text</label>
+                    </th>
+                    <td>
+                        <input class="setting_input" type="text" id="property_email_us" name="property_email_us" value="<?php echo get_option('property_email_us'); ?>" rows="4">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="property_call_us">Call us text</label>
+                    </th>
+                    <td>
+                        <input class="setting_input" type="text" id="property_call_us" name="property_call_us" value="<?php echo get_option('property_call_us'); ?>" rows="4">
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th>
+                        <label for="property_call_us">Business</label>
+                    </th>
+                    <td>
+                        <input class="setting_input" type="text" id="property_call_us" name="property_call_us" value="<?php echo get_option('property_call_us'); ?>" rows="4">
+                    </td>
+                </tr> -->
+                
             </table>
             <?php  submit_button(); ?>
         </form>

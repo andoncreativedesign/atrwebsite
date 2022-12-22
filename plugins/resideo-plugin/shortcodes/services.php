@@ -240,8 +240,8 @@ if (!function_exists('resideo_services_shortcode')):
                                    </div>';
                                  }
 
-                $service_i = 0;
-                foreach ($s_array['services'] as $service) {
+                 $service_i = 0;
+                 foreach ($s_array['services'] as $service) {
                     if ($service_i > 0) {
                         $item_margin = 'mt-3 mt-md-4';
                     }
@@ -266,17 +266,17 @@ if (!function_exists('resideo_services_shortcode')):
                                         </div>
                                     </div>';
                     $service_i++;
-                }
-                if ($s_array['cta_link'] != '') {
+                 }
+                 if ($s_array['cta_link'] != '') {
                     $return_string .= 
                                     '<a href="' . esc_url($s_array['cta_link']) . '" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in" id="cta-' . esc_attr($cta_id) . '" style="color: ' . esc_attr($cta_color) . '">' . esc_html($s_array['cta_label']) . '</a>';
                     if ($cta_color != '') {
                         $return_string .= 
                                     '<style>.pxp-primary-cta#cta-' . esc_attr($cta_id) . ':after { border-top: 2px solid ' . esc_html($cta_color) . '; }</style>';
                     }
-                }
-                //..
-                $return_string .= 
+                 }
+                 //..
+                 $return_string .= 
                                 '</div>
                                 <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="height: 400px">
                                     <div style="display:none" ><textarea class="my_iframe">'.$s_array['youtube'].'</textarea></div>
@@ -432,7 +432,7 @@ if (!function_exists('resideo_services_shortcode')):
                         $service_i++;
                     }
                     if ($s_array['cta_link'] != '') {
-                        if (get_field('page_slug')=="mission-vision"){
+                        if (get_field('page_slug')=="mission-vision" || get_field('page_slug')=="aboutus_new"){
                         }
                         else if(get_field('page_slug') !="mission-vision-ar")
                         {
@@ -508,7 +508,7 @@ if (!function_exists('resideo_services_shortcode')):
                                     ob_start();
                                   ?>
 
-                                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                  <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
                                       <ol class="carousel-indicators" style="top:0">
                                          <?php if( have_rows('vision_section') ): ?>
                                            
@@ -522,7 +522,7 @@ if (!function_exists('resideo_services_shortcode')):
                                                 $button_link = get_sub_field('button_link');
                                                
                                                 ?>
-                                               <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $s;?>" class="<?php if($s=="0"){echo 'active';}?>" style="background:#C2A022">aa</li>
+                                               <li data-target="#carouselExampleIndicators3" data-slide-to="<?php echo $s;?>" class="<?php if($s=="0"){echo 'active';}?>" style="background:#C2A022">aa</li>
                                             <?php 
                                                  $s++;
                                                 endwhile; ?>
@@ -617,7 +617,7 @@ if (!function_exists('resideo_services_shortcode')):
                     $service_i++;
                 }
                 if ($s_array['cta_link'] != '') {
-                    if (get_field('page_slug')=="mission-vision"){
+                    if (get_field('page_slug')=="mission-vision" || get_field('page_slug')=="aboutus_new"){
                     }
                     else
                     {

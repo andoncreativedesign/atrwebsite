@@ -1171,7 +1171,7 @@ function closeGallery() {
                 <p class="ct_form_intro"><?php  echo $ct_form_intro; ?> </p>   
                 <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" lang="en-US" dir="ltr">
                     <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-                    <form action="/single-community/?term_id=48#wpcf7-f654-p719-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+                     <form action="/single-community/?term_id=48#wpcf7-f654-p719-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
                         <div style="display: none;">
                             <input type="hidden" name="_wpcf7" value="654">
                             <input type="hidden" name="_wpcf7_version" value="5.6.1">
@@ -1218,7 +1218,7 @@ function closeGallery() {
                                     </div> 
                                     </div>
                                 </div>
-                                <p>                                    <a href="javascript:void(0);" id="submit_1" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color: ; float: right;"><img src="<?php echo site_url(); ?>/wp-content/plugins/resideo-plugin/images/loader-dark.svg" class="pxp-loader pxp-is-btn" alt="..." style="display:none"> <?php echo pll__( "SUBMIT" ); ?></a></p>
+                                <p> <a href="javascript:void(0);" id="submit_1" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color: ; float: right;"><img src="<?php echo site_url(); ?>/wp-content/plugins/resideo-plugin/images/loader-dark.svg" class="pxp-loader pxp-is-btn" alt="..." style="display:none"> <?php echo pll__( "SUBMIT" ); ?></a></p>
                                 <div style="display:none">
                                     <input type="submit" value="Send" class="wpcf7-form-control has-spinner wpcf7-submit ddd" id="main_submit"><span class="wpcf7-spinner"></span>
                                 </div>

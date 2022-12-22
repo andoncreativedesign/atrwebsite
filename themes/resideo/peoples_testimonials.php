@@ -5,7 +5,7 @@
         icl_register_string("resideo", 'WHAT THEY SAY ABOUT US','WHAT THEY SAY ABOUT US'); 
         icl_register_string("resideo", 'HOME BUYERS TESTIMONIALS','HOME BUYERS TESTIMONIALS'); 
     ?>
-    <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/09/testim-bg.jpg);">
+    <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/12/testimbg-new.jpg);">
         <div class="pxp-testim-1-intro">
             <p class="pxp-text-light" style="color: "><?php echo pll__("WHAT THEY SAY ABOUT US"); ?></p>
             <h3 class="pxp-section-h2" style="color: "><?php echo pll__("HOME BUYERS TESTIMONIALS");?></h3><a href="http://pixelprime.co/themes/resideo-wp/demo-5/contact-us/" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate" id="cta-6308cf442c70f" style="color: "><?php echo pll__("Contact us"); ?></a>

@@ -73,7 +73,7 @@
         if (main_vars.currency_pos == 'before') {
             $('#pxp-calculator-data-pi').text(main_vars.currency + tmp.toString().replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
         } else {
-            $('#pxp-calculator-data-pi').text(tmp.toString().replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + main_vars.currency);
+            $('#pxp-calculator-data-pi').text(tmp.toString().replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' '+main_vars.currency);
         }
         $('#pxp-calculator-data-pt').text(taxes);
         $('#pxp-calculator-data-hd').text(dues);
@@ -98,7 +98,7 @@
         if (main_vars.currency_pos == 'before') {
             newDownPrice = main_vars.currency + downPrice.toString().replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         } else {
-            newDownPrice = downPrice.toString().replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + main_vars.currency;
+            newDownPrice = downPrice.toString().replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' ' + main_vars.currency;
         }
 
         $('#pxp-calculator-form-down-price').val(newDownPrice);

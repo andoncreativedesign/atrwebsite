@@ -75,6 +75,7 @@
         {
             .home .pxp-testim-1-intro .pxp-section-h2 {color:#fff !important;}
             .home .pxp-contact-section .pxp-section-h2 {color:#fff !important;}
+            .single-property .ct_contact_bg.ct_property_page .pxp-section-h2 {color:#fff !important;}
            .pxp-section-h2{ color: #333 !important ; }
            .technical-spc .pxp-section-h2 {color:#fff !important;}
            .service_case2_intro{color: #fff !important;}
@@ -381,7 +382,7 @@
         <?php
     }
 
-    if( get_field('page_slug')=='mission-vision' or get_field('page_slug')=='mission-vision-ar')
+    if( get_field('page_slug')=='mission-vision' or get_field('page_slug')=='mission-vision-ar' || get_field('page_slug')=='aboutus_new')
     {
         
         ?>

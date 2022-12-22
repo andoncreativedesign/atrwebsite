@@ -55,7 +55,7 @@ while (have_posts()) : the_post();
             }
         }
     } else {
-        echo "ADDRESSSEtings_notarr";
+        //echo "ADDRESSSEtings_notarr";
         if ($street_no != '') array_push($address_arr, $street_no);
         if ($street != '') array_push($address_arr, $street);
         if ($neighborhood_value != '') array_push($address_arr, $neighborhood_value);

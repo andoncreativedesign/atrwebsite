@@ -55,7 +55,7 @@ while (have_posts()) : the_post();
             }
         }
     } else {
-        echo "ADDRESSSEtings_notarr";
+       // echo "ADDRESSSEtings_notarr";
         if ($street_no != '') array_push($address_arr, $street_no);
         if ($street != '') array_push($address_arr, $street);
         if ($neighborhood_value != '') array_push($address_arr, $neighborhood_value);
@@ -492,7 +492,294 @@ while (have_posts()) : the_post();
 
         <div class="container mt-100">
             <div class="row">
-                <div class="col-lg-8">
+            <div class="col-lg-5">
+            
+                    <?php $count_sections = 0;
+                    foreach ($sections as $key => $value) {
+                        $section_margin_class = $count_sections == 0 ? '' : 'mt-4 mt-md-5';
+                        switch ($key) {
+                           
+
+                            case 'video':
+                                if ($video != '') {
+                                    if (function_exists('resideo_get_property_video')) { ?>
+                                        <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
+                                            <h3><?php esc_html_e('Video', 'resideo'); ?></h3>
+                                            <div class="mt-3 mt-md-4">
+                                                <?php resideo_get_property_video($video); ?>
+                                            </div>
+                                        </div>
+                                        <?php $count_sections++;
+                                    }
+                                }
+                            break;
+
+                            case 'virtual_tour':
+                                if ($virtual_tour != '') {
+                                    if (function_exists('resideo_get_property_virtual_tour')) { ?>
+                                        <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
+                                            <h3><?php esc_html_e('Virtual Tour', 'resideo'); ?></h3>
+                                            <div class="mt-3 mt-md-4">
+                                                <?php resideo_get_property_virtual_tour($virtual_tour); ?>
+                                            </div>
+                                        </div>
+                                        <?php $count_sections++;
+                                    }
+                                }
+                            break;
+
+                            case 'floor_plans':
+                            //oxygensoft
+                                $floor_plans_list = array();
+
+                                if ($floor_plans != '') {
+                                    $floor_plans_data = json_decode(urldecode($floor_plans));
+
+                                    if (isset($floor_plans_data)) {
+                                        $floor_plans_list = $floor_plans_data->plans;
+                                    }
+                                }
+
+                                if (count($floor_plans_list) > 0) { ?>
+                                    <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
+                                        <h3 style="color: #4D858D;"><?php echo pll__( "Floor Plans" ); ?></h3>
+                                        <div class="row ">
+                                            <div class="col-lg-9">
+                                                <ul class="nav nav-pills">
+                                                    <?php 
+                                                    $t=0;
+                                                    
+                                                    foreach ($floor_plans_list as $key=>$floor_plan) 
+                                                    {
+                                                        $t++;$class_='';if($t==1){$class_="active";}
+                                                    ?>
+                                                  <li class="nav-item padding_fix" >
+                                                    <a class="nav-link nav-link show_img <?php echo $class_;?>" data-toggle="pill" aria-current="ss<?php echo $key; ?>" href="#ss<?php echo $key; ?>" style=" background-color: #none; color: #4D858D">
+                                                        <?php 
+                                                            // echo esc_attr($floor_plan->title); 
+                                                            $getfloortitle = $floor_plan->title;
+                                                            icl_register_string("resideo", $getfloortitle,$getfloortitle);
+                                                            echo pll__( $getfloortitle );
+                                                        ?>
+                                                    </a>
+                                                  </li>
+                                              <?php }?>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 detial_area" style="visibility: hidden;">
+                                                <div>
+                                                <?php echo pll__( "1BR" ); ?> | <?php echo pll__( "2BA" ); ?> | <?php echo pll__( "500 SQF" ); ?>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-lg-3 no-gutter">
+                                                <button class="pxp-sp-top-btn compare_floor_plan" >
+                                                <?php //echo pll__( "Compare Floor plans" ); ?></button>
+                                            </div> -->
+                                        </div>
+                                        <div style="
+                                            margin-bottom: 20px;
+                                            border-bottom: 1px solid #E2E2E2;">
+                                                
+                                            </div>
+                                        <div class="row ">
+                                            <div class="col-lg-12">
+                                            <button class="pxp-sp-top-btn compare_floor_plan" >
+                                                <?php echo pll__( "Compare Floor plans" ); ?></button>
+                                            </div>
+                                        </div>
+                                       
+                                        
+                                        
+                                        <div class="tab-content">
+                                        <?php foreach ($floor_plans_list as $key=>$floor_plan) {
+                                            $floor_plan_image = wp_get_attachment_image_src($floor_plan->image, 'full');
+                                            ?>
+                                            <div style="<?php if($key==0){}else{echo 'display: none;';}?> text-align:center;padding-top:20px;" id="ss<?php echo $key; ?>" class="all_img pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" aria-labelledby="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" data-parent="#pxpFloorPlans">
+                                                        <?php if ($floor_plan_image != '') { ?>
+                                                            <a href="<?php echo esc_url($floor_plan_image[0]); ?>" target="_blank" >
+                                                                <img style="max-width:100% " class="pxp-sp-floor-plans-item-image" src="<?php echo esc_url($floor_plan_image[0]); ?>" alt="<?php echo esc_attr($floor_plan->title); ?>" >
+                                                            </a>
+                                                        <?php } ?>
+                                                    </div>
+                                        <?php }?>
+                                        </div>
+                                        
+                                        <div class="accordion" id="pxpFloorPlans" style="display: none;">
+                                            <?php foreach ($floor_plans_list as $floor_plan) {
+                                                $floor_plan_image = wp_get_attachment_image_src($floor_plan->image, 'pxp-full'); ?>
+
+                                                <div class="pxp-sp-floor-plans-item">
+                                                    <div class="pxp-sp-floor-plans-item-header" id="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>">
+                                                        <div class="pxp-sp-floor-plans-item-trigger collapsed" data-toggle="collapse" data-target="#pxpSPFloorPlansCollapse<?php echo esc_attr($floor_plan->image); ?>" aria-expanded="true" aria-controls="pxpSPFloorPlansCollapse<?php echo esc_attr($floor_plan->image); ?>">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="pxp-sp-floor-plans-item-title"><span class="fa fa-angle-down pxp-is-plus mr-3"></span><span class="fa fa-angle-up pxp-is-minus mr-3"></span><?php echo esc_html($floor_plan->title); ?></div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="pxp-sp-floor-plans-item-info">
+                                                                        <?php if ($floor_plan->beds != '') { ?>
+                                                                            <div class="d-inline-block mr-2"><?php echo esc_html($floor_plan->beds); ?> <span><?php echo esc_html($beds_label); ?></span></div>
+                                                                        <?php } ?>
+                                                                        <?php if ($floor_plan->baths != '') { ?>
+                                                                            <div class="d-inline-block mr-2"><?php echo esc_html($floor_plan->baths); ?> <span><?php echo esc_html($baths_label); ?></span></div>
+                                                                        <?php } ?>
+                                                                        <?php if ($floor_plan->size != '') { ?>
+                                                                            <div class="d-inline-block"><?php echo esc_html($floor_plan->size); ?> <span><?php echo esc_html($unit); ?></span></div>
+                                                                        <?php } ?>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="pxpSPFloorPlansCollapse<?php echo esc_attr($floor_plan->image); ?>" class="collapse" aria-labelledby="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" data-parent="#pxpFloorPlans">
+                                                        <?php if ($floor_plan_image != '') { ?>
+                                                            <a href="<?php echo esc_url($floor_plan_image[0]); ?>" target="_blank">
+                                                                <img class="pxp-sp-floor-plans-item-image" src="<?php echo esc_url($floor_plan_image[0]); ?>" alt="<?php echo esc_attr($floor_plan->title); ?>">
+                                                            </a>
+                                                        <?php } ?>
+                                                        <p class="mt-3"><?php echo esc_html($floor_plan->description); ?></p>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                    <?php $count_sections++;
+                                }
+                            break;
+
+                           
+
+                            case 'payment_calculator':
+                                if ($calculator == '1') { ?>
+                                   
+                                    <!-- <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
+                                        <h3 style="color: #4D858D"><?php echo pll__( "MORTGAGE CALCULATOR" ); ?></h3>
+                                        <div class="pxp-calculator-view mt-3 mt-md-4 mortgage_portion">
+                                            <div class="row">
+                                               
+                                               <div class="col-sm-12 col-lg-12 align-self-center mt-3 mt-lg-0">
+                                                    <div class="pxp-calculator-data">
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-8">
+                                                                <div class="pxp-calculator-data-label"><span class="fa fa-minus"></span><?php echo pll__( "Monthly Installment" ); ?></div>
+                                                            </div>
+                                                            <div class="col-4 text-right">
+                                                                <div class="pxp-calculator-data-sum" id="pxp-calculator-data-pi"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pxp-calculator-form mt-3 mt-md-4">
+                                     
+                                            <div>
+                                                <p><?php echo pll__( "Finance your home with:" ); ?></p>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                                  <label class="form-check-label" for="inlineRadio1"><?php echo pll__( "Amlak International" ); ?></label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                  <label class="form-check-label" for="inlineRadio2"><?php echo pll__( "Bidaya Home Finance" ); ?></label>
+                                                </div>
+                                            </div>
+                                            <div style="padding-bottom: 20px;
+                                            margin-bottom: 20px;
+                                            border-bottom: 1px solid #E2E2E2;">
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="pxp-calculator-form-term"><?php echo pll__( "Term" ); ?></label>
+                                                        <select class="custom-select" id="pxp-calculator-form-term">
+                                                            <option value="20">20 <?php echo pll__( "Years Fixed" ); ?></option>
+                                                            <option value="30" selected>30 <?php echo pll__( "Years Fixed" ); ?></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="pxp-calculator-form-interest"><?php echo pll__( "Interest" ); ?></label>
+                                                        <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-interest" data-type="percent" readonly="true" value="2.75%">
+                                                    </div>
+                                                </div>
+                                                <?php icl_register_string("resideo", $price_value,$price_value); ?>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="pxp-calculator-form-price"><?php echo pll__( "Home Price" ); ?></label>
+                                                        <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-price" data-type="currency" readonly="true" value="<?php echo pll__($price_value); ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="row">
+                                                         <div class="col-5 col-sm-5 col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="pxp-calculator-form-down-percentage"><?php echo pll__( "Down Payment" ); ?></label>
+                                                                <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-down-percentage" data-type="percent" value="10%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-7 col-sm-7 col-md-8">
+                                                            <div class="form-group">
+                                                                <label for="pxp-calculator-form-down-price">&nbsp;</label>
+                                                                <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-down-price" data-type="currency" readonly="true" value="">
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                             <?php
+                                        // $property_disclaimer = get_field('property_disclaimer');
+                                        // if (!empty($property_disclaimer)){
+                                        ?>
+                                        
+                                        <!-- <div class="row mt-2">
+                                            <div class="col-lg-12">
+                                                <div class="" style="font-size: 13px;padding: 10px 0;">
+                                                    <i class="bi-info-circle-fill"></i>
+                                                    <strong><?php echo pll__( "Disclaimer:" ); ?> </strong> <?php 
+
+                                                    if(get_locale()=="ar")
+                                                    {
+                                                        echo get_option('resideo_new_disclimer_ar'); 
+                                                    }
+                                                    else
+                                                    {
+                                                        echo get_option('resideo_new_disclimer');   
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <?php
+                                  //  }
+                                    ?>
+                                     <?php (get_locale() == "ar") ? $ct_cta_contact = "/contact-us-ar":$ct_cta_contact = "/contact-us"; ?>
+                            <?php (get_locale() == "ar") ? $ct_cta_finance = "/finance-your-home-ar":$ct_cta_finance = "/finance-your-home"; ?>
+                                            <!-- <div class="mt-2">
+                                                <button class="pxp-sp-top-btn" style=" background-color: #af8814; color: #fff; border: 0px solid #af8814"><a href="<?php echo $ct_cta_contact;?>" style="color:#fff;text-decoration:none;"><?php echo pll__( "ASK OUR TEAM FOR HELP" ); ?></a></button>
+                                                <button class="pxp-sp-top-btn" style=" background-color: lightgray; color: #fff; border: 0px solid #af8814"><a href="<?php echo $ct_cta_finance;?>" style="color:#fff;text-decoration:none;"><?php echo pll__( "SEE DETAILS" ); ?></a></button>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <?php $count_sections++;
+                                }
+                            break;
+
+                            default:
+                                // Nothing to do here
+                            break;
+                        }
+                    } ?>
+                
+
+            </div>
+            <div class="col-lg-1"></div>
+                <div class="col-lg-6">
                     <?php 
                     $count_sections = 0;
                     $more_details = get_field("more_details",$prop_id);
@@ -537,7 +824,7 @@ while (have_posts()) : the_post();
                                                 <div class="pxp-sp-key-details-item">
                                                     <div class="pxp-sp-kd-item-label text-uppercase"><?php echo pll__( "Buildup area" ); ?></div>
                                                     <div class="pxp-sp-kd-item-value"><?php if ($size != '') { ?>
-                                                        <?php echo $more_details['buildup_area']; ?><?php //echo esc_html($unit); ?>
+                                                        <?php echo $more_details['buildup_area'].' '.pll__("SQM"); ?><?php //echo esc_html($unit); ?>
                                                     <?php }?>
                                                         
                                                     </div>
@@ -547,7 +834,7 @@ while (have_posts()) : the_post();
                                                 <div class="pxp-sp-key-details-item">
                                                     <div class="pxp-sp-kd-item-label text-uppercase"><?php echo pll__( "Land Area" ); ?></div>
                                                     <div class="pxp-sp-kd-item-value">
-                                                        <?php echo $more_details['land_area']; ?><?php //echo esc_html($unit); ?>
+                                                        <?php echo $more_details['land_area'].' '.pll__("SQM");; ?><?php //echo esc_html($unit); ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -713,7 +1000,7 @@ while (have_posts()) : the_post();
                     } ?>
                 </div>
 
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-6">
                     <div class="addition_info">
                         <div class="addition_info_f">
                             <h2 class="text-uppercase">
@@ -721,7 +1008,7 @@ while (have_posts()) : the_post();
                                     $getheading = get_option('information_heading');
                                     icl_register_string("resideo", $getheading,$getheading);
                                     echo pll__( $getheading );
-                                    // echo __(get_option('information_heading'),'resideo'); 
+                                    
                                 ?>
                             </h2>
                             <?php
@@ -736,7 +1023,7 @@ while (have_posts()) : the_post();
                                         $getctabtntxt = get_option('cta_btn_text');
                                         icl_register_string("resideo", $getctabtntxt,$getctabtntxt);
                                         echo pll__( $getctabtntxt );
-                                        // echo __(get_option('cta_btn_text'),'resideo'); 
+                                        
                                     ?> 
                                 </div>
                                 <?php
@@ -746,14 +1033,14 @@ while (have_posts()) : the_post();
                                     $getinfodescreption = get_option('informative_desc');
                                     icl_register_string("resideo", $getinfodescreption,$getinfodescreption);
                                     echo pll__( $getinfodescreption );
-                                    // echo __(get_option('informative_desc'),'resideo');
+                                  
                                 ?> 
                             </p>
                         </div>
                         <div class="addition_info_s">
                             <h2 class="text-uppercase">
                                 <?php 
-                                    //echo __(get_option('material_heading'),'resideo');
+                                   
                                     $materialheading = get_option('material_heading');
                                     icl_register_string("resideo", $materialheading,$materialheading);
                                     echo pll__( $materialheading );
@@ -766,7 +1053,7 @@ while (have_posts()) : the_post();
                                         <div class="icon_wrapper single_property_icon"> <img src="<?php echo get_template_directory_uri(); ?>/images/Group 895.png"> </div>
                                         <div class="title_t"> <img src="<?php echo get_template_directory_uri();?>/images/ic_file_download.png" class="download_icon"> <span style="font-size: 13px;">
                                         <?php 
-                                            // echo  get_field('info_pack_text');
+                                            
                                             $getinfopacktxt = get_field('info_pack_text');
                                             icl_register_string("resideo", $getinfopacktxt,$getinfopacktxt);
                                             echo pll__( $getinfopacktxt );
@@ -795,96 +1082,11 @@ while (have_posts()) : the_post();
                                 <?php 
                             } ?>
                             </div>
-                            <?php 
-                                            //if ($agent_id > 0 && !empty($agent_email) or 1) { ?>
-                                <!--<div class="row before_box"> <?php echo get_option('material_desc'); ?> </div>
-                                <div class="subscribe_box">
-                                    <div class="input-group">
-                                        <input type="email" class="form-control request_box user_email" placeholder="Enter your email">
-                                        <input type="hidden" class="property_id" value="<?php echo get_the_ID()?>"> <span class="input-group-btn">
-                                                         <button class="btn btn-warning request_button" agent_email="zeeshangill11@gmail.com<?php //echo $agent_email; ?>" type="button">Request</button>
-                                                         </span> </div>
-                                </div>
-                                <div class="img_loader" style="text-align: center; padding-top: 10px; display: none;"> <img src="https://wordpress-823234-2829680.cloudwaysapps.com/wp-content/plugins/resideo-plugin/images/loader-dark.svg" class="pxp-loader pxp-is-btn" alt="..."> </div>
-                        </div>-->
-                        <?php
-                                           // } ?>
+                            
                     </div>
 
-                    <?php if ($agent_id != '') { 
-                                    $agent_avatar       = get_post_meta($agent_id, 'agent_avatar', true);
-                                    $agent_avatar_photo = wp_get_attachment_image_src($agent_avatar, 'pxp-thmb');
-
-                                    if ($agent_avatar_photo != '') {
-                                        $a_photo = $agent_avatar_photo[0];
-                                    } else {
-                                        $a_photo = RESIDEO_LOCATION . '/images/avatar-default.png';
-                                    }
-
-                                    $show_rating = isset($general_settings['resideo_agents_rating_field']) ? $general_settings['resideo_agents_rating_field'] : '';
-                                    $hide_phone = isset($appearance_settings['resideo_hide_agents_phone_field']) ? $appearance_settings['resideo_hide_agents_phone_field'] : '';
-
-                                    $agent_email = get_post_meta($agent_id, 'agent_email', true);
-                                    $agent_phone = get_post_meta($agent_id, 'agent_phone', true); ?>
-                <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0" style="display:none">
-                    <h3><?php echo pll__( "Term" ); ?></h3>
-                    <div class="pxp-sp-agent mt-3 mt-md-4">
-                        <a href="<?php echo esc_url(get_permalink($agent_id)); ?>" class="pxp-sp-agent-fig pxp-cover rounded-lg" style="background-image: url(<?php echo esc_attr($a_photo); ?>);"></a>
-                        <div class="pxp-sp-agent-info">
-                            <div class="pxp-sp-agent-info-name"><a href="<?php echo esc_url(get_permalink($agent_id)); ?>"><?php echo esc_attr($agent->post_title); ?></a></div>
-                            <?php if ($show_rating != '') {
-                                                    print resideo_display_agent_rating(resideo_get_agent_ratings($agent_id), false, 'pxp-sp-agent-info-rating');
-                                                }
-
-                                                if ($agent_email != '') { ?>
-                                <div class="pxp-sp-agent-info-email">
-                                    <a href="mailto:<?php echo esc_attr($agent_email); ?>">
-                                        <?php echo esc_html($agent_email); ?>
-                                    </a>
-                                </div>
-                                <?php }
-
-                                                if ($agent_phone != '') { 
-                                                    if ($hide_phone != '') { ?>
-                                    <div class="pxp-sp-agent-info-show-phone" data-phone="<?php echo esc_attr($agent_phone); ?>"><span class="fa fa-phone"></span> <span class="pxp-is-number"><?php esc_html_e('Show phone number', 'resideo'); ?></span></div>
-                                    <?php } else { ?>
-                                        <div class="pxp-sp-agent-info-phone"><span class="fa fa-phone"></span>
-                                            <?php echo esc_html($agent_phone); ?>
-                                        </div>
-                                        <?php }
-                                                } ?>
-                        </div>
-                        <div class="clearfix"></div>
-                        <?php if (function_exists('resideo_get_contact_agent_modal')) {
-                                                $modal_info                   = array();
-                                                $modal_info['link']           = get_permalink($prop_id);
-                                                $modal_info['title']          = get_the_title();
-                                                $modal_info['agent_email']    = $agent_email;
-                                                $modal_info['agent_id']       = $agent_id;
-                                                $modal_info['agent']          = $agent->post_title;
-                                                $modal_info['user_id']        = '';
-                                                $modal_info['user_email']     = '';
-                                                $modal_info['user_firstname'] = '';
-                                                $modal_info['user_lastname']  = '';
-
-                                                if (is_user_logged_in()) {
-                                                    $user_meta                    = get_user_meta($user->ID);
-                                                    $modal_info['user_id']        = $user->ID;
-                                                    $modal_info['user_email']     = $user->user_email;
-                                                    $user_firstname               = $user_meta['first_name'];
-                                                    $user_lastname                = $user_meta['last_name'];
-                                                    $modal_info['user_firstname'] = $user_firstname[0];
-                                                    $modal_info['user_lastname']  = $user_lastname[0];
-                                                }
-
-                                                $cta_is_sticky = isset($appearance_settings['resideo_sticky_agent_cta_field']) ? $appearance_settings['resideo_sticky_agent_cta_field'] : false;
-                                                $cta_sticky_class = $cta_is_sticky == '1' ? 'pxp-is-sticky' : ''; ?>
-                            <div class="pxp-sp-agent-btns mt-3 mt-md-4"> <a href="#pxp-contact-agent" class="pxp-sp-agent-btn-main <?php echo esc_attr($cta_sticky_class); ?>" data-toggle="modal" data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span><?php esc_html_e('Contact Agent', 'resideo'); ?></a> </div>
-                            <?php } ?>
-                    </div>
-                </div>
-                <?php } ?>
-                </div>
+                   
+                </div> -->
             </div>
 
 
@@ -896,12 +1098,65 @@ while (have_posts()) : the_post();
 
 
 
-
-
-        <div class="map_section mt-100">
+        <div class="ct_download_section mt-100">
             <div class="container " >
-                <div class="row">
-                    <div class="col-lg-8">
+                <div class="row2">
+                <div class="col-lg-12">
+                  <div class="addition_info_s">
+                            <!-- <h2 class="text-uppercase">
+                                <?php 
+                                   
+                                    // $materialheading = get_option('material_heading');
+                                    // icl_register_string("resideo", $materialheading,$materialheading);
+                                    // echo pll__( $materialheading );
+                                ?> 
+                            </h2> -->
+                            <div class="row2 iconss_wrapper addition_info_1">
+                            <?php if(get_field('info_pack_text')) { ?>
+                                <div class="col-md-12 first_col">
+                                    <a href="<?php if(get_field('info_pack')){echo  get_field('info_pack');}else{echo " # ";}?>" style="text-decoration: none;">
+                                        <div class="icon_wrapper single_property_icon"> <img src="<?php echo get_template_directory_uri(); ?>/images/Group 895.png"> </div>
+                                        <div class="title_t"> <img src="<?php echo get_template_directory_uri();?>/images/ic_file_download.png" class="download_icon"> <span style="font-size: 13px;">
+                                        <?php 
+                                            
+                                           // $getinfopacktxt = get_field('info_pack_text');
+                                            $getinfopacktxt = "Download the brochure";
+                                            icl_register_string("resideo", $getinfopacktxt,$getinfopacktxt);
+                                            echo pll__( $getinfopacktxt );
+                                        ?>
+                                        </span> </div>
+                                    </a>
+                                </div>
+                                <?php 
+                            }
+                            if(get_field('info_plan_text')) { ?>
+                                <div class="col-md-4 second_col">
+                                    <a href="<?php if(get_field('info_plans')){echo  get_field('info_plans');}else{echo " # ";}?>" style="text-decoration: none;">
+                                        <div class="icon_wrapper single_property_icon"> <img src="<?php echo get_template_directory_uri()?>/images/Group 888.png"> </div>
+                                        <div class="title_t"> <img src="<?php echo get_template_directory_uri();?>/images/ic_file_download.png" class="download_icon"> <span style="font-size: 13px;"><?php echo  get_field('info_plan_text');?></span> </div>
+                                    </a>
+                                </div>
+                                <?php 
+                            }
+                            if(get_field('payment_plan_text')) { ?>
+                                <div class="col-md-4 third_col">
+                                    <a href="<?php if(get_field('payment_plan')){echo  get_field('payment_plan');}else{echo " # ";}?>" style="text-decoration: none;">
+                                        <div class="icon_wrapper single_property_icon"> <img src="<?php echo get_template_directory_uri()?>/images/Group 892.png"> </div>
+                                        <div class="title_t"> <img src="<?php echo get_template_directory_uri();?>/images/ic_file_download.png" class="download_icon"> <span style="font-size: 13px;"><?php echo  get_field('payment_plan_text');?></span> </div>
+                                    </a>
+                                </div>
+                                <?php 
+                            } ?>
+                        </div>
+                </div>
+                </div>
+            </div>
+          </div>
+       </div>
+        <div class="map_section ct_map_section">
+            <div class="container " >
+                <div class="row2">
+                    <div class="col-lg-12">
 
                         <?php $count_sections = 0;
                         foreach ($sections as $key => $value) {
@@ -916,7 +1171,7 @@ while (have_posts()) : the_post();
 
                                     if (wp_script_is('gmaps', 'enqueued')) { ?>
                                         <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
-                                            <div class="row">
+                                            <!-- <div class="row">
                                                 <div class="col-sm-6">
                                                     <h4 style="color:#4D858D; font-size:21px; font-weight: bold;">
                                                         <?php echo pll__( "LOCATION" ); ?>
@@ -927,7 +1182,7 @@ while (have_posts()) : the_post();
                                                     <a class="pxp-primary-cta pull-right" target="_blank" href="https://maps.google.com/?q=<?php echo $prop_lat.','.$prop_lng.'';?>"
                                                      style="color:#fff;"><?php echo pll__( "View on google maps" ); ?></a>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- <div class="pxp-sp-pois-nav mt-3 mt-md-4">
                                                 <div class="pxp-sp-pois-nav-transportation text-uppercase"><?php esc_html_e('Transportation', 'resideo'); ?></div>
                                                 <div class="pxp-sp-pois-nav-restaurants text-uppercase"><?php esc_html_e('Restaurants', 'resideo'); ?></div>
@@ -936,7 +1191,7 @@ while (have_posts()) : the_post();
                                                 <div class="pxp-sp-pois-nav-arts text-uppercase"><?php esc_html_e('Arts & Entertainment', 'resideo'); ?></div>
                                                 <div class="pxp-sp-pois-nav-fitness text-uppercase"><?php esc_html_e('Fitness', 'resideo'); ?></div>
                                             </div> -->
-                                            <div id="pxp-sp-map" class="mt-3"></div>
+                                            <div id="pxp-sp-map" ></div>
                                         </div>
                                         <?php $count_sections++;
                                     }
@@ -955,186 +1210,12 @@ while (have_posts()) : the_post();
             </div>
         </div>
 
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="container mt-100">
-
-            <div class="row">
-                <div class="col-lg-8">
-                    <?php $count_sections = 0;
-                    foreach ($sections as $key => $value) {
-                        $section_margin_class = $count_sections == 0 ? '' : 'mt-4 mt-md-5';
-                        switch ($key) {
-                           
-
-                            case 'video':
-                                if ($video != '') {
-                                    if (function_exists('resideo_get_property_video')) { ?>
-                                        <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
-                                            <h3><?php esc_html_e('Video', 'resideo'); ?></h3>
-                                            <div class="mt-3 mt-md-4">
-                                                <?php resideo_get_property_video($video); ?>
-                                            </div>
-                                        </div>
-                                        <?php $count_sections++;
-                                    }
-                                }
-                            break;
-
-                            case 'virtual_tour':
-                                if ($virtual_tour != '') {
-                                    if (function_exists('resideo_get_property_virtual_tour')) { ?>
-                                        <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
-                                            <h3><?php esc_html_e('Virtual Tour', 'resideo'); ?></h3>
-                                            <div class="mt-3 mt-md-4">
-                                                <?php resideo_get_property_virtual_tour($virtual_tour); ?>
-                                            </div>
-                                        </div>
-                                        <?php $count_sections++;
-                                    }
-                                }
-                            break;
-
-                            case 'floor_plans':
-                            //oxygensoft
-                                $floor_plans_list = array();
-
-                                if ($floor_plans != '') {
-                                    $floor_plans_data = json_decode(urldecode($floor_plans));
-
-                                    if (isset($floor_plans_data)) {
-                                        $floor_plans_list = $floor_plans_data->plans;
-                                    }
-                                }
-
-                                if (count($floor_plans_list) > 0) { ?>
-                                    <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
-                                        <h3 style="color: #4D858D;"><?php echo pll__( "Floor Plans" ); ?></h3>
-                                        <div class="row ">
-                                            <div class="col-lg-6">
-                                                <ul class="nav nav-pills">
-                                                    <?php 
-                                                    $t=0;
-                                                    
-                                                    foreach ($floor_plans_list as $key=>$floor_plan) 
-                                                    {
-                                                        $t++;$class_='';if($t==1){$class_="active";}
-                                                    ?>
-                                                  <li class="nav-item padding_fix" >
-                                                    <a class="nav-link nav-link show_img <?php echo $class_;?>" data-toggle="pill" aria-current="ss<?php echo $key; ?>" href="#ss<?php echo $key; ?>" style=" background-color: #none; color: #4D858D">
-                                                        <?php 
-                                                            // echo esc_attr($floor_plan->title); 
-                                                            $getfloortitle = $floor_plan->title;
-                                                            icl_register_string("resideo", $getfloortitle,$getfloortitle);
-                                                            echo pll__( $getfloortitle );
-                                                        ?>
-                                                    </a>
-                                                  </li>
-                                              <?php }?>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 detial_area" style="visibility: hidden;">
-                                                <div>
-                                                <?php echo pll__( "1BR" ); ?> | <?php echo pll__( "2BA" ); ?> | <?php echo pll__( "500 SQF" ); ?>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 no-gutter">
-                                                <button class="pxp-sp-top-btn compare_floor_plan" >
-                                                <?php echo pll__( "Compare Floor plans" ); ?></button>
-                                            </div>
-                                        </div>
-                                       
-                                        
-                                        <div style="padding-bottom: 20px;
-                                            margin-bottom: 20px;
-                                            border-bottom: 1px solid #E2E2E2;">
-                                                
-                                            </div>
-                                        <div class="tab-content">
-                                        <?php foreach ($floor_plans_list as $key=>$floor_plan) {
-                                            $floor_plan_image = wp_get_attachment_image_src($floor_plan->image, 'full');
-                                            ?>
-                                            <div style="<?php if($key==0){}else{echo 'display: none;';}?>" id="ss<?php echo $key; ?>" class="all_img pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" aria-labelledby="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" data-parent="#pxpFloorPlans">
-                                                        <?php if ($floor_plan_image != '') { ?>
-                                                            <a href="<?php echo esc_url($floor_plan_image[0]); ?>" target="_blank" >
-                                                                <img style="max-width:100% " class="pxp-sp-floor-plans-item-image" src="<?php echo esc_url($floor_plan_image[0]); ?>" alt="<?php echo esc_attr($floor_plan->title); ?>" >
-                                                            </a>
-                                                        <?php } ?>
-                                                    </div>
-                                        <?php }?>
-                                        </div>
-                                        
-                                        <div class="accordion" id="pxpFloorPlans" style="display: none;">
-                                            <?php foreach ($floor_plans_list as $floor_plan) {
-                                                $floor_plan_image = wp_get_attachment_image_src($floor_plan->image, 'pxp-full'); ?>
-
-                                                <div class="pxp-sp-floor-plans-item">
-                                                    <div class="pxp-sp-floor-plans-item-header" id="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>">
-                                                        <div class="pxp-sp-floor-plans-item-trigger collapsed" data-toggle="collapse" data-target="#pxpSPFloorPlansCollapse<?php echo esc_attr($floor_plan->image); ?>" aria-expanded="true" aria-controls="pxpSPFloorPlansCollapse<?php echo esc_attr($floor_plan->image); ?>">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="pxp-sp-floor-plans-item-title"><span class="fa fa-angle-down pxp-is-plus mr-3"></span><span class="fa fa-angle-up pxp-is-minus mr-3"></span><?php echo esc_html($floor_plan->title); ?></div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="pxp-sp-floor-plans-item-info">
-                                                                        <?php if ($floor_plan->beds != '') { ?>
-                                                                            <div class="d-inline-block mr-2"><?php echo esc_html($floor_plan->beds); ?> <span><?php echo esc_html($beds_label); ?></span></div>
-                                                                        <?php } ?>
-                                                                        <?php if ($floor_plan->baths != '') { ?>
-                                                                            <div class="d-inline-block mr-2"><?php echo esc_html($floor_plan->baths); ?> <span><?php echo esc_html($baths_label); ?></span></div>
-                                                                        <?php } ?>
-                                                                        <?php if ($floor_plan->size != '') { ?>
-                                                                            <div class="d-inline-block"><?php echo esc_html($floor_plan->size); ?> <span><?php echo esc_html($unit); ?></span></div>
-                                                                        <?php } ?>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div id="pxpSPFloorPlansCollapse<?php echo esc_attr($floor_plan->image); ?>" class="collapse" aria-labelledby="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" data-parent="#pxpFloorPlans">
-                                                        <?php if ($floor_plan_image != '') { ?>
-                                                            <a href="<?php echo esc_url($floor_plan_image[0]); ?>" target="_blank">
-                                                                <img class="pxp-sp-floor-plans-item-image" src="<?php echo esc_url($floor_plan_image[0]); ?>" alt="<?php echo esc_attr($floor_plan->title); ?>">
-                                                            </a>
-                                                        <?php } ?>
-                                                        <p class="mt-3"><?php echo esc_html($floor_plan->description); ?></p>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                    <?php $count_sections++;
-                                }
-                            break;
-
-                           
-
-                            case 'payment_calculator':
-                                if ($calculator == '1') { ?>
-                                   
-                                    <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
+        <div class="ct_mortgage_calc_section">
+            <div class="container ">
+                <div class="row">
+                <div class="col-lg-12">
+                <?php if ($calculator == '1') { ?> 
+                    <div class="pxp-single-property-section <?php echo esc_attr($section_margin_class); ?>">
                                         <h3 style="color: #4D858D"><?php echo pll__( "MORTGAGE CALCULATOR" ); ?></h3>
                                         <div class="pxp-calculator-view mt-3 mt-md-4 mortgage_portion">
                                             <div class="row">
@@ -1189,7 +1270,7 @@ while (have_posts()) : the_post();
                                             } else {
                                                 $taxes_value = money_format('%!.0i', $taxes) . $currency;
                                                 $hoa_dues_value = money_format('%!.0i', $hoa_dues) . $currency;
-                                                $price_value = $price . $currency;
+                                                $price_value = $price .' '. $currency;
                                             } ?>
             
                                             <input type="hidden" id="pxp-calculator-form-property-taxes" value="<?php echo esc_attr($taxes_value); ?>">
@@ -1298,17 +1379,44 @@ while (have_posts()) : the_post();
                                         </div>
                                     </div>
                                     <?php $count_sections++;
-                                }
-                            break;
 
-                            default:
-                                // Nothing to do here
-                            break;
-                        }
-                    } ?>
+                     }?>
+                </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="container mt-100">
+
+            <div class="row">
+               
+            </div>
+        </div> -->
 
         <?php $show_similar = isset($appearance_settings['resideo_similar_field']) ? $appearance_settings['resideo_similar_field'] : false;
 
@@ -1328,6 +1436,99 @@ while (have_posts()) : the_post();
                 </div>
             </div>
         </div> -->
+
+        <?php 
+  icl_register_string("resideo",  "New Homes", "New Homes");
+  icl_register_string("resideo",  "Customer Support", "Customer Support");
+  icl_register_string("resideo",  "Partnerships", "Partnerships");
+  icl_register_string("resideo",  "Other", "Other");
+  icl_register_string("resideo",  "INTERESTED IN OUR COMMUNITIES?", "INTERESTED IN OUR COMMUNITIES?");
+  $contact_intro = get_option('property_contact_intro  ');
+  icl_register_string("resideo", $contact_intro,$contact_intro);
+  $property_email_us = get_option('property_email_us');
+  icl_register_string("resideo", $property_email_us,$property_email_us);
+  $property_call_us = get_option('property_call_us');
+  icl_register_string("resideo", $property_call_us,$property_call_us);
+  icl_register_string("resideo",  "Our business hours are:", "Our business hours are:"); 
+  icl_register_string("resideo",  "9AM - 5PM", "9AM - 5PM");
+  icl_register_string("resideo",  "Sunday - Thursday", "Sunday - Thursday");
+  ?>
+  <div class="ct_property_page pxp-contact-section pxp-cover pt-50 pb-100 ct_contact_bg mt-100" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2022/07/contact_bg.png)">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-4 align-left order-1">
+                    <p class="pxp-text-light" style="color: #ffffff; font-weight: 700;"><?php echo pll__( "CONTACT US" ); ?></p>
+                    <h2 class="pxp-section-h2 main_heading_style" style="text-transform:uppercase; color:#fff; "><?php echo pll__( "INTERESTED IN OUR COMMUNITIES?" ); ?></h2>
+                    <p class="ct_contact_intro"><?php echo pll__( $property_email_us ).' '.'<a href="mailto:info@al-tahaluf.com">info@al-tahaluf.com</a>'; ?><br><?php echo pll__( $property_call_us ).' '.'<a href="tel:+92-000-1769">+92 000 1769</a>'; ?></p>
+                    <p class="ct_business_hours"><?php echo pll__( "Our business hours are:" );?><br>
+                    <?php echo pll__( "Sunday - Thursday" );?><br>
+                    <?php echo pll__( "9AM - 5PM" );?>
+                    </p>
+                </div>
+                <div class="col-lg-1 col-xl-1 order-2">
+                </div>
+                <div class="col-lg-7 align-left order-3">
+                <p class="ct_form_intro"><?php  echo pll__( $contact_intro );?> </p>   
+                <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" lang="en-US" dir="ltr">
+                    <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+                     <form action="/single-community/?term_id=48#wpcf7-f654-p719-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="654">
+                            <input type="hidden" name="_wpcf7_version" value="5.6.1">
+                            <input type="hidden" name="_wpcf7_locale" value="en_US">
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f654-p719-o1">
+                            <input type="hidden" name="_wpcf7_container_post" value="719">
+                            <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+                        </div>
+                        <div class="pxp-contact-section-form mt-5 mt-lg-0">
+                            <h2 class="pxp-section-h2"></h2>
+                            <p></p>
+                            <div class="pxp-contact-section-form-response mt-4"></div>
+                            <div class="mt-4">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="wpcf7-form-control-wrap" data-name="your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-name" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Your name" ); ?>"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="wpcf7-form-control-wrap" data-name="your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-phone" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Phone number" ); ?>"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="wpcf7-form-control-wrap" data-name="your-email"><input type="text" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="pxp-contact-section-form-email" aria-required="true" aria-invalid="false" placeholder="<?php echo pll__( "Email" ); ?>"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                         <div class="form-group">
+                                       <span class="wpcf7-form-control-wrap" data-name="your-project">
+                                          <select name="your-project" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false">
+                                          <option value="New Homes"><?php echo pll__( "New Homes" );?></option>
+                                          <option value="Customer Support"><?php echo pll__( "Customer Support" );?></option>
+                                          <option value="Partnerships"><?php echo pll__( "Partnerships" );?></option>
+                                          <option value="Other"><?php echo pll__( "Other" );?></option>   
+                                          <?php  //foreach ($comm_props_array as $value) { ?>
+                                               <!-- <option value="<?php echo $value;?>"><?php echo $value;?></option> -->
+                                            
+                                             <?php //} ?>
+                                            </select>
+                                        </span>
+                                    </div> 
+                                    </div>
+                                </div>
+                                <p> <a href="javascript:void(0);" id="submit_1" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color:#fff; float: right;"><img src="<?php echo site_url(); ?>/wp-content/plugins/resideo-plugin/images/loader-dark.svg" class="pxp-loader pxp-is-btn" alt="..." style="display:none"> <?php echo pll__( "SUBMIT" ); ?></a></p>
+                                <div style="display:none">
+                                    <input type="submit" value="Send" class="wpcf7-form-control has-spinner wpcf7-submit ddd" id="main_submit"><span class="wpcf7-spinner"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="display: none !important;"><label>Δ<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="1661511711949"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p><div class="wpcf7-response-output" aria-hidden="true"></div></form></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
