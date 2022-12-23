@@ -266,6 +266,7 @@ while (have_posts()) : the_post();
                     <div class="row">
                         <div class="col-sm-12 col-md-5">
                             <h2 class="pxp-sp-top-title"><?php the_title(); ?></h2>
+                            <h3 class="pxp-sp-top-subtitle"><?php echo pll__($findCommunity[0]->name); ?></h3>
                             <p class="pxp-sp-top-address pxp-text-light"><?php echo esc_html($address); ?></p>
                         </div>
                         <div class="col-sm-12 col-md-7">

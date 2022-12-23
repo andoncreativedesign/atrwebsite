@@ -145,6 +145,12 @@ ob_start();
   Main Components 
 
   -------------------------------- */
+  .cd-horizontal-timeline .ol_history {
+   padding-left:0;
+  }
+  .cd-horizontal-timeline .ol_history img {
+    max-width:100% !important;
+  }
   .cd-horizontal-timeline {
     opacity: 0;
     margin: 5vh auto;
@@ -319,7 +325,26 @@ ob_start();
       content: 'desktop';
     }
   }
+  @media only screen and (max-width: 990px) {
+  .cd-horizontal-timeline .events-content {
+   margin-top:0;
+  }
+  .cd-horizontal-timeline .events-content { 
+    min-height:auto !important;
+  }
+  .cd-horizontal-timeline {
+    margin-bottom:0;
+  }
+  }
+  @media only screen and (max-width: 768px) {
+  .cd-horizontal-timeline .timeline {
+  height:50px;
 
+  }
+  .cd-timeline-navigation a {
+    top:270px !important;
+  }
+}
   .cd-timeline-navigation a {
     // these are the left/right arrows to navigate the timeline 
     position: absolute;
@@ -386,13 +411,14 @@ ob_start();
   .cd-horizontal-timeline .events-content {
     position: relative;
     width: 100%;
-    height : auto; //added for responsiveness
+    height : auto; 
     margin: 70px auto 20px;
     //overflow: hidden;
     -webkit-transition: height 0.4s;
     -moz-transition: height 0.4s;
     transition: height 0.4s;
     text-align : center;
+    min-height:300px;
   }
   .cd-horizontal-timeline .events-content li {
     position: absolute;

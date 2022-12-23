@@ -14101,8 +14101,27 @@ height:50px !important;
     background: none;
     }
     }
-
-
+    @media only screen and (max-width: 990px) {
+    /* .cust_people_info_cont.mt-100 {
+       margin-top:50px !important;
+        } */
+    }
     .page-template-tpl_aboutnew .cust_people_info_cont {
      background-size:cover;
+    }
+
+
+    .page_aboutus_mission {
+        background:linear-gradient(90deg, #1D252C 50%, #fff 50%);
+    }
+
+    .cd-timeline-navigation .fa-angle-left:before {
+        display: none;
+    }
+
+    .pxp-sp-top-subtitle {
+ font-size:1.4rem;
+ font-weight:bold;
+ line-height: 32px;
+ text-align:left;
     }

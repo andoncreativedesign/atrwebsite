@@ -13585,10 +13585,10 @@ color: #fff; }
         margin-top:40px;
       }
      .pxp-single-property-top .pxp-sp-top-title{
-        text-align:left;
+        text-align:right;
       }
       .pxp-single-property-top .pxp-sp-top-address{
-         text-align:left;
+         text-align:right;
        }
        .pxp-single-property-top .pxp-sp-top-price {
          float:left
@@ -14005,3 +14005,46 @@ height:50px !important;
     .page-template-tpl_aboutnew .cust_people_info_cont {
         background-size:cover;
        }
+
+
+       .page-template-tpl_aboutnew.pxp-dark-mode .pxp-testim-1-intro, .page-template-tpl_aboutnew.pxp-dark-mode .pxp-testim-1-intro .pxp-primary-cta,.page-template-tpl_aboutnew.pxp-dark-mode .pxp-testim-1-intro .pxp-section-h2 {
+        color:#fff;
+       }
+
+
+       .page-template-tpl_aboutnew .carousel-indicators {
+        position: absolute;
+      
+        bottom: 0;
+        left: unset;
+        right: 0;
+        z-index: 15;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding-right: 0;
+        margin-right: 0%;
+         margin-left: 15%; /**/
+        list-style: none;
+    }
+
+    .page-template-tpl_aboutnew .carousel-indicators li{
+        margin-left: 13px;
+        margin-right: 3px;
+    }
+
+    .page-template-tpl_aboutnew.pxp-dark-mode .pxp-services-h .pxp-text-light     
+    {
+       padding-top:0;
+    }
+    .cd-timeline-navigation .fa-angle-left:before {
+        display: none;
+    }
+
+    .pxp-sp-top-subtitle {
+        font-size:1.4rem;
+        font-weight:bold;
+        line-height: 32px;
+        text-align:right;
+           }

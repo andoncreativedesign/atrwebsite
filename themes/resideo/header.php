@@ -80,6 +80,9 @@
            .technical-spc .pxp-section-h2 {color:#fff !important;}
            .service_case2_intro{color: #fff !important;}
            .service_case2_intro p{color: #000 !important; }
+           .page-template-tpl_aboutnew .carousel-inner .service_case2_intro,.page-template-tpl_aboutnew .carousel-inner .service_case2_intro ul li {
+    color:#000 !important;
+    }
            /* .service_case2_intro.ct-cyh p{ color:#fff !important;} */
            <?php if(is_home() or is_front_page()){ ?>
               .pxp-services-h-fig {height: 400px; background-size: cover; }
@@ -105,6 +108,15 @@
            .pxp-services-h.service_case2 {
             margin-top:0 !important;
             padding-bottom:60px;
+           }
+           .page-template-tpl_aboutnew .pxp-services-h.service_case2.page_aboutus_mission  {
+            padding-bottom:0px;
+           }
+           .page-template-tpl_aboutnew .pxp-services-h.service_case2.page_service {
+            padding-bottom:50px;
+           }
+           .page-template-tpl_aboutnew .service_case_3 {
+            padding-top:0 !important;
            }
            .rtl .service_case2.page_service {
             padding-bottom:60px;
@@ -183,7 +195,7 @@
             </style>
         <?php
     }
-    if(get_field('page_slug') == 'who-we-are-ar'){
+    if(get_field('page_slug') == 'who-we-are-ar' || get_field('page_slug') == 'aboutus_new_ar'){
         ?>
             <style type="text/css">
                 .iframe_video{
@@ -245,7 +257,7 @@
             </style>
         <?php
     }
-    if(strtolower(get_field('page_slug'))=="who-we-are-ar"){
+    if(strtolower(get_field('page_slug'))=="who-we-are-ar" || strtolower(get_field('page_slug'))=="aboutus_new_ar"){
         ?>
             <style type="text/css">
                .pxp-services-h-items {
@@ -382,7 +394,7 @@
         <?php
     }
 
-    if( get_field('page_slug')=='mission-vision' or get_field('page_slug')=='mission-vision-ar' || get_field('page_slug')=='aboutus_new')
+    if( get_field('page_slug')=='mission-vision' or get_field('page_slug')=='mission-vision-ar' or get_field('page_slug')=='aboutus_new' or get_field('page_slug')=='aboutus_new_ar')
     {
         
         ?>
@@ -511,7 +523,7 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="our-history")
+    if( strtolower(get_field('page_slug'))=="our-history" || strtolower(get_field('page_slug'))=="aboutus_new")
     {
         ?>
         <style type="text/css">
@@ -540,10 +552,10 @@
         <?php
     }
 
-    if( strtolower(get_field('page_slug'))=="who-we-are" or strtolower(get_field('page_slug'))=="who-we-are-ar")
+    if( strtolower(get_field('page_slug'))=="who-we-are" or strtolower(get_field('page_slug'))=="who-we-are-ar" or strtolower(get_field('page_slug'))=="aboutus_new_ar" or strtolower(get_field('page_slug'))=="aboutus_new_ar")
     {
 
-        if ( strtolower(get_field('page_slug'))=="who-we-are-ar") 
+        if ( strtolower(get_field('page_slug'))=="who-we-are-ar" || strtolower(get_field('page_slug'))=="aboutus_new_ar") 
         {?>
             <style type="text/css">
                                     
@@ -1105,7 +1117,7 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="our-history") {
+    if( strtolower(get_field('page_slug'))=="our-history" || strtolower(get_field('page_slug'))=="aboutus_new") {
         ?>
         <style type="text/css">
             .timeline-slider.slick-initialized.slick-slider .slick-list{
@@ -1120,7 +1132,7 @@
         </style>
         <?php
     }
-    if( strtolower(get_field('page_slug'))=="our-history-ar") {?>
+    if( strtolower(get_field('page_slug'))=="our-history-ar" || strtolower(get_field('page_slug'))=="aboutus_new_ar") {?>
         <!-- <style type="text/css">
         .rtl .service_case2.page_service {
         padding-bottom:0;

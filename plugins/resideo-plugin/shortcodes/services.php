@@ -290,7 +290,7 @@ if (!function_exists('resideo_services_shortcode')):
                         </div>
                     </div>';
                 }
-                elseif (get_field('page_slug') == 'choosing-your-home-ar' or get_field('page_slug') == 'financing-your-home-ar' or get_field('page_slug')=="mission-vision-ar" or get_field('page_slug')=='partnership-ar' or get_field('page_slug')=='who-we-are-ar' or get_field('page_slug')=='our-history-ar' or get_field('page_slug') == 'howwecanhelpyouar' or get_field('page_slug') == 'careers-ar')
+                elseif (get_field('page_slug') == 'choosing-your-home-ar' or get_field('page_slug') == 'financing-your-home-ar' or get_field('page_slug')=="mission-vision-ar" or get_field('page_slug')=='partnership-ar' or get_field('page_slug')=='who-we-are-ar' or get_field('page_slug')=='aboutus_new_ar' or get_field('page_slug')=='our-history-ar' or get_field('page_slug') == 'howwecanhelpyouar' or get_field('page_slug') == 'careers-ar')
                 {
                     if (get_field('page_slug')=='partnership-ar' or get_field('page_slug') == 'choosing-your-home-ar'  ) {
                         $ct_padding_bottom='ct_padding_bottom';
@@ -432,7 +432,7 @@ if (!function_exists('resideo_services_shortcode')):
                         $service_i++;
                     }
                     if ($s_array['cta_link'] != '') {
-                        if (get_field('page_slug')=="mission-vision" || get_field('page_slug')=="aboutus_new"){
+                        if (get_field('page_slug')=="mission-vision"){
                         }
                         else if(get_field('page_slug') !="mission-vision-ar")
                         {
@@ -617,7 +617,7 @@ if (!function_exists('resideo_services_shortcode')):
                     $service_i++;
                 }
                 if ($s_array['cta_link'] != '') {
-                    if (get_field('page_slug')=="mission-vision" || get_field('page_slug')=="aboutus_new"){
+                    if (get_field('page_slug')=="mission-vision"){
                     }
                     else
                     {

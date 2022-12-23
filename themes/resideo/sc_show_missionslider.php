@@ -2,13 +2,23 @@
 function show_mission_slider_fn()
 {
     ob_start();
+    $yt_iframe = get_field('ct_mission_yt_iframe');
+    $youtube_thumbnail = get_field('ct_youtube_thumbnail');
     ?>
     
-        <div class="pxp-services-h service_case2 pt-100 pb-100 page_service body_color" style="">
+        <div class="pxp-services-h service_case2 pt-100 pb-100 page_service page_aboutus_mission body_color" style="">
                 <div class="container">
                          <div class="pxp-services-h-container mt-0 mt-md-0">
-                         <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 service_img_min_height" >
-                          <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg pxp-in"><div style="display:none"><textarea class="my_iframe"><?php echo $yt_iframe;?></textarea></div><div class="iframe_video" id="third_iframe_vedio" style="margin-top: 36px; background-color:#000">
+                                        <img src="<?php echo $youtube_thumbnail;?>"><a id="ct-anim-play-video" class="ct-anim-video-play-button" href="#">
+                                        <span></span>
+                                      </a>
+                                       
+                                    </div>
+
+                                </div>
+                           <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0 service_img_min_height" >
+                             <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
                                       <ol class="carousel-indicators" style="top:0">
                                          <?php if( have_rows('vision_section') ): ?>
                                            
@@ -70,7 +80,7 @@ function show_mission_slider_fn()
                                       
                                     </div>
                             </div>
-
+                           
                          </div>
                 </div>
         </div>
