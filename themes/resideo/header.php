@@ -104,6 +104,7 @@
            
            .service_case2 h3 {color:#000 !important;}
            .pxp-services-h.service_case2 .pxp-primary-cta { color:#000 !important; }
+           .pxp-services-h.service_case2 .pxp-primary-cta:hover { color:#fff !important; }
            .service_case2 .pxp-primary-cta { color:#000 !important; }
            .pxp-services-h.service_case2 {
             margin-top:0 !important;
@@ -260,9 +261,9 @@
     if(strtolower(get_field('page_slug'))=="who-we-are-ar" || strtolower(get_field('page_slug'))=="aboutus_new_ar"){
         ?>
             <style type="text/css">
-               .pxp-services-h-items {
+               /* .pxp-services-h-items {
                     padding-right: 93px;
-                }
+                } */
                 .pxp-section-h3{
                     color: #333;
                 }

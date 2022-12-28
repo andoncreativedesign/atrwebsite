@@ -113,7 +113,7 @@ if($searched_posts != null)
     else $communities_listed = true;
 }
 
-
+//icl_register_string("resideo", 'Starting from','Starting from'); 
 
 $fields_settings = get_option('resideo_prop_fields_settings');
 $p_price         = isset($fields_settings['resideo_p_price_field']) ? $fields_settings['resideo_p_price_field'] : '';
@@ -245,14 +245,14 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
             <?php if ($no_map === true) { ?>
                 <div class="<?php echo esc_attr($container_class); ?>">
             <?php } ?>
-                    <div class="row pxp-results">
+                    <div class="pxp-results">
 
                     <div>
                         <?php
                         icl_register_string("resideo", 'SQM','SQM'); 
                         if($communities_listed == true) {
                         foreach ($searched_posts[1] as $term) {
-
+                           // echo "PRIBNT";print_r($term);
                             $term_id = $term->term_id;
                             $name   = $term->name;
                             $bed    =  get_field('no_of_bad',$term->taxonomy . '_' . $term_id);
@@ -271,7 +271,8 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
 
                             $price_label = $price[0];
                             $t_price = $price[1];
-
+                            $currency_ct     = isset($general_settings['resideo_currency_symbol_field']) ? $general_settings['resideo_currency_symbol_field'] : '';
+                            icl_register_string('resideo',$currency_ct,$currency_ct);
                             $units  =  get_field('available_units',$term->taxonomy . '_' . $term_id);
                             $units = explode("|", $units);
 
@@ -281,13 +282,16 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                             $size   =  get_field('area_size_sqft',$term->taxonomy . '_' . $term_id);
 
                             $image  =  get_field('image',$term->taxonomy . '_' . $term_id);
+                            $ct_logo = get_field('ct_community_logo',$term->taxonomy . '_' . $term_id);
 
                             $floors     =  get_field('floors',$term->taxonomy . '_' . $term_id);
 
                             $front_image =  get_field('community_front_image',$term->taxonomy . '_' . $term_id);
+                            $before_title =   get_field("label_before_title",$term->taxonomy . '_' . $term_id);
+                            $property_label_bed =   get_field("property_label_bed",$term->taxonomy . '_' . $term_id);
                             ?>
 
-                            <div class="owl-item active" style="width: 288.65px; margin-right: 30px;">
+                            <div class="owl-item ct-community-card">
                                 <div class="">
                                     <?php 
                                     $community_slug = get_term_by('id', $term_id, 'Community');
@@ -298,11 +302,12 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                     } 
 
                                     ?>
-                                    <a href="<?php echo $link; ?>" class="pxp-prop-card-1 rounded-lg ">
+                                    <a href="<?php echo $link; ?>" class="pxp-results-card ct-community-link rounded-lg ">
                                         <div class="pxp-prop-card-1-fig pxp-cover" style="background-size: cover;background-image: url(<?php if ($front_image != '') {
                                             echo $front_image;
                                         } else { echo $image;} ?>);"></div>
-                                        <div class="pxp-prop-card-1-gradient pxp-animate">
+                                        <div class="pxp-prop-card-1-gradient"></div>
+                                       <!-- <div class="pxp-prop-card-1-gradient pxp-animate">
                                             <div class="pxp-prop-card-1-details">
                                                 <div class="pxp-prop-card-1-details-title">
                                                     <?php echo pll__( $name ); ?>
@@ -367,8 +372,41 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                                                 </div>
                                                 <?php echo pll__("View Details"); ?>
                                             </div>
-                                        </div>
-                                        
+                                        </div>-->
+                                        <div class="ct-community-details">
+<div class="ct-community-details-inner">
+    <div class="ct-details-top">
+   
+    <div class="ct-details-title">
+        <div class="ct-details-title-top">
+          <?php echo pll__($before_title); ?>
+        </div>
+        <div class="ct-details-title-middle">
+        <?php echo pll__( $name ); ?>
+        </div>
+        <div class="ct-details-title-bottom">
+        <?php echo pll__( $property_label_bed ); ?>
+        </div>
+    </div>
+    <div class="ct-details-image-logo">
+      <img src="<?php echo $ct_logo;?>" />
+    </div>
+   </div>
+    <div class="ct-details-bottom">
+            <div class="ct-details-bottom-left"> 
+                <div class="ct-price-label"><?php echo pll__( $price_label );?>&nbsp;</div>
+                <div class="ct-price-value"><?php echo pll__( $t_price ); ?>&nbsp;<?php echo pll__( $currency_ct ); ?> </div>
+                <div class="more_dtl"><?php echo pll__( $area_label );?></div>
+                   <div class="more_dtl_val">
+                      <?php echo pll__($area_sqf).' '.pll__("SQM");?>
+                  </div>
+            </div>
+            <div class="ct-details-bottom-right">
+                <button><?php echo pll__("View Details"); ?></button>
+            </div>
+     </div>
+</div>
+</div>
                                     </a>
                                 </div>
                             </div>

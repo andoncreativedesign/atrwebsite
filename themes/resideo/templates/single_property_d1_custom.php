@@ -152,13 +152,26 @@ while (have_posts()) : the_post();
     $status = wp_get_post_terms($prop_id, 'property_status');
     $type   = wp_get_post_terms($prop_id, 'property_type');
     $findCommunity = wp_get_post_terms($prop_id, 'Community');
-   
+    //echo "COMMMM";print_r($findCommunity);
     if(!empty( $findCommunity )) {
 
        
         $current_comm = $findCommunity[0]->term_id;
     }
    
+    // $ct_community_details = get_terms( array(
+    //     'taxonomy' => 'Community',
+    //     'hide_empty' => false,
+    //     'term_taxonomy_id' => $current_comm
+    // ));
+    // echo "COMM2";print_r($ct_community_details);
+    if (get_locale()=='ar') {
+        $dwn_brochure_link = get_field('ct_community_arabic_brochure','term_' . $current_comm);
+    }
+    else {
+        $dwn_brochure_link = get_field('ct_community_english_brochure','term_' . $current_comm);
+    }
+    //echo "lang".get_locale();
     $custom_fields_settings = get_option('resideo_fields_settings');
 
     $overview = get_the_content();
@@ -1115,7 +1128,7 @@ while (have_posts()) : the_post();
                             <div class="row2 iconss_wrapper addition_info_1">
                             <?php if(get_field('info_pack_text')) { ?>
                                 <div class="col-md-12 first_col">
-                                    <a href="<?php if(get_field('info_pack')){echo  get_field('info_pack');}else{echo " # ";}?>" style="text-decoration: none;">
+                                    <a target="_blank" href="<?php echo ($dwn_brochure_link ? $dwn_brochure_link : '#');?>" style="text-decoration: none;">
                                         <div class="icon_wrapper single_property_icon"> <img src="<?php echo get_template_directory_uri(); ?>/images/Group 895.png"> </div>
                                         <div class="title_t"> <img src="<?php echo get_template_directory_uri();?>/images/ic_file_download.png" class="download_icon"> <span style="font-size: 13px;">
                                         <?php 

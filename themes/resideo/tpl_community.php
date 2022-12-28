@@ -406,6 +406,14 @@ function closeGallery() {
                 $price_from      =   explode("|", $price_from);
                 $ct_intro = get_field("ct_intro_text");
                 $ct_form_intro = get_field("ct_form_intro");
+                
+
+                if (get_locale()=='ar') {
+                    $dwn_brochure_link = get_field("ct_community_arabic_brochure",$tt);
+                }
+                else {
+                       $dwn_brochure_link = get_field("ct_community_english_brochure",$tt);
+                }
                 if(!isset($ct_intro))  $ct_intro= '';
                 if(!isset($ct_form_intro))  $ct_form_intro= '';
                 if(count($price_from)>1)
@@ -1107,7 +1115,7 @@ function closeGallery() {
                 <div class="col-md-4 col-sm-12">
                     <div class="pxp-testim-1-intro">
                         <h5 class="pxp-section-h2" style="color: "><?php echo pll__( $tech_heading ); ?></h5>
-                    </div><a href="#" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in tech_cta pxp-in" id="cta-6308a821e3ae7" style="color: #ffffff !important; margin-top: 15px !important"><?php echo pll__( "DOWNLOAD THE BROCHURE" ); ?></a><style>.pxp-primary-cta#cta-6308a821e3ae7:after { border-top: 2px solid #ffffff; }</style></div>
+                    </div><a target="_blank" href="<?php echo $dwn_brochure_link;?>" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in tech_cta pxp-in" id="cta-6308a821e3ae7" style="color: #ffffff !important; margin-top: 15px !important"><?php echo pll__( "DOWNLOAD THE BROCHURE" ); ?></a><style>.pxp-primary-cta#cta-6308a821e3ae7:after { border-top: 2px solid #ffffff; }</style></div>
                 <div class="col-md-4 col-sm-12">
                     <div class="tech_list">
                         <ul>

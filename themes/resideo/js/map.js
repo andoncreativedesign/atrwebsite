@@ -564,7 +564,8 @@
             dataType: 'json',
             url: map_vars.ajaxurl,
             data: {
-                'action'               : 'resideo_get_searched_properties',
+                'action'               : 'resideo_get_searched_communities',
+                //'action'               : 'resideo_get_searched_properties',                 
                 'security'             : $('#resultsMapSecurity').val(),
                 'city_term_id'         : $('#city_term_id').val(),
                 'search_property_id'   : $('#search_property_id').val(),
@@ -606,6 +607,7 @@
                 map.setZoom(parseInt(map_vars.default_zoom));
 
                 if (data.getprops === true) {
+                    console.log("PROPS",data.comms);
                     addMarkers(data.props, map);
 
                     map.fitBounds(markers.reduce(function(bounds, marker) {
@@ -638,6 +640,7 @@
                         var propID = $(this).attr('data-prop');
 
                         $(this).on('mouseenter', function() {
+                           
                             if (map) {
                                 var targetMarker = $.grep(markers, function(e) {
                                     return e.id == propID;

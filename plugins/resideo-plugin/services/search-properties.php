@@ -736,6 +736,7 @@ if (!function_exists('resideo_get_searched_properties')):
             $prop->unit  = $unit;
 
             array_push($props, $prop);
+            //echo "HURRR";
         }
 
         wp_reset_postdata();

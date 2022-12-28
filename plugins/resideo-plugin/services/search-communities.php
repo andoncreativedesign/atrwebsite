@@ -44,7 +44,28 @@ if (!function_exists('resideo_search_communities')):
                   return array("communities",$terms);
             }
         }
-
+        else if(isset($_GET['search_status']) && $_GET['search_status'] != 0) {
+            //echo "status" . $_GET['search_status'];
+            $terms = get_terms( array(
+                'taxonomy' => 'Community',
+                'hide_empty' => false,
+                'term_taxonomy_id' => $_GET['search_status']
+                // 'meta_query' => array(
+                //     array(
+                //        'key'       => 'term_id',
+                //        'value'     => $_GET['search_status'],
+                //        'compare'   => '='
+                //     )
+                // )
+            ) );
+            //$terms2 = get_term_by( 'term_id', $_GET['search_status']);
+            // echo "STATiste";
+            // print_r($terms2 );
+            // The Loop
+            if ( ! empty( $terms ) ) { 
+                  return array("communities",$terms);
+            }
+        }
 
         else {
         // if there are search params, it should 
@@ -380,9 +401,10 @@ if (!function_exists('resideo_search_communities')):
 endif;
 
 // Get searched properties for map
-if (!function_exists('resideo_get_searched_properties')): 
-    function resideo_get_searched_properties() {
+if (!function_exists('resideo_get_searched_communities')): 
+    function resideo_get_searched_communities() {
         check_ajax_referer('results_map_ajax_nonce', 'security');
+        
 
         $search_status        = isset($_POST['search_status']) ? sanitize_text_field($_POST['search_status']) : '0';
         $search_address       = isset($_POST['search_address']) ? stripslashes(sanitize_text_field($_POST['search_address'])) : '';
@@ -772,13 +794,28 @@ if (!function_exists('resideo_get_searched_properties')):
             $prop->unit  = $unit;
 
             array_push($props, $prop);
+            
         }
 
         wp_reset_postdata();
         wp_reset_query();
 
+//fetching all communities
+$comms = array();
+$ct_communities_for_maps = get_terms( array(
+    'taxonomy' => 'Community',
+    'hide_empty' => false,
+) );
+foreach ($ct_communities_for_maps as $term) {
+    $comm = new stdClass();
+   
+    $comm->id = $term->term_id;
+    $comm->name   = $term->name;
+    array_push($comms, $comm);
+}
+
         if (count($props) > 0) {
-            echo json_encode(array('getprops'=>true, 'props'=>$props));
+            echo json_encode(array('getprops'=>true, 'props'=>$props, 'comms' => $comms));
             exit();
         } else {
             echo json_encode(array('getprops'=>false));
@@ -788,6 +825,6 @@ if (!function_exists('resideo_get_searched_properties')):
         die();
     }
 endif;
-add_action('wp_ajax_nopriv_resideo_get_searched_properties', 'resideo_get_searched_properties');
-add_action('wp_ajax_resideo_get_searched_properties', 'resideo_get_searched_properties');
+add_action('wp_ajax_nopriv_resideo_get_searched_communities', 'resideo_get_searched_communities');
+add_action('wp_ajax_resideo_get_searched_communities', 'resideo_get_searched_communities');
 ?>

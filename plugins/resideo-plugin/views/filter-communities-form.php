@@ -146,11 +146,11 @@ if (!function_exists('resideo_get_filter_communities_form')):
                         <?php }?>
                     </div>
                 </div>
-                <?php if(isset($_GET['search_location'])) {?>
+                <?php //if(isset($_GET['search_location'])) {?>
                 <div class="d-flex">
                     <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
                 </div>
-                <?php } ?>
+                <?php // } ?>
             </div>
 
             <div class="pxp-content-side-search-form-adv mb-3">

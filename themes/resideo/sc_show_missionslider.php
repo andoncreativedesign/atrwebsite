@@ -17,7 +17,7 @@ function show_mission_slider_fn()
                                     </div>
 
                                 </div>
-                           <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0 service_img_min_height" >
+                           <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-5 service_img_min_height" >
                              <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
                                       <ol class="carousel-indicators" style="top:0">
                                          <?php if( have_rows('vision_section') ): ?>

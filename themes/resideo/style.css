@@ -13795,6 +13795,11 @@ color: #fff; }
 }
 
 }
+@media only screen and (min-width: 768px) and (max-width: 990px) { 
+    .page-template-tpl_aboutnew .service_case_3 > div:nth-child(2){
+        margin-left:0%;
+      }
+}
 
 @media only screen and (max-width: 1024px) {
 .page_service {
@@ -13807,7 +13812,7 @@ color: #fff; }
         width:100%;
     }
     .ct_padding_bottom{
-        padding-bottom: 0px;
+        /* padding-bottom: 0px; */
         margin-top:1.5rem !important;
     }
 }
@@ -13908,7 +13913,9 @@ color: #fff; }
     font-weight: bold;
     font-size: 1rem;
 }
-
+.ct_contactdetails {
+    text-align:left;
+}
 .ct_contactdetails p a{
   color:#4d858d;
 }
@@ -14125,3 +14132,213 @@ height:50px !important;
  line-height: 32px;
  text-align:left;
     }
+    @media only screen and (max-width:767px) {
+        .page-template-tpl_aboutnew .row.service_case_3 {
+            max-width:540px;
+            margin:0 auto !important;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 990px) {
+        .page-template-tpl_aboutnew .row.service_case_3 {
+            max-width:720px;
+            margin:0 auto !important;
+        }
+    }
+@media only screen and (min-width: 991px) and (max-width: 1024px) {
+        .page-template-tpl_aboutnew .row.service_case_3 {
+            max-width:960px;
+            margin:0 auto !important;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1500px) {
+        .page-template-tpl_aboutnew .row.service_case_3 .pxp-primary-cta{
+          font-size:13px;
+        }
+    }
+
+
+    .page_aboutus_mission  .pxp-primary-cta {
+        z-index:10000;
+        position: relative;
+    }
+
+/*New community search*/
+body.pxp-dark-mode.page-template-community-search {
+  background: #f3f4f4;
+}
+
+    .ct-community-card {
+        max-width:570px;
+        width:570px;
+        margin-top:25px;
+    }
+    .ct-community-card .ct-community-link {
+        position: relative;
+        display: block;    
+        overflow: hidden;
+        height:242px;
+        background: #fff;
+
+    }
+    .ct-community-card .pxp-prop-card-1-fig, .ct-community-card .pxp-prop-card-1-gradient {
+        max-width:180px;
+    }
+
+    .ct-community-card .ct-community-details {
+        position:absolute;
+        left:180px;
+        background:#fff;
+        width:390px;
+    }
+    .ct-community-card .ct-community-details-inner {
+        padding: 25px;
+        
+    }
+
+    .ct-community-card .ct-details-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ct-community-card .ct-details-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top:15px;
+    }
+
+    .ct-community-card .ct-details-image-logo {
+      width:136px;
+      text-align:right;
+     
+    }
+    .ct-community-card .ct-details-image-logo img{
+        max-width:100%;
+        text-align: right;
+    }
+
+    .ct-community-card .ct-details-title-top {
+      font-size:10px;
+      color:#4D858D;
+      font-weight:bold;
+      text-transform: uppercase;
+    }
+    .ct-community-card .ct-details-title-middle {
+      font-size:21px;
+      color:#000;
+      font-weight:bold;
+    }
+    .ct-community-card .ct-details-title-bottom {
+        font-size:13px;
+        color:#7B868C;
+      }
+      .ct-community-card .ct-details-bottom-left .ct-price-label {
+        font-size:13px;
+        color:#7B868C;
+      }
+      .ct-community-card .ct-details-bottom-left .ct-price-value {
+        font-size:18px;
+        color:#000;
+        font-weight:bold;
+      }
+      .ct-community-card .ct-details-bottom-left .more_dtl {
+        font-size:13px;
+        color:#7B868C;
+      }
+      .ct-community-card .ct-details-bottom-left .more_dtl_val {
+        font-size:18px;
+        color:#000;
+        font-weight:bold;
+      }
+
+      .ct-community-card .ct-details-bottom-right {
+        display: block;
+        margin-top: auto;
+      }
+      .ct-community-card .ct-details-bottom-right button {
+        font-size:16px;
+        font-weight:bold;
+        color:#000;
+        text-transform: uppercase;
+        border: 2px solid #a98913;
+        padding:7px 10px;
+        background: #fff;
+        -webkit-transition: background .7s ease-in-out;
+        -o-transition: background .7s ease-in-out;
+          transition: background .7s ease-in-out;
+      }
+      .ct-community-card .ct-details-bottom-right button:hover {
+      background: #a98913;
+      color:#fff;
+      }
+
+
+      .page-template-community-search .d-flex .pxp-adv-toggle {
+        display: none;
+      }
+      .page-template-community-search .pxp-sort-form .pxp-sort-select {
+        display: none;
+      }
+
+      .ct-community-card .pxp-prop-card-1-gradient {
+        pointer-events: none;
+    }
+
+      @media only screen and (max-width: 767px)  {
+        .ct-community-card .ct-community-details-inner {
+            padding:12px;
+        }
+        .ct-community-card {
+         max-width: 100%;
+        }
+        .ct-community-card .ct-details-image-logo {
+            width:80px;
+    
+        }
+        .ct-community-card .ct-details-title-middle { 
+          font-size:14px;
+          line-height: 16px;
+        }
+        .ct-community-card .ct-details-title-bottom {
+            font-size:10px;
+            line-height: 12px;
+        }
+        .ct-community-card .ct-details-bottom-left .ct-price-label {
+            font-size:10px;
+            line-height: 14px;
+        }
+        .ct-community-card .ct-details-bottom-left .ct-price-value {
+            font-size:12px;
+            line-height: 16px;
+        }
+        .ct-community-card .ct-details-bottom-left .more_dtl {
+            font-size:10px; 
+            line-height: 14px;
+        }
+        .ct-community-card .ct-details-bottom-left .more_dtl_val {
+            font-size:12px;
+            line-height: 16px;
+        }
+        .ct-community-card .ct-details-bottom-right button {
+            font-size:12px;
+            line-height: 16px;
+            padding:5px;
+        }
+    }
+    @media only screen and (max-width: 580px)  {
+    .ct-community-card .ct-community-link {
+         height:200px;
+    }
+    .ct-community-card .pxp-prop-card-1-fig, .ct-community-card .pxp-prop-card-1-gradient {
+        max-width:40%;
+    }
+    .ct-community-card .ct-community-details {
+        left:40%;
+    }
+    .ct-community-card .ct-details-bottom {
+        flex-direction:column;
+    }
+    .ct-community-card .ct-details-bottom-right button {
+        margin-top:15px;
+    }
+}

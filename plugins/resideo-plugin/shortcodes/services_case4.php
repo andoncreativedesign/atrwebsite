@@ -650,7 +650,7 @@ ob_start();
   }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<div class="container">
+<div class="container" id="ct-cd-horizontal-timeline">
 	<div class="carousel_custom_h2_wrapper">
 		<p class="pxp-text-light" style="color:#4D858D;font-weight: 700; "><?php the_field('company_timeline_title');?></p>
 
@@ -735,6 +735,7 @@ ob_start();
 
         //detect click on the next arrow
         timelineComponents['timelineNavigation'].on('click', '.next', function(event){
+          // alert(0)
           if(window.innerWidth < 1170){
             event.preventDefault();
             updateSlide(timelineComponents, timelineTotWidth, 'next');

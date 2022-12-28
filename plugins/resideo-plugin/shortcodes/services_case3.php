@@ -5,11 +5,11 @@ $return_string =
     '<div class="row service_case_3" style="padding: 70px 0px 0px 0px; margin:0px">';
     if (get_field('page_slug')=='who-we-are-ar' || get_field('page_slug')=='aboutus_new_ar') {
         $return_string .=' 
-        <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3">';
+        <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3 ct-offset-right-ar">';
     }
     else{
         $return_string .=' 
-        <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3 offset-md-1 offset-sm-1">';
+        <div class="col-sm-10 col-md-10 col-lg-4 col-xl-3 offset-lg-1">';
     }
     $return_string .=' 
             <div class="pxp-services-h-items pxp-animate-in ml-0 mt-4 mt-md-5 mt-lg-0" style="padding-bottom: 0px">
@@ -39,12 +39,20 @@ $people_area = get_field("people_area");
 
 $return_string .= 
             '</div>
-        </div>
-        <div class="col-md-12 col-lg-8 col-xl-8">
-            <div class="pxp-services-h-fig pxp-cover  rounded-lg" style="height:auto;" >
+        </div>';
+        if (get_field('page_slug')=='who-we-are-ar' || get_field('page_slug')=='aboutus_new_ar') {
+          $return_string .=  '<div class="col-md-12 col-lg-8 col-xl-8">';
+      }
+      else{
+        $return_string .=  '<div class="col-md-12 col-lg-8 col-xl-8">';
+      }
+        
+
+         $return_string .=  '<div class="pxp-services-h-fig pxp-cover  rounded-lg" style="height:auto;" >
                 '. $people_area .'
-            </div>
-        </div>
+            </div>';
+
+         $return_string .= '</div>
     </div>
 
 
