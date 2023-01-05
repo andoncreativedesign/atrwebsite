@@ -6,7 +6,6 @@
     var styles;
     var resizeCenter;
     var markers               = [];
-    var markers2              = [];
     var placesIDs             = [];
     var transportationMarkers = [];
     var restaurantsMarkers    = [];
@@ -172,7 +171,7 @@
         return x1 + x2;
     }
 
-    function addMarkers(props, comms, map) {
+    function addMarkers(props, map) {
         $.each(props, function(i, prop) {
             var latlng = new google.maps.LatLng(prop.lat, prop.lng);
 
@@ -248,24 +247,6 @@
 
             marker.id = prop.id;
             markers.push(marker);
-        });
-        $.each(comms, function(i, comm) { 
-            var latlng2 = new google.maps.LatLng(comm.lat, comm.long);
-
-            var html2 = '<div class="pxp-marker-short-price">' + comm.name + '</div>' + 
-            '<a href="' + comm.url + '" class="pxp-marker-details">' + 
-                '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + comm.tn + ');background-size: cover;"></div>' + 
-                '<div class="pxp-marker-details-info">' + 
-                    '<div class="pxp-marker-details-info-title">' + comm.name + '</div>' + 
-                    '<div class="pxp-marker-details-info-price">' + comm.price + '</div>' + 
-                    '<div class="pxp-marker-details-info-feat">'  + '</div>' + 
-                '</div>' + 
-            '</a>';
-
-            var marker2 = new CustomMarker(comm.id, latlng2, map, 'pxp-price-marker', html2);
-
-            marker2.id = comm.id;
-            markers2.push(marker2);
         });
     }
 
@@ -627,7 +608,7 @@
 
                 if (data.getprops === true) {
                     console.log("PROPS",data.comms);
-                    addMarkers(data.props,data.comms, map);
+                    addMarkers(data.props, map);
 
                     map.fitBounds(markers.reduce(function(bounds, marker) {
                         return bounds.extend(marker.getPosition());
@@ -674,32 +655,6 @@
                         $(this).on('mouseleave', function() {
                             var targetMarker = $.grep(markers, function(e) {
                                 return e.id == propID;
-                            });
-        
-                            if(targetMarker.length > 0) {
-                                targetMarker[0].removeActive();
-                            }
-                        });
-                    });
-
-                    $('.ct-community-card').each(function(i) {
-                        var commID = $(this).attr('data-commid');
-                        $(this).on('mouseenter', function() {
-                           
-                            if (map) {
-                                var targetMarker = $.grep(markers2, function(e) {
-                                    return e.id == commID;
-                                });
-        
-                                if(targetMarker.length > 0) {
-                                    targetMarker[0].addActive();
-                                    map.setCenter(targetMarker[0].latlng_);
-                                }
-                            }
-                        });
-                        $(this).on('mouseleave', function() {
-                            var targetMarker = $.grep(markers2, function(e) {
-                                return e.id == commID;
                             });
         
                             if(targetMarker.length > 0) {

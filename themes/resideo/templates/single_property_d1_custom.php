@@ -1473,7 +1473,7 @@ while (have_posts()) : the_post();
                 <div class="col-lg-6 col-xl-4 align-left order-1">
                     <p class="pxp-text-light" style="color: #ffffff; font-weight: 700;"><?php echo pll__( "CONTACT US" ); ?></p>
                     <h2 class="pxp-section-h2 main_heading_style" style="text-transform:uppercase; color:#fff; "><?php echo pll__( "INTERESTED IN OUR COMMUNITIES?" ); ?></h2>
-                    <p class="ct_contact_intro"><?php echo pll__( $property_email_us ).' '.'<a href="mailto:info@al-tahaluf.com">info@al-tahaluf.com</a>'; ?><br><?php echo pll__( $property_call_us ).' '.'<a href="tel:+92-000-1769">+92 000 1769</a>'; ?></p>
+                    <p class="ct_contact_intro"><?php echo pll__( $property_email_us ).' '.'<a href="mailto:info@al-tahaluf.com">info@al-tahaluf.com</a>'; ?><br><?php echo pll__( $property_call_us ).' '.'<a href="tel:92-000-1769">92 000 1769</a>'; ?></p>
                     <p class="ct_business_hours"><?php echo pll__( "Our business hours are:" );?><br>
                     <?php echo pll__( "Sunday - Thursday" );?><br>
                     <?php echo pll__( "9AM - 5PM" );?>

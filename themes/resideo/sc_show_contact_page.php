@@ -34,7 +34,7 @@ function sc_show_contact_page_fn()
                             </div>
                             <!-- <div id="pxp-contact-map" class="mt-3"></div>  -->
                             <div class="ct_contactdetails mt-3 mt-md-4">
-                                <p><strong><?php echo pll__( "Call us at" ).':';?> </strong><a href="tel:+92-000-1769">+92 000 1769</a></p>
+                                <p><strong><?php echo pll__( "Call us at" ).':';?> </strong><a href="tel:92-000-1769">92 000 1769</a></p>
                                 <p><strong><?php echo pll__( "Email us at" ).':';?></strong> <a href="mailto:info@al-tahaluf.com">info@al-tahaluf.com</a></p>
                             </div>
                         </div>

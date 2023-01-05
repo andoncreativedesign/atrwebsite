@@ -1642,7 +1642,7 @@ function ct_show_call_btn() {
     ?>
     <div class="ct_callBtn_cnt">
     <div class="ct_callBtn_cont">
-        <a href="tel:+92-000-1769" class="ct_call_toggle">
+        <a href="tel:92-000-1769" class="ct_call_toggle">
           <i class="fa fa-phone"></i>
         </a>
     </div>

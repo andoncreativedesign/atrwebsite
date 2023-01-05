@@ -112,7 +112,7 @@ if($searched_posts != null)
     } 
     else $communities_listed = true;
 }
-
+echo "SEARCHED".$searched_posts[2];
 //icl_register_string("resideo", 'Starting from','Starting from'); 
 
 $fields_settings = get_option('resideo_prop_fields_settings');
@@ -291,7 +291,7 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                             $property_label_bed =   get_field("property_label_bed",$term->taxonomy . '_' . $term_id);
                             ?>
 
-                            <div class="owl-item ct-community-card">
+                            <div class="owl-item ct-community-card" data-commid="<?php echo $term_id;?>">
                                 <div class="">
                                     <?php 
                                     $community_slug = get_term_by('id', $term_id, 'Community');

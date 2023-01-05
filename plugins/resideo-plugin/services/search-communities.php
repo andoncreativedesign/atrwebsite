@@ -7,11 +7,29 @@
 if (!function_exists('resideo_search_communities')): 
     function resideo_search_communities() {
        
-       
-        if(!isset($_GET['search_location']) || (isset($_GET['search_location']) && $_GET['search_location']==0 && $_GET['search_status']==0))
-        {
-            //this is the condition for default search page whre there is not get params and search page where community and location is not set
-            // it should load all the communities
+   //check if amenities are set
+   $amenities_searched = false;
+   if(             
+            (isset($_GET['search_beds']) && $_GET['search_beds'] == 0) &&
+            (isset($_GET['search_baths']) && $_GET['search_baths'] == 0 ) && 
+            (isset($_GET['search_size_min']) && $_GET['search_size_min'] == '') &&
+            (isset($_GET['search_size_max']) && $_GET['search_size_max'] == '') &&           
+            (isset($_GET['search_price_min']) && $_GET['search_price_min'] == '') &&
+            (isset($_GET['search_price_max']) && $_GET['search_price_max'] == '') &&
+            (!isset($_GET['majlis'])) &&
+            (!isset( $_GET['storage_area'])) &&
+            (!isset( $_GET['maid'])) && 
+            (!isset( $_GET['garage'])) 
+        
+    ) {
+        $amenities_searched = false;
+    }
+    else {
+        $amenities_searched = true;
+    }
+
+        if(!isset($_GET['search_location']) && !isset($_GET['search_status'])) {
+            // default page view
             $terms = get_terms( array(
                 'taxonomy' => 'Community',
                 'hide_empty' => false,
@@ -19,11 +37,40 @@ if (!function_exists('resideo_search_communities')):
         
             // The Loop
             if ( ! empty( $terms ) ) { 
-                  return array("communities",$terms);
+                  return array("communities",$terms,"case1");
             }
         }
-        else if(isset($_GET['search_location']) && $_GET['search_location'] != 0) {
-            //this is when location is set, which should load the communties in that location
+        if((isset($_GET['search_location']) && $_GET['search_location']==0 && $_GET['search_status']==0) && $amenities_searched == false)
+        {
+           //when select location option and select community option is selected  and no amenities are clicked
+            $terms = get_terms( array(
+                'taxonomy' => 'Community',
+                'hide_empty' => false,
+            ) );
+        
+            // The Loop
+            if ( ! empty( $terms ) ) { 
+                  return array("communities",$terms,"case2");
+            }
+        }
+
+        if(isset($_GET['search_status']) && $_GET['search_status'] != 0 && $amenities_searched == false) {
+            
+            $terms = get_terms( array(
+                'taxonomy' => 'Community',
+                'hide_empty' => false,
+                'term_taxonomy_id' => $_GET['search_status'] 
+            ) );
+           
+            // The Loop
+            if ( ! empty( $terms ) ) { 
+                  return array("communities",$terms,"case4");
+            }
+        }
+
+        
+        if(isset($_GET['search_location']) && $_GET['search_location'] != 0 && $amenities_searched == false) {
+            //when location is selected and no amenities are selected, which should load the communties in that location
             $terms = get_terms( array(
                 'taxonomy' => 'Community',
                 'hide_empty' => false,
@@ -35,40 +82,21 @@ if (!function_exists('resideo_search_communities')):
                     )
                 )
             ) );
-            // array_push($args['meta_query'], array(
-            //     'key'     => 'street_number',
-            //     'value'   => $street_no,
-            // ));
+         
             // The Loop
             if ( ! empty( $terms ) ) { 
-                  return array("communities",$terms);
+                  return array("communities",$terms,"case3");
             }
         }
-        else if(isset($_GET['search_status']) && $_GET['search_status'] != 0) {
-            //echo "status" . $_GET['search_status'];
-            $terms = get_terms( array(
-                'taxonomy' => 'Community',
-                'hide_empty' => false,
-                'term_taxonomy_id' => $_GET['search_status']
-                // 'meta_query' => array(
-                //     array(
-                //        'key'       => 'term_id',
-                //        'value'     => $_GET['search_status'],
-                //        'compare'   => '='
-                //     )
-                // )
-            ) );
-            //$terms2 = get_term_by( 'term_id', $_GET['search_status']);
-            // echo "STATiste";
-            // print_r($terms2 );
-            // The Loop
-            if ( ! empty( $terms ) ) { 
-                  return array("communities",$terms);
-            }
-        }
+      
+   
 
-        else {
-        // if there are search params, it should 
+       
+        // if there are any filters selected it would execute the below code
+        // it will fetch the properties first as the filter paramenters are applied to properties only, then 
+        // find the commmunities these properties belong to and feature those communities
+        // while filtering, the location selected in the dropdown is considered but not the 
+        // community selected in the dropdown
         $status       = isset($_GET['search_status']) ? sanitize_text_field($_GET['search_status']) : '0';
         $location       = isset($_GET['search_location']) ? sanitize_text_field($_GET['search_location']) : '0';
         $address      = isset($_GET['search_address']) ? stripslashes(sanitize_text_field($_GET['search_address'])) : '';
@@ -132,14 +160,16 @@ if (!function_exists('resideo_search_communities')):
         }
 
         $args['tax_query'] = array('relation' => 'AND');
-
-        if ($status != '0') {
-            array_push($args['tax_query'], array(
-                'taxonomy' => 'Community',
-                'field'    => 'term_id',
-                'terms'    => $status,
-            ));
-        }
+       
+        // No neeed to check the community id as we are filtering with other fields, so we neeed to fetch all the communities that mathces the filter criteria
+        // not just the ones that is selected in dropdown
+        // if ($status != '0') {
+        //     array_push($args['tax_query'], array(
+        //         'taxonomy' => 'Community',
+        //         'field'    => 'term_id',
+        //         'terms'    => $status,
+        //     ));
+        // }
 
         if ($location != '0') {
             array_push($args['tax_query'], array(
@@ -390,12 +420,49 @@ if (!function_exists('resideo_search_communities')):
         }
 
         $query = new WP_Query($args);
-        wp_reset_postdata();
+        
+        // finding the community ids of the properties that match the query and add it to an array without duplicating. 
+        // then those communties are fetched and passed
 
-        return array("properties",$query);
-
+        // if location is selected  from dropdown, then only that community needs to be shown which matches
+        // the filter properties selected. Otherwise it will feature all the communities based on the filters
+        // =location assigned in community page needs to be considered here rather than the location taxonomy selected in 
+        // property leve;
+        $result_comms = array();
+        while ($query->have_posts()) {
+            $query->the_post();
+            $prop_id = get_the_ID();
+            $findCommunity = wp_get_post_terms($prop_id, 'Community');
+            
+            if(!empty( $findCommunity )) {            
+                $current_comm = $findCommunity[0]->term_id;
+                if(!in_array($current_comm , $result_comms, true)){
+                    array_push($result_comms, $current_comm);
+                }
+            }
+            
 
         }
+        print_r($result_comms);
+        
+        wp_reset_postdata();
+        if(count($result_comms) > 0 ) {
+         $terms = get_terms( array(
+            'taxonomy' => 'Community',
+            'hide_empty' => false,
+            'term_taxonomy_id' => $result_comms
+        ) );
+        }
+       
+        // The Loop
+        if ( ! empty( $terms ) ) { 
+              return array("communities",$terms,"case5");
+        }
+        return;
+        //return array("properties",$query);
+
+
+       // } //if
         
     }
 endif;
@@ -806,11 +873,33 @@ $ct_communities_for_maps = get_terms( array(
     'taxonomy' => 'Community',
     'hide_empty' => false,
 ) );
+icl_register_string("resideo", "Price from","Price from");
 foreach ($ct_communities_for_maps as $term) {
     $comm = new stdClass();
    
-    $comm->id = $term->term_id;
-    $comm->name   = $term->name;
+    $comm->id     = $term->term_id;
+    $comm->name   = pll__($term->name);
+    $comm->lat    = get_field("ct_cord_lattitude",$term->taxonomy.'_'.$term->term_id);
+    $comm->long   = get_field("ct_cord_longitude",$term->taxonomy.'_'.$term->term_id);
+    $comm->tn     = get_field("community_front_image",$term->taxonomy.'_'.$term->term_id);
+    $price_from   =   get_field("price_from",$term->taxonomy.'_'.$term->term_id);
+    $price_from   =   explode("|", $price_from);
+    $link = site_url()."/single-community/?term_id=".$term_id."&community=".$term->slug;
+    if(get_locale() == 'ar'){
+       $link = str_replace("/single-community","/ar/single-community-ar",$link);
+        } 
+    $comm->url = $link;
+    //( $price_from1 ).' '.pll__( "SAR" )
+    if(count($price_from)>1)
+        {
+            $price_from2 = $price_from[1]; 
+        }
+    else
+        {
+            $price_from2 = $price_from[0];
+        }
+    
+    $comm->price = pll__( 'Price from' ).' '.$price_from2.' '.pll__( "SAR" );
     array_push($comms, $comm);
 }
 

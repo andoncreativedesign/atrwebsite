@@ -59,7 +59,17 @@ if (!function_exists('resideo_get_filter_communities_form')):
             }
             ?>
         </style>
+    <?php 
+     icl_register_string("resideo", 'Min Price','Min Price');
+     icl_register_string("resideo", 'Max Price','Max Price');
+     icl_register_string("resideo", 'Min Size','Min Size');
+     icl_register_string("resideo", 'Max Size','Max Size');
+     icl_register_string("resideo", 'No Max','No Max');
+     icl_register_string("resideo", 'No Min','No Min');
+     icl_register_string("resideo", 'Any','Any');
 
+     
+    ?>
         <form class="pxp-results-filter-form " role="search" method="get" action="<?php echo esc_url($search_submit); ?>">
             <input type="hidden" name="sort" id="sort" value="<?php echo esc_attr($sort); ?>" autocomplete="off" />
 
@@ -147,12 +157,15 @@ if (!function_exists('resideo_get_filter_communities_form')):
                     </div>
                 </div>
                 <?php //if(isset($_GET['search_location'])) {?>
-                <div class="d-flex">
+                <!-- <div class="d-flex">
                     <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
-                </div>
+                </div> -->
                 <?php // } ?>
             </div>
-
+            <div class="ct_filter_search_btn">
+                <?php  icl_register_string("resideo", "REFINE YOUR SEARCH","REFINE YOUR SEARCH");?>
+                <a role="button" href="#"><?php echo pll__("REFINE YOUR SEARCH")?></a>
+            </div>
             <div class="pxp-content-side-search-form-adv mb-3">
                 <div class="row pxp-content-side-search-form-row">
                     <?php
@@ -170,7 +183,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                         $resideo_cities_settings = get_option('resideo_cities_settings'); ?>
 
                                         <select class="custom-select" id="search_city" name="search_city">
-                                            <option value=""><?php esc_html_e('Any', 'resideo'); ?></option>
+                                            <option value=""><?php echo pll__('Any');//esc_html_e('Any', 'resideo'); ?></option>
                                             <?php if (is_array($resideo_cities_settings) && count($resideo_cities_settings) > 0) {
                                                 uasort($resideo_cities_settings, "resideo_compare_position");
 
@@ -202,7 +215,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                         $resideo_neighborhoods_settings = get_option('resideo_neighborhoods_settings'); ?>
 
                                         <select class="custom-select" id="search_neighborhood" name="search_neighborhood">
-                                            <option value=""><?php esc_html_e('Any', 'resideo'); ?></option>
+                                            <option value=""><?php echo pll__('Any');//esc_html_e('Any', 'resideo'); ?></option>
                                             <?php if (is_array($resideo_neighborhoods_settings) && count($resideo_neighborhoods_settings) > 0) {
                                                 uasort($resideo_neighborhoods_settings, "resideo_compare_position");
 
@@ -252,7 +265,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                             <div class="form-group">
                                 <label for="search_type"><?php esc_html_e('Completion status', 'resideo'); ?></label>
                                 <select class="custom-select" id="search_type" name="search_type">
-                                    <option value="0"><?php esc_html_e('Any', 'resideo'); ?></option>
+                                    <option value="0"><?php echo pll__('Any'); //esc_html_e('Any', 'resideo'); ?></option>
                                     <?php foreach ($type_terms as $type_term) {
                                         $type_selected = ($type_term->term_id == $search_type) ? 'selected="selected"' : ''; ?>
                                         <option value="<?php echo esc_attr($type_term->term_id); ?>" <?php echo esc_attr($type_selected); ?>><?php echo esc_html($type_term->name); ?></option>
@@ -268,9 +281,9 @@ if (!function_exists('resideo_get_filter_communities_form')):
                     if ($beds_f == 'yes') { ?>
                         <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
                             <div class="form-group">
-                                <label for="search_beds"><?php esc_html_e('Bedrooms', 'resideo'); ?></label>
+                                <label for="search_beds"><?php echo pll__('Bedrooms');//esc_html_e('Bedrooms', 'resideo'); ?></label>
                                 <select class="custom-select" name="search_beds" id="search_beds">
-                                    <option value="0"><?php esc_html_e('Any', 'resideo'); ?></option>
+                                    <option value="0"><?php echo pll__('Any'); //esc_html_e('Any', 'resideo'); ?></option>
                                     <option value="1" <?php selected($search_beds, '1'); ?>>1+</option>
                                     <option value="2" <?php selected($search_beds, '2'); ?>>2+</option>
                                     <option value="3" <?php selected($search_beds, '3'); ?>>3+</option>
@@ -287,9 +300,9 @@ if (!function_exists('resideo_get_filter_communities_form')):
                     if ($baths_f == 'yes') { ?>
                         <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
                             <div class="form-group">
-                                <label for="search_baths"><?php esc_html_e('Bathrooms', 'resideo'); ?></label>
+                                <label for="search_baths"><?php echo pll__('Bathrooms');//esc_html_e('Bathrooms', 'resideo'); ?></label>
                                 <select class="custom-select" name="search_baths" id="search_baths">
-                                    <option value="0"><?php esc_html_e('Any', 'resideo'); ?></option>
+                                    <option value="0"><?php echo pll__('Any'); //esc_html_e('Any', 'resideo'); ?></option>
                                     <option value="1" <?php selected($search_baths, '1'); ?>>1+</option>
                                     <option value="2" <?php selected($search_baths, '2'); ?>>2+</option>
                                     <option value="3" <?php selected($search_baths, '3'); ?>>3+</option>
@@ -330,7 +343,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                         <div class="col-sm-6 pxp-content-side-search-form-col">
                             <div class="row pxp-content-side-search-form-row">
                                 <div class="col pxp-content-side-search-form-col">
-                                    <label for="search_size_min"><?php esc_html_e('Min Size', 'resideo'); ?></label>
+                                    <label for="search_size_min"><?php echo pll__('Min Size');//esc_html_e('Min Size', 'resideo'); ?></label>
                                     <div class="input-group mb-3">
                                         <input type="number" min="0" class="form-control" id="search_size_min" name="search_size_min" value="<?php echo esc_attr($search_size_min); ?>">
                                         <div class="input-group-append">
@@ -339,7 +352,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                     </div>
                                 </div>
                                 <div class="col pxp-content-side-search-form-col">
-                                    <label for="search_size_max"><?php esc_html_e('Max Size', 'resideo'); ?></label>
+                                    <label for="search_size_max"><?php echo pll__('Max Size'); //esc_html_e('Max Size', 'resideo'); ?></label>
                                     <div class="input-group mb-3">
                                         <input type="number" min="0" class="form-control" id="search_size_max" name="search_size_max" value="<?php echo esc_attr($search_size_max); ?>">
                                         <div class="input-group-append">
@@ -355,14 +368,14 @@ if (!function_exists('resideo_get_filter_communities_form')):
                             <div class="row pxp-content-side-search-form-row">
                                 <div class="col pxp-content-side-search-form-col">
                                     <div class="form-group">
-                                        <label for="search_price_min"><?php esc_html_e('Min Price', 'resideo'); ?></label>
+                                        <label for="search_price_min"><?php echo pll__('Min Price');//esc_html_e('Min Price', 'resideo'); ?></label>
                                         <select class="custom-select" name="search_price_min" id="search_price_min">
-                                            <option value=""><?php esc_html_e('No Min', 'resideo'); ?></option>
+                                            <option value=""><?php echo pll__('No Min'); //esc_html_e('No Min', 'resideo'); ?></option>
                                             <?php foreach ($price_array as $price) {
                                                 if ($currency_pos == 'after') { ?>
-                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_min) ?>><?php echo esc_html(money_format('%!.0i', $price)) . esc_html($currency); ?></option>
+                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_min) ?>><?php echo esc_html(money_format('%!.0i', $price)) . pll__($currency); ?></option>
                                                 <?php } else { ?>
-                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_min) ?>><?php echo esc_html($currency) . esc_html(money_format('%!.0i', $price)); ?></option>
+                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_min) ?>><?php echo pll__($currency) . esc_html(money_format('%!.0i', $price)); ?></option>
                                                 <?php }
                                             } ?>
                                         </select>
@@ -370,14 +383,14 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                 </div>
                                 <div class="col pxp-content-side-search-form-col">
                                     <div class="form-group">
-                                        <label for="search_price_max"><?php esc_html_e('Max Price', 'resideo'); ?></label>
+                                        <label for="search_price_max"><?php echo pll__('Max Price'); //esc_html_e('Max Price', 'resideo'); ?></label>
                                         <select class="custom-select" name="search_price_max" id="search_price_max">
-                                            <option value=""><?php esc_html_e('No Max', 'resideo'); ?></option>
+                                            <option value=""><?php echo pll__('No Max');//esc_html_e('No Max', 'resideo'); ?></option>
                                             <?php foreach ($price_array as $price) {
                                                 if ($currency_pos == 'after') { ?>
-                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_max) ?>><?php echo esc_html(money_format('%!.0i', $price)) . esc_html($currency); ?></option>
+                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_max) ?>><?php echo esc_html(money_format('%!.0i', $price)) . pll__($currency); ?></option>
                                                 <?php } else { ?>
-                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_max) ?>><?php echo esc_html($currency) . esc_html(money_format('%!.0i', $price)); ?></option>
+                                                    <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_max) ?>><?php echo pll__($currency) . esc_html(money_format('%!.0i', $price)); ?></option>
                                                 <?php }
                                             } ?>
                                         </select>
@@ -452,7 +465,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                         <div class="form-group">
                                             <label for="<?php echo esc_attr($key); ?>"><?php echo esc_html($value['label']); ?></label>
                                             <select class="custom-select" name="<?php echo esc_attr($key); ?>" id="<?php echo esc_attr($key); ?>">
-                                                <option value=""><?php esc_html_e('Any', 'resideo'); ?></option>
+                                                <option value=""><?php echo pll__('Any'); //esc_html_e('Any', 'resideo'); ?></option>
                                                 <?php for ($i = 0; $i < count($list); $i++) { ?>
                                                     <option value="<?php echo esc_attr($i); ?>" <?php selected($field_value, $i) ?>><?php echo esc_html($list[$i]); ?></option>
                                                 <?php } ?>
@@ -501,7 +514,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                         uasort($amenities_settings, "resideo_compare_position"); ?>
 
                         <div class="form-group">
-                            <label class="mb-2"><?php esc_html_e('Amenities', 'resideo'); ?></label>
+                            <label class="mb-2"><?php echo pll__('Amenities'); //esc_html_e('Amenities', 'resideo'); ?></label>
                             <div class="row pxp-content-side-search-form-row ct_amenities_search">
                                 <?php foreach ($amenities_settings as $key => $value) {
                                     $am_label = $value['label'];

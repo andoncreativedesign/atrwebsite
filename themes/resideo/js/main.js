@@ -743,6 +743,10 @@
         $(this).toggleClass('pxp-active');
         $('.pxp-content-side-search-form-adv').slideToggle();
     });
+    $('.ct_filter_search_btn a').click(function () {
+        $(this).toggleClass('pxp-active');
+        $('.pxp-content-side-search-form-adv').slideToggle();
+    });
 
 
 
@@ -1862,4 +1866,5 @@
         $(this).parent().siblings().removeClass('pxp-active');
         $(this).parent().addClass('pxp-active');
     });
+    $('#qlwapp .qlwapp-toggle').attr('data-phone','966556646916');
 })(jQuery);
