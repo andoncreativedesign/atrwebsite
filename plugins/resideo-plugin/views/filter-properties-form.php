@@ -297,32 +297,10 @@ if (!function_exists('resideo_get_filter_properties_form')):
                             </div>
                         </div>
                     <?php }
-
-                    /**
-                     * Price field
-                     */
-                    if ($price_f == 'yes') {
-                        $locale       = isset($general_settings['resideo_locale_field']) ? $general_settings['resideo_locale_field'] : '';
-                        $currency     = isset($general_settings['resideo_currency_symbol_field']) ? $general_settings['resideo_currency_symbol_field'] : '';
-                        $currency_pos = isset($general_settings['resideo_currency_symbol_pos_field']) ? $general_settings['resideo_currency_symbol_pos_field'] : '';
-                        $max_price    = isset($general_settings['resideo_max_price_field']) ? intval($general_settings['resideo_max_price_field']) : '';
-
-                        $i = $max_price;
-                        $price_array = array($max_price);
-
-                        if ($max_price != '') {
-                            while($i >= 200) {
-                                $i = round($i / 2, -2);
-                                array_unshift($price_array, $i);
-                            }
-                        }
-
-                        setlocale(LC_MONETARY, $locale); 
-
-                        /**
+  /**
                      * Size field
                      */
-                        if ($size_f == 'yes') {
+                    if ($size_f == 'yes') {
                         $unit = isset($general_settings['resideo_unit_field']) ? $general_settings['resideo_unit_field'] : ''; ?>
 
                         <div class="col-sm-6 pxp-content-side-search-form-col">
@@ -348,6 +326,29 @@ if (!function_exists('resideo_get_filter_properties_form')):
                             </div>
                         </div>
                     <?php }?>
+                    <?php 
+                    /**
+                     * Price field
+                     */
+                    if ($price_f == 'yes') {
+                        $locale       = isset($general_settings['resideo_locale_field']) ? $general_settings['resideo_locale_field'] : '';
+                        $currency     = isset($general_settings['resideo_currency_symbol_field']) ? $general_settings['resideo_currency_symbol_field'] : '';
+                        $currency_pos = isset($general_settings['resideo_currency_symbol_pos_field']) ? $general_settings['resideo_currency_symbol_pos_field'] : '';
+                        $max_price    = isset($general_settings['resideo_max_price_field']) ? intval($general_settings['resideo_max_price_field']) : '';
+
+                        $i = $max_price;
+                        $price_array = array($max_price);
+
+                        if ($max_price != '') {
+                            while($i >= 200) {
+                                $i = round($i / 2, -2);
+                                array_unshift($price_array, $i);
+                            }
+                        }
+
+                        setlocale(LC_MONETARY, $locale); 
+
+                      ?>
 
                         <div class="col-sm-6 pxp-content-side-search-form-col">
                             <div class="row pxp-content-side-search-form-row">
