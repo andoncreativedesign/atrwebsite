@@ -257,7 +257,7 @@
                 '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + comm.tn + ');background-size: cover;"></div>' + 
                 '<div class="pxp-marker-details-info">' + 
                     '<div class="pxp-marker-details-info-title">' + comm.name + '</div>' + 
-                    '<div class="pxp-marker-details-info-price">' + comm.price + '</div>' + 
+                    // '<div class="pxp-marker-details-info-price">' + comm.price + '</div>' + 
                     '<div class="pxp-marker-details-info-feat">'  + '</div>' + 
                 '</div>' + 
             '</a>';

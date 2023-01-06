@@ -364,13 +364,13 @@ if (!function_exists('resideo_get_filter_communities_form')):
                         </div>
                     <?php }?>
 
-                        <div class="col-sm-6 pxp-content-side-search-form-col">
+                        <!-- <div class="col-sm-6 pxp-content-side-search-form-col">
                             <div class="row pxp-content-side-search-form-row">
                                 <div class="col pxp-content-side-search-form-col">
                                     <div class="form-group">
-                                        <label for="search_price_min"><?php echo pll__('Min Price');//esc_html_e('Min Price', 'resideo'); ?></label>
+                                        <label for="search_price_min"><?php echo pll__('Min Price'); ?></label>
                                         <select class="custom-select" name="search_price_min" id="search_price_min">
-                                            <option value=""><?php echo pll__('No Min'); //esc_html_e('No Min', 'resideo'); ?></option>
+                                            <option value=""><?php echo pll__('No Min');  ?></option>
                                             <?php foreach ($price_array as $price) {
                                                 if ($currency_pos == 'after') { ?>
                                                     <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_min) ?>><?php echo esc_html(money_format('%!.0i', $price)) . pll__($currency); ?></option>
@@ -383,9 +383,9 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                 </div>
                                 <div class="col pxp-content-side-search-form-col">
                                     <div class="form-group">
-                                        <label for="search_price_max"><?php echo pll__('Max Price'); //esc_html_e('Max Price', 'resideo'); ?></label>
+                                        <label for="search_price_max"><?php echo pll__('Max Price');  ?></label>
                                         <select class="custom-select" name="search_price_max" id="search_price_max">
-                                            <option value=""><?php echo pll__('No Max');//esc_html_e('No Max', 'resideo'); ?></option>
+                                            <option value=""><?php echo pll__('No Max'); ?></option>
                                             <?php foreach ($price_array as $price) {
                                                 if ($currency_pos == 'after') { ?>
                                                     <option value="<?php echo esc_attr($price); ?>" <?php selected($price, $search_price_max) ?>><?php echo esc_html(money_format('%!.0i', $price)) . pll__($currency); ?></option>
@@ -397,7 +397,7 @@ if (!function_exists('resideo_get_filter_communities_form')):
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     <?php }
                     
                     

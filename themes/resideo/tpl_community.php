@@ -527,10 +527,10 @@ function closeGallery() {
                                 }
                                 if($price_from  !="" ) { 
                                     ?>
-                                    <div class="<?php echo $first_col; ?>">
+                                    <!-- <div class="<?php echo $first_col; ?>">
                                         <p class="pxp-text-light com_text">
                                             <?php
-                                                // echo (isset($price_from[0]))?$price_from[0]:'Price from';
+                                               
                                                 $price_frm = isset($price_from[0])?$price_from[0]:'Price from';
                                                
                                                 icl_register_string("resideo", $price_frm,$price_frm);
@@ -539,14 +539,14 @@ function closeGallery() {
                                         </p>
                                         <h3 class="pxp-section-h2 com_heading">
                                             <?php 
-                                                $price_from1 = $price_from[1];// ." ".$currency; 
+                                                $price_from1 = $price_from[1];
 
-                                               // icl_register_string("resideo", $price_from1,$price_from1);
+                                              
                                                 echo pll__( $price_from1 ).' '.pll__( "SAR" ); 
                                             ?>
                                         
                                         </h3>
-                                    </div>
+                                    </div> -->
                                     <?php 
                                 }
 
@@ -785,7 +785,7 @@ function closeGallery() {
                                                 <div class="pxp-prop-card-1-details-title">
                                                     <?php echo $title ;?>
                                                 </div>
-                                                <div class="pxp-prop-card-1-details-price">
+                                                <div class="pxp-prop-card-1-details-price" style="visibility:hidden;">
                                                     <?php
                                                         if(get_locale() == 'ar'){
                                                         ?><p style="font-weight:300;float:right;"><?php echo pll__( "From" ); ?> &nbsp;</p><?php

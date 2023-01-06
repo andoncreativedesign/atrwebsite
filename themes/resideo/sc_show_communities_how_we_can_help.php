@@ -89,7 +89,7 @@ function show_communities_how_we_can_help_fn()
                                 <div class="pxp-prop-card-1-details-title">
                                     <?php echo pll__($name) ;?>
                                 </div>
-                                <div class="pxp-prop-card-1-details-price">
+                                <div class="pxp-prop-card-1-details-price" style="visibility:hidden;">
                                     <?php
                                         if(get_locale() == 'ar'){
                                         ?>

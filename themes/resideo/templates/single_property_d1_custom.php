@@ -285,7 +285,7 @@ while (have_posts()) : the_post();
                         <div class="col-sm-12 col-md-7">
                             <div class="row no-gutter">
                                 <div class="col-lg-4">
-                                    <div class="pxp-sp-top-price mt-3 mt-md-0">
+                                    <div class="pxp-sp-top-price mt-3 mt-md-0" style="visibility:hidden;">
                                         <?php if ($currency_pos == 'before') {
                                             icl_register_string("resideo",$currency,$currency);
                                             echo esc_html($currency) . esc_html($price) . ' <span>' . esc_html($price_label) . '</span>';

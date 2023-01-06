@@ -14204,7 +14204,7 @@ body.pxp-dark-mode.page-template-community-search {
     .ct-community-card .ct-details-bottom {
         display: flex;
         justify-content: space-between;
-        padding-top:15px;
+        padding-top:50px;
     }
 
     .ct-community-card .ct-details-image-logo {

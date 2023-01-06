@@ -250,7 +250,7 @@ if (!function_exists('resideo_featured_properties_shortcode')):
                         <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                         <div class="pxp-prop-card-1-details">
                             <div class="pxp-prop-card-1-details-title">' . esc_html($p_title) . '</div>
-                            <div class="pxp-prop-card-1-details-price">';
+                            <div class="pxp-prop-card-1-details-price" style="visibility:hidden;">';
             if ($currency_pos == 'before') {
                 $return_string .= '<p style="font-weight: 300;margin-bottom:0;'. (get_locale() == 'ar' ? 'float: right':'float:left').'">'.pll__('From').'  &nbsp;</p> <span style="'.(get_locale() == 'ar' ? 'float: right':'float:left').'">'.esc_html($currency_str) .'</span><span>'. esc_html($p_price) . '</span> <span>' . esc_html($p_price_label) . '</span>';
             } else {

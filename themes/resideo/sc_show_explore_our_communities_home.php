@@ -97,7 +97,7 @@ function show_explore_community_properties_home_fn()
                                                 <div class="pxp-prop-card-1-details-title">
                                                     <?php echo pll__( $name ); ?>
                                                 </div>
-                                                <div class="pxp-prop-card-1-details-price">
+                                                <div class="pxp-prop-card-1-details-price" style="visibility:hidden;">
                                                     <?php
                                                         if(get_locale() == 'ar'){
                                                         ?>
