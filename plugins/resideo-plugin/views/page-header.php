@@ -403,7 +403,7 @@ if (!function_exists('resideo_get_page_header')):
                             if ($slider_type == "video") {
                                 $video_file = get_field("video_file");
                                 ?>
-                                <video id="video_slider" width="100%" autoplay muted loop>
+                                <video id="video_slider" width="100%" autoplay muted loop playsinline src="<?php echo $video_file; ?>">
                                   <source src="<?php echo $video_file; ?>" type="video/mp4">
                                 </video>
 

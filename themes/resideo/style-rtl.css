@@ -14344,3 +14344,8 @@ body.pxp-dark-mode.page-template-community-search {
 .pxp-logo > img {
     object-position: 0 6px;
   }
+
+  .home .wpcf7 form.sent .wpcf7-response-output {
+    color:#fff !important;
+    border:none !important;
+  }

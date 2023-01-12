@@ -193,7 +193,8 @@ if (!function_exists('resideo_load_scripts')):
 
         wp_enqueue_style('jquery-ui', RESIDEO_LOCATION . '/css/jquery-ui.css', array(), '1.11.0', 'all'); 
         wp_enqueue_style('fileinput', RESIDEO_LOCATION . '/css/fileinput.min.css', array(), '4.0', 'all'); 
-        wp_enqueue_style('base-font', 'https://fonts.googleapis.com/css?family=Roboto:400,700,900', array(), '1.0', 'all');
+        // wp_enqueue_style('base-font', 'https://fonts.googleapis.com/css?family=Roboto:400,700,900', array(), '1.0', 'all');
+        wp_enqueue_style('base-font', 'https://fonts.googleapis.com/css?family=Cairo:400,700,900', array(), '1.0', 'all');
         wp_enqueue_style('font-awesome', RESIDEO_LOCATION . '/css/font-awesome.min.css', array(), '4.7.0', 'all');
         wp_enqueue_style('bootstrap', RESIDEO_LOCATION . '/css/bootstrap.min.css', array(), '4.3.1', 'all');
         wp_enqueue_style('datepicker', RESIDEO_LOCATION . '/css/datepicker.css', array(), '1.0', 'all');
@@ -1662,4 +1663,33 @@ function add_additional_class_on_a($classes, $item, $args)
 }
 
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
+
+
+
+
+/* OG titles */
+// add_filter('og_og_title_meta', 'my_og_og_title_meta');
+// function my_og_og_title_meta($title)
+// {
+ 
+//         return '<meta name="title" property="og:title" content="Al Tahaluf Real Estate company" />';
+   
+//     return $title;
+// }
+// add_filter( 'og_twitter_title_value', 'my_og_twitter_title_value' );
+
+// function my_og_twitter_title_value($title)
+// {
+  
+//         return __('Al Tahaluf Real Estate company', 'translate-domain');
+  
+//     return $title;
+// }
+
+//  add_filter('og_og_image_value', 'my_og_og_image_value');
+//  function my_og_og_image_value($value) {
+    
+// 	$value = 'https://sigmaprivate.com/wp-content/uploads/2021/09/sigmalogo.jpg';
+// 	return $value;
+//  }
 ?>

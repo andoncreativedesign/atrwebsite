@@ -208,7 +208,7 @@
 
         function init() {
             elems = document.querySelectorAll('.pxp-animate-in,.pxp-text-light,.pxp-section-h2,.home_service .pxp-section-featured-h2,.pxp-primary-cta,.home .pxp-props-carousel-right-stage-1 .owl-item,.pxp-testim-1,.feature_carousal_22,.pxp-contact-section-form,.pxp-section-featured-h2,.finance_list,.fin_basic_req,.service_case2_intro,.row div .pxp-prop-card-1,.pxp-services-h-items div,.pxp-hero .pxp-hero-caption p,.tech_list,.pxp-page-header,.fix_margin_show_community_listing, .fr_ct_testim_container,.cus_community_bar #gallery,.ct_homevidcta,.ct_contact_intro,.ct_business_hours,.ct_home_logo_cont');
-            console.log(elems);
+            //console.log(elems);
             windowHeight = window.innerHeight;
             addEventHandlers();
             checkPosition();
@@ -222,7 +222,7 @@
         function checkPosition() {
             for (var i = 0; i < elems.length; i++) {
                 var positionFromTop = elems[i].getBoundingClientRect().top;
-                console.log(elems[i].getAttribute('class'));
+                //console.log(elems[i].getAttribute('class'));
                 if (positionFromTop - windowHeight <= 0) {
                     elems[i].classList.add('pxp-in');
                 }
@@ -1867,4 +1867,5 @@
         $(this).parent().addClass('pxp-active');
     });
     $('#qlwapp .qlwapp-toggle').attr('data-phone','966556646916');
+    if($('#video_slider')) $('#video_slider')[0].play();
 })(jQuery);
