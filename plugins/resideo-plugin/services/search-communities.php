@@ -884,7 +884,7 @@ foreach ($ct_communities_for_maps as $term) {
     $comm->tn     = get_field("community_front_image",$term->taxonomy.'_'.$term->term_id);
     $price_from   =   get_field("price_from",$term->taxonomy.'_'.$term->term_id);
     $price_from   =   explode("|", $price_from);
-    $link = site_url()."/single-community/?term_id=".$term_id."&community=".$term->slug;
+    $link = site_url()."/single-community/?term_id=".$comm->id."&community=".$term->slug;
     if(get_locale() == 'ar'){
        $link = str_replace("/single-community","/ar/single-community-ar",$link);
         } 

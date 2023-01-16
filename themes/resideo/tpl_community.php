@@ -1177,7 +1177,7 @@ function closeGallery() {
                 </div>
                 <div class="col-lg-7 align-left order-3">
                 <p class="ct_form_intro"><?php  echo $ct_form_intro; ?> </p>   
-                <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" lang="en-US" dir="ltr">
+                <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" <?php echo (get_locale()=='ar')?'lang="ar" dir="rtl"':'lang="en-US" dir="ltr"'; ?>>
                     <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
                      <form action="/single-community/?term_id=48#wpcf7-f654-p719-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
                         <div style="display: none;">

@@ -568,7 +568,7 @@ while (have_posts()) : the_post();
                                                         $t++;$class_='';if($t==1){$class_="active";}
                                                     ?>
                                                   <li class="nav-item padding_fix" >
-                                                    <a class="nav-link nav-link show_img <?php echo $class_;?>" data-toggle="pill" aria-current="ss<?php echo $key; ?>" href="#ss<?php echo $key; ?>" style=" background-color: #none; color: #4D858D">
+                                                    <a class="ct_carousel_navigate nav-link nav-link show_img <?php echo $class_;?>" data-toggle="pill" data-id="<?php echo $key;?>" aria-current="ss<?php echo $key; ?>" href="#ss<?php echo $key; ?>" style=" background-color: #none; color: #4D858D">
                                                         <?php 
                                                             // echo esc_attr($floor_plan->title); 
                                                             $getfloortitle = $floor_plan->title;
@@ -604,18 +604,31 @@ while (have_posts()) : the_post();
                                        
                                         
                                         
-                                        <div class="tab-content">
-                                        <?php foreach ($floor_plans_list as $key=>$floor_plan) {
-                                            $floor_plan_image = wp_get_attachment_image_src($floor_plan->image, 'full');
+                                        <!-- <div class="tab-content">
+                                        <?php //foreach ($floor_plans_list as $key=>$floor_plan) {
+                                            //$floor_plan_image = wp_get_attachment_image_src($floor_plan->image, 'full');
                                             ?>
-                                            <div style="<?php if($key==0){}else{echo 'display: none;';}?> text-align:center;padding-top:20px;" id="ss<?php echo $key; ?>" class="all_img pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" aria-labelledby="pxpSPFloorPlansItemHeader<?php echo esc_attr($floor_plan->image); ?>" data-parent="#pxpFloorPlans">
-                                                        <?php if ($floor_plan_image != '') { ?>
+                                            <div style="<?php //if($key==0){}else{echo 'display: none;';}?> text-align:center;padding-top:20px;" id="ss<?php //echo $key; ?>" class="all_img pxpSPFloorPlansItemHeader<?php //echo esc_attr($floor_plan->image); ?>" aria-labelledby="pxpSPFloorPlansItemHeader<?php //echo esc_attr($floor_plan->image); ?>" data-parent="#pxpFloorPlans">
+                                                        <?php //if ($floor_plan_image != '') { ?>
                                                             <a href="<?php echo esc_url($floor_plan_image[0]); ?>" target="_blank" >
                                                                 <img style="max-width:100% " class="pxp-sp-floor-plans-item-image" src="<?php echo esc_url($floor_plan_image[0]); ?>" alt="<?php echo esc_attr($floor_plan->title); ?>" >
                                                             </a>
-                                                        <?php } ?>
+                                                        <?php //} ?>
                                                     </div>
-                                        <?php }?>
+                                        <?php //}?>
+                                        </div> -->
+                                        <div class="ct_floorplans_carousel owl-carousel owl-theme">
+                                        <?php foreach ($floor_plans_list as $key=>$floor_plan) {
+                                            $floor_plan_image2 = wp_get_attachment_image_src($floor_plan->image, 'full');?>
+                                                <div class="item">
+                                                <?php if ($floor_plan_image2 != '') { ?>
+                                                            <a href="<?php echo esc_url($floor_plan_image2[0]); ?>" target="_blank" >
+                                                                <img style="max-width:100% " class="pxp-sp-floor-plans-item-image" src="<?php echo esc_url($floor_plan_image2[0]); ?>" alt="<?php echo esc_attr($floor_plan->title); ?>" >
+                                                            </a>
+                                                        <?php } ?>
+                                                </div>
+
+                                            <?php } ?>
                                         </div>
                                         
                                         <div class="accordion" id="pxpFloorPlans" style="display: none;">
@@ -1483,7 +1496,7 @@ while (have_posts()) : the_post();
                 </div>
                 <div class="col-lg-7 align-left order-3">
                 <p class="ct_form_intro"><?php  echo pll__( $contact_intro );?> </p>   
-                <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" lang="en-US" dir="ltr">
+                <div role="form" class="wpcf7" id="wpcf7-f654-p719-o1" <?php echo (get_locale()=='ar')?'lang="ar" dir="rtl"':'lang="en-US" dir="ltr"'; ?>>
                     <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
                      <form action="/single-community/?term_id=48#wpcf7-f654-p719-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
                         <div style="display: none;">

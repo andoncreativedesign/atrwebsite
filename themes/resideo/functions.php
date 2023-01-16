@@ -225,6 +225,7 @@ if (!function_exists('resideo_load_scripts')):
         wp_enqueue_script('numeral', RESIDEO_LOCATION . '/js/numeral.min.js', array(), '2.0.6', true);
 
         $resideo_gmaps_settings = get_option('resideo_gmaps_settings', '');
+        
         $gmaps_key              = isset($resideo_gmaps_settings['resideo_gmaps_key_field']) ? $resideo_gmaps_settings['resideo_gmaps_key_field'] : '';
         $gmaps_lat              = isset($resideo_gmaps_settings['resideo_gmaps_lat_field']) ? $resideo_gmaps_settings['resideo_gmaps_lat_field'] : 0;
         $gmaps_lng              = isset($resideo_gmaps_settings['resideo_gmaps_lng_field']) ? $resideo_gmaps_settings['resideo_gmaps_lng_field'] : 0;
@@ -263,7 +264,7 @@ else
 
         if ($gmaps_key != '') {
             wp_enqueue_script('infobox', RESIDEO_LOCATION . '/js/infobox.js', array('gmaps'), '1.1.13', true);
-            wp_enqueue_script('pxp-map', RESIDEO_LOCATION . '/js/map.js', array(), '1.0', true);
+            wp_enqueue_script('pxp-map', RESIDEO_LOCATION . '/js/map.js', array(), '1.2', true);
             wp_enqueue_script('pxp-map-single', RESIDEO_LOCATION . '/js/single-map.js', array(), '1.0', true);
             wp_enqueue_script('pxp-map-contact', RESIDEO_LOCATION . '/js/contact-map.js', array(), '1.0', true);
         }

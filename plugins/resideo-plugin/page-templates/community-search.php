@@ -398,7 +398,7 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
                 <div class="ct-price-value"><?php echo pll__( $t_price ); ?>&nbsp;<?php echo pll__( $currency_ct ); ?> </div> -->
                 <div class="more_dtl"><?php echo pll__( $area_label );?></div>
                    <div class="more_dtl_val">
-                      <?php echo pll__($area_sqf).' '.pll__("SQM");?>
+                      <?php echo pll__($size).' '.pll__("SQM");?>
                   </div>
             </div>
             <div class="ct-details-bottom-right">

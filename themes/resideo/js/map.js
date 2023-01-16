@@ -615,7 +615,7 @@
                 'page'                 : map_vars.page,
             },
             success: function(data) {
-               console.log("datavars",data)
+             
                 var center = new google.maps.LatLng(map_vars.default_lat, map_vars.default_lng);
                 map = new google.maps.Map(document.getElementById('results-map'), options);
                 var styledMapType = new google.maps.StyledMapType(styles, {
@@ -624,7 +624,8 @@
                 map.mapTypes.set('Styled', styledMapType);
                 map.setCenter(center);
                 map.setZoom(parseInt(map_vars.default_zoom));
-
+                //map.setZoom(parseInt(5));
+                //console.log("zoom",map.getZoom());
                 if (data.getprops === true) {
                     console.log("PROPS",data.comms);
                     addMarkers(data.props,data.comms, map);

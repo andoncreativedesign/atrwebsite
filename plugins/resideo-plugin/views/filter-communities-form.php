@@ -162,10 +162,10 @@ if (!function_exists('resideo_get_filter_communities_form')):
                 </div> -->
                 <?php // } ?>
             </div>
-            <div class="ct_filter_search_btn">
-                <?php  icl_register_string("resideo", "REFINE YOUR SEARCH","REFINE YOUR SEARCH");?>
-                <a role="button" href="#"><?php echo pll__("REFINE YOUR SEARCH")?></a>
-            </div>
+            <!-- <div class="ct_filter_search_btn">
+                <?php  // icl_register_string("resideo", "REFINE YOUR SEARCH","REFINE YOUR SEARCH");?>
+                <a role="button" href="#"><?php //echo pll__("REFINE YOUR SEARCH")?></a>
+            </div> -->
             <div class="pxp-content-side-search-form-adv mb-3">
                 <div class="row pxp-content-side-search-form-row">
                     <?php

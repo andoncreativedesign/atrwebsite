@@ -114,13 +114,13 @@
                     }
     
                     subMenu.fadeIn({ queue: false, duration: 200 });
-                    subMenu.animate({ top: "24px" }, 200);
+                    subMenu.animate({ top: "17px" }, 200);
                 }
             }, function() {
                 var subMenu = $(this).children('ul:first');
     
                 if (subMenu.length > 0  && !$('.pxp-header').hasClass('pxp-mobile')) {
-                    subMenu.fadeOut({ queue: false, duration: 200 });
+                    subMenu.fadeOut({ queue: false, duration: 800 });
                     subMenu.animate({ top: "17px" }, 200);
                 }
             });
@@ -698,7 +698,7 @@
     }).on("mouseleave", ".lang_hover", function(){
         
         var userMenu = $('.pxp-user-menu');
-        userMenu.fadeOut({ queue: false, duration: 200 });
+        userMenu.fadeOut({ queue: false, duration: 800 });
         userMenu.animate({ top: "37px" }, 200);
         userMenu.removeClass('pxp-user-menu-active');
     });
@@ -1027,6 +1027,70 @@
             'checkVisible': false,
             'smartSpeed': 600,
             'onInitialized': toggleSticky
+        });
+        
+        
+    }
+    if ($('.ct_floorplans_carousel').length > 0) { 
+        $('.ct_floorplans_carousel').owlCarousel({
+            // 'rtl': (main_vars.is_rtl == '1'),
+            // 'nav': true,
+            dots: false,                      
+             loop:true,
+             margin:10,
+             nav:true,
+             responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+            },         
+            'navText': (main_vars.is_rtl == '1')
+                        ? [`<div class="pxp-props-carousel-left-arrow pxp-animate">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828" class="pxp-arrow-1">
+                                    <g id="Symbol_1_1" data-name="Symbol 1 – 1" transform="translate(-1847.5 -1589.086)">
+                                        <line id="Line_2" data-name="Line 2" x2="30" transform="translate(1848.5 1599.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_3" data-name="Line 3" x2="9" y2="9" transform="translate(1869.5 1590.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_4" data-name="Line 4" y1="9" x2="9" transform="translate(1869.5 1599.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+                            </div>`,
+                            `<div class="pxp-props-carousel-right-arrow pxp-animate">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828">
+                                    <g id="Group_30" data-name="Group 30" transform="translate(-1845.086 -1586.086)">
+                                        <line id="Line_2" data-name="Line 2" x1="30" transform="translate(1846.5 1596.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_3" data-name="Line 3" x1="9" y2="9" transform="translate(1846.5 1587.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_4" data-name="Line 4" x1="9" y1="9" transform="translate(1846.5 1596.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+                            </div>`]
+                        : [`<div class="pxp-props-carousel-left-arrow pxp-animate">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828" class="pxp-arrow-1">
+                                    <g id="Group_30" data-name="Group 30" transform="translate(-1845.086 -1586.086)">
+                                        <line id="Line_2" data-name="Line 2" x1="30" transform="translate(1846.5 1596.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_3" data-name="Line 3" x1="9" y2="9" transform="translate(1846.5 1587.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_4" data-name="Line 4" x1="9" y1="9" transform="translate(1846.5 1596.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+                            </div>`,
+                            `<div class="pxp-props-carousel-right-arrow pxp-animate">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828">
+                                    <g id="Symbol_1_1" data-name="Symbol 1 – 1" transform="translate(-1847.5 -1589.086)">
+                                        <line id="Line_2" data-name="Line 2" x2="30" transform="translate(1848.5 1599.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_3" data-name="Line 3" x2="9" y2="9" transform="translate(1869.5 1590.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                        <line id="Line_4" data-name="Line 4" y1="9" x2="9" transform="translate(1869.5 1599.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+                            </div>`],
+            // 'checkVisible': false,
+            // 'smartSpeed': 600,
+            // 'onInitialized': toggleSticky
+        });
+
+        $('.ct_carousel_navigate').click(function(){
+            var id = $(this).attr('data-id');
+            
+            $('.ct_floorplans_carousel').trigger('to.owl.carousel', id)
         });
     }
 
@@ -1867,5 +1931,5 @@
         $(this).parent().addClass('pxp-active');
     });
     $('#qlwapp .qlwapp-toggle').attr('data-phone','966556646916');
-    if($('#video_slider')) $('#video_slider')[0].play();
+    // if($('#video_slider')) $('#video_slider')[0].play();
 })(jQuery);
