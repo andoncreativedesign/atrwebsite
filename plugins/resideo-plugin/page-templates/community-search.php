@@ -112,7 +112,7 @@ if($searched_posts != null)
     } 
     else $communities_listed = true;
 }
-echo "SEARCHED".$searched_posts[2];
+//echo "SEARCHED".$searched_posts[2];
 //icl_register_string("resideo", 'Starting from','Starting from'); 
 
 $fields_settings = get_option('resideo_prop_fields_settings');
@@ -278,7 +278,7 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
 
                             $units_label = $units[0];
                             $t_units = $units[1];
-                            
+                            icl_register_string('resideo',$t_units,$t_units);
                             $size   =  get_field('area_size_sqft',$term->taxonomy . '_' . $term_id);
 
                             $image  =  get_field('image',$term->taxonomy . '_' . $term_id);
@@ -303,6 +303,7 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
 
                                     ?>
                                     <a href="<?php echo $link; ?>" class="pxp-results-card ct-community-link rounded-lg ">
+                                        <div class="soldoutwatermark"><?php echo pll__($t_units);?></div>
                                         <div class="pxp-prop-card-1-fig pxp-cover" style="background-size: cover;background-image: url(<?php if ($front_image != '') {
                                             echo $front_image;
                                         } else { echo $image;} ?>);"></div>

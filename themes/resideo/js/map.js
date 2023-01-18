@@ -258,7 +258,7 @@
                 '<div class="pxp-marker-details-info">' + 
                     '<div class="pxp-marker-details-info-title">' + comm.name + '</div>' + 
                     // '<div class="pxp-marker-details-info-price">' + comm.price + '</div>' + 
-                    '<div class="pxp-marker-details-info-feat">'  + '</div>' + 
+                    '<div class="pxp-marker-details-info-feat">' + comm.beds + ' | '+ comm.baths  + ' | ' + comm.area +'</div>' + 
                 '</div>' + 
             '</a>';
 
@@ -719,6 +719,10 @@
                     console.log('zoomed',map.getZoom());
                 },50);
                 
+                // google.maps.event.addListener(map, 'bounds_changed', function() {
+                //     console.log('zoombound',map.getZoom());
+                // });
+
             },
             error: function(errorThrown) {}
         });

@@ -40,7 +40,7 @@ if (!function_exists('resideo_search_communities')):
                   return array("communities",$terms,"case1");
             }
         }
-        if((isset($_GET['search_location']) && $_GET['search_location']==0 && $_GET['search_status']==0) && $amenities_searched == false)
+        if((isset($_GET['search_location']) && $_GET['search_location']==0 && $_GET['search_status']==0))
         {
            //when select location option and select community option is selected  and no amenities are clicked
             $terms = get_terms( array(
@@ -54,7 +54,7 @@ if (!function_exists('resideo_search_communities')):
             }
         }
 
-        if(isset($_GET['search_status']) && $_GET['search_status'] != 0 && $amenities_searched == false) {
+        if(isset($_GET['search_status']) && $_GET['search_status'] != 0 ) {
             
             $terms = get_terms( array(
                 'taxonomy' => 'Community',
@@ -69,7 +69,7 @@ if (!function_exists('resideo_search_communities')):
         }
 
         
-        if(isset($_GET['search_location']) && $_GET['search_location'] != 0 && $amenities_searched == false) {
+        if(isset($_GET['search_location']) && $_GET['search_location'] != 0) {
             //when location is selected and no amenities are selected, which should load the communties in that location
             $terms = get_terms( array(
                 'taxonomy' => 'Community',
@@ -884,11 +884,20 @@ foreach ($ct_communities_for_maps as $term) {
     $comm->tn     = get_field("community_front_image",$term->taxonomy.'_'.$term->term_id);
     $price_from   =   get_field("price_from",$term->taxonomy.'_'.$term->term_id);
     $price_from   =   explode("|", $price_from);
+    $commavailable =  get_field("available_units",$term->taxonomy.'_'.$term->term_id);
+    $commavailable = explode("|", $commavailable);
     $link = site_url()."/single-community/?term_id=".$comm->id."&community=".$term->slug;
+    $combeds = get_field("no_of_bed",$term->taxonomy.'_'.$term->term_id);
+    $combath = get_field("no_of_bed",$term->taxonomy.'_'.$term->term_id);
+    $comarea = get_field("area_size_sqft",$term->taxonomy.'_'.$term->term_id);
+    $com_beds_label       = isset($general_settings['resideo_beds_label_field']) ? $general_settings['resideo_beds_label_field'] : 'BD';
+    $com_baths_label      = isset($general_settings['resideo_baths_label_field']) ? $general_settings['resideo_baths_label_field'] : 'BA';
+    $com_sizeunit         = isset($general_settings['resideo_unit_field']) ? $general_settings['resideo_unit_field'] : 'SQM';
     if(get_locale() == 'ar'){
        $link = str_replace("/single-community","/ar/single-community-ar",$link);
         } 
     $comm->url = $link;
+
     //( $price_from1 ).' '.pll__( "SAR" )
     if(count($price_from)>1)
         {
@@ -898,8 +907,14 @@ foreach ($ct_communities_for_maps as $term) {
         {
             $price_from2 = $price_from[0];
         }
-    
+    if(count($commavailable) > 1 ) {
+        $notavailable = $commavailable[1];
+        $comm->soldout = $notavailable;
+    }
     $comm->price = pll__( 'Price from' ).' '.$price_from2.' '.pll__( "SAR" );
+    $comm->beds  = $combeds.' '.pll__('BD');
+    $comm->baths = $combath.' '.pll__('BA');
+    $comm->area  = $comarea.' '.pll__('SQM');
     array_push($comms, $comm);
 }
 

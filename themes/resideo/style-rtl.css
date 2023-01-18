@@ -4908,7 +4908,7 @@ a.pxp-list-toggle.pxp-active {
     color: #fff;
 }
 .pxp-marker-details-info-price {
-    font-size: 12px;
+    font-size: 14px;
     padding: 0 10px 5px 10px;
     color: #333;
 }
@@ -4917,10 +4917,10 @@ a.pxp-list-toggle.pxp-active {
 }
 .pxp-marker-details-info-feat {
     font-weight: normal;
-    padding: 0 10px;
-    color: #333;
+    padding: 5px 10px;
+    color: #fff;
     font-size: 11px;
-    opacity: .7;
+    /* opacity: .7; */
 }
 .pxp-dark-mode .pxp-marker-details-info-feat {
     color: #fff;
@@ -13601,6 +13601,7 @@ color: #fff; }
        .pxp-single-property-top {
          margin-bottom:30px;
        }
+     
 }
 
 @media only screen and (min-width: 769px) and (max-width: 980px) {
@@ -14149,12 +14150,12 @@ body.pxp-dark-mode.page-template-community-search {
   
       .ct-community-card .ct-details-image-logo {
         width:136px;
-        text-align:right;
+        text-align:left;
        
       }
       .ct-community-card .ct-details-image-logo img{
           max-width:100%;
-          text-align: right;
+          text-align: left;
       }
   
       .ct-community-card .ct-details-title-top {
@@ -14408,3 +14409,18 @@ body.pxp-dark-mode.page-template-community-search {
 .page-template-tpl_howwecanhelp .services_goldkey  {
     margin-top:75px;
 }
+
+.soldoutwatermark {
+    position:absolute;
+    font-size:26px;
+    color:rgba(255,255,255,0.4);
+    bottom:6px;
+    right:6px;
+    z-index:1;
+    font-weight:bold;
+}
+@media screen and (max-width: 768px) {
+.soldoutwatermark {
+    font-size:20px;
+       }
+    }
