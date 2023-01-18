@@ -42,7 +42,7 @@ function show_community_listing_fn()
                     $img2       =   get_field("image",$tt);
                     $c_f_image  =   get_field("community_front_image",$tt);
                     $title      =   $term->name;
-                    $bd         =   get_field("no_of_bad",$tt);
+                    $bd         =   get_field("no_of_bed",$tt);
                     $ba         =   get_field("no_of_bath",$tt);
                     $sq         =   get_field("area_size_sqft",$tt);
 

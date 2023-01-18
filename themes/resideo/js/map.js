@@ -623,7 +623,7 @@
                 });
                 map.mapTypes.set('Styled', styledMapType);
                 map.setCenter(center);
-                map.setZoom(parseInt(map_vars.default_zoom));
+                // map.setZoom(parseInt(map_vars.default_zoom));
                 //map.setZoom(parseInt(5));
                 //console.log("zoom",map.getZoom());
                 if (data.getprops === true) {
@@ -713,6 +713,12 @@
                 if (map_vars.gmaps_poi != '') {
                     setPOIControls(map, map.getCenter());
                 }
+               
+                setTimeout(function(){
+                    map.setZoom(parseInt(map_vars.default_zoom));                
+                    console.log('zoomed',map.getZoom());
+                },50);
+                
             },
             error: function(errorThrown) {}
         });

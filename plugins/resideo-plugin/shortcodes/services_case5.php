@@ -37,6 +37,15 @@ elseif (get_field('page_slug')=='choosing-your-home' or get_field('page_slug') =
 
 	'</div>';
 }
+elseif (get_field('page_slug')=='howwecanhelpyou' or get_field('page_slug') == 'howwecanhelpyouar') {
+	$return_string = 
+	'<div class="pxp-cover " style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);
+
+
+	    $return_string .=
+
+	'</div>';
+}
 elseif (get_field('page_slug')=='financing-your-home' or get_field('page_slug') == 'financing-your-home-ar') {
 	$return_string = 
 	'<div class="pxp-cover " style="background-image: url(' . esc_url($bg_image_src) . '); background-size: cover; background-color: #fff;">'.html_entity_decode($s_array['cta_sevice_text']);

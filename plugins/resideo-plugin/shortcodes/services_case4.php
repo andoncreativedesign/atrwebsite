@@ -30,11 +30,140 @@ ob_start();
 ?>
 
 <style type="text/css">
-  $dark-blue : #16354e;
-  $light-blue : #4696d1;
-  $gray : #8f9da9;
 
-  %gibson-light{
+/*style for owl slider for timeline history starts here */
+
+.ct-owl-timeline {
+    height: 50%;
+}
+.ct-owl-timeline .owl-stage-outer {
+    height: 50%;
+}
+.ct-owl-timeline .item {
+    padding-top:150px;
+  
+}
+.ct-owl-timeline .item h2, .ct-owl-timeline .item p {
+    text-align:center;
+}
+.ct-owl-timeline .item img {
+   max-width:100%;
+   /* max-height: 100%; */
+   width: auto !important;
+   margin: 0 auto;
+   height:auto !important;
+   max-height: 400px;
+}
+.ct-owl-timeline {
+    position: relative;
+}
+.ct-owl-timeline .owl-dots {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width:100%;
+    top:0;
+}
+.ct-owl-timeline .owl-dots:after {
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:0;
+    height:3px;
+    width:100%;
+    content:'';
+    background-color:#4D858D;
+    z-index: -1;
+}
+.ct-owl-timeline .owl-dots .owl-dot span {
+    width:24px;
+    height:24px;
+    border:4px solid #4D858D;
+    background-color: #fff;
+    /* -webkit-transition: background-color 0.3s ease-in-out, border-color 0.6s ease-in-out,height 0.6s ease-in-out, width 0.6s ease-in-out;
+    -moz-transition: background-color 0.6s ease-in-out, border-color 0.6s ease-in-out,height 0.6s ease-in-out, width 0.6s ease-in-out; */
+    transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out;
+    transform-origin: center;
+    /* height 0.6s ease-in-out, width 0.6s ease-in-out; */
+}
+.ct-owl-timeline .owl-dots .owl-dot:hover span {
+  background: #4D858D;
+  
+}
+.ct-owl-timeline .owl-dots .owl-dot.active span {
+  background: #4D858D !important;
+  /* width:32px;
+  height:32px; */
+  transform: scale(1.2);
+
+}
+
+.ct_year_timeline_text {
+ width:100%;
+ transform: translateY(75px);
+}
+.ct_year_timeline_text ul {padding:0;margin:0;display:flex;justify-content: space-between;}
+.ct_year_timeline_text ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+.ct-owl-timeline .pxp-props-carousel-right-arrow.pxp-props-carousel-right-arrow-timeline {
+background: none;
+box-shadow:none;
+}
+
+.ct-owl-timeline .pxp-props-carousel-left-arrow.pxp-props-carousel-left-arrow-timeline {
+background: none;
+box-shadow:none;
+}
+.rtl .ct-owl-timeline .pxp-props-carousel-right-arrow.pxp-props-carousel-right-arrow-timeline {
+left:0;
+}
+
+.rtl .ct-owl-timeline .pxp-props-carousel-left-arrow.pxp-props-carousel-left-arrow-timeline {
+right:0;
+}
+.ct-owl-timeline .pxp-props-carousel-left-arrow.pxp-props-carousel-left-arrow-timeline svg line,
+.ct-owl-timeline .pxp-props-carousel-right-arrow.pxp-props-carousel-right-arrow-timeline svg line {
+    stroke: #4D858D;
+}
+
+.ct-owl-timeline .pxp-props-carousel-left-arrow.pxp-props-carousel-left-arrow-timeline svg,
+.ct-owl-timeline .pxp-props-carousel-right-arrow.pxp-props-carousel-right-arrow-timeline svg {
+    width: 60px;
+}
+
+@media screen and (max-width: 600px) { 
+  .ct-owl-timeline .owl-dots .owl-dot span {
+    width:14px;
+    height:14px;
+  }
+  .ct-owl-timeline .item img {
+    max-height:175px;
+  }
+  .ct_year_timeline_text {
+    display:none;
+  }
+}
+@media screen and (max-width: 990px) { 
+  .ct-owl-timeline .item img {
+    max-height:280px;
+  }
+}
+
+@media screen and (max-width: 1280px) {  
+  .ct-owl-timeline .item img {
+    max-height:320px;
+  }
+}
+/* style for owl slider for timeline history ends here */
+
+  /* $dark-blue : #16354e;
+  $light-blue : #4696d1;
+  $gray : #8f9da9; */
+
+  /* %gibson-light{
     font-family: canada-type-gibson,sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -56,7 +185,7 @@ ob_start();
    font-family: canada-type-gibson,sans-serif;
     font-weight: 500;
     font-style: normal;
-  }
+  } */
 
   /*html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -120,9 +249,9 @@ ob_start();
   Primary style
 
   -------------------------------- */
-  *, *::after, *::before {
+  /* *, *::after, *::before {
     box-sizing: border-box;
-  }
+  } */
 
   /*html {
     font-size: 62.5%;
@@ -473,14 +602,14 @@ ob_start();
     margin: 0 auto;
   }
 
-  // EVENT TITLE
+
   .cd-horizontal-timeline .events-content .event-title {
     color : #16354e;
     font-size: 24px;
     @extend %gibson-book;
   }
 
-  // EVENT DATE (deleted from html)
+
   .cd-horizontal-timeline .events-content em {
     display: block;
     font-style: italic;
@@ -490,7 +619,7 @@ ob_start();
     content: '- ';
   }
 
-  //EVENT CONTENT
+
   .cd-horizontal-timeline .events-content p {
     font-size: 19px;
     color: #16354e;
@@ -501,15 +630,15 @@ ob_start();
     line-height: 28px;
   }
   @media only screen and (min-width: 768px) {
-    //TITLE
+ 
     .cd-horizontal-timeline .events-content .event-title {
       font-size: 24px;
     }
-    //DATE (deleted in html)
+    
     .cd-horizontal-timeline .events-content em {
       font-size: 2rem;
     }
-    //CONTENT
+    
     .cd-horizontal-timeline .events-content p {
       font-size: 19px;
     }
@@ -640,7 +769,7 @@ ob_start();
     border-right : 3px solid #4696d1;
     border-top : 3px solid #4696d1;
     transform : rotate(30%);
-    color: #fff; //White to fit background and make the arrows "disappear" ; might need a better solution
+    color: #fff; 
   }
   .cd-timeline-navigation{
     list-style-type: none;
@@ -659,11 +788,34 @@ ob_start();
 		</h1>
 	</div>
 </div>
+<div class="container">
+    <div class="ct_year_timeline_text"> 
+        <ul>
+        <?php foreach ($s_array['services'] as $key => $service) { ?>
+          <li><?php echo $service['title']; ?></li>
+
+      <?php } ?>
+        
+      </ul>
+    </div>
+    <div class="ct-owl-timeline owl-carousel owl-theme">
+    <?php foreach ($s_array['services'] as $key => $service) { ?>
+        <div class="item">
+       
+               <div>
+                <h2 class="pxp-section-h2 carousel_custom_h2 pxp-in"><?php echo $service['title']; ?></h2>
+                <p><?php echo $service['text']; ?></p>
+                <p><?php if($service['bgsrc'] != '') { ?><img src="<?php echo $service['bgsrc']?>"/><?php  } ?></p>
+              </div>
+              
+        </div>
+        
+      <?php } ?>
+    </div>
+</div>
 
 
-
-
-<section class="cd-horizontal-timeline">
+<!-- <section class="cd-horizontal-timeline">
 
   <div class="timeline">
     <div class="events-wrapper">
@@ -678,19 +830,19 @@ ob_start();
 
         <span class="filling-line" aria-hidden="true"></span>
       </div>
-    </div> <!-- .events-wrapper -->
+    </div> 
       
     <ul class="cd-timeline-navigation">
       <li><a href="#0" class="history_angle prev fa fa-angle-right fa-lg " style="position: absolute;"></a></li>
       <li><a href="#0" class="next fa fa-angle-left fa-lg" style="position: absolute;"></a></li>
-    </ul> <!-- .cd-timeline-navigation -->
+    </ul> 
   </div>
 
   <div class="events-content container">
     <ol class="ol_history">
     	<?php
 			foreach ($s_array['services'] as $key => $service) { 
-        //print_r($service);
+        
         ?>
 	      <li class="<?php echo ($key == 0 ? 'selected' : ''); ?>" data-date="01/<?php echo sprintf("%02d", $key+1); ?>/2000">
 	        <h2 class="pxp-section-h2 carousel_custom_h2 pxp-in"><?php echo $service['title']; ?></h2>
@@ -700,15 +852,17 @@ ob_start();
       	<?php
 			} ?>
     </ol>
-  </div> <!-- .events-content -->
+  </div> 
   
-</section>
+</section> -->
+
+
   
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
   jQuery(document).ready(function($){
     var timelines = $('.cd-horizontal-timeline'),
-      eventsMinDistance = 120; // !*WAS 60*!
+      eventsMinDistance = 120; 
 
     (timelines.length > 0) && initTimeline(timelines);
 
@@ -990,7 +1144,7 @@ ob_start();
     }
     
   });  
-</script>
+</script> -->
 
 <?php
 

@@ -44,7 +44,7 @@ function show_communities_how_we_can_help_fn()
 
                 $term_id = $term->term_id;
                 $name   = $term->name;
-                $bed    =  get_field('no_of_bad',$term->taxonomy . '_' . $term_id);
+                $bed    =  get_field('no_of_bed',$term->taxonomy . '_' . $term_id);
 
                 $bath   =  get_field('no_of_bath',$term->taxonomy . '_' . $term_id);
 

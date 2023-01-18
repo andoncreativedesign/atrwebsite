@@ -1225,7 +1225,7 @@ function choosing_your_home()
     ob_start();
     icl_register_string("resideo", 'KEY POINTS:','KEY POINTS:'); 
     ?>
-    <div class="pt-100 home_services_bg home-ar ct-warranty" style="<?php if (strtolower(get_field('page_slug'))=="choosing-your-home") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
+    <div class="pt-100 home_services_bg home-ar ct-warranty" style="<?php if (strtolower(get_field('page_slug'))=="choosing-your-home" || strtolower(get_field('page_slug'))=="howwecanhelpyou") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
     <div class="container" style="padding-top: 30px;">
         <div class="row">
             <div class="col-md-6 ">
