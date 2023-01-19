@@ -303,10 +303,12 @@ icl_register_string("resideo", 'Featured','Featured'); ?>
 
                                     ?>
                                     <a href="<?php echo $link; ?>" class="pxp-results-card ct-community-link rounded-lg ">
-                                        <div class="soldoutwatermark"><?php echo pll__($t_units);?></div>
+                                        
                                         <div class="pxp-prop-card-1-fig pxp-cover" style="background-size: cover;background-image: url(<?php if ($front_image != '') {
                                             echo $front_image;
-                                        } else { echo $image;} ?>);"></div>
+                                        } else { echo $image;} ?>);">
+                                             <?php if($t_units != '') {?><div class="soldoutwatermark"><?php echo pll__($t_units);?></div>    <?php } ?>
+                                        </div>
                                         <div class="pxp-prop-card-1-gradient"></div>
                                        <!-- <div class="pxp-prop-card-1-gradient pxp-animate">
                                             <div class="pxp-prop-card-1-details">

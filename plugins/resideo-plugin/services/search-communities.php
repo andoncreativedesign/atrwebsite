@@ -890,6 +890,7 @@ foreach ($ct_communities_for_maps as $term) {
     $combeds = get_field("no_of_bed",$term->taxonomy.'_'.$term->term_id);
     $combath = get_field("no_of_bed",$term->taxonomy.'_'.$term->term_id);
     $comarea = get_field("area_size_sqft",$term->taxonomy.'_'.$term->term_id);
+    $comm->mappinlogo = get_field("map_pin_logo",$term->taxonomy.'_'.$term->term_id);
     $com_beds_label       = isset($general_settings['resideo_beds_label_field']) ? $general_settings['resideo_beds_label_field'] : 'BD';
     $com_baths_label      = isset($general_settings['resideo_baths_label_field']) ? $general_settings['resideo_baths_label_field'] : 'BA';
     $com_sizeunit         = isset($general_settings['resideo_unit_field']) ? $general_settings['resideo_unit_field'] : 'SQM';

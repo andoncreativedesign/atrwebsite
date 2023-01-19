@@ -7,6 +7,7 @@
     var resizeCenter;
     var markers               = [];
     var markers2              = [];
+    var markers3              = [];
     var placesIDs             = [];
     var transportationMarkers = [];
     var restaurantsMarkers    = [];
@@ -252,13 +253,15 @@
         $.each(comms, function(i, comm) { 
             var latlng2 = new google.maps.LatLng(comm.lat, comm.long);
 
-            var html2 = '<div class="pxp-marker-short-price">' + comm.name + '</div>' + 
+            var html2 = '<div class="pxp-marker-generic-pin"></div>' + 
+            // '<div class="pxp-marker-short-price">' + comm.name + '</div>' + 
+            '<div class="pxp-marker-short-price"><img src="'+comm.mappinlogo+'"></div>' +
             '<a href="' + comm.url + '" class="pxp-marker-details">' + 
                 '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + comm.tn + ');background-size: cover;"></div>' + 
                 '<div class="pxp-marker-details-info">' + 
                     '<div class="pxp-marker-details-info-title">' + comm.name + '</div>' + 
                     // '<div class="pxp-marker-details-info-price">' + comm.price + '</div>' + 
-                    '<div class="pxp-marker-details-info-feat">' + comm.beds + ' | '+ comm.baths  + ' | ' + comm.area +'</div>' + 
+                    // '<div class="pxp-marker-details-info-feat">' + comm.beds + ' | '+ comm.baths  + ' | ' + comm.area +'</div>' + 
                 '</div>' + 
             '</a>';
 
@@ -268,7 +271,7 @@
             markers2.push(marker2);
         });
     }
-
+    
     function getPOIs(pos, map, type) {
         var service   = new google.maps.places.PlacesService(map);
         var bounds    = map.getBounds();
@@ -686,6 +689,7 @@
                     $('.ct-community-card').each(function(i) {
                         var commID = $(this).attr('data-commid');
                         $(this).on('mouseenter', function() {
+                            
                            
                             if (map) {
                                 var targetMarker = $.grep(markers2, function(e) {
@@ -696,6 +700,8 @@
                                     targetMarker[0].addActive();
                                     map.setCenter(targetMarker[0].latlng_);
                                 }
+                                $('.pxp-marker-short-price').addClass('hide');
+                                
                             }
                         });
                         $(this).on('mouseleave', function() {
@@ -706,6 +712,7 @@
                             if(targetMarker.length > 0) {
                                 targetMarker[0].removeActive();
                             }
+                            $('.pxp-marker-short-price').removeClass('hide');
                         });
                     });
                 }
@@ -717,11 +724,25 @@
                 setTimeout(function(){
                     map.setZoom(parseInt(map_vars.default_zoom));                
                     console.log('zoomed',map.getZoom());
-                },50);
+                },150);
                 
-                // google.maps.event.addListener(map, 'bounds_changed', function() {
-                //     console.log('zoombound',map.getZoom());
-                // });
+                google.maps.event.addListener(map, 'bounds_changed', function() {
+                    console.log('zoombound',map.getZoom());
+                    var currentZoom = map.getZoom();
+                    if(currentZoom >= 11 ) {
+                      //addMarkersonZoomout(comms, map);
+                      $('.pxp-marker-short-price').hide();
+                      if(!$('.pxp-price-marker').hasClass('active')) $('.pxp-marker-generic-pin').show();
+                      $('.pxp-price-marker').addClass('noafter');
+                      
+                    }
+                    else if(currentZoom < 11) {
+                        //addMarkers(props, comms, map)
+                        $('.pxp-marker-short-price').show();
+                      $('.pxp-marker-generic-pin').hide();
+                      $('.pxp-price-marker').removeClass('noafter');
+                    }
+                });
 
             },
             error: function(errorThrown) {}
