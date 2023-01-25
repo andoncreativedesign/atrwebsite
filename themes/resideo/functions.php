@@ -1000,7 +1000,7 @@ include_once('sc_careers_page_dynamic.php');
 include_once('sc_show_contact_page.php');
 include_once('sc_fr_testimonials_noslider.php');
 include_once('sc_show_missionslider.php');
-
+include_once('sc_onloadpopup.php');
 add_action( 'init', 'create_subjects_hierarchical_taxonomy', 0 );
  
 //create a custom taxonomy name it subjects for your posts
@@ -1693,4 +1693,29 @@ add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 // 	$value = 'https://sigmaprivate.com/wp-content/uploads/2021/09/sigmalogo.jpg';
 // 	return $value;
 //  }
+
+// add a settings page for adding popup
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Additional Settings',
+        'menu_slug'     => 'theme-additional-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme popup',
+        'menu_title'    => 'Popup settings',
+        'parent_slug'   => 'theme-additional-general-settings',
+    ));
+    
+    // acf_add_options_sub_page(array(
+    //     'page_title'    => 'Theme Footer Settings',
+    //     'menu_title'    => 'Footer',
+    //     'parent_slug'   => 'theme-general-settings',
+    // ));
+    
+}
 ?>

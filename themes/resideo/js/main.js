@@ -1994,4 +1994,40 @@
     });
     $('#qlwapp .qlwapp-toggle').attr('data-phone','966556646916');
     // if($('#video_slider')) $('#video_slider')[0].play();
+
+
+
+     // on load modal for coming soon
+var csmodal = document.getElementById("comingsoonModal");
+var modalclosebtn = document.getElementsByClassName("comingsoon-modal-close")[0];
+
+if(csmodal != null ) {
+if(sessionStorage.getItem("formsent") != "true"){
+    console.log("notetrue",sessionStorage.getItem("formsent"));
+    csmodal.style.display = "block";
+
+  
+} else {
+    console.log("etrue",sessionStorage.getItem("formsent"));
+    csmodal.style.display = "none";
+}
+ modalclosebtn.onclick = function() {
+    csmodal.style.display = "none";
+  }
+}
+  document.addEventListener( 'wpcf7submit', function( event ) {
+    if ( '2712' == event.detail.contactFormId ) {
+       // alert( "The contact form ID is 2705." );
+        if(csmodal.querySelector('form').classList.contains('sent')) {
+            sessionStorage.setItem("formsent", "true");
+            dataLayer.push({
+                'event':'comingsoon_form_submit',
+                'form_name':'coming soon popup form',
+                'page_location':window.location.href,
+                'page_language':document.getElementsByTagName('html')[0].getAttribute('lang')
+              });
+        }
+        // do something productive
+    }
+}, false );
 })(jQuery);

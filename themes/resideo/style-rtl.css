@@ -14487,10 +14487,145 @@ a.pxp-marker-details,a.pxp-marker-details:hover {
     display: none !important;
 }
 .pxp-price-marker:hover .pxp-marker-short-price {
-    display: none;
+    display: none !important;
     }
 @media screen and (max-width: 768px) {
 .soldoutwatermark {
     font-size:20px;
        }
     }
+
+
+    
+    /* The Modal (background) */
+    .comingsoonModal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        z-index:1200;
+        background:rgba(255,255,255,.9);
+      }
+      
+      /* Modal Content/Box */
+      .comingsoon-modal-content {
+        background-color: #393E43;
+        margin: 10% auto; /* 15% from the top and centered */
+        padding: 60px 60px 20px 60px;
+        border: 1px solid #393E43;
+        width: 90%; /* Could be more or less, depending on screen size */
+        max-width:710px;
+        position: relative;
+    
+      }
+      .comingsoon-modal-content .cs_copy_cont {
+        width:90%;
+        max-width:546px;
+        text-align: center;
+        margin:0 auto;
+    
+      }
+      .comingsoon-modal-content .cs_copy_cont h2 {
+         color:#4D858D;
+         font-size:32px;
+         font-weight:bold;
+         padding-top:60px;
+      }
+      .comingsoon-modal-content .cs_copy_cont p { 
+      color:#fff;
+      font-size:16px;
+      line-height:24px;
+      padding-top:12px;
+      }
+      .comingsoon-modal-content input.wpcf7-form-control{  
+       max-width:280px;
+       height:50px;
+       width:80%;
+       border: 1px solid #4D858D;
+       border-radius:0;
+       margin:24px auto 0 auto;
+      }
+      .comingsoon-modal-content .wpcf7-not-valid-tip {
+        max-width:280px;
+        width:80%;
+        margin:0 auto;
+      }
+      .comingsoon-modal-content .wpcf7-form .wpcf7-form-control.wpcf7-submit {
+        margin-top:25px !important;
+        color: #fff;
+        font-weight: 700;
+        display: block;
+        border: 2px solid #a98913;
+        
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        transform-origin: top left;
+        transition-delay: .1s !important;
+        margin:0 auto;
+        width:110px;
+        border-radius: 0;
+        background-color: #393E43;
+      }
+      .comingsoon-modal-content input.wpcf7-submit:hover {
+        color: #fff;
+        background-color: #a98913;
+        
+      }
+      /* The Close Button */
+      .comingsoon-modal-close {
+        width:19px;
+        height:19px;
+        position:absolute;
+        top:32px;
+        right:40px;
+        background: url(images/popup_close.svg);
+        
+      }
+      .comingsoon-modal-content .wpcf7 form .wpcf7-response-output {
+       margin-top:0;
+      }
+      .comingsoon-modal-content .wpcf7 form.sent .wpcf7-response-output {
+        color:#fff;
+        }
+      .comingsoon-modal-close:hover,
+      .comingsoon-modal-close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    
+      @media only screen and (max-width: 990px) {
+        .comingsoon-modal-content {
+         padding:30px 30px 20px 30px;
+         margin-top:80px;
+        }
+        .cs_copy_cont img {
+            width:50%;
+        }
+        .comingsoon-modal-content .cs_copy_cont h2 {
+            font-size:20px;
+            padding-top:20px;
+        }
+        .comingsoon-modal-content .cs_copy_cont p {
+            font-size:12px;
+            line-height:16px;
+            padding:6px 0;
+            margin-bottom:0;
+        }
+        .comingsoon-modal-content input.wpcf7-form-control {
+            width:100%;
+        }
+        .comingsoon-modal-content .wpcf7-not-valid-tip {
+            width:100%;
+        }
+        .comingsoon-modal-content .wpcf7-form p {
+            margin-bottom:0;
+        }
+      }

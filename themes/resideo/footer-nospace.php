@@ -8,6 +8,8 @@ $general_settings = get_option('resideo_general_settings');
 $copyright        = isset($general_settings['resideo_copyright_field']) ? $general_settings['resideo_copyright_field'] : ''; ?>
 
     <div class="pxp-footer">
+        
+    <?php echo do_shortcode('[sc_onload_popup]') ?>
         <div class="container pt-100" style="padding-bottom: 25px;"><?php get_sidebar('footer'); ?><?php if ($copyright != '') { ?>
             <div class="pxp-footer-bottom mt-4 mt-md-5" style="border-top: 1px solid #4D858D; padding-top:8px">
                 <div>
