@@ -234,7 +234,7 @@ if (!function_exists('resideo_load_scripts')):
         $gmaps_poi              = isset($resideo_gmaps_settings['resideo_gmaps_poi_field']) ? $resideo_gmaps_settings['resideo_gmaps_poi_field'] : '';
 
         if ($gmaps_key != '') {
-            wp_enqueue_script('gmaps', 'https://maps.googleapis.com/maps/api/js?key=' . $gmaps_key . '&amp;libraries=geometry&amp;libraries=places', array('jquery'), false, true);
+            wp_enqueue_script('gmaps', 'https://maps.googleapis.com/maps/api/js?key=' . $gmaps_key . '&amp;libraries=geometry&amp;libraries=places&callback=Function.prototype', array('jquery'), false, true);
         }
 
         wp_enqueue_script('google-video',  'https://www.youtube.com/iframe_api', array(), false, true);
