@@ -3650,6 +3650,7 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
     color: #333;
     text-decoration: none;
 }
+button:focus{ outline:unset !important; }
 .pxp-services-accordion-item-header button:hover {
     opacity: .7;
 }

@@ -190,7 +190,7 @@ if (!function_exists('resideo_services_shortcode')):
                         $image_src = wp_get_attachment_image_src($service['value'], 'pxp-icon');
                         if ($image_src != false) {
                             $return_string .= 
-                                            '<img src="' . esc_url($image_src[0]) . '" class="mr-4" alt="' . esc_attr($service['title']) . '" />';
+                                            '<img src="' . esc_url($image_src[0]) . '" class="mr-4" alt="' . esc_attr($service['title']) . '" width="auto" height="64" />';
                         }
                     }
                     $return_string .= 

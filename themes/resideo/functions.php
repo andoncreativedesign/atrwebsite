@@ -191,7 +191,7 @@ if (!function_exists('resideo_load_scripts')):
         global $paged;
         global $post;
 
-        wp_enqueue_style('jquery-ui', RESIDEO_LOCATION . '/css/jquery-ui.css', array(), '1.11.0', 'all'); 
+        wp_enqueue_style('jquery-ui', RESIDEO_LOCATION . '/css/jquery-ui.min.css', array(), '1.13.2', 'all'); 
         wp_enqueue_style('fileinput', RESIDEO_LOCATION . '/css/fileinput.min.css', array(), '4.0', 'all'); 
         // wp_enqueue_style('base-font', 'https://fonts.googleapis.com/css?family=Roboto:400,700,900', array(), '1.0', 'all');
         wp_enqueue_style('base-font', 'https://fonts.googleapis.com/css?family=Cairo:400,700,900', array(), '1.0', 'all');
@@ -217,7 +217,7 @@ if (!function_exists('resideo_load_scripts')):
 
         include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
-        wp_enqueue_script('jquery-ui', RESIDEO_LOCATION . '/js/jquery-ui.min.js', array('jquery'), '1.11.4', true);
+        wp_enqueue_script('jquery-ui', RESIDEO_LOCATION . '/js/jquery-ui.min.js', array('jquery'), '1.13.2', true);
         wp_enqueue_script('popper', RESIDEO_LOCATION . '/js/popper.min.js', array('jquery'), '1.0', true);
         wp_enqueue_script('bootstrap', RESIDEO_LOCATION . '/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
         wp_enqueue_script('markerclusterer',    RESIDEO_LOCATION . '/js/markerclusterer.js', array(), '2.0.8', true);

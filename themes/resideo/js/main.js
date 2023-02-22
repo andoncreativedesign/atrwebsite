@@ -207,7 +207,7 @@
         var windowHeight;
 
         function init() {
-            elems = document.querySelectorAll('.pxp-animate-in,.pxp-text-light,.pxp-section-h2,.home_service .pxp-section-featured-h2,.pxp-primary-cta,.home .pxp-props-carousel-right-stage-1 .owl-item,.pxp-testim-1,.feature_carousal_22,.pxp-contact-section-form,.pxp-section-featured-h2,.finance_list,.fin_basic_req,.service_case2_intro,.row div .pxp-prop-card-1,.pxp-services-h-items div,.pxp-hero .pxp-hero-caption p,.tech_list,.pxp-page-header,.fix_margin_show_community_listing, .fr_ct_testim_container,.cus_community_bar #gallery,.ct_homevidcta,.ct_contact_intro,.ct_business_hours,.ct_home_logo_cont');
+            elems = document.querySelectorAll('.pxp-animate-in,.pxp-text-light,.pxp-section-h2,.home_service .pxp-section-featured-h2,.pxp-primary-cta,.home .pxp-props-carousel-right-stage-1 .owl-item,.pxp-testim-1,.feature_carousal_22,.pxp-contact-section-form,.pxp-section-featured-h2,.finance_list,.fin_basic_req,.service_case2_intro,.row div .pxp-prop-card-1,.pxp-services-h-items div,.pxp-hero .pxp-hero-caption p,.tech_list,.pxp-page-header,.fix_margin_show_community_listing, .fr_ct_testim_container,.cus_community_bar #gallery,.ct_homevidcta,.ct_contact_intro,.ct_business_hours');
             //console.log(elems);
             windowHeight = window.innerHeight;
             addEventHandlers();
@@ -1096,7 +1096,7 @@
 
     if ($('.ct-owl-timeline').length > 0) { 
         $('.ct-owl-timeline').owlCarousel({
-            // 'rtl': (main_vars.is_rtl == '1'),
+            'rtl': (main_vars.is_rtl == '1'),
             'nav': true,
             dots: true,    
              slideSpeed: 2000,  
@@ -1998,36 +1998,38 @@
 
 
      // on load modal for coming soon
-var csmodal = document.getElementById("comingsoonModal");
-var modalclosebtn = document.getElementsByClassName("comingsoon-modal-close")[0];
+// var csmodal = document.getElementById("comingsoonModal");
+// var modalclosebtn = document.getElementsByClassName("comingsoon-modal-close")[0];
 
-if(csmodal != null ) {
-if(sessionStorage.getItem("formsent") != "true"){
-    console.log("notetrue",sessionStorage.getItem("formsent"));
-    csmodal.style.display = "block";
+// if( csmodal != null && document.getElementsByTagName("BODY")[0].classList.contains('home') ) {
+// if(sessionStorage.getItem("formsent") != "true"){
+//     //console.log("notetrue",sessionStorage.getItem("formsent"));
+//     csmodal.style.display = "block";
 
   
-} else {
-    console.log("etrue",sessionStorage.getItem("formsent"));
-    csmodal.style.display = "none";
-}
- modalclosebtn.onclick = function() {
-    csmodal.style.display = "none";
-  }
-}
-  document.addEventListener( 'wpcf7submit', function( event ) {
-    if ( '2712' == event.detail.contactFormId ) {
-       // alert( "The contact form ID is 2705." );
-        if(csmodal.querySelector('form').classList.contains('sent')) {
-            sessionStorage.setItem("formsent", "true");
-            dataLayer.push({
-                'event':'comingsoon_form_submit',
-                'form_name':'coming soon popup form',
-                'page_location':window.location.href,
-                'page_language':document.getElementsByTagName('html')[0].getAttribute('lang')
-              });
-        }
-        // do something productive
-    }
-}, false );
+// } else {
+//     //console.log("etrue",sessionStorage.getItem("formsent"));
+//     csmodal.style.display = "none";
+// }
+//  modalclosebtn.onclick = function() {
+//     csmodal.style.display = "none";
+//   }
+// }
+//   document.addEventListener( 'wpcf7submit', function( event ) {
+//     if ( '2712' == event.detail.contactFormId ) {
+//        // alert( "The contact form ID is 2705." );
+//         if(csmodal.querySelector('form').classList.contains('sent')) {
+//             sessionStorage.setItem("formsent", "true");
+//             dataLayer.push({
+//                 'event':'comingsoon_form_submit',
+//                 'form_name':'coming soon popup form',
+//                 'page_location':window.location.href,
+//                 'page_language':document.getElementsByTagName('html')[0].getAttribute('lang')
+//               });
+//         }
+//         // do something productive
+//     }
+// }, false );
+
+
 })(jQuery);
