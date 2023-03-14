@@ -1599,7 +1599,7 @@ while (have_posts()) : the_post();
                 
                 <div class="modal-body" style="padding:0px">
                         <button type="button" class="close" data-dismiss="modal" style="padding:15px">
-                            <img src="<?php echo get_template_directory_uri()?>/images/cros_icon.svg" style="width: 20px;">
+                        <img src="<?php echo esc_url(get_template_directory_uri().'/images/cros_icon.svg');?>" style="width: 20px;">
                             <!-- <i class="fa fa-close" style="font-size:28px;color:#4D858D"></i> -->
                         </button>
                     <style type="text/css">

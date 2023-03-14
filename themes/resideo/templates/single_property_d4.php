@@ -313,7 +313,7 @@ while (have_posts()) : the_post();
                     </div>
                     <?php if ($no_map === false) { ?>
                         <a role="button" class="pxp-map-toggle pxp-is-gallery"><!-- <span class="fa fa-map-o"></span> -->
-                            <img src="<?php echo get_template_directory_uri();?>/images/ic_map_24px.png">
+                        <img src="<?php echo esc_url(get_template_directory_uri().'/images/ic_map_24px.png');?>">
                         </a>
                     <?php } ?>
                 </div>

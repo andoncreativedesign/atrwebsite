@@ -43,7 +43,7 @@ add_filter( 'auto_update_plugin', '__return_false' );
 
 
 
-include_once('peoples_post_type.php');
+// include_once('peoples_post_type.php');
 include_once('disclaimer_setting.php');
 /**
  * Register required plugins
@@ -986,313 +986,73 @@ endif;
 add_filter('body_class', 'resideo_add_dark_mode_class');
 include_once('custom_code.php');
 
-include_once('sc_community_detail_page_slider.php');
-include_once('sc_show_communities_how_we_can_help.php');
-include_once('sc_get_explore_community.php');
-include_once('sc_show_community_listing.php');
-include_once('sc_show_people.php');
-include_once('sc_show_community_properties.php');
-include_once('sc_show_design_features.php');
-include_once('sc_show_welcome_video_section.php');
-include_once('sc_show_explore_our_communities_home.php');
-include_once('sc_show_peoples_testimonials.php');
-include_once('sc_careers_page_dynamic.php');
-include_once('sc_show_contact_page.php');
-include_once('sc_fr_testimonials_noslider.php');
-include_once('sc_show_missionslider.php');
-include_once('sc_onloadpopup.php');
-add_action( 'init', 'create_subjects_hierarchical_taxonomy', 0 );
+// include_once('sc_community_detail_page_slider.php');
+// include_once('sc_show_communities_how_we_can_help.php');
+// include_once('sc_get_explore_community.php');
+// include_once('sc_show_community_listing.php');
+// include_once('sc_show_people.php');
+// include_once('sc_show_community_properties.php');
+// include_once('sc_show_design_features.php');
+// include_once('sc_show_welcome_video_section.php');
+// include_once('sc_show_explore_our_communities_home.php');
+// include_once('sc_show_peoples_testimonials.php');
+// include_once('sc_careers_page_dynamic.php');
+// include_once('sc_show_contact_page.php');
+// include_once('sc_fr_testimonials_noslider.php');
+// include_once('sc_show_missionslider.php');
+// include_once('sc_onloadpopup.php');
+// add_action( 'init', 'create_subjects_hierarchical_taxonomy', 0 );
  
 //create a custom taxonomy name it subjects for your posts
  
-function create_subjects_hierarchical_taxonomy() {
+// function create_subjects_hierarchical_taxonomy() {
  
-// Add new taxonomy, make it hierarchical like categories
-//first do the translations part for GUI
+// // Add new taxonomy, make it hierarchical like categories
+// //first do the translations part for GUI
  
-  $labels = array(
-    'name' => _x( 'Community', 'taxonomy general name' ),
-    'singular_name' => _x( 'Community', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Community' ),
-    'all_items' => __( 'All Community' ),
-    'parent_item' => __( 'Parent Community' ),
-    'parent_item_colon' => __( 'Parent Community:' ),
-    'edit_item' => __( 'Edit Community' ), 
-    'update_item' => __( 'Update Community' ),
-    'add_new_item' => __( 'Add New Community' ),
-    'new_item_name' => __( 'New Community Name' ),
-    'menu_name' => __( 'Community' ),
-  );    
+//   $labels = array(
+//     'name' => _x( 'Community', 'taxonomy general name' ),
+//     'singular_name' => _x( 'Community', 'taxonomy singular name' ),
+//     'search_items' =>  __( 'Search Community' ),
+//     'all_items' => __( 'All Community' ),
+//     'parent_item' => __( 'Parent Community' ),
+//     'parent_item_colon' => __( 'Parent Community:' ),
+//     'edit_item' => __( 'Edit Community' ), 
+//     'update_item' => __( 'Update Community' ),
+//     'add_new_item' => __( 'Add New Community' ),
+//     'new_item_name' => __( 'New Community Name' ),
+//     'menu_name' => __( 'Community' ),
+//   );    
  
-// Now register the taxonomy
-  register_taxonomy('Community',array('property'), array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_in_rest' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'community' ),
-  ));
+// // Now register the taxonomy
+//   register_taxonomy('Community',array('property'), array(
+//     'hierarchical' => true,
+//     'labels' => $labels,
+//     'show_ui' => true,
+//     'show_in_rest' => true,
+//     'show_admin_column' => true,
+//     'query_var' => true,
+//     'rewrite' => array( 'slug' => 'community' ),
+//   ));
 
 
 
 
   
  
-}
+// }
 
 icl_register_string("resideo", 'HAVE A HOME IN MIND?','HAVE A HOME IN MIND?');
 icl_register_string("resideo", 'SR','SR');
 
-function have_property_in_mind_calculator()
-{
-    ob_start();
-    ?>
-    <div class="container mt-100">
-        <h2 class="pxp-section-h2"><?php echo pll__("HAVE A HOME IN MIND?"); ?></h2>
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="pxp-single-property-section">
-                    <h3 style="color: #4D858D;"><?php echo pll__( "MORTGAGE CALCULATOR" ); ?></h3>
-                    <div class="pxp-calculator-view mt-3 mt-md-4">
-                        <div class="row">
-                            <!--<div class="col-sm-12 col-lg-4 align-self-center">
-                                <div class="pxp-calculator-chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="pxp-calculator-chart" style="display: block; width: 223px; height: 223px;" width="223" height="223" class="chartjs-render-monitor"></canvas>
-                                    <div class="pxp-calculator-chart-result">
-                                        <div class="pxp-calculator-chart-result-sum">8,122SR</div>
-                                        <div class="pxp-calculator-chart-result-label">per month</div>
-                                    </div>
-                                </div>
-                            </div>-->
-                            <div class="col-sm-12 col-lg-12 align-self-center mt-3 mt-lg-0">
-                                <div class="pxp-calculator-data">
-                                    <div class="row justify-content-between">
-                                        <div class="col-8">
-                                            <div class="pxp-calculator-data-label"><?php echo pll__( "Monthly Installment"); ?><span class="fa fa-minus"></span></div>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <div class="pxp-calculator-data-sum" id="pxp-calculator-data-pi">5,018 &nbsp;<?php echo pll__("SR"); ?></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--<div class="pxp-calculator-data">
-                                    <div class="row justify-content-between">
-                                        <div class="col-8">
-                                            <div class="pxp-calculator-data-label"><span class="fa fa-minus"></span>Property Taxes</div>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <div class="pxp-calculator-data-sum" id="pxp-calculator-data-pt">1,068SR</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pxp-calculator-data">
-                                    <div class="row justify-content-between">
-                                        <div class="col-8">
-                                            <div class="pxp-calculator-data-label"><span class="fa fa-minus"></span>Lorem Ipsem</div>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <div class="pxp-calculator-data-sum" id="pxp-calculator-data-hd">2,036SR</div>
-                                        </div>
-                                    </div>
-                                </div>-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pxp-calculator-form">
-                                    
-                        <input type="hidden" id="pxp-calculator-form-property-taxes" value="1,068<?php echo pll__("SR"); ?>">
-                        <input type="hidden" id="pxp-calculator-form-hoa-dues" value="2,036<?php echo pll__("SR"); ?>">
-                        <div style="padding-bottom: 20px;
-                        margin-bottom: 20px;
-                        border-bottom: 1px solid #E2E2E2;">
-                            
-                        </div>
-                        <div>
-                            <p><?php echo pll__( "Finance your home with:" ); ?></p>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="">
-                              <label class="form-check-label" style="margin-right: .9rem;" for="inlineRadio1"><?php echo pll__( "Amlak International" ); ?></label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" style="margin-right: .9rem;" for="inlineRadio2"><?php echo pll__( "Bidaya Home Finance" ); ?></label>
-                            </div>
-                        </div>
-                        <div style="padding-bottom: 20px;
-                        margin-bottom: 20px;
-                        border-bottom: 1px solid #E2E2E2;">
-                            
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-term"><?php echo pll__( "Term" ); ?></label>
-                                    <select class="custom-select" id="pxp-calculator-form-term">
-                                        <option value="20">20 <?php echo pll__( "Years Fixed" ); ?></option>
-                                        <option value="30" selected>30 <?php echo pll__( "Years Fixed" ); ?></option>
-                                        
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-interest"><?php echo pll__( "Interest" ); ?></label>
-                                    <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-interest" data-type="percent" value="2.75%">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-price"><?php echo pll__( "Home Price" ); ?></label>
-                                    <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-price" data-type="currency" value="1,240,000SR">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="row">
-                                    <div class="col-7 col-sm-7 col-md-8">
-                                        <div class="form-group">
-                                            <label for="pxp-calculator-form-down-price"><?php echo pll__( "Down Payment" ); ?></label>
-                                            <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-down-price" data-type="currency" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-5 col-sm-5 col-md-4">
-                                        <div class="form-group">
-                                            <label for="pxp-calculator-form-down-percentage">&nbsp;</label>
-                                            <input type="text" class="form-control pxp-form-control-transform" id="pxp-calculator-form-down-percentage" data-type="percent" value="10%">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="diclaimer_btns">
 
-                            <div class="" style="font-size: 13px;padding: 10px 0;">
-                            <i class="bi-info-circle-fill"></i>
-                             <strong><?php echo pll__( "Disclaimer:" ); ?> </strong> <?php 
 
-                            if(get_locale()=="ar")
-                            {
-                                echo get_option('resideo_new_disclimer_ar'); 
-                            }
-                            else
-                            {
-                                echo get_option('resideo_new_disclimer');   
-                            }
-                            ?>
-                            </div>
 
-                            <?php (get_locale() == "ar") ? $ct_cta_contact = "/contact-us-ar":$ct_cta_contact = "/contact-us"; ?>
-                            <?php (get_locale() == "ar") ? $ct_cta_finance = "/finance-your-home-ar":$ct_cta_finance = "/finance-your-home"; ?>
-                            <button class="pxp-sp-top-btn" style=" background-color: #af8814; color: #fff; border: 0px solid #af8814" onclick="location.href='<?php echo $ct_cta_contact;?>'"><?php echo pll__( "ASK OUR TEAM FOR HELP" ); ?></button>
-                            <button class="pxp-sp-top-btn" style=" background-color: lightgray; color: #fff; border: 0px solid #af8814" onclick="location.href='<?php echo $ct_cta_finance;?>'"><?php echo pll__( "SEE DETAILS" ); ?></button>
-                        </div>
-                    </div>
-                </div>
-                <p style="padding: 20px 0px; font-size: 13px;" class="disclaimer_style">
-                    <strong><?php if($property_disclaimer != ""){ echo pll__( "Disclaimer:" );}?></strong>    
-                    <?php 
-                        if($property_disclaimer != ""){
-                           echo $property_disclaimer; 
-                        }
-                     ?> 
-                </p>
 
-            </div>
-        </div>
-    </div>
-    <?php
-   return  ob_get_clean();
-    
-}
 
-add_shortcode('have_property_in_mind_calculator_services','have_property_in_mind_calculator');
 
-function finance_home_image()
-{
-    ob_start();
-    ?>
-    <div>
-        <img src="<?php echo site_url(); ?>/wp-content/uploads/2022/08/yyyy.png" width="100%">
-    </div>
-    <?php
-   return  ob_get_clean();
-}
-add_shortcode('finance_home_image_services','finance_home_image');
 
-function choosing_your_home()
-{
-    ob_start();
-    icl_register_string("resideo", 'KEY POINTS:','KEY POINTS:'); 
-    ?>
-    <div class="pt-100 home_services_bg home-ar ct-warranty" style="<?php if (strtolower(get_field('page_slug'))=="choosing-your-home" || strtolower(get_field('page_slug'))=="howwecanhelpyou") {echo 'background: linear-gradient(90deg, #fff 50%, #7B868C 50%)';} ?> ; background-size: cover; padding-bottom: 50px;">
-    <div class="container" style="padding-top: 30px;">
-        <div class="row">
-            <div class="col-md-6 ">
-                <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0 service_img_min_height pxp-in"><p class="pxp-text-light" style="color: #4D858D; font-weight: 700; "><?php echo get_field('warrenty_title'); ?></p>
-                <h3 class="pxp-section-featured-h2" style=""><?php echo get_field('warrenty_sub_title'); ?></h3><div class="service_case2_intro">
-                   <p style="padding-right: 20px; text-align: left;"><?php echo get_field('warrenty_description'); ?></p><p></p>
-                   </div>
-            </div>
-            </div>
-           <style type="text/css">
-               .service-section-h2{
-                color: #fff;
-                text-transform: uppercase;
-                font-weight: 700;
-               }
-           </style>
-            <div class="col-md-6 home_services_m" style="padding: 0px 66px;">
-                  <div class="pxp-testim-1-intro" style="width: 100%;">
-                        <h5 class="service-section-h2"><?php echo pll__("KEY POINTS:"); ?></h5>
-                    </div>
-                    <div class="finance_list">
-                      <ul>
-                        <?php
 
-                        
-                        if( have_rows('warrenty_key_points') ):
-
-                        
-                            while( have_rows('warrenty_key_points') ) : the_row();
-
-                        
-                                $list = get_sub_field('warrenty_list');
-                        ?>
-
-                        <li><?php echo $list; ?></li>
-                        <?php
-                        
-                            endwhile;
-
-                        
-                        else :
-                          
-                        endif;
-                        ?>
-                          
-                      </ul>
-                  </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <?php
-   return  ob_get_clean();
-}
-add_shortcode('choosing_your_home_services','choosing_your_home');
-
-function faqs_home_image()
-{
-    ob_start();
-    ?>
-    <div>
-        <img src="<?php echo site_url(); ?>/wp-content/uploads/2022/08/Capture1111.png" width="100%">
-    </div>
-    <?php
-   return  ob_get_clean();
-}
-add_shortcode('faqs_home_image_services','faqs_home_image');
 
 
 
@@ -1430,28 +1190,28 @@ function single_options_page() {
 add_action("init","product_name_typeahead_fn");
 function product_name_typeahead_fn()
 {
-    $labels = array(
-        'name' => _x( 'Locations', 'taxonomy general name' ),
-        'singular_name' => _x( 'Locations', 'taxonomy singular name' ),
-        'search_items' =>  __( 'Search Locations' ),
-        'all_items' => __( 'All Locations' ),
-        'parent_item' => __( 'Parent Locations' ),
-        'parent_item_colon' => __( 'Parent Locations:' ),
-        'edit_item' => __( 'Edit Locations' ), 
-        'update_item' => __( 'Update Locations' ),
-        'add_new_item' => __( 'Add New Locations' ),
-        'new_item_name' => __( 'New Locations Name' ),
-        'menu_name' => __( 'Locations' ),
-    );
-    register_taxonomy('locations',array('property'), array(
-        'hierarchical' => true,
-        'labels' => $labels,
-        'show_ui' => true,
-        'show_in_rest' => true,
-        'show_admin_column' => true,
-        'query_var' => true,
-        'rewrite' => array( 'slug' => 'locations' ),
-    ));
+    // $labels = array(
+    //     'name' => _x( 'Locations', 'taxonomy general name' ),
+    //     'singular_name' => _x( 'Locations', 'taxonomy singular name' ),
+    //     'search_items' =>  __( 'Search Locations' ),
+    //     'all_items' => __( 'All Locations' ),
+    //     'parent_item' => __( 'Parent Locations' ),
+    //     'parent_item_colon' => __( 'Parent Locations:' ),
+    //     'edit_item' => __( 'Edit Locations' ), 
+    //     'update_item' => __( 'Update Locations' ),
+    //     'add_new_item' => __( 'Add New Locations' ),
+    //     'new_item_name' => __( 'New Locations Name' ),
+    //     'menu_name' => __( 'Locations' ),
+    // );
+    // register_taxonomy('locations',array('property'), array(
+    //     'hierarchical' => true,
+    //     'labels' => $labels,
+    //     'show_ui' => true,
+    //     'show_in_rest' => true,
+    //     'show_admin_column' => true,
+    //     'query_var' => true,
+    //     'rewrite' => array( 'slug' => 'locations' ),
+    // ));
    
     if( isset($_GET['prod_name']) && $_GET['prod_name'] != "") {
         $search = $_GET['prod_name'];

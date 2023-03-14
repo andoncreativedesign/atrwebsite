@@ -57,7 +57,7 @@ if (!function_exists('resideo_recent_posts_shortcode')):
             $p_title = $post['post_title'];
             $post_id = $post['ID'];
             $blog_image = get_field('blog_image', $post_id);
-            $blog_title = substr(get_field('blog_title',$post_id), 0, 50);
+            $blog_title = substr(get_field('blog_title',$post_id), 0, 100);
             $blog_link = get_field('blog_url', $post_id);
             $p_link = get_permalink($post['ID']);
             $p_date = get_the_date('F j, Y', $post['ID']);
@@ -91,20 +91,20 @@ if (!function_exists('resideo_recent_posts_shortcode')):
                     <a href="' . $blog_link . '" target="_blank" class="pxp-posts-1-item ' . esc_attr($item_class) . '">
                    '.'
                         <div class="pxp-posts-1-item-fig-container">';
-            icl_register_string("resideo", $blog_title,$blog_title);
+           // icl_register_string("resideo", $blog_title,$blog_title);
             icl_register_string("resideo", $categories_str,$categories_str);
             icl_register_string("resideo", 'Read Article','Read Article');
             if ($p_photo !== false) {
                 $return_string .= '
                             <div class="pxp-posts-1-item-fig pxp-cover" style="background-image2: url(); background-size:cover">
-                                <img src="'. $blog_image .'" style="width:100%;">
+                                <img src="'. $blog_image .'" style="width:100%;" alt="Social media posts from Al Tahaluf, the best real estate company in Saudi arabia">
                             </div>';
             }
             $return_string .= '
                         </div>
                         <div class="pxp-posts-1-item-details">
                             <div class="pxp-posts-1-item-details-category">' . pll__($categories_str) . '</div>
-                            <div class="pxp-posts-1-item-details-title">' . pll__( $blog_title) . ' ...</div>
+                            <div class="pxp-posts-1-item-details-title">' .  $blog_title . ' ...</div>
                             <div class="pxp-posts-1-item-details-date mt-2">' . esc_html($p_date) . '</div>
                             <div class="pxp-posts-1-item-cta text-uppercase" style="color: ' . esc_attr($card_cta_color) . '">' . pll__('Read Article', 'resideo') . '</div>
                         </div>

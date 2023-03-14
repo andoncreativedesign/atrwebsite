@@ -10,7 +10,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/custom_client.css">
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri().'/css/custom_client.css');?>">
   
 
     <?php if (function_exists('resideo_get_social_meta')) {
@@ -286,7 +286,7 @@
     }
     if( strtolower(get_field('page_slug'))=="faqs" or strtolower(get_field('page_slug'))=="choosing-your-home" or strtolower(get_field('page_slug'))=="choosing-your-home-ar" or strtolower(get_field('page_slug'))=="financing-your-home" or strtolower(get_field('page_slug')) == 'financing-your-home-ar' or strtolower(get_field('page_slug'))=="careers" or strtolower(get_field('page_slug'))=="faqs-ar" or strtolower(get_field('page_slug'))=="careers-ar" or strtolower(get_field('page_slug'))=="howwecanhelpyou" or strtolower(get_field('page_slug'))=="howwecanhelpyouar" )
     {?>
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/pagestyle.css">
+        <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri().'/pagestyle.css');?>">
         <?php
         if (strtolower(get_field('page_slug'))=="careers-ar") {
         ?>

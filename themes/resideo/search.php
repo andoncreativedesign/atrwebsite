@@ -111,7 +111,7 @@ if ($is_sidebar === true) {
 
                 <?php if ($is_sidebar === true) { ?>
                     <div class="col-sm-12 col-lg-3 mt-4 mt-md-5 mt-lg-0 <?php echo esc_attr($sidebar_class); ?>">
-                        <?php get_sidebar(); ?>
+                        <?php //get_sidebar(); ?>
                     </div>
                 <?php } ?>
             </div>
