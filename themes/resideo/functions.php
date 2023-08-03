@@ -529,21 +529,21 @@ else
 endif;
 add_action( 'wp_enqueue_scripts', 'resideo_load_scripts' );
 
-if (!function_exists('resideo_wp_title')) :
-    function resideo_wp_title($title, $sep) {
-        global $page, $paged;
+// if (!function_exists('resideo_wp_title')) :
+//     function resideo_wp_title($title, $sep) {
+//         global $page, $paged;
 
-        $title .= get_bloginfo('name', 'display');
-        $site_description = get_bloginfo('description', 'display');
+//         $title .= get_bloginfo('name', 'display');
+//         $site_description = get_bloginfo('description', 'display');
 
-        if ($site_description && (is_home() || is_front_page() || is_archive() || is_search())) {
-            $title .= " $sep $site_description";
-        }
+//         if ($site_description && (is_home() || is_front_page() || is_archive() || is_search())) {
+//             $title .= " $sep $site_description";
+//         }
 
-        return $title;
-    }
-endif;
-add_filter('wp_title', 'resideo_wp_title', 10, 2);
+//         return $title;
+//     }
+// endif;
+// add_filter('wp_title', 'resideo_wp_title', 10, 2);
 
 if (!function_exists('resideo_compare_position')) :
     function resideo_compare_position($a, $b) {
@@ -1478,4 +1478,17 @@ if( function_exists('acf_add_options_page') ) {
     // ));
     
 }
+
+/**
+ * Filter the translation url of the current page before Polylang caches it.
+ *
+ * @param null|string $url The translation url, null if none was found.
+ */
+// function ct_url_query_string( $url ) {
+//     if ( ! empty( $_SERVER['QUERY_STRING'] ) ) {
+//         return $url . '?' . $_SERVER['QUERY_STRING'];
+//     }
+//     return $url;
+// }
+// add_filter( 'pll_the_language_link', 'ct_url_query_string' );
 ?>

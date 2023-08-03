@@ -1377,4 +1377,12 @@ public function sc_show_contact_page_fn()
     return ob_get_clean();
 
 }
+public function ct_url_query_string( $url ) {
+        if ( ! empty( $_SERVER['QUERY_STRING'] ) ) {
+            return $url . '?' . $_SERVER['QUERY_STRING'];
+        }
+        return $url;
+    }
+
+
 }

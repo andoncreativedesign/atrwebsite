@@ -26,13 +26,13 @@
 
             jQuery(".iframe_video a").on("click",function (e){  
                e.preventDefault();
-               var my_iframe = jQuery(".my_iframe").html();
+               var my_iframe = jQuery(this).parents().find(".my_iframe").html();
                var img_h = jQuery(".iframe_video img").css('height')
                my_iframe = my_iframe.split('"').join("");
                my_iframe = my_iframe.replace(/&lt;/g, '<').replace(/&gt;/g, '>') ; 
               
-                jQuery(".iframe_video").css("min-height",img_h );
-                jQuery(".iframe_video").html(my_iframe);
+               jQuery(this).parent().css("min-height",img_h );
+               jQuery(this).parent().html( my_iframe );
 
             });
             jQuery(document).on("click","#submit_1",function (){

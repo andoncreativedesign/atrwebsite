@@ -1033,7 +1033,7 @@
     }
     if ($('.ct_floorplans_carousel').length > 0) { 
         $('.ct_floorplans_carousel').owlCarousel({
-            // 'rtl': (main_vars.is_rtl == '1'),
+            'rtl': (main_vars.is_rtl == '1'),
             // 'nav': true,
             dots: false,                      
              loop:true,

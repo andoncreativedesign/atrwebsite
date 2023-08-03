@@ -176,6 +176,8 @@ class Atr_Custom_Plugin {
 		$this->loader->add_action( 'init', $plugin_public, 'ct_create_subjects_hierarchical_taxonomy' );
 		$this->loader->add_action( 'init', $plugin_public, 'ct_create_propertylocation_taxonomy' );
 
+		$this->loader->add_filter( 'pll_the_language_link', $plugin_public, 'ct_url_query_string' );
+
 		// $this->loader->add_shortcodes('show_welcome_video_section',$plugin_public,'show_welcome_video_section_fn');
 		// $this->loader->add_shortcodes('show_promo_slider', $plugin_public,'wpb_promo_slider_shortcode');
 		
